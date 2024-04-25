@@ -47,7 +47,12 @@
                 <h2>YOURMEDI</h2>
             </div>
             <!-- Search Icon used in Media Only -->
-            <p class="search-media"><img src="assets/images/search-icon.png" id="search-icon" alt=""></p>
+            <p class="search-media">
+               <span class="search-container-media">
+                <input type="text" placeholder="Search" id="search-input-media">
+                <i class="fa-solid fa-magnifying-glass" id="glass-media"></i>
+               </span>
+                <img src="assets/images/search-icon.png" id="search-icon" class="search-icon-media" alt=""></p>
             <!-- Menu Tab -->
             <div class="menuTab">
                 <i class="fa-solid fa-bars" id="displayMenu"></i>
@@ -84,9 +89,13 @@
                     </li>
                 </ul>
             </div>
-            <!-- {/* For serch feature */} -->
+            <!-- {/* For serch feature Desktop */} -->
             <div class="search">
-                <img src="assets/images/search-icon.png" id="search-icon" alt="search" />
+                <span class="search-container-Desktop">
+                    <input type="text" placeholder="Search" id="search-input-Desktop">
+                    <i class="fa-solid fa-magnifying-glass" id="small-glass-search"></i>
+                </span>
+                <img src="assets/images/search-icon.png" id="search-icon" class="getData" alt="search" />
             </div>
         </div>
       </div>
@@ -107,19 +116,32 @@
         </div>
        </div>
         <div class="searchFixtures">
-            <div class="searchbg">
-                <div class="locationsearch">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Locaton" id="input-location">
+        <form action="">
+                <div class="searchbg">
+                    <div class="locationsearch">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" placeholder="Locaton" id="input-location">
+                    </div>
+                    <div class="speciality">
+                        <i class="fa-solid fa-hand-pointer"></i>
+                        <input type="text" placeholder="Speciality" id="input-speciality">
+                    </div>
+                    <div class="search-icon-home"><button class="search-btn" type="submit">Search</button></div>
                 </div>
-                <div class="speciality">
-                    <i class="fa-solid fa-hand-pointer"></i>
-                    <input type="text" placeholder="Speciality" id="input-speciality">
-                </div>
-                <button class="search-btn">Search</button>
-            </div>
+        </form>
         </div>
        </section>
+       <!-- End Home Section -->
+
+       <!-------------------------------------------------------------
+                             DEPARTMENT SEECTION
+        --------------------------------------------------- -->
+        <section id="departments">
+            <div class="departmentHeader">
+                <h2>OUR DEPARTMENT</h2>
+                <P></P>
+            </div>
+        </section>
     </div>
  
 
