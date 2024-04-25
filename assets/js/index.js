@@ -46,6 +46,21 @@ search.addEventListener("click", () => {
    }
    search.style.display = "none"
 })
+const glass_Desktop = document.getElementById("small-glass-search");
+var search_Input_Desktop = document.getElementById("search-input-Desktop");
+glass_Desktop.addEventListener("click", () => {
+      if (search_Input_Desktop.value == "") {
+        alert("Please input a word to search for")
+    }else if (search_Input_Desktop.value.length <= 10) {
+        alert(`"${search_Input_Desktop.value}" is not up to 11 characters. Try searching words more than 10 charcaters`)
+        search_Input_Desktop.value = "";
+    }
+    else
+    {
+        alert(` Sorry! We cannot find "${search_Input_Desktop.value}" now. You can try searching a different keyword`)
+        search_Input_Desktop.value = "";
+    }
+})
 
 
 // VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE)
@@ -56,6 +71,21 @@ search_Media.addEventListener("click", () => {
     search_Container_media.style.display = "block"
    }
    search_Media.style.display = "none"
+})
+const glass_Media = document.getElementById("glass-media");
+var inputSearch_media = document.getElementById("search-input-media");
+glass_Media.addEventListener("click", () => {
+    if (inputSearch_media.value == "") {
+        alert("Please input a word to search for")
+    }else if (inputSearch_media.value.length <= 10) {
+        alert(`"${inputSearch_media.value}" is not up to 11 characters. Try searching words more than 10 charcaters`)
+        inputSearch_media.value = "";
+    }
+    else
+    {
+        alert(` We cannot find "${inputSearch_media.value}" now. You can try searching a different keyword`)
+        inputSearch_media.value = "";
+    }
 })
 
 // VALIDATE SEARCH FEATURE ON THE HOMEPAGE
