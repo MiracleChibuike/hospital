@@ -1,3 +1,56 @@
+// Lets load our animation
+
+const AnimationLoad = () => {
+    const loader = document.querySelector(".loader");
+    var headre = document.getElementById("header");
+    var mainDiv = document.querySelector(".main");
+
+    // Show Loader Initially
+    headre.style.display = "block";
+    mainDiv.style.display = "none"
+
+    // After 6 seconds, hide the headre and show the mainDiv
+    setTimeout(() => {
+        headre.style.display = "none";
+        mainDiv.style.display = "block"
+    }, 6000)
+}
+
+// Call the AnimationLoad function when page is ready
+document.addEventListener("DOMContentLoaded", AnimationLoad)
+
+// Prevent back_home Link reload
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const backHomeLink = document.getElementById("arrow-back-home");
+// ShowNavsection - Show_Menu
+    const showNavSection = () => {
+         if ((search_Container_media.style.display = "block")) {
+           search_Container_media.style.display = "none";
+           show_menu.style.display = "block";
+         }
+         search_Media.style.display = "block";
+    }
+
+// HideNavSection - Hide_Menu
+const HideNavSection = () => {
+    if ((search_Container_media.style.display = "block")) {
+      search_Container_media.style.display = "none";
+      hide_menu.style.display = "block";
+    }
+    search_Media.style.display = "block";
+}
+
+    backHomeLink.addEventListener("click", (event) => {
+      backHomeLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        showNavSection(); // Show navigation and hide main content
+        // HideNavSection(); 
+      });
+    });
+  });
+
+
 // Show nav-contents
 var show_menu = document.getElementById("displayMenu");
 var hide_menu = document.getElementById("hide_menu");
@@ -73,7 +126,7 @@ searchInputDesktop.addEventListener("keydown", (e) => {
 
 
 
-// VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE)
+// VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE) - Show_Menu
 const search_Media = document.querySelector(".search-icon-media");
 var search_Container_media = document.querySelector(".search-container-media");
 search_Media.addEventListener("click", () => {
@@ -83,6 +136,14 @@ search_Media.addEventListener("click", () => {
    }
    search_Media.style.display = "none"
 })
+
+search_Media.addEventListener("click", () => {
+     if ((search_Container_media.style.display = "none")) {
+       search_Container_media.style.display = "block";
+       hide_menu.style.display = "none";
+     }
+     search_Media.style.display = "none";
+} )
 
 
 // Validate the search feature on mobile
