@@ -155,6 +155,8 @@ a {
   bottom: 8px;
   left: -35px;
   cursor: pointer;
+      display: none;
+
 }
 #search-input-Desktop{
    padding: 10px 7px;
@@ -216,7 +218,7 @@ a {
 }
 #search-icon {
   width: 30px;
-  cursor: pointer;
+  cursor: pointer
 }
 
 
@@ -407,22 +409,40 @@ a {
     display: none;
   }
   #search-input-media{
-    padding: 10px 7px;
-    width: 120px;
+    padding: 15px 7px;
+    width: 240px;
     position: relative;
-    bottom: 5px;
-    left: -85px;
+    bottom: 35px;
+    left: -25px;
     border: none;
     outline: none;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 17px;
   }
   #glass-media{
     position: relative;
-    /* left: -55px; */
-    right: 110px;
-    bottom: 5px;
+    display: none;
+    left: -80px;
+    z-index: 100;
+    /* right: 30px; */
+    bottom: 35px;
     cursor: pointer;
+    /* width: 20px; */
+    /* background: var(--error-message); */
+  }
+  /* Arrow */
+  #arrow-back-home{
+    display: block;
+    z-index: 100;
+    position: relative;
+    left: -60px;
+    font-size: 20px;
+    width: 30px;
+    color: var(--clr-white-main);
+  }
+  #arrow-back-home:hover{
+    transition: .2s;
+    transform: translateX(-5px);
   }
   .drops {
     position: relative;
@@ -461,21 +481,36 @@ a {
  }
  .searchbg{
     margin: 0 4px;
-    padding: 15px 5px;
+    /* padding: 15px 5px; */
+   background: var(--clr-dark-main);
+   border-radius: 7px;
+   display: block;
  }
   #input-location, #input-speciality{
-    padding: 12px 5px;
-    width: 120px;
+    padding: 15px 10px;
+    margin: 5px 0;
+    width: 250px;
+    font-size: 16px;
+    background: var(--clr-white-secondary);
+    color: var(--clr-dark-main);
+ }
+ .search-icon-home{
+  text-align: center;
  }
  .search-btn{
     padding: 10px 8px;
+    width: 50%;
+    font-size: 16px;
     /* position: relative;
     top: 20px; */
  }
+ .search-btn:hover{
+  background: var(--clr-hospital-deep);
+  transition: .4s;
+ }
  .searchbg i{
     position: relative;
-    left: 110px;
-    top: 30px;
+    left: 230px;
  }
 }
 

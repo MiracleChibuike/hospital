@@ -46,21 +46,31 @@ search.addEventListener("click", () => {
    }
    search.style.display = "none"
 })
-const glass_Desktop = document.getElementById("small-glass-search");
-var search_Input_Desktop = document.getElementById("search-input-Desktop");
-glass_Desktop.addEventListener("click", () => {
-      if (search_Input_Desktop.value == "") {
-        alert("Please input a word to search for")
-    }else if (search_Input_Desktop.value.length <= 10) {
-        alert(`"${search_Input_Desktop.value}" is not up to 11 characters. Try searching words more than 10 charcaters`)
-        search_Input_Desktop.value = "";
-    }
-    else
-    {
-        alert(` Sorry! We cannot find "${search_Input_Desktop.value}" now. You can try searching a different keyword`)
-        search_Input_Desktop.value = "";
-    }
-})
+
+
+var searchInputDesktop = document.getElementById("search-input-Desktop");
+
+const searchOnDesktop = () => {
+  const searchInputDesktopValue = searchInputDesktop.value.trim();
+  if (searchInputDesktopValue === "") {
+    alert("Please input a word to search for");
+  } else {
+    alert(
+      `Sorry! We cannot find "${searchInputDesktopValue}" now. You can try searching a different keyword`
+    );
+    searchInputDesktop.value = ""; // Reset the input field
+  }
+};
+
+searchInputDesktop.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    searchOnDesktop(); // Correctly invoke the function
+  }
+});
+
+
+
 
 
 // VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE)
@@ -68,51 +78,63 @@ const search_Media = document.querySelector(".search-icon-media");
 var search_Container_media = document.querySelector(".search-container-media");
 search_Media.addEventListener("click", () => {
    if (search_Container_media.style.display = "none") {
-    search_Container_media.style.display = "block"
+    search_Container_media.style.display = "block";
+    show_menu.style.display = "none"
    }
    search_Media.style.display = "none"
 })
-const glass_Media = document.getElementById("glass-media");
-var inputSearch_media = document.getElementById("search-input-media");
-glass_Media.addEventListener("click", () => {
-    if (inputSearch_media.value == "") {
-        alert("Please input a word to search for")
-    }else if (inputSearch_media.value.length <= 10) {
-        alert(`"${inputSearch_media.value}" is not up to 11 characters. Try searching words more than 10 charcaters`)
-        inputSearch_media.value = "";
-    }
-    else
-    {
-        alert(` We cannot find "${inputSearch_media.value}" now. You can try searching a different keyword`)
-        inputSearch_media.value = "";
-    }
-})
+
+
+// Validate the search feature on mobile
+var inputSearchMedia = document.getElementById("search-input-media");
+
+// Function to be triggered
+const performSearch = () => {
+  if (inputSearchMedia.value.trim() === "") {
+    alert("Please input a word to search for");
+  } else {
+    alert(
+      `We cannot find "${inputSearchMedia.value}" now. You can try searching a different keyword`
+    );
+    inputSearchMedia.value = "";
+  }
+};
+
+// Calling the search function when user presses Enter
+inputSearchMedia.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent the default form submission behavior
+    performSearch();
+  }
+});
+
+
 
 // VALIDATE SEARCH FEATURE ON THE HOMEPAGE
 
-const form = document.querySelector("form");
-const location_Input = document.getElementById("input-location");
-const speciality_Input = document.getElementById("input-speciality");
 
-form.addEventListener("submit", (e) =>{
-    e.preventDefault();
 
-    if (location_Input.value == "")  {
-        alert("Error - Please enter a location")
-        location_Input.style.border = "2px solid var(--error-message)";
-    }
-    else if (speciality_Input.value == "") {
-        alert("Error - Please input a Speciality to continue");
-        speciality_Input.style.border = "2px solid var(--error-message)";
-    }
-    else{
-        alert (`Your search "${speciality_Input.value}" in "${location_Input.value}" did not 
-        return any results \n Try again Later`)
-         location_Input.style.border = "none";
-         speciality_Input.style.border = "none";
-        form.reset()
-    }
+const form = document.getElementById("form_main");
+const locationInput = document.getElementById("input-location");
+const specialityInput = document.getElementById("input-speciality");
 
-    // console.log(location_Input.value);
-    // console.log(speciality_Input.value)
-})
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Reset border styles initially
+  locationInput.style.border = "none";
+  specialityInput.style.border = "none";
+
+  if (locationInput.value.trim() === "") {
+    alert("Error - Please enter a location");
+    locationInput.style.border = "2px solid var(--error-message)";
+  } else if (specialityInput.value.trim() === "") {
+    alert("Error - Please input a Speciality to continue");
+    specialityInput.style.border = "2px solid var(--error-message)";
+  } else {
+    alert(
+      `Your search "${specialityInput.value}" in "${locationInput.value}" did not return any results. Try again later.`
+    );
+    form.reset();
+  }
+});

@@ -49,7 +49,8 @@
             <!-- Search Icon used in Media Only -->
             <p class="search-media">
                <span class="search-container-media">
-                <input type="text" placeholder="Search" id="search-input-media">
+                    <a href="index.html"><i class="fa-solid fa-arrow-left" id="arrow-back-home"></i></a>
+                <input type="search" placeholder="Search" id="search-input-media">
                 <i class="fa-solid fa-magnifying-glass" id="glass-media"></i>
                </span>
                 <img src="assets/images/search-icon.png" id="search-icon" class="search-icon-media" alt=""></p>
@@ -89,11 +90,13 @@
                     </li>
                 </ul>
             </div>
-            <!-- {/* For serch feature Desktop */} -->
+            <!-- {/* For search feature Desktop */} -->
             <div class="search">
                 <span class="search-container-Desktop">
-                    <input type="text" placeholder="Search" id="search-input-Desktop">
+                   <form action="">
+                    <input type="search" placeholder="Search" id="search-input-Desktop">
                     <i class="fa-solid fa-magnifying-glass" id="small-glass-search"></i>
+                   </form>
                 </span>
                 <img src="assets/images/search-icon.png" id="search-icon" class="getData" alt="search" />
             </div>
@@ -116,7 +119,7 @@
         </div>
        </div>
         <div class="searchFixtures">
-        <form action="">
+        <form action="" id="form_main">
                 <div class="searchbg">
                     <div class="locationsearch">
                         <i class="fa-solid fa-location-dot"></i>
