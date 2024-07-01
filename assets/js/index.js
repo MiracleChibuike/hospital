@@ -1,4 +1,4 @@
-// Lets load our animation
+// Loads the animation on a succesful page load
 
 const AnimationLoad = () => {
     const loader = document.querySelector(".loader");
@@ -17,7 +17,7 @@ const AnimationLoad = () => {
 }
 
 // Call the AnimationLoad function when page is ready
-document.addEventListener("DOMContentLoaded", AnimationLoad)
+// document.addEventListener("DOMContentLoaded", AnimationLoad)
 
 // Prevent back_home Link reload
 
@@ -41,13 +41,11 @@ const HideNavSection = () => {
     search_Media.style.display = "block";
 }
 
-    backHomeLink.addEventListener("click", (event) => {
       backHomeLink.addEventListener("click", (event) => {
         event.preventDefault(); // Prevent default link behavior
         showNavSection(); // Show navigation and hide main content
         // HideNavSection(); 
-      });
-    });
+      })
   });
 
 
@@ -101,6 +99,7 @@ search.addEventListener("click", () => {
 })
 
 
+// Validate the search feature on DESKTOP
 var searchInputDesktop = document.getElementById("search-input-Desktop");
 
 const searchOnDesktop = () => {
@@ -173,8 +172,6 @@ inputSearchMedia.addEventListener("keydown", (event) => {
 
 // VALIDATE SEARCH FEATURE ON THE HOMEPAGE
 
-
-
 const form = document.getElementById("form_main");
 const locationInput = document.getElementById("input-location");
 const specialityInput = document.getElementById("input-speciality");
@@ -199,3 +196,91 @@ form.addEventListener("submit", (e) => {
     form.reset();
   }
 });
+
+
+// Validate departmenrts buttons to pop out corresponding container
+// Defining containers to hold the departments div
+var Cardiology_Dept,  Neurology_Dept, Diagnostics_Dept, Dental_Dept, Opthalmalogy_Dept, Emergency_Dept, Oncology_Dept
+
+ Cardiology_Dept = document.getElementById("Cardiology_target");
+ Neurology_Dept = document.getElementById("Neurology_target");
+ Diagnostics_Dept = document.getElementById("Diagnostics_target")
+ Dental_Dept = document.getElementById("Dental_target");
+ Opthalmalogy_Dept = document.getElementById("Ophthalmology_target");
+ Emergency_Dept = document.getElementById("Emergency_target")
+ Oncology_Dept = document.getElementById("Oncology_target");
+
+//  Defining the buttons for each dept
+const button_Cardiology = document.getElementById("Cardiology_Dept");
+const button_Neurology = document.getElementById("Neurology_Dept");
+const button_Diagnosis = document.getElementById("Diagnostics_Dept");
+const button_Dental = document.getElementById("Dental_Dept");
+const button_Opthal = document.getElementById("Opthalmalogy_Dept");
+const button_Emergency = document.getElementById("Emergency_Dept");
+const button_Oncology = document.getElementById("Oncology_Dept");
+
+
+// showNeurologyDept
+const showNewurologyDept = () => {
+  if (Neurology_Dept.style.display = 
+    "none"
+  ) {
+    Neurology_Dept.style.display = "block";
+    button_Neurology.style.background = "var(--clr-hospital)";
+    button_Neurology.style.color = "var(--clr-white-main)";
+  }
+  Cardiology_Dept.style.display = "none";
+   Diagnostics_Dept.style.display = "none";
+  button_Cardiology.style.background = "transparent";
+  button_Cardiology.style.color = "var(--clr-dark-main)";
+   button_Diagnosis.style.background = "transparent";
+   button_Diagnosis.style.color = "var(--clr-dark-main)";
+}
+
+button_Neurology.addEventListener("click", (e) => {
+  e.preventDefault();
+  showNewurologyDept()
+})
+
+// Show cardiology Dept
+const showCardiologyDept = () => {
+  if (Cardiology_Dept.style.display = "none") {
+    Cardiology_Dept.style.display = "block"
+    Neurology_Dept.style.display = "none";
+    Diagnostics_Dept.style.display = "none"
+  }
+  button_Neurology.style.background = "transparent";
+  button_Neurology.style.color = "var(--clr-dark-main)";
+  button_Cardiology.style.background = "var(--clr-hospital)";
+  button_Cardiology.style.color = "var(--clr-white-main)";
+    button_Diagnosis.style.background = "transparent";
+    button_Diagnosis.style.color = "var(--clr-dark-main)";
+}
+
+button_Cardiology.addEventListener("click", (e) => {
+  e.preventDefault();
+  showCardiologyDept()
+})
+
+// Show Diagnostics
+
+const Show_Diagnostics = () => {
+  if (Diagnostics_Dept.style.display = "none") {
+    Diagnostics_Dept.style.display = "block";
+    Neurology_Dept.style.display = "none";
+    Cardiology_Dept.style.display = "none"
+  }
+  button_Diagnosis.style.background = "var(--clr-hospital)";
+  button_Diagnosis.style.color = "var(--clr-white-main)";
+  button_Neurology.style.background = "transparent";
+  button_Neurology.style.color = "var(--clr-dark-main)";
+  button_Cardiology.style.background = "transparent";
+  button_Cardiology.style.color = "var(--clr-dark-main)";
+}
+
+button_Diagnosis.addEventListener("click", (e) => {
+  e.preventDefault();
+  Show_Diagnostics();
+})
+
+

@@ -19,7 +19,7 @@
   --clr-white-main: #fff;
   --clr-darkGray: rgba(230, 217, 217, 0.2);
   --clr-dark-main: #000;
-  --clr-gray-origin: rgb(153, 148, 148);
+  --clr-gray-origin: rgb(224, 218, 218);
   --error-message: rgb(126, 23, 23);
 }
 
@@ -288,7 +288,7 @@ a {
  }  */
  #doc-home{
     position: relative;
-    top: 20px;
+    top: 105px;
     /* bottom: 20px; */
  }
  .searchFixtures{
@@ -333,6 +333,148 @@ a {
   /* font-weight: bold; */
   margin: 5px 10px;
  }
+
+
+
+
+/**********************************  
+DEPARTMENT SEECTION 
+ ***************************************/
+#departments{
+     margin: 30px 0 0 ;
+    padding: 25px 15px;
+}
+.departmentHeader{
+  text-align: center;
+}
+.department_Header{
+  font-weight: bold;
+  font-size: 2rem;
+ letter-spacing: 2px;
+}
+.department_Indicator{
+  margin: 10px 0;
+}
+
+.departments_specs{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px 0;
+}
+.box_Specs{
+  background: var(--clr-white-default);
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--clr-hospital-deep);
+  /* margin: 50px 50px; */
+}
+/* New */
+.active_style{
+  background: var(--clr-hospital);
+  color: var(--clr-white-main);
+  font-size: 50px;
+}
+.box_Specs button i{
+  font-size: 20px;
+  position: relative;
+  left: -7px;
+}
+#Cardiology_Dept{
+  background: var(--clr-hospital);
+  color: var(--clr-white-main);
+}
+.box_Specs button{
+  background: transparent;
+  border: none;
+  padding: 20px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 17px;
+  display: block;
+  width: 100%;
+}
+.box_Specs button:hover{
+  color: var(--clr-white-main);
+   cursor: pointer;
+   background: var(--clr-hospital);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: .2s; 
+  transform: translateX(5px);
+}
+/***************************************************
+    ALL THE CODES THAT GOES IN HERE IS TO HELP FOR DEPTS VALIDATION 
+ ************************************************/
+#Neurology_target{
+  display: none;
+}
+#Diagnostics_target{
+  display: none;
+}
+#Dental_target{
+  display: none;
+}
+#Ophthalmology_target{
+  display: none;
+}
+#Emergency_target{
+  display: none;
+}
+#Oncology_target{
+  display: none;
+}
+
+
+
+
+
+
+ /***************************************************
+    CODES FOR DEPTS VALIDATION ENDS HERE - CSS ONLY
+ ************************************************/
+.cardiology_Container, .Neurology_Container,
+ .Diagnostics_Container, .Dental_Container,
+.Ophthalmology_Container, .Emergency_Container, .Oncology_Container{
+  font-size: 17px;
+}
+#img_cardiology{
+  width: 800px;
+}
+.about_cardiology, .about_Neurology,
+ .about_Diagnostics, .about_Dental,
+ .about_Ophthalmology, .about_Emergency, .about_Oncology{
+  margin: 15px 0;
+}
+.cardiology_services, .Neurology_services,
+ .Diagnostics_services, .Dental_services,
+ .Ophthalmology_services, .Emergency_services, .Oncology_services{
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.cardiology_services p, .Neurology_services p, 
+.Diagnostics_services p, .Dental_services p,
+.Ophthalmology_services p, .Emergency_services p, .Oncology_services p{
+  padding: 7px 0;
+}
+.cardiology_services i, .Neurology_services i, 
+.Diagnostics_services i, .Dental_services i,
+.Ophthalmology_services i, .Emergency_services i, .Oncology_services i{
+  color: var(--clr-hospital);
+}
+#btn_cardiology, #btn_Neurology, #btn_Diagnostics, #btn_Dental, 
+#btn_Ophthalmology, #btn_Emergency, #btn_Oncology{
+  position: relative;
+  left: -10px;
+  background: var(--clr-hospital);
+}
+#btn_cardiology:hover, #btn_Neurology:hover,
+ #btn_Diagnostics:hover, #btn_Dental:hover, 
+ #btn_Ophthalmology:hover, #btn_Emergency:hover, #btn_Oncology:hover{
+  background: var(--clr-hospital-deep);
+}
+
+
 /* Media Querry - Mobile Screens */
 
 @media (min-width: 0) and (max-width: 750px) {
@@ -479,8 +621,13 @@ a {
  .homeImg{
     text-align: center;
  }
+ .homeTxt{
+  margin: 100px 0;
+ }
  #doc-home{
    width: 300px;
+   top: -40px;
+   /* margin-bottom: 50px; */
  }
  .searchbg{
     margin: 0 4px;
@@ -515,6 +662,21 @@ a {
     position: relative;
     left: 230px;
  }
+ /**********************************  
+DEPARTMENT SEECTION 
+ ***************************************/
+ .departments_specs{
+  display: block;
+}
+.box_Specs{
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+}
+#img_cardiology{
+  width: 100%;
+}
+
 }
 
 /* Ipads */
@@ -582,7 +744,7 @@ a {
   }
   #search-input-media{
     padding: 15px 7px;
-    width: 430px;
+    width: 425px;
     position: relative;
     bottom: 35px;
     left: -25px;
@@ -656,6 +818,21 @@ a {
    .searchbg{
     margin: 50px 0;
    }
+   /**********************************  
+DEPARTMENT SEECTION 
+ ***************************************/
+ .departments_specs{
+  display: block;
+}
+.box_Specs{
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+}
+#img_cardiology{
+  width: 100%;
+}
+
 }
 
 /* Css Loader */
