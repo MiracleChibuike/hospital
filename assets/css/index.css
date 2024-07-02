@@ -68,6 +68,30 @@ a {
   background: var(--clr-dark-blue);
   transition: 0.4s;
 }
+/* Appointment button Mobile */
+.apt_mobile{
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  right: 15px;
+  bottom: 40px;
+  transition: all 0.4s;
+  display: none;
+   z-index: 100;
+}
+#apt_button_Mobile{
+  font-size: 25px;
+  color: var(--clr-white-main);
+  background: var(--clr-hospital-deep);
+  padding: 10px 13px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 7px var(--clr-dark-main);
+}
+#apt_button_Mobile:hover{
+  box-shadow: 0 0 7px var(--clr-dark-main);
+}
 .main_nav {
   position: relative;
   top: 80px;
@@ -440,6 +464,14 @@ DEPARTMENT SEECTION
 #img_cardiology{
   width: 800px;
 }
+#img_cardiology:hover{
+  cursor: pointer;
+  filter: brightness(90%);
+  transition: .4s;
+  box-shadow: 0 0 5px var(--clr-hospital-deep);
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 .about_cardiology, .about_Neurology,
  .about_Diagnostics, .about_Dental,
  .about_Ophthalmology, .about_Emergency, .about_Oncology{
@@ -473,6 +505,159 @@ DEPARTMENT SEECTION
  #btn_Ophthalmology:hover, #btn_Emergency:hover, #btn_Oncology:hover{
   background: var(--clr-hospital-deep);
 }
+
+
+/**********************************  
+OUR SERVICES SEECTION 
+ ***************************************/
+
+ #services{
+   margin: 30px 0 0 ;
+  padding: 25px 15px;
+  background: var(--clr-white-default);
+ }
+ .services_Header{
+  text-align: center;
+ }
+
+ .servicesHeading{
+  font-weight: bold;
+  font-size: 2rem;
+ letter-spacing: 2px;
+ }
+ .servicesContainer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 30px 15px;
+  column-gap: 35px;
+  row-gap: 20px;
+ }
+.heart_Surgery, .Dental_Care, .EmergencyDiv, .DNA_Div,
+.BloodTesting_Div, .Support_Div, .GeneralTreatment_Div, .FreeCheckUp_Div{
+  background: var(--clr-white-main);
+  box-shadow: 0 0 3px var(--clr-dark-main);
+  text-align: center;
+  padding: 15px;
+  font-size: 17px;
+  border-radius: 4px;
+  margin: 20px 0;
+ }
+ .heart_Surgery:hover, .Dental_Care:hover, .EmergencyDiv:hover, .DNA_Div:hover,
+ .BloodTesting_Div:hover, .Support_Div:hover, .GeneralTreatment_Div:hover, .FreeCheckUp_Div:hover{
+  transition: .2s;
+  cursor: pointer;
+  transform: translateY(-5px);
+  transform: scale(1.1);
+ }
+.heart_Surgery div h3, .Dental_Care div h3, .EmergencyDiv div h3, .DNA_Div div h3,
+.BloodTesting_Div div h3, .Support_Div div h3, .GeneralTreatment_Div div h3, .FreeCheckUp_Div div h3{
+  color: var(--clr-hospital);
+}
+ .heart_Surgery div i, .Dental_Care div i, .EmergencyDiv div i, .DNA_Div div i,
+ .BloodTesting_Div div i, .Support_Div div i, .GeneralTreatment_Div div i, .FreeCheckUp_Div div i{
+  font-size: 20px;
+  border: 2px solid var(--clr-hospital);
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 0 2px var(--clr-hospital);
+  margin: 15px 0;
+  color: var(--clr-white-main);
+  background: var(--clr-hospital);
+ }
+ .heart_Surgery div p, .Dental_Care div p, .EmergencyDiv div p, .DNA_Div div p,
+ .BloodTesting_Div div p, .Support_Div div p, .GeneralTreatment_Div div p, .FreeCheckUp_Div div p{
+  margin: 10px 0;
+ }
+
+ /* ************************************************************
+                            BOOK APPOINTMENT SECTION
+ **************************************************************/
+
+ #appointment{
+  padding: 35px 0;
+  background: url(../images/bg-blur-appointment.jpeg) no-repeat center center/cover;
+ }
+ .apppointment_Container{
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+ .bookAppointment{
+  background: var(--clr-white-main);
+  padding: 50px;
+  box-shadow:  0 0 3px var(--clr-dark-main);
+  height: 450px;
+  font-size: 17px;
+  border-radius: 5px;
+  position: relative;
+  top: 100px;
+ }
+ .appointment_Header{
+  text-align: center;
+  margin: 12px 0;
+ }
+ .appointmentHeadre{
+  font-weight: bold;
+  font-size: 2rem;
+ letter-spacing: 2px;
+ }
+ .firstDetails, .Second_Details, .third_Details{
+  display: flex;
+  justify-content: space-between;
+ }
+.firstDetails div, .Second_Details div, .third_Details div{
+  margin: 15px 0;
+}
+#userNameApt, #userPhoneApt, #userEmailApt, #userDateApt, #Docs_Specs, #departments_specs{
+  padding: 10px 10px;
+  width: 250px;
+  margin: 0 10px;
+  background: transparent;
+  border: 1px solid var(--clr-dark-main);
+  outline: none;
+  border-radius: 4px;
+  font-size: 17px;
+}
+#userNameApt:focus, #userPhoneApt:focus, #userEmailApt:focus, #userDateApt:focus, #Docs_Specs:focus,
+#departments_specs:focus{
+  box-shadow: 0 0 2px var(--clr-hospital);
+  border: 1px solid var(--clr-hospital);
+  transition: .2s;
+  cursor: pointer;
+}
+#userNameApt::placeholder, #userPhoneApt::placeholder, #userEmailApt::placeholder, #userDateApt::placeholder,
+ #Docs_Specs::placeholder, #departments_specs::placeholder{
+  font-size: 14px;
+}
+
+.appointmentButton{
+  margin: 20px 0;
+}
+#submit_Btn_Appointment{
+  width: 100%;
+  background: var(--clr-hospital);
+  border: none;
+  color: var(--clr-white-main);
+  padding: 12px 0;
+  border-radius: 4px;
+  font-size: 17px;
+  cursor: pointer;
+}
+#submit_Btn_Appointment:hover{
+  background: var(--clr-hospital-deep);
+  transition: .3s;
+}
+
+#Book_appointment_Image{
+  position: relative;
+  bottom: 100px;
+}
+
+
+
+
+
+
 
 
 /* Media Querry - Mobile Screens */
@@ -545,7 +730,10 @@ DEPARTMENT SEECTION
   .nav-links ul li a{
     font-size: 18px;
   }
-
+  /* Apt Button on Mobile */
+  .apt_mobile{
+    display: block;
+  }
   /* Search feature(Input) on Media */
   .search-container-media{
     display: none;
@@ -676,6 +864,38 @@ DEPARTMENT SEECTION
 #img_cardiology{
   width: 100%;
 }
+/**********************************  
+OUR SERVICES SEECTION 
+ ***************************************/
+ .servicesContainer{
+  display: block;
+ }
+
+  /* ************************************************************
+                            BOOK APPOINTMENT SECTION
+ **************************************************************/
+  .apppointment_Container{
+    display: block;
+ }
+ .firstDetails, .Second_Details, .third_Details{
+  display: block;
+  text-align: center;
+ }
+ .bookAppointment{
+  height: auto;
+  margin: 0 20px;
+  padding: 20px;
+  top: 0;
+ }
+ .appointment_img{
+    text-align: center;
+    margin: 20px 0;
+ }
+ #Book_appointment_Image{
+  width: 300px;
+  bottom: 0;
+}
+
 
 }
 
@@ -738,13 +958,18 @@ DEPARTMENT SEECTION
   .nav-links ul li {
     padding: 55px;
   }
+
+  /* Apt Button on Mobile */
+  .apt_mobile{
+    display: block;
+  }
  /* Search feature(Input) on Media */
   .search-container-media{
     display: none;
   }
   #search-input-media{
     padding: 15px 7px;
-    width: 425px;
+    width: 420px;
     position: relative;
     bottom: 35px;
     left: -25px;
@@ -832,7 +1057,41 @@ DEPARTMENT SEECTION
 #img_cardiology{
   width: 100%;
 }
+/**********************************  
+OUR SERVICES SEECTION 
+ ***************************************/
+ .servicesContainer{
+ grid-template-columns: repeat(2, 1fr);
+ }
 
+ 
+  /* ************************************************************
+                            BOOK APPOINTMENT SECTION
+ **************************************************************/
+  .apppointment_Container{
+    display: block;
+ }
+ .firstDetails, .Second_Details, .third_Details{
+  display: block;
+  text-align: center;
+ }
+ .bookAppointment{
+  height: auto;
+  margin: 0 20px;
+  padding: 20px;
+  top: 0;
+ }
+ .appointment_img{
+    text-align: center;
+    margin: 20px 0;
+ }
+ #Book_appointment_Image{
+  width: 400px;
+  bottom: 0;
+}
+  #Departments_list, #Docs{
+    display: block;
+  }
 }
 
 /* Css Loader */
