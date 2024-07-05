@@ -17,7 +17,7 @@ const AnimationLoad = () => {
 };
 
 // Call the AnimationLoad function when page is ready
-document.addEventListener("DOMContentLoaded", AnimationLoad)
+// document.addEventListener("DOMContentLoaded", AnimationLoad)
 
 // Prevent back_home Link reload
 
@@ -98,18 +98,40 @@ search.addEventListener("click", () => {
 
 // Validate the search feature on DESKTOP
 var searchInputDesktop = document.getElementById("search-input-Desktop");
+// Function to highlight the search term
+const highlightSearchTerm_Desktop = (searchTerm_Desktop) => {
+  const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, button");
+  const regex = new RegExp(`(${searchTerm_Desktop})`, "gi");
+
+  Desktop_elements.forEach((Desktop_element) => {
+    Desktop_element.innerHTML = Desktop_element.innerHTML.replace(
+      regex,
+      '<span class="highlight">$1</span>'
+    );
+  });
+};
+
 
 const searchOnDesktop = () => {
-  const searchInputDesktopValue = searchInputDesktop.value.trim();
-  if (searchInputDesktopValue === "") {
+  const searchTerm_Desktop = searchInputDesktop.value.trim();
+  if (searchTerm_Desktop === "") {
     alert("Please input a word to search for");
   } else {
-    alert(
-      `Sorry! We cannot find "${searchInputDesktopValue}" now. You can try searching a different keyword`
-    );
-    searchInputDesktop.value = ""; // Reset the input field
+    const found_Desktop = document.body.innerText
+    .toLowerCase()
+    .includes(searchTerm_Desktop.toLowerCase());
+    if (!found_Desktop) {
+      alert(
+        `We cannot find ${searchTerm_Desktop} now. You can try searching a differnt keyword`
+      );
+    } else {
+      highlightSearchTerm_Desktop(searchTerm_Desktop);
+    }
+    searchInputDesktop.value = ""
   }
 };
+
+
 
 searchInputDesktop.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
@@ -117,6 +139,17 @@ searchInputDesktop.addEventListener("keydown", (e) => {
     searchOnDesktop();
   }
 });
+
+// CSS for highlighting
+const style_Desktop = document.createElement("style");
+style_Desktop.innerHTML = `
+  .highlight {
+    background-color: yellow;
+    color: black;
+  }
+`;
+document.head.appendChild(style_Desktop);
+
 
 // VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE) - Show_Menu
 const search_Media = document.querySelector(".search-icon-media");
@@ -140,14 +173,35 @@ search_Media.addEventListener("click", () => {
 // Validate the search feature on mobile
 var inputSearchMedia = document.getElementById("search-input-media");
 
+// Function to highlight the search term
+const highlightSearchTerm = (searchTerm) => {
+  const elements = document.querySelectorAll("p, h1, h2, h3, button");
+  const regex = new RegExp(`(${searchTerm})`, "gi");
+
+  elements.forEach((element) => {
+    element.innerHTML = element.innerHTML.replace(
+      regex,
+      '<span class="highlight">$1</span>'
+    );
+  });
+};
+
 // Function to be triggered
 const performSearch = () => {
-  if (inputSearchMedia.value.trim() === "") {
+  const searchTerm = inputSearchMedia.value.trim();
+  if (searchTerm === "") {
     alert("Please input a word to search for");
   } else {
-    alert(
-      `We cannot find "${inputSearchMedia.value}" now. You can try searching a different keyword`
-    );
+    const found = document.body.innerText
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    if (!found) {
+      alert(
+        `We cannot find "${searchTerm}" now. You can try searching a different keyword`
+      );
+    } else {
+      highlightSearchTerm(searchTerm);
+    }
     inputSearchMedia.value = "";
   }
 };
@@ -159,6 +213,17 @@ inputSearchMedia.addEventListener("keydown", (event) => {
     performSearch();
   }
 });
+
+// CSS for highlighting
+const style = document.createElement("style");
+style.innerHTML = `
+  .highlight {
+    background-color: yellow;
+    color: black;
+  }
+`;
+document.head.appendChild(style);
+
 
 // VALIDATE SEARCH FEATURE ON THE HOMEPAGE
 

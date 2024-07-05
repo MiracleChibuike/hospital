@@ -116,6 +116,7 @@ a {
 .logo h2 {
   color: var(--clr-hospital);
   font-size: 1.7rem;
+  cursor: pointer;
 }
 #logo-home {
   display: none;
@@ -357,6 +358,10 @@ a {
   /* font-size: large; */
   /* font-weight: bold; */
   margin: 5px 10px;
+ }
+ .search-btn:hover{
+  background: var(--clr-dark-blue);
+  transition: .3s;
  }
 
 
@@ -668,7 +673,11 @@ OUR SERVICES SEECTION
 .specialists_Desc{
   text-align: center;
 }
-
+.specialists_Desc h2{
+  font-weight: bold;
+  font-size: 2rem;
+ letter-spacing: 2px;
+}
 .row, .row_2, .row_3{
   box-shadow: 0 0 3px var(--clr-dark-main);
   border-radius: 3px;
@@ -760,6 +769,14 @@ OUR SERVICES SEECTION
   width: 300px;
   position: relative;
   top: 4px;
+}
+#specialist_Image:hover{
+    cursor: pointer;
+  filter: brightness(90%);
+  transition: .4s;
+  transform: scale(1.1);
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .name_specialist{
   margin: 10px 0;
