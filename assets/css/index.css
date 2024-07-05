@@ -5,8 +5,9 @@
   /* font-family: "Cabin Condensed", sans-serif; */
   /* font-family: "Syne", sans-serif; */
   /* font-family: "Slabo 27px", serif; */
-  font-family: "Asap Condensed", sans-serif;
+  /* font-family: "Asap Condensed", sans-serif; */
   /* font-weight: normal; */
+  font-family: "Ubuntu", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -654,9 +655,179 @@ OUR SERVICES SEECTION
 }
 
 
+/* ************************************************************
+                            SPECIALISTS SECTION SECTION
+ **************************************************************/
+#specialists{
+  margin: 50px 0 0;
+}
+.main_Specialists{
+  margin: 25px 10px;
+}
 
+.specialists_Desc{
+  text-align: center;
+}
 
+.row, .row_2, .row_3{
+  box-shadow: 0 0 3px var(--clr-dark-main);
+  border-radius: 3px;
+}
 
+.first_Row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 40px 35px;
+  column-gap: 35px;
+}
+.animate{
+  animation: showCarousel 0.5s ease-in-out;
+}
+@keyframes showCarousel {
+  0% {
+    opacity: 0;
+    filter: brightness(0%);
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(90%);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(90%);
+    transform: scale(1);
+  }
+}
+
+.animate_Row2 {
+  animation: Carousel2 0.5s ease-in-out;
+}
+
+@keyframes Carousel2 {
+  0% {
+    opacity: 0;
+    filter: brightness(0%);
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(90%);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(90%);
+    transform: scale(1);
+  }
+}
+
+/* @keyframes carousel {
+  0%{
+    transform: translateY(0);
+    transition: 0;
+  }
+  50%, 100%{
+    transform: translateY(-10px);
+    transition: 0
+  }
+} */
+.Second_Row{
+   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 40px 35px;
+  column-gap: 35px;
+  content-visibility: hidden;
+}
+.row_contents, .row2_contents, .row3_contents{
+  text-align: center;
+  padding: 35px 0;
+  z-index: 100;
+}
+.row_contents:hover, .row2_contents:hover, .row3_contents:hover{
+  transition: .3s;
+  cursor: pointer;
+  background: var(--clr-hospital);
+  color: var(--clr-white-main);
+  border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+}
+.row_Img_container, .row2_Img_container, .row3_Img_container{
+  text-align: center;
+}
+#specialist_Image{
+  width: 300px;
+  position: relative;
+  top: 4px;
+}
+.name_specialist{
+  margin: 10px 0;
+}
+.name_specialist span{
+  position: relative;
+  bottom: 5px;
+}
+.specialists_HoursDays, .specialists_HoursDays_2, .specialists_HoursDays_3{
+  margin: 1px 0;
+  display: none;
+  position: absolute;
+
+}
+.specialists_HoursDays .days, .specialists_HoursDays_2 .days, .specialists_HoursDays_3 .days{
+  position: relative;
+  left: -15px;
+}
+.specialists_HoursDays i, .specialists_HoursDays_2 i, .specialists_HoursDays_3 i{
+   position: relative;
+  left: -20px;
+}
+.row_contents:hover>.specialists_HoursDays, .row2_contents:hover>.specialists_HoursDays_2,
+.row3_contents:hover>.specialists_HoursDays_3{
+  display: flex;
+  justify-content: space-evenly;
+    margin-left: 110px;
+    margin-top: 10px;
+}
+/* .controller_Div{
+  text-align: center;
+} */
+ .buttons_Controller{
+  display: flex;
+  justify-content: center;
+ }
+ .buttons_Controller i{
+  font-size: 20px;
+  background: var(--clr-hospital);
+  color: var(--clr-white-main);
+  padding: 10px;
+  border-radius: 4px;
+ }
+ .buttons_Controller i:hover{
+  background: var(--clr-hospital-deep);
+  cursor: pointer;
+  transition: .2s;
+ }
+ #left_toggle:hover{
+  transform: translateX(-10px);
+ }
+ #right_toggle:hover{
+    transform: translateX(10px);
+ }
+ .buttons_Controller button{
+  margin: 0 25px;
+  padding: 10px 25px;
+  background: var(--clr-hospital);
+  border: 1px solid  var(--clr-hospital);
+  color: var(--clr-white-main);
+  cursor: pointer;
+  border-radius: 5px;
+ }
+ .buttons_Controller button:hover{
+  background: var(--clr-hospital-deep);
+  transform: .3s;
+  border: 1px solid var(--clr-hospital-deep);
+ }
 
 
 
@@ -901,6 +1072,25 @@ OUR SERVICES SEECTION
   width: 300px;
   bottom: 0;
 }
+/* ************************************************************
+                            SPECIALISTS SECTION SECTION
+ **************************************************************/
+
+.first_Row, .Second_Row{
+  display: block;
+}
+.row, .row_2, .row_3{
+  margin: 30px 0;
+}
+#specialist_Image{
+  width: 200px;
+}
+.row_contents:hover>.specialists_HoursDays, .row2_contents:hover>.specialists_HoursDays_2,
+.row3_contents:hover>.specialists_HoursDays_3{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
 
 
 }
@@ -1095,6 +1285,23 @@ OUR SERVICES SEECTION
   width: 400px;
   bottom: 0;
 }
+/* ************************************************************
+                            SPECIALISTS SECTION SECTION
+ **************************************************************/
+
+.first_Row{
+  display: block;
+}
+.row, .row_2, .row_3{
+  margin: 15px 0;
+}
+.row_contents:hover>.specialists_HoursDays, .row2_contents:hover>.specialists_HoursDays_2,
+.row3_contents:hover>.specialists_HoursDays_3{
+    margin-left: 250px;
+    margin-top: 10px;
+}
+
+
 }
 
 /* Css Loader */
@@ -1106,8 +1313,8 @@ OUR SERVICES SEECTION
   border: 1px solid #FFF;
   border-radius: 0 0 50px 50px;
   position: relative;
-  box-shadow: 0px 0px #1dbfcb inset;
-  background-image: linear-gradient(#1dbfcb 100px, transparent 0);
+  box-shadow: 0px 0px #a70d0d  inset;
+  background-image: linear-gradient(#a70d0d 100px, transparent 0);
   background-position: 0px 0px;
   background-size: 22px 80px;
   background-repeat: no-repeat;

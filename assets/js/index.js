@@ -440,3 +440,67 @@ button_Oncology.addEventListener("click", (e) => {
     e.preventDefault();
     display_OncologyDept()
 })
+
+
+// SPECIALISTS SECTION
+const Row_1_Specialists = document.querySelector(".first_Row");
+const Row_2_Specialists = document.querySelector(".Second_Row");
+
+const specialist_Toogler = document.getElementById("toggler")
+
+const left_toggle = document.getElementById("left_toggle");
+
+const right_toggle = document.getElementById("right_toggle");
+
+// Show Specialists Row_2
+const preview_Row2 = () => {
+  
+  if (Row_2_Specialists.style.contentVisibility = "hidden") {
+    Row_2_Specialists.style.contentVisibility ="visible";
+    Row_2_Specialists.classList.remove('animate_Row2');
+    void Row_2_Specialists.offsetWidth;
+    Row_2_Specialists.classList.add('animate_Row2')
+  }
+  Row_1_Specialists.style.contentVisibility = "hidden"
+}
+
+right_toggle.addEventListener("click", (e) => {
+  e.preventDefault();
+   preview_Row2();
+});
+
+const preview_Row1 = () => {
+  if (Row_1_Specialists.style.contentVisibility = "hidden") {
+    Row_1_Specialists.style.contentVisibility = "visible";
+    Row_1_Specialists.classList.remove("animate");
+    void Row_1_Specialists.offsetWidth; // Trigger a reflow
+    Row_1_Specialists.classList.add('animate')
+  }
+  Row_2_Specialists.style.contentVisibility = "hidden"; 
+}
+
+left_toggle.addEventListener("click", (e) => {
+  e.preventDefault();
+  preview_Row1()
+})
+
+// Try show all Specialists
+const show_All_Specialists = () => {
+  Row_1_Specialists.style.contentVisibility = "visible";
+   Row_1_Specialists.classList.remove("animate");
+   void Row_1_Specialists.offsetWidth; // Trigger a reflow
+   Row_1_Specialists.classList.add("animate");
+  Row_2_Specialists.style.contentVisibility = "Visible";
+  Row_2_Specialists.classList.remove("animate_Row2");
+  void Row_2_Specialists.offsetWidth;
+  Row_2_Specialists.classList.add("animate_Row2");
+  console.log(Row_1_Specialists && Row_2_Specialists);
+
+}
+
+specialist_Toogler.addEventListener("click", (e) => {
+  e.preventDefault();
+  show_All_Specialists()
+})
+
+
