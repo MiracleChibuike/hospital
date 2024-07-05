@@ -196,12 +196,12 @@ a {
 .icons_Drops {
   display: flex;
   position: relative;
-  bottom: 17px;
+  bottom: 20px;
   left: 40px;
 }
 #icon-drops,
 #icon-drops-up {
-  margin: 0 10px;
+  margin: 0 20px;
 }
 #icon-drops-up {
   display: none;
@@ -1313,8 +1313,8 @@ OUR SERVICES SEECTION
   border: 1px solid #FFF;
   border-radius: 0 0 50px 50px;
   position: relative;
-  box-shadow: 0px 0px #a70d0d  inset;
-  background-image: linear-gradient(#a70d0d 100px, transparent 0);
+  box-shadow: 0px 0px #0bb0b2 inset;
+  background-image: linear-gradient(#0bb0b2 100px, transparent 0);
   background-position: 0px 0px;
   background-size: 22px 80px;
   background-repeat: no-repeat;
