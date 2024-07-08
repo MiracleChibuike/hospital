@@ -569,3 +569,17 @@ specialist_Toogler.addEventListener("click", (e) => {
 })
 
 
+// Show Modal
+
+// let modal = document.getElementById(".modal");
+
+// const btn_Appointment = document.getElementById("submit_Btn_Appointment");
+
+// btn_Appointment.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   if (modal.style.display = "none") {
+//     modal.style.display = "block"
+//   }
+// })
+
+

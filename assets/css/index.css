@@ -845,7 +845,54 @@ OUR SERVICES SEECTION
   transform: .3s;
   border: 1px solid var(--clr-hospital-deep);
  }
+ .toogle_Body{
+  opacity: 1;
+ }
+ .modal{
+  background: var(--clr-white-main);
+  box-shadow: 0 0 10px var(--clr-dark-main);
+  display: grid;
+  /* place-content: center; */
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  top: 20%;
+  border-radius: 15px;
+   animation: showCarousel 0.5s ease-in-out;
+   display: none;
+ }
+ .inner_contents{
+  text-align: center;
+  padding: 15px;
+ }
+ #check_success{
+  font-size: 50px;
+  color: var(--clr-hospital);
+ }
+ .response{
+  margin: 15px 0;
+ }
+ #btn_success{
+  margin: 15px 0;
+  padding: 15px 0;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background: var(--clr-hospital-deep);
+  color: var(--clr-white-main);
+  font-size: 17px;
+ }
+.modal_remove{
+  display: flex;
+  justify-content: flex-end;
+    padding: 10px;
 
+  /* background: var(--error-message); */
+}
+#remove_modal{
+  font-size: 30px;
+  color: var(--error-message);
+}
 
 
 /* Media Querry - Mobile Screens */
@@ -1107,6 +1154,11 @@ OUR SERVICES SEECTION
     margin-left: 40px;
     margin-top: 10px;
 }
+/* Modal */
+.modal{
+  left: 10%;
+  right: 10%;
+}
 
 
 
@@ -1319,6 +1371,45 @@ OUR SERVICES SEECTION
 }
 
 
+}
+
+
+/* Semi_Big Screens */
+@media (min-width: 950px) and (max-width: 1025px) {
+  .servicesContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px 15px;
+  column-gap: 35px;
+  row-gap: 20px;
+ }
+ .apppointment_Container{
+   margin: 10px 10px;
+   display: flex;
+   justify-content: space-around;
+ }
+ .appointment_img{
+  /* width: 100px; */
+  /* background: var(--clr-hospital-deep); */
+  position: relative;
+  left: -80px;
+ }
+ #Book_appointment_Image{
+  position: relative;
+  bottom: 100px;
+  left: 40px;
+}
+
+ .first_Row{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 40px 35px;
+  column-gap: 35px;
+}
+.Second_Row{
+   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 }
 
 /* Css Loader */
