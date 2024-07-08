@@ -571,15 +571,41 @@ specialist_Toogler.addEventListener("click", (e) => {
 
 // Show Modal
 
-// let modal = document.getElementById(".modal");
+let modal = document.querySelector(".modal");
 
-// const btn_Appointment = document.getElementById("submit_Btn_Appointment");
+const modal_Show = () => {
+  if (modal.style.display = "none") {
+    modal.style.display = "block";
+    var main_Content = document.querySelector(".main");
+    // main_Content.classList.add("toogle_Body");
+    console.log(main_Content);
+  }
+  // Scroll to the top of the modal
+  modal.scrollIntoView({ behavior: "smooth" });
+};
 
-// btn_Appointment.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   if (modal.style.display = "none") {
-//     modal.style.display = "block"
-//   }
-// })
+const appointment_Form = document.getElementById("appointment_form");
 
+appointment_Form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  modal_Show();
+  appointment_Form.reset();
+});
 
+// Remove the Modal
+
+const modal_button_remove = document.getElementById("remove_modal");
+const btn_Success = document.getElementById("btn_success");
+const modal_remove = () => {
+  if (modal.style.display = "block") {
+    modal.style.display = "none";
+    modal.classList.add("animate_Row2");
+  }
+}
+modal_button_remove.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal_remove()
+})
+btn_Success.addEventListener("click", () => {
+  modal_remove();
+})

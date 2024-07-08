@@ -846,7 +846,8 @@ OUR SERVICES SEECTION
   border: 1px solid var(--clr-hospital-deep);
  }
  .toogle_Body{
-  opacity: 1;
+    opacity: 1;
+    filter: brightness(80%);
  }
  .modal{
   background: var(--clr-white-main);
@@ -856,7 +857,7 @@ OUR SERVICES SEECTION
   position: absolute;
   left: 30%;
   right: 30%;
-  top: 20%;
+  top: 50%;
   border-radius: 15px;
    animation: showCarousel 0.5s ease-in-out;
    display: none;
@@ -881,6 +882,7 @@ OUR SERVICES SEECTION
   background: var(--clr-hospital-deep);
   color: var(--clr-white-main);
   font-size: 17px;
+  cursor: pointer;
  }
 .modal_remove{
   display: flex;
@@ -892,6 +894,7 @@ OUR SERVICES SEECTION
 #remove_modal{
   font-size: 30px;
   color: var(--error-message);
+   cursor: pointer;
 }
 
 
@@ -1378,7 +1381,7 @@ OUR SERVICES SEECTION
 @media (min-width: 950px) and (max-width: 1025px) {
   .servicesContainer{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 30px 15px;
   column-gap: 35px;
   row-gap: 20px;
