@@ -901,7 +901,7 @@ OUR SERVICES SEECTION
        BLOGS SECTION
    **************************************************/
   #Blogs{
-    margin: 50px 0;
+    margin: 50px 0 0;
     background: var(--clr-white-default);
   }
    .blogs_Header{
@@ -927,7 +927,7 @@ OUR SERVICES SEECTION
    .blog_Texts, .blog_2_Texts{
     padding: 20px;
     background: var(--clr-white-main);
-
+    height: 375px;
    }
    .blog_Texts h3, .blog_Texts span, .blog_Texts p,
    .blog_2_Texts h3, .blog_2_Texts span, .blog_2_Texts p{
@@ -1231,6 +1231,7 @@ OUR SERVICES SEECTION
   box-shadow: 0 0 3px var(--clr-dark-main);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  height: auto;
 }
 #blog_photo_Img{
   width: 100%;
@@ -1453,6 +1454,10 @@ OUR SERVICES SEECTION
 .blog_Initial, .blog_2{
   display: block;
 }
+.blog_Texts, .blog_2_Texts{
+    height: auto;
+
+}
 .blog_photo, .blog_2Photo{
   /* text-align: center; */
   margin: 15px 0;
@@ -1506,6 +1511,11 @@ OUR SERVICES SEECTION
    **************************************************/
 .blogs_contents{
   display: block;
+}
+
+.blog_Texts, .blog_2_Texts{
+    height: auto;
+
 }
 }
 
