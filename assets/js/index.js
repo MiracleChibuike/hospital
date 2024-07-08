@@ -17,7 +17,7 @@ const AnimationLoad = () => {
 };
 
 // Call the AnimationLoad function when page is ready
-// document.addEventListener("DOMContentLoaded", AnimationLoad)
+document.addEventListener("DOMContentLoaded", AnimationLoad)
 
 // Prevent back_home Link reload
 
