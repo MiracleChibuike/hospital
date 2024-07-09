@@ -19,6 +19,16 @@ const AnimationLoad = () => {
 // Call the AnimationLoad function when page is ready
 document.addEventListener("DOMContentLoaded", AnimationLoad)
 
+// Header_Top Scroll Effect
+window.addEventListener("scroll", function () {
+  const header_Top = document.querySelector(".socialIconsHeader");
+  if (window.scrollY > 0) {
+    header_Top.classList.add("scroll");
+  } else {
+    header_Top.classList.remove("scroll");
+  }
+});
+
 // Prevent back_home Link reload
 
 document.addEventListener("DOMContentLoaded", () => {
