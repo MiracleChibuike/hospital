@@ -13,7 +13,7 @@ const AnimationLoad = () => {
   setTimeout(() => {
     headre.style.display = "none";
     mainDiv.style.display = "block";
-  }, 6000);
+  }, 12000);
 };
 
 // Call the AnimationLoad function when page is ready

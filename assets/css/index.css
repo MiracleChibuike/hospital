@@ -1635,6 +1635,10 @@ OUR SERVICES SEECTION
 .blog_Texts, .blog_2_Texts{
     height: auto;
 }
+ .comment{
+    position: relative;
+    left: 15px;
+   }
 /* ************************************************************
                             CONTACT/FOOTER SECTION
  **************************************************************/
