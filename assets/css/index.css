@@ -58,6 +58,11 @@ a {
   text-decoration: none;
 }
 
+/* Style for main container */
+.main{
+  display: none;
+}
+
 .socialIconsHeader {
   display: flex;
   justify-content: space-between;

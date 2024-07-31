@@ -3,7 +3,6 @@ var home_El = document.getElementById("home_Contents");
 const home_logo = document.getElementById("logo-home");
 var department_El = document.getElementById("departments_El");
 const load_HomePage = () => {
-    department_El.style.color = "var(--clr-hospital-deep)";
     window.location.href = "Index.html";
     console.log(home_El)
 };

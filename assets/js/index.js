@@ -7,12 +7,13 @@ const AnimationLoad = () => {
 
   // Show Loader Initially
   headre.style.display = "block";
-  mainDiv.style.display = "none";
 
   // After 6 seconds, hide the headre and show the mainDiv
   setTimeout(() => {
-    headre.style.display = "none";
-    mainDiv.style.display = "block";
+    if (mainDiv.style.display = "none") {
+        mainDiv.style.display = "block";
+        headre.style.display = "none";
+    }
   }, 12000);
 };
 
@@ -116,7 +117,8 @@ pages.addEventListener("click", () => {
 var re_Direct_Departments = document.getElementById("departments_load");
 
 const load_Department_Page = (e) => {
-  re_Direct_Departments.style.color = "var(--clr-hospital-deep)";
+  re_Direct_Departments.style.color = "red"
+  console.log(re_Direct_Departments)
     window.location.href = "Departments.html";
 };
 // re_Direct_Departments.addEventListener("click", (e) => {
@@ -140,7 +142,7 @@ search.addEventListener("click", () => {
 var searchInputDesktop = document.getElementById("search-input-Desktop");
 // Function to highlight the search term
 const highlightSearchTerm_Desktop = (searchTerm_Desktop) => {
-  const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, li, button");
+  const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, button");
   const regex = new RegExp(`(${searchTerm_Desktop})`, "gi");
 
   Desktop_elements.forEach((Desktop_element) => {
