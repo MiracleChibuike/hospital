@@ -1,26 +1,19 @@
-// Loads the animation on a succesful page load
 
-const AnimationLoad = () => {
-  const loader = document.querySelector(".loader");
-  var headre = document.getElementById("header");
-  var mainDiv = document.querySelector(".main");
-
-  // Show Loader Initially
-  headre.style.display = "block";
-  mainDiv.style.display = "none";
-
-  // After 6 seconds, hide the headre and show the mainDiv
-  setTimeout(() => {
-    headre.style.display = "none";
-    mainDiv.style.display = "block";
-  }, 12000);
+var home_El = document.getElementById("home_Contents");
+const home_logo = document.getElementById("logo-home");
+var department_El = document.getElementById("departments_El");
+const load_HomePage = () => {
+    department_El.style.color = "var(--clr-hospital-deep)";
+    window.location.href = "Index.html";
+    console.log(home_El)
 };
 
-// Call the AnimationLoad function when page is ready
-AnimationLoad();
+home_logo.addEventListener("click", (e) => {
+    e.preventDefault();
+    load_HomePage();
+})
 
-
-  // Prevent Image dragging
+ // Prevent Image dragging
 
     document.querySelectorAll("img").forEach((img) => {
       img.addEventListener("mousedown", function (event) {
@@ -111,20 +104,6 @@ pages.addEventListener("click", () => {
   }
 });
 
-// Load all pages as according to the user-clicks(Page-redirect);
-
-var re_Direct_Departments = document.getElementById("departments_load");
-
-const load_Department_Page = (e) => {
-  re_Direct_Departments.style.color = "var(--clr-hospital-deep)";
-    window.location.href = "Departments.html";
-};
-// re_Direct_Departments.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   load_Department_Page();
-//   console.log(re_Direct_Departments)
-// }) 
-
 // VALIDATE THE SERCH ICON TO SHOW THE SEARCH INPUT -- (Desktop)
 const search = document.querySelector(".getData");
 var search_Container = document.querySelector(".search-container-Desktop");
@@ -140,7 +119,7 @@ search.addEventListener("click", () => {
 var searchInputDesktop = document.getElementById("search-input-Desktop");
 // Function to highlight the search term
 const highlightSearchTerm_Desktop = (searchTerm_Desktop) => {
-  const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, li, button");
+  const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, button");
   const regex = new RegExp(`(${searchTerm_Desktop})`, "gi");
 
   Desktop_elements.forEach((Desktop_element) => {
@@ -267,30 +246,31 @@ document.head.appendChild(style);
 
 // VALIDATE SEARCH FEATURE ON THE HOMEPAGE
 
-const form = document.getElementById("form_main");
-const locationInput = document.getElementById("input-location");
-const specialityInput = document.getElementById("input-speciality");
+// const form = document.getElementById("form_main");
+// const locationInput = document.getElementById("input-location");
+// const specialityInput = document.getElementById("input-speciality");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  // Reset border styles initially
-  locationInput.style.border = "none";
-  specialityInput.style.border = "none";
+//   // Reset border styles initially
+//   locationInput.style.border = "none";
+//   specialityInput.style.border = "none";
 
-  if (locationInput.value.trim() === "") {
-    alert("Error - Please enter a location");
-    locationInput.style.border = "2px solid var(--error-message)";
-  } else if (specialityInput.value.trim() === "") {
-    alert("Error - Please input a Speciality to continue");
-    specialityInput.style.border = "2px solid var(--error-message)";
-  } else {
-    alert(
-      `Your search "${specialityInput.value}" in "${locationInput.value}" did not return any results. Try again later.`
-    );
-    form.reset();
-  }
-});
+//   if (locationInput.value.trim() === "") {
+//     alert("Error - Please enter a location");
+//     locationInput.style.border = "2px solid var(--error-message)";
+//   } else if (specialityInput.value.trim() === "") {
+//     alert("Error - Please input a Speciality to continue");
+//     specialityInput.style.border = "2px solid var(--error-message)";
+//   } else {
+//     alert(
+//       `Your search "${specialityInput.value}" in "${locationInput.value}" did not return any results. Try again later.`
+//     );
+//     form.reset();
+//   }
+// });
+
 
 // Validate departmenrts buttons to pop out corresponding container
 // Defining containers to hold the departments div
@@ -544,108 +524,4 @@ const display_OncologyDept = () => {
 button_Oncology.addEventListener("click", (e) => {
     e.preventDefault();
     display_OncologyDept()
-})
-
-
-// SPECIALISTS SECTION
-const Row_1_Specialists = document.querySelector(".first_Row");
-const Row_2_Specialists = document.querySelector(".Second_Row");
-
-const specialist_Toogler = document.getElementById("toggler")
-
-const left_toggle = document.getElementById("left_toggle");
-
-const right_toggle = document.getElementById("right_toggle");
-
-// Show Specialists Row_2
-const preview_Row2 = () => {
-  
-  if (Row_2_Specialists.style.contentVisibility = "hidden") {
-    Row_2_Specialists.style.contentVisibility ="visible";
-    Row_2_Specialists.classList.remove('animate_Row2');
-    void Row_2_Specialists.offsetWidth;
-    Row_2_Specialists.classList.add('animate_Row2')
-  }
-  Row_1_Specialists.style.contentVisibility = "hidden"
-}
-
-right_toggle.addEventListener("click", (e) => {
-  e.preventDefault();
-   preview_Row2();
-});
-
-const preview_Row1 = () => {
-  if (Row_1_Specialists.style.contentVisibility = "hidden") {
-    Row_1_Specialists.style.contentVisibility = "visible";
-    Row_1_Specialists.classList.remove("animate");
-    void Row_1_Specialists.offsetWidth; // Trigger a reflow
-    Row_1_Specialists.classList.add('animate')
-  }
-  Row_2_Specialists.style.contentVisibility = "hidden"; 
-}
-
-left_toggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  preview_Row1()
-})
-
-// Try show all Specialists
-const show_All_Specialists = () => {
-  Row_1_Specialists.style.contentVisibility = "visible";
-   Row_1_Specialists.classList.remove("animate");
-   void Row_1_Specialists.offsetWidth; // Trigger a reflow
-   Row_1_Specialists.classList.add("animate");
-  Row_2_Specialists.style.contentVisibility = "Visible";
-  Row_2_Specialists.classList.remove("animate_Row2");
-  void Row_2_Specialists.offsetWidth;
-  Row_2_Specialists.classList.add("animate_Row2");
-  console.log(Row_1_Specialists && Row_2_Specialists);
-
-}
-
-specialist_Toogler.addEventListener("click", (e) => {
-  e.preventDefault();
-  show_All_Specialists()
-})
-
-
-// Show Modal
-
-let modal = document.querySelector(".modal");
-
-const modal_Show = () => {
-  if (modal.style.display = "none") {
-    modal.style.display = "block";
-    var main_Content = document.querySelector(".main");
-    // main_Content.classList.add("toogle_Body");
-    console.log(main_Content);
-  }
-  // Scroll to the top of the modal
-  modal.scrollIntoView({ behavior: "smooth" });
-};
-
-const appointment_Form = document.getElementById("appointment_form");
-
-appointment_Form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  modal_Show();
-  appointment_Form.reset();
-});
-
-// Remove the Modal
-
-const modal_button_remove = document.getElementById("remove_modal");
-const btn_Success = document.getElementById("btn_success");
-const modal_remove = () => {
-  if (modal.style.display = "block") {
-    modal.style.display = "none";
-    modal.classList.add("animate_Row2");
-  }
-}
-modal_button_remove.addEventListener("click", (e) => {
-  e.preventDefault();
-  modal_remove()
-})
-btn_Success.addEventListener("click", () => {
-  modal_remove();
 })

@@ -24,6 +24,31 @@
   --clr-gray-origin: rgb(224, 218, 218);
   --error-message: rgb(126, 23, 23);
 }
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: var(--clr-white-default);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--clr-hospital);
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: var(--clr-dark-blue);
+    transition: .4s;
+}
+/* Change the text selection background color */
+::selection {
+  background: var(--clr-hospital); /* Custom background color */
+  color: var(--clr-white-main); /* Custom text color */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background: var(--clr-hospital); /* Custom background color */
+  color: var(--clr-white-main); /* Custom text color */
+}
 
 .error{
   border: 2px solid red;
@@ -169,6 +194,7 @@ a {
   padding: 0 25px;
   height: 30px;
   cursor: pointer;
+  color: var(--clr-white-main);
   /* font-weight: bold; */
 }
 .nav-links ul li:hover {
@@ -217,10 +243,11 @@ a {
 .drops {
   width: 200px;
   background: var(--clr-dark-main);
+  color: var(--clr-white-main);
   border-radius: 4px;
   padding: 15px 10px;
   position: absolute;
-  top: 50px;
+  top: 45px;
   display: none;
   z-index: 100;
   animation: drops 2s linear;
@@ -554,12 +581,14 @@ OUR SERVICES SEECTION
   font-size: 17px;
   border-radius: 4px;
   margin: 20px 0;
+   transition: transform 0.9s ease, background-color 0.9s ease;
+
  }
  .heart_Surgery:hover, .Dental_Care:hover, .EmergencyDiv:hover, .DNA_Div:hover,
  .BloodTesting_Div:hover, .Support_Div:hover, .GeneralTreatment_Div:hover, .FreeCheckUp_Div:hover{
   transition: .2s;
   cursor: pointer;
-  transform: translateY(-5px);
+  transition: .9s;
   transform: scale(1.1);
  }
 .heart_Surgery div h3, .Dental_Care div h3, .EmergencyDiv div h3, .DNA_Div div h3,
@@ -756,10 +785,18 @@ OUR SERVICES SEECTION
   column-gap: 35px;
   content-visibility: hidden;
 }
+.row, .row_2, .row_3{
+  transition: transform 0.9s ease, background-color 0.9s ease;
+}
+.row:hover, .row_2:hover, .row_3:hover{
+     transform: scale(1.1);
+  transition: .9s;
+}
 .row_contents, .row2_contents, .row3_contents{
   text-align: center;
   padding: 35px 0;
   z-index: 100;
+
 }
 .row_contents:hover, .row2_contents:hover, .row3_contents:hover{
   transition: .3s;
@@ -776,14 +813,17 @@ OUR SERVICES SEECTION
   width: 300px;
   position: relative;
   top: 4px;
+  transition: transform 0.9s ease, background-color 0.9s ease;
+
 }
 #specialist_Image:hover{
     cursor: pointer;
   filter: brightness(90%);
-  transition: .4s;
+  transition: .9s;
   transform: scale(1.1);
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
 }
 .name_specialist{
   margin: 10px 0;
@@ -855,6 +895,10 @@ OUR SERVICES SEECTION
  .toogle_Body{
     opacity: 1;
     filter: brightness(80%);
+ }
+ .animate_Background{
+  filter: blur(2px);
+  transition: .5s;
  }
  .modal{
   background: var(--clr-white-main);
@@ -1014,6 +1058,25 @@ OUR SERVICES SEECTION
 #socials_Footer{
   display: none;
 }
+.language_Div{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+/* styling for google translate page */
+.goog-te-combo {
+  /* width: 100px; */
+    height: 45px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid var(--clr-dark-main);
+}
+
+.goog-te-combo:hover {
+    border: 1px solid var(--clr-hospital);
+    cursor: pointer;
+    transition: .7s;
+}
 .copyRight{
   margin: 15px 0 0 0;
 }
@@ -1051,29 +1114,29 @@ OUR SERVICES SEECTION
     position: absolute;
     left: 0;
     right: 0;
-    top: 40px;
+    top: 45px;
     background: var(--clr-dark-blue);
-    width: 100%;
+    width: 70%;
     height: 500px;
     /* text-align: center; */
-    animation: nav-rotate 2s linear;
+    animation: showCarousel 0.5s ease-in-out;
     height: calc(100vh - 3rem);
     /* overflow-y: auto; */
     padding-bottom: 20px;
     z-index: 100;
   }
 
-  @keyframes nav-rotate {
+  /* @keyframes Carousel2 {
     0% {
-      height: 0;
+      width: 0;
       transition: all 0.3s;
     }
     50%,
     100% {
-      height: calc(100vh - 3rem);
+      width: 70%;
       transition: all 0.3s;
     }
-  }
+  } */
   .nav-links ul {
     display: block;
     margin-bottom: 20px;

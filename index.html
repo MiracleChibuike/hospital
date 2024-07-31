@@ -90,33 +90,34 @@
             </div>
             <div class="nav-links" id="links">
                 <ul>
-                    <li>
-                        <a href="#home">HOME</a>
+                    <li id="home_Contents" onclick="load_HomePage()">
+                        HOME
                     </li>
                     <li>
-                        <a href="#about">ABOUT</a>
+                        ABOUT
+                    </li>
+                    <li id="departments_load" onclick="load_Department_Page()">
+                        DEPARTMENTS
                     </li>
                     <li>
-                        <a href="#departments">DEPARTMENTS</a>
-                    </li>
-                    <li>
-                        <a href="#" id="Pages">PAGES <div class="icons_Drops"><i class="fa-solid fa-caret-down"
-                                    id="icon-drops">
-                                </i> <i class="fa-solid fa-caret-up" id="icon-drops-up"></i></div></a>
+                      <span id="Pages">
+                        PAGES <div class="icons_Drops"><i class="fa-solid fa-caret-down" id="icon-drops">
+                            </i> <i class="fa-solid fa-caret-up" id="icon-drops-up"></i></div>
+                      </span>
                         <div class="drops">
                             <ul>
-                                <li><a href="#Teams">Our Teams</a></li>
-                                <li><a href="#Faqs">Patient's Faqs</a></li>
-                                <li><a href="#feeback">Patient Feedbacks</a></li>
-                                <li><a href="#news">Our News</a></li>
+                                <li>Our Teams</li>
+                                <li>Patient's Faqs</li>
+                                <li>Patient Feedbacks</li>
+                                <li>Our News</li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <a href="#Blogs">BLOG</a>
+                        BLOG
                     </li>
                     <li>
-                        <a href="#contact">CONTACT</a>
+                        CONTACT
                     </li>
                 </ul>
             </div>
@@ -134,6 +135,7 @@
     </div>
     <!-- End Nav-Links -->
 
+    <div class="inner_Contents">
     <!-- Home -->
     <section id="home">
         <div class="homeContents">
@@ -168,10 +170,10 @@
         </div>
     </section>
     <!-- End Home Section -->
-
+    
     <!-------------------------------------------------------------
-                             DEPARTMENT SEECTION
-        --------------------------------------------------- -->
+                                 DEPARTMENT SEECTION
+            --------------------------------------------------- -->
     <section id="departments">
         <div class="departmentHeader">
             <h2 class="department_Header">OUR DEPARTMENT</h2>
@@ -219,8 +221,7 @@
             <!-- Neurology Container Goes here -->
             <div class="Neurology_Container" id="Neurology_target">
                 <div class="neurology_Image_Cover">
-                    <img src="assets/images/diagnos-2.jpg" id="img_cardiology"
-                        alt="Specialized neurology care services">
+                    <img src="assets/images/diagnos-2.jpg" id="img_cardiology" alt="Specialized neurology care services">
                 </div>
                 <h3 class="about_Neurology">About the Neurology</h3>
                 <p>Our Neurology Department specializes in the diagnosis and treatment of neurological disorders. Our
@@ -244,8 +245,7 @@
             <!-- Diagnostics Container Goes here -->
             <div class="Diagnostics_Container" id="Diagnostics_target">
                 <div class="Diagnostics_Image_Cover">
-                    <img src="assets/images/diagnosis.jpeg" id="img_cardiology"
-                        alt="Advanced medical diagnostic services">
+                    <img src="assets/images/diagnosis.jpeg" id="img_cardiology" alt="Advanced medical diagnostic services">
                 </div>
                 <h3 class="about_Diagnostics">About the Diagnostics</h3>
                 <p>The Diagnostics Department focuses on identifying and diagnosing a wide range of health conditions
@@ -332,7 +332,8 @@
                     and <br> effective treatment for
                     all patients. We are equipped with the latest technology and resources to handle <br> critical
                     situations and provide
-                    comprehensive emergency care.</p>
+                    comprehensive emergency care.
+                </p>
                 <div class="Emergency_services">
                     <div class="service1">
                         <p><i class="fa-regular fa-circle-check"></i> 24/7 emergency care</p>
@@ -378,10 +379,10 @@
             </div>
         </div>
     </section>
-
+    
     <!-------------------------------------------------------------
-                                     SERVICES SEECTION
-                --------------------------------------------------- -->
+                                         SERVICES SECTION
+                    --------------------------------------------------- -->
     <section id="services">
         <div class="services_Header">
             <h2 class="servicesHeading">
@@ -470,9 +471,9 @@
         </div>
     </section>
     <!-------------------------------------------------------------
-                                         BOOK APPOINTMENT SEECTION
-                    --------------------------------------------------- -->
-
+                                             BOOK APPOINTMENT SEECTION
+                        --------------------------------------------------- -->
+    
     <section id="appointment">
         <div class="apppointment_Container">
             <div class="bookAppointment">
@@ -534,11 +535,11 @@
                                     Book an Appointment
                                 </button>
                             </div>
-
+    
                         </form>
                     </div>
                 </div>
-
+    
             </div>
             <div class="appointment_img">
                 <img src="assets/images/appointment-nurse-2.png" id="Book_appointment_Image"
@@ -546,10 +547,10 @@
             </div>
         </div>
     </section>
-
+    
     <!-------------------------------------------------------------
-                                         OUR SPECIALISTS SECTION
-                    --------------------------------------------------- -->
+                                             OUR SPECIALISTS SECTION
+                        --------------------------------------------------- -->
     <section id="specialists">
         <div class="specialist_Container">
             <div class="specialists_Desc">
@@ -681,10 +682,10 @@
                 </div>
             </div>
             <!-- To load all the doctors -->
-
+    
         </div>
     </section>
-
+    
     <!-- Modal Display -->
     <div class="modal">
         <div class="modal_remove">
@@ -701,10 +702,10 @@
             </div>
         </div>
     </div>
-
+    
     <!-------------------------------------------------------------
-                                             OUR BLOGS SECTION
-                        --------------------------------------------------- -->
+                                                 OUR BLOGS SECTION
+                            --------------------------------------------------- -->
     <section id="Blogs">
         <div class="blogs_Header">
             <h2 class="BlogsHeading">
@@ -716,23 +717,26 @@
         </div>
         <div class="blogs_contents">
             <div class="blog_Initial">
-                    <div class="blog_photo">
-                        <img src="assets/images/blog_Picture_Init.jpg" alt=""  id="blog_photo_Img">
-                    </div>
-                    <div class="blog_Texts">
-                        <h3>Transforming Healthcare: Innovations and Stories from Our Hospital</h3>
-                        <span class="admin"><i class="fa-solid fa-user"></i> Admin</span>
-                        <span class="comment"><i class="fa-solid fa-message"></i> 7</span>
-                        <br>
-                        <br>
-                        <p>
-                            Discover how our hospital is at the forefront of medical advancements. From groundbreaking treatments to inspiring
-                            patient stories, explore the latest innovations and insights shaping the future of healthcare. Stay informed and
-                            inspired with our expert perspectives and compassionate care narratives. Join us on our journey to transform healthcare,
-                            one story at a time.
-                        </p>
-                        <button id="more_Blogs">Read More <i class="fa-solid fa-arrow-right"></i> </button>
-                    </div>
+                <div class="blog_photo">
+                    <img src="assets/images/blog_Picture_Init.jpg" alt="" id="blog_photo_Img">
+                </div>
+                <div class="blog_Texts">
+                    <h3>Transforming Healthcare: Innovations and Stories from Our Hospital</h3>
+                    <span class="admin"><i class="fa-solid fa-user"></i> Admin</span>
+                    <span class="comment"><i class="fa-solid fa-message"></i> 7</span>
+                    <br>
+                    <br>
+                    <p>
+                        Discover how our hospital is at the forefront of medical advancements. From groundbreaking
+                        treatments to inspiring
+                        patient stories, explore the latest innovations and insights shaping the future of healthcare. Stay
+                        informed and
+                        inspired with our expert perspectives and compassionate care narratives. Join us on our journey to
+                        transform healthcare,
+                        one story at a time.
+                    </p>
+                    <button id="more_Blogs">Read More <i class="fa-solid fa-arrow-right"></i> </button>
+                </div>
             </div>
             <div class="blog_2">
                 <div class="blog_2Photo">
@@ -745,8 +749,10 @@
                     <br>
                     <br>
                     <p>
-                        Welcome to our cancer care blog, where we share the latest advancements, research, and inspirational stories in the
-                        fight against cancer. Our dedicated team of oncologists and researchers are working tirelessly to develop innovative
+                        Welcome to our cancer care blog, where we share the latest advancements, research, and inspirational
+                        stories in the
+                        fight against cancer. Our dedicated team of oncologists and researchers are working tirelessly to
+                        develop innovative
                         treatments and provide compassionate care to our patients.
                     </p>
                     <button id="more_Blogs">Read More <i class="fa-solid fa-arrow-right"></i> </button>
@@ -754,33 +760,35 @@
             </div>
         </div>
     </section>
-
+    
     <!-------------------------------------------------------------
-                                                 CONTACTS SECTION/FOOTER
-                            --------------------------------------------------- -->
+                                                     CONTACTS SECTION/FOOTER
+                                --------------------------------------------------- -->
     <section id="contact">
         <div class="contact_Footer">
             <div class="about_Footer">
                 <h3>About Us</h3>
                 <p>
-                    Dedicated to providing compassionate, patient-centered care, our innovative medical care project ensures accessible and
-                    quality healthcare through a trusted team of experts, advanced technology, and efficient appointment booking, aiming to
+                    Dedicated to providing compassionate, patient-centered care, our innovative medical care project ensures
+                    accessible and
+                    quality healthcare through a trusted team of experts, advanced technology, and efficient appointment
+                    booking, aiming to
                     improve community health and wellness.
                 </p>
-               <div class="contacts_social_footer">
-                <div>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p>Ikenegbu Extension, Owerri, Nigeria</p>
+                <div class="contacts_social_footer">
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Ikenegbu Extension, Owerri, Nigeria</p>
+                    </div>
+                    <div class="email_Footer">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p><a href="mailto:miraclechibuike27@gmail.com">yourmedi-health-care.com</a></p>
+                    </div>
+                    <div class="phone_Footer">
+                        <i class="fa-solid fa-phone"></i>
+                        <p><a href="tel:+234 905 625 5572">+234 905 625 5572</a></p>
+                    </div>
                 </div>
-                <div class="email_Footer">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p><a href="mailto:miraclechibuike27@gmail.com">yourmedi-health-care.com</a></p>
-                </div>
-                <div class="phone_Footer">
-                    <i class="fa-solid fa-phone"></i>
-                    <p><a href="tel:+234 905 625 5572">+234 905 625 5572</a></p>
-                </div>
-               </div>
             </div>
             <div class="Navigation_Footer">
                 <h3>Navigation</h3>
@@ -811,12 +819,26 @@
             <i class="fa-brands fa-pinterest-p"></i>
             <i class="fa-brands fa-youtube"></i>
         </div>
+        <!-- Language Select -->
+        <div class="language_Div">
+            <p>Language</p>
+            <div id="google_translate_element"></div>
+    
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript"
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </div>
         <!-- CopyRight -->
-         <div class="copyRight">
+        <div class="copyRight">
             <p>Copyright &copy; 2024 All Rights reserved</p>
-         </div>
+        </div>
     </section>
 
+ </div>
 </div>
 
 
@@ -824,7 +846,7 @@
 <script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
 
 <!-- JS Default Link -->
-<script src="assets/js/index.js"></script>
+<script src="assets/js/Index.js"></script>
 </body>
 
 </html>

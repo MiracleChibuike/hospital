@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Description -->
+    <meta name="description"
+        content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
+    <title>Our Departments</title>
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="medical care, hospital access, appointment booking, healthcare, online medical services, patient care">
+
+    <!-- Author -->
+    <meta name="author" content="Onyia Miracle| Trust Cyril - MTech Development">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Accessible Medical Care - Easy Hospital Access and Appointment Booking">
+    <meta property="og:description"
+        content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
+    <meta property="og:image" content="assets/images/logo-2.png">
+    <meta property="og:url" content="https://yourmedi-health-care.netlify.app/">
+    <meta property="og:type" content="website">
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/logo-2.png">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Cabin+Condensed&family=Dancing+Script&family=Jost&family=Kalam&family=Kanit&family=Noto+Sans+Display:wght@600&family=Odibee+Sans&family=PT+Sans+Narrow&family=Sansita+Swashed:wght@300..900&family=Slabo+27px&family=Syne:wght@400..800&family=Ubuntu:wght@500&family=Yesteryear&display=swap"
+        rel="stylesheet">
+    <!-- CUSTOM CSS LINK -->
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <style>
+        :root {
+            --clr-white-default: #f2f2f2;
+            --clr-white-secondary: #f1f1f1;
+            --clr-dark-blue: #46c1ba;
+            --clr-hospital: #0bb0b2;
+            --clr-hospital-deep: #043637;
+            --clr-white-main: #fff;
+            --clr-darkGray: rgba(230, 217, 217, 0.2);
+            --clr-dark-main: #000;
+            --clr-semi-dark: rgba(0, 0, 0, 0.8);
+            --clr-gray-origin: rgb(224, 218, 218);
+            --error-message: rgb(126, 23, 23);
+        }
+        #departments{
+            margin: 100px 0 0 0;
+        }
+    </style>
+</head>
+
+<!-- head -->
+<!-- <header id="header">
+        <span class="loader"></span>
+ </header> -->
+
+<!-- MAIN-CONTAINER -->
+
+<div class="main">
+
+    <!-- Upper Icons -->
+    <div class="socialIconsHeader">
+        <div class="icons-social">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-pinterest-p"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="contacts-header">
+            <span><strong>Call Now:</strong> <a href="tel:+234 905 625 5572">+234 905 625 5572</a></span>
+            <span><strong>E-mail:</strong> <a
+                    href="mailto:miraclechibuike27@gmail.com">YourMedi@healthcare.com</a></span>
+        </div>
+        <div class="appointment-Header">
+            <a href="#appointment"><button>Appointment</button></a>
+        </div>
+    </div>
+    <div class="main_nav">
+        <!-- Header -->
+        <div class="header">
+            <img src="assets/images/design-curve.jpg" id="headre-background" alt="">
+        </div>
+        <!-- Nav-links -->
+        <div class="navs">
+            <div class="logo">
+                <img src="assets/images/logo-2.png" id="logo-home" alt="">
+                <h2>YOURMEDI</h2>
+            </div>
+            <!-- Search Icon used in Media Only -->
+            <p class="search-media">
+                <span class="search-container-media">
+                    <i class="fa-solid fa-arrow-left" id="arrow-back-home"></i>
+                    <input type="search" placeholder="Search" id="search-input-media">
+                    <i class="fa-solid fa-magnifying-glass" id="glass-media"></i>
+                </span>
+                <img src="assets/images/search-icon.png" id="search-icon" class="search-icon-media" alt="">
+            </p>
+            <!-- Menu Tab -->
+            <div class="menuTab">
+                <i class="fa-solid fa-bars" id="displayMenu"></i>
+                <i class="fa-solid fa-xmark" id="hide_menu"></i>
+            </div>
+            <div class="nav-links" id="links">
+                <ul>
+                    <li id="home_Contents" onclick="load_HomePage()">
+                        HOME
+                    </li>
+                    <li>
+                        ABOUT
+                    </li>
+                    <li id="departments_El">
+                        DEPARTMENTS
+                    </li>
+                    <li>
+                        <span id="Pages">
+                            PAGES <div class="icons_Drops"><i class="fa-solid fa-caret-down" id="icon-drops">
+                                </i> <i class="fa-solid fa-caret-up" id="icon-drops-up"></i></div>
+                        </span>
+                        <div class="drops">
+                            <ul>
+                                <li>Our Teams</li>
+                                <li>Patient's Faqs</li>
+                                <li>Patient Feedbacks</li>
+                                <li>Our News</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        BLOG
+                    </li>
+                    <li>
+                        CONTACT
+                    </li>
+                </ul>
+            </div>
+            <!-- {/* For search feature Desktop */} -->
+            <div class="search">
+                <span class="search-container-Desktop">
+                    <form action="">
+                        <input type="search" placeholder="Search" id="search-input-Desktop">
+                        <i class="fa-solid fa-magnifying-glass" id="small-glass-search"></i>
+                    </form>
+                </span>
+                <img src="assets/images/search-icon.png" id="search-icon" class="getData" alt="search" />
+            </div>
+        </div>
+    </div>
+    <!-- End Nav-Links -->
+
+    <div class="inner_Contents">
+
+        <!-------------------------------------------------------------
+                                 DEPARTMENT SEECTION
+            --------------------------------------------------- -->
+        <section id="departments">
+            <div class="departmentHeader">
+                <h2 class="department_Header">OUR DEPARTMENT</h2>
+                <P>Welcome to our medical departments, where dedicated professionals provide exceptional care.</P>
+                <div class="department_Indicator">
+                    <i class="fa-regular fa-hospital"></i>
+                </div>
+            </div>
+            <!-- specialists Div -->
+            <div class="departments_specs">
+                <div class="box_Specs">
+                    <Button id="Cardiology_Dept" class="button_cardiology_strong"> <i
+                            class="fa-solid fa-heart-pulse"></i>
+                        CARDIOLOGY </Button>
+                    <Button id="Neurology_Dept"> <i class="fa-solid fa-dna"></i> NEUROLOGY</Button>
+                    <Button id="Diagnostics_Dept"><i class="fa-solid fa-bed-pulse"></i> DIAGNOSTICS</Button>
+                    <Button id="Dental_Dept"> <i class="fa-solid fa-tooth"></i> Dental</Button>
+                    <Button id="Opthalmalogy_Dept"> <i class="fa-solid fa-eye"></i> Opthalmalogy</Button>
+                    <Button id="Emergency_Dept"> <i class="fa-regular fa-hospital"></i> Emergency</Button>
+                    <Button id="Oncology_Dept"> <i class="fa-solid fa-stethoscope"></i> Oncology</Button>
+                </div>
+                <!-- cardiology_Container" -->
+                <div class="cardiology_Container" id="Cardiology_target">
+                    <div class="cardImg">
+                        <img src="assets/images/cardiology_experiment.jpg" id="img_cardiology"
+                            alt="cardiology experiment with our expert doctors">
+                    </div>
+                    <h3 class="about_cardiology">About the Cardiology</h3>
+                    <p>Our Cardiology Department is equipped with state-of-the-art technology and experienced
+                        cardiologists
+                        who <br> specialize in
+                        heart health. We offer comprehensive cardiac care, from diagnosis to treatment and
+                        rehabilitation.
+                    </p>
+                    <div class="cardiology_services">
+                        <div class="service1">
+                            <p><i class="fa-regular fa-circle-check"></i> Heart health evaluations</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Heart disease treatments</p>
+                        </div>
+                        <div class="service2">
+                            <p><i class="fa-regular fa-circle-check"></i> Interventional procedures</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Cardiac rehab programs</p>
+                        </div>
+                    </div>
+                    <!-- Contact Button -->
+                    <button class="contact-btn" id="btn_cardiology">Contact Us</button>
+                </div>
+                <!-- Neurology Container Goes here -->
+                <div class="Neurology_Container" id="Neurology_target">
+                    <div class="neurology_Image_Cover">
+                        <img src="assets/images/diagnos-2.jpg" id="img_cardiology"
+                            alt="Specialized neurology care services">
+                    </div>
+                    <h3 class="about_Neurology">About the Neurology</h3>
+                    <p>Our Neurology Department specializes in the diagnosis and treatment of neurological disorders.
+                        Our
+                        team of <br> neurologists
+                        uses cutting-edge technology to provide comprehensive care for conditions affecting the brain
+                        and <br> nervous system.</p>
+                    <div class="Neurology_services">
+                        <div class="service1">
+                            <p><i class="fa-regular fa-circle-check"></i> Neurological rehabilitation programs</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Advanced neuroimaging (e.g., MRI, CT scans)
+                            </p>
+                        </div>
+                        <div class="service2">
+                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive neurological evaluations</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Treatment of neurological disorders <br>(e.g.,
+                                epilepsy, multiple sclerosis)</p>
+                        </div>
+                    </div>
+                    <!-- Contact Button -->
+                    <button class="contact-btn" id="btn_Neurology">Contact Us</button>
+                </div>
+                <!-- Diagnostics Container Goes here -->
+                <div class="Diagnostics_Container" id="Diagnostics_target">
+                    <div class="Diagnostics_Image_Cover">
+                        <img src="assets/images/diagnosis.jpeg" id="img_cardiology"
+                            alt="Advanced medical diagnostic services">
+                    </div>
+                    <h3 class="about_Diagnostics">About the Diagnostics</h3>
+                    <p>The Diagnostics Department focuses on identifying and diagnosing a wide range of health
+                        conditions
+                        using <br> advanced
+                        technology. Our diagnostic specialists are experts in their field, ensuring accurate and timely
+                        <br>
+                        results for optimal
+                        patient care.
+                    </p>
+                    <div class="Diagnostics_services">
+                        <div class="service1">
+                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive lab tests</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Imaging services (e.g., X-rays, MRIs, CT
+                                scans)
+                            </p>
+                        </div>
+                        <div class="service2">
+                            <p><i class="fa-regular fa-circle-check"></i> Blood tests and analyses</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Genetic testing and screening</p>
+                        </div>
+                    </div>
+                    <!-- Contact Button -->
+                    <button class="contact-btn" id="btn_Diagnostics">Contact Us</button>
+                </div>
+                <!-- Dental Container Goes here -->
+                <div class="Dental_Container" id="Dental_target">
+                    <div class="Dental_Image_Cover">
+                        <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Professional dental health care">
+                    </div>
+                    <h3 class="about_Dental">About the Dental</h3>
+                    <p>Our Dental Department focuses on maintaining and improving oral health using advanced techniques
+                        <br>
+                        and
+                        technology. Our
+                        dental specialists are experts in their field, providing comprehensive care for optimal dental
+                        health.
+                    <div class="Dental_services">
+                        <div class="service1">
+                            <p><i class="fa-regular fa-circle-check"></i> Routine dental check-ups and cleanings</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Cosmetic dentistry (e.g., teeth whitening,
+                                veneers)</p>
+                        </div>
+                        <div class="service2">
+                            <p><i class="fa-regular fa-circle-check"></i> Orthodontic services (e.g., braces,
+                                Invisalign)
+                            </p>
+                            <p><i class="fa-regular fa-circle-check"></i> Restorative treatments (e.g., fillings,
+                                crowns,
+                                bridges)</p>
+                        </div>
+                    </div>
+                    <!-- Contact Button -->
+                    <button class="contact-btn" id="btn_Dental">Contact Us</button>
+                </div>
+                <!-- Ophthalmology Container Goes here -->
+                <div class="Ophthalmology_Container" id="Ophthalmology_target">
+                    <div class="Ophthalmology_Image_Cover">
+                        <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Comprehensive eye care services">
+                    </div>
+                    <h3 class="about_Ophthalmology">About the Ophthalmology</h3>
+                    <p>Our Ophthalmology Department focuses on maintaining and improving eye health using advanced <br>
+                        techniques and technology.
+                        Our ophthalmologists are experts in their field, providing comprehensive care <br> for optimal
+                        vision and
+                        eye health.
+                    <div class="Ophthalmology_services">
+                        <div class="service1">
+                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive eye exams</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Cataract surgery</p>
+                        </div>
+                        <div class="service2">
+                            <p><i class="fa-regular fa-circle-check"></i> Treatment for glaucoma and macular
+                                degeneration
+                            </p>
+                            <p><i class="fa-regular fa-circle-check"></i> Corrective procedures (e.g., LASIK, PRK)</p>
+                        </div>
+                    </div>
+                    <!-- Contact Button -->
+                    <button class="contact-btn" id="btn_Ophthalmology">Contact Us</button>
+                </div>
+                <!-- Emergency Container Goes here -->
+                <div class="Emergency_Container" id="Emergency_target">
+                    <div class="Emergency_Image_Cover">
+                        <img src="assets/images/emergency.jpeg" id="img_cardiology"
+                            alt="Immediate emergency medical care">
+                    </div>
+                    <h3 class="about_Emergency">About the Emergency</h3>
+                    <p>The Emergency Department is dedicated to providing immediate and life-saving care for a wide
+                        range of
+                        <br>
+                        medical
+                        emergencies. Our emergency physicians and nurses are experts in their field, ensuring prompt
+                        and <br> effective treatment for
+                        all patients. We are equipped with the latest technology and resources to handle <br> critical
+                        situations and provide
+                        comprehensive emergency care.
+                    </p>
+                    <div class="Emergency_services">
+                        <div class="service1">
+                            <p><i class="fa-regular fa-circle-check"></i> 24/7 emergency care</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Trauma care and stabilization</p>
+                        </div>
+                        <div class="service2">
+                            <p><i class="fa-regular fa-circle-check"></i> Acute medical treatment (e.g., heart attacks,
+                                strokes)</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Rapid diagnostic services (e.g., imaging, lab
+                                tests)</p>
+                        </div>
+                    </div>
+                    <!-- Contact Button -->
+                    <button class="contact-btn" id="btn_Emergency">Contact Us</button>
+                </div>
+                <!-- Oncology Container Goes here -->
+                <div class="Oncology_Container" id="Oncology_target">
+                    <div class="Oncology_Image_Cover">
+                        <img src="assets/images/oncology_Dept.jpeg" id="img_cardiology"
+                            alt="Expert cancer treatment care">
+                    </div>
+                    <h3 class="about_Oncology">About the Oncology</h3>
+                    <p>The Oncology Department is dedicated to providing comprehensive and compassionate care for
+                        patients
+                        <br>
+                        with cancer. Our
+                        oncologists and specialized staff are experts in diagnosing and treating various types of <br>
+                        cancer, ensuring personalized
+                        treatment plans for each patient.
+                    </p>
+                    <div class="Oncology_services">
+                        <div class="service1">
+                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive cancer screenings and
+                                diagnostics
+                            </p>
+                            <p><i class="fa-regular fa-circle-check"></i> Chemotherapy and radiation therapy</p>
+                        </div>
+                        <div class="service2">
+                            <p><i class="fa-regular fa-circle-check"></i> Surgical oncology procedures</p>
+                            <p><i class="fa-regular fa-circle-check"></i> Personalized treatment plans and targeted
+                                therapies</p>
+                        </div>
+                    </div>
+                    <!-- Contact Button -->
+                    <button class="contact-btn" id="btn_Oncology">Contact Us</button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-------------------------------------------------------------
+                                                     CONTACTS SECTION/FOOTER
+                                --------------------------------------------------- -->
+        <section id="contact">
+            <div class="contact_Footer">
+                <div class="about_Footer">
+                    <h3>About Us</h3>
+                    <p>
+                        Dedicated to providing compassionate, patient-centered care, our innovative medical care project
+                        ensures
+                        accessible and
+                        quality healthcare through a trusted team of experts, advanced technology, and efficient
+                        appointment
+                        booking, aiming to
+                        improve community health and wellness.
+                    </p>
+                    <div class="contacts_social_footer">
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Ikenegbu Extension, Owerri, Nigeria</p>
+                        </div>
+                        <div class="email_Footer">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p><a href="mailto:miraclechibuike27@gmail.com">yourmedi-health-care.com</a></p>
+                        </div>
+                        <div class="phone_Footer">
+                            <i class="fa-solid fa-phone"></i>
+                            <p><a href="tel:+234 905 625 5572">+234 905 625 5572</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="Navigation_Footer">
+                    <h3>Navigation</h3>
+                    <p><a href="#appointment"><i class="fa-solid fa-angles-right"></i> Appointment</a></p>
+                    <p><a href="#specialists"><i class="fa-solid fa-angles-right"></i> Our Specialists</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Why Choose Us</a></p>
+                    <p><a href="#services"><i class="fa-solid fa-angles-right"></i> Our Services</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Parent FAQ</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Health Tips</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Our Latest News</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Patients Feedbacks</a></p>
+                </div>
+                <div class="instagram_Footer">
+                    <h3>Instagram</h3>
+                    <div class="IG_Photos">
+                        <img src="assets/images/insta_main.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_2.jpeg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_3.jpeg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_4.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_5.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_6.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                    </div>
+                </div>
+            </div>
+            <div class="icons-social" id="socials_Footer">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-pinterest-p"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <!-- Language Select -->
+            <div class="language_Div">
+                <p>Language</p>
+                <div id="google_translate_element"></div>
+
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript"
+                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
+            <!-- CopyRight -->
+            <div class="copyRight">
+                <p>Copyright &copy; 2024 All Rights reserved</p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+
+<!-- FA Link -->
+<script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
+<script src="assets/js/Departments.js"></script>
+<!-- JS Default Link -->
+</body>
+
+</html>
