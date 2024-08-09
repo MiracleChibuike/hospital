@@ -1,24 +1,24 @@
 // Loads the animation on a succesful page load
 
-const AnimationLoad = () => {
-  const loader = document.querySelector(".loader");
-  var headre = document.getElementById("header");
-  var mainDiv = document.querySelector(".main");
+// const AnimationLoad = () => {
+//   const loader = document.querySelector(".loader");
+//   var headre = document.getElementById("header");
+//   var mainDiv = document.querySelector(".main");
 
-  // Show Loader Initially
-  headre.style.display = "block";
+//   // Show Loader Initially
+//   headre.style.display = "block";
 
-  // After 6 seconds, hide the headre and show the mainDiv
-  setTimeout(() => {
-    if (mainDiv.style.display = "none") {
-        mainDiv.style.display = "block";
-        headre.style.display = "none";
-    }
-  }, 12000);
-};
+//   // After 6 seconds, hide the headre and show the mainDiv
+//   setTimeout(() => {
+//     if (mainDiv.style.display = "none") {
+//         mainDiv.style.display = "block";
+//         headre.style.display = "none";
+//     }
+//   }, 12000);
+// };
 
-// Call the AnimationLoad function when page is ready
-AnimationLoad();
+// // Call the AnimationLoad function when page is ready
+// AnimationLoad();
 
 
   // Prevent Image dragging
@@ -113,6 +113,8 @@ pages.addEventListener("click", () => {
 });
 
 // Load all pages as according to the user-clicks(Page-redirect);
+
+
 
 var re_Direct_Departments = document.getElementById("departments_load");
 
@@ -266,6 +268,17 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
+
+// Load the about us button when clicked on homepage
+const load_about_btn = document.querySelector(".about-btn");
+
+const fetch_AboutPage = (e) => {
+  window.location.href = "About.html"
+};
+
+load_about_btn.addEventListener("click", (e) => {
+  fetch_AboutPage();
+})
 
 // VALIDATE SEARCH FEATURE ON THE HOMEPAGE
 

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Description -->
+    <meta name="description"
+        content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
+    <title>Read More About Us || C-Health</title>
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="medical care, hospital access, appointment booking, healthcare, online medical services, patient care">
+
+    <!-- Author -->
+    <meta name="author" content="Onyia Miracle| Trust Cyril - MTech Development">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Accessible Medical Care - Easy Hospital Access and Appointment Booking">
+    <meta property="og:description"
+        content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
+    <meta property="og:image" content="assets/images/logo-2.png">
+    <meta property="og:url" content="https://yourmedi-health-care.netlify.app/">
+    <meta property="og:type" content="website">
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/logo-2.png">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Cabin+Condensed&family=Dancing+Script&family=Jost&family=Kalam&family=Kanit&family=Noto+Sans+Display:wght@600&family=Odibee+Sans&family=PT+Sans+Narrow&family=Sansita+Swashed:wght@300..900&family=Slabo+27px&family=Syne:wght@400..800&family=Ubuntu:wght@500&family=Yesteryear&display=swap"
+        rel="stylesheet">
+    <!-- CUSTOM CSS LINK -->
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <style>
+        :root {
+            --clr-white-default: #f2f2f2;
+            --clr-white-secondary: #f1f1f1;
+            --clr-dark-blue: #46c1ba;
+            --clr-hospital: #0bb0b2;
+            --clr-hospital-deep: #043637;
+            --clr-white-main: #fff;
+            --clr-darkGray: rgba(230, 217, 217, 0.2);
+            --clr-dark-main: #000;
+            --clr-semi-dark: rgba(0, 0, 0, 0.8);
+            --clr-gray-origin: rgb(224, 218, 218);
+            --error-message: rgb(126, 23, 23);
+        }
+
+        #About {
+            margin: 100px 0 0 0;
+            padding: 20px 0;
+        }
+        .about_Header{
+             text-align: center;
+            margin: 10px 0;
+        }
+        #About h2{
+            font-size: 2.5rem;
+        }
+
+        .main {
+            display: block;
+        }
+       /* #about_img_Center{
+        width: 100%;
+       } */
+        .missionDiv{
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-evenly;
+           padding: 10px;
+           /* height: 500px; */
+        }
+        .missionDiv > div{
+            margin: 0 25px;
+        }
+        .missionDiv h3{
+            font-size: 1.8rem;
+            margin: 10px 0;
+            border-left: 5px solid var(--clr-hospital);
+            padding: 2px 10px;
+        }
+
+        @media (min-width: 0px) and (max-width: 750px) {
+            .missionDiv{
+                display: block;
+            }
+        .missionDiv > div{
+            margin: 10px;
+        }
+        #mission_img{
+            width: 100%;
+        }
+        }
+           @media (min-width: 750px) and (max-width: 1024px) {
+            .missionDiv{
+                display: block;
+            }
+        .missionDiv > div{
+            margin: 10px;
+        }
+        #mission_img{
+            width: 100%;
+        }
+        }
+    </style>
+</head>
+
+<!-- head -->
+<!-- <header id="header">
+        <span class="loader"></span>
+ </header> -->
+
+<!-- MAIN-CONTAINER -->
+
+<div class="main">
+
+    <!-- Upper Icons -->
+    <div class="socialIconsHeader">
+        <div class="icons-social">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-pinterest-p"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="contacts-header">
+            <span><strong>Call Now:</strong> <a href="tel:+234 905 625 5572">+234 905 625 5572</a></span>
+            <span><strong>E-mail:</strong> <a
+                    href="mailto:miraclechibuike27@gmail.com">C-Health@healthcare.com</a></span>
+        </div>
+        <div class="appointment-Header">
+            <a href="#appointment"><button>Appointment</button></a>
+        </div>
+    </div>
+    <div class="main_nav">
+        <!-- Header -->
+        <div class="header">
+            <img src="assets/images/design-curve.jpg" id="headre-background" alt="">
+        </div>
+        <!-- Nav-links -->
+        <div class="navs">
+            <div class="logo">
+                <img src="assets/images/logo-2.png" id="logo-home" alt="">
+                <h2>C-HEALTH</h2>
+            </div>
+            <!-- Search Icon used in Media Only -->
+            <p class="search-media">
+                <span class="search-container-media">
+                    <i class="fa-solid fa-arrow-left" id="arrow-back-home"></i>
+                    <input type="search" placeholder="Search" id="search-input-media">
+                    <i class="fa-solid fa-magnifying-glass" id="glass-media"></i>
+                </span>
+                <img src="assets/images/search-icon.png" id="search-icon" class="search-icon-media" alt="">
+            </p>
+            <!-- Menu Tab -->
+            <div class="menuTab">
+                <i class="fa-solid fa-bars" id="displayMenu"></i>
+                <i class="fa-solid fa-xmark" id="hide_menu"></i>
+            </div>
+            <div class="nav-links" id="links">
+                <ul>
+                    <li id="home_Contents" onclick="load_HomePage()">
+                        HOME
+                    </li>
+                    <li>
+                        ABOUT
+                    </li>
+                    <li id="departments_El">
+                        DEPARTMENTS
+                    </li>
+                    <li>
+                        <span id="Pages">
+                            PAGES <div class="icons_Drops"><i class="fa-solid fa-caret-down" id="icon-drops">
+                                </i> <i class="fa-solid fa-caret-up" id="icon-drops-up"></i></div>
+                        </span>
+                        <div class="drops">
+                            <ul>
+                                <li>Our Teams</li>
+                                <li>Patient's Faqs</li>
+                                <li>Patient Feedbacks</li>
+                                <li>Our News</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        BLOG
+                    </li>
+                    <li>
+                        CONTACT
+                    </li>
+                </ul>
+            </div>
+            <!-- {/* For search feature Desktop */} -->
+            <div class="search">
+                <span class="search-container-Desktop">
+                    <form action="">
+                        <input type="search" placeholder="Search" id="search-input-Desktop">
+                        <i class="fa-solid fa-magnifying-glass" id="small-glass-search"></i>
+                    </form>
+                </span>
+                <img src="assets/images/search-icon.png" id="search-icon" class="getData" alt="search" />
+            </div>
+        </div>
+    </div>
+    <!-- End Nav-Links -->
+
+    <div class="inner_Contents">
+
+        <!-------------------------------------------------------------
+                                 About Us SECTION
+            --------------------------------------------------- -->
+        <section id="About">
+           <div class="about_Header">
+            <h2>About Us</h2>
+            <p>Find out what makes us the diffrent from others</p>
+           </div>
+           <!-- <div class="center_Image">
+            <img src="assets/images/about_Us_Img.jpeg" id="about_img_Center" alt="">
+           </div> -->
+            <div class="missionDiv">
+               <div class="mission_Texts">
+                <h3>Our Mission</h3>
+                <p>At Capital Health, At Capital Health, our mission is to deliver accessible, high-quality healthcare services to all
+                    individuals,
+                    irrespective of their background, socioeconomic status, or circumstances. We are steadfast in our commitment to
+                    ensuring
+                    that every patient receives compassionate and personalized care tailored to their unique needs. Our approach is
+                    deeply
+                    rooted in the belief that healthcare is not just a service but a fundamental human right. We strive to remove
+                    barriers
+                    that prevent access to quality healthcare, working tirelessly to create an inclusive environment where everyone has
+                    the
+                    opportunity to live a healthy and fulfilling life. <br> <br>
+                
+                    We are dedicated to integrating advanced medical practices with a patient-centered approach that places the
+                    individual
+                    at the heart of every decision we make. Our healthcare professionals are not only highly skilled and experienced but
+                    also deeply empathetic, understanding the importance of treating the whole person—mind, body, and spirit. We
+                    recognize
+                    that each patient's journey is different, and we are committed to providing care that is as unique as the
+                    individuals we
+                    serve.
+                    <br>
+                    <br>
+                
+                
+                    Capital Health is constantly evolving, driven by a relentless pursuit of excellence in medical care. Our dedication
+                    to
+                    continuous improvement ensures that we stay at the forefront of medical innovation, incorporating the latest
+                    research,
+                    technologies, and treatment modalities into our practice. We invest in cutting-edge equipment and ongoing
+                    professional
+                    development for our staff, enabling us to offer the most effective and up-to-date care possible.
+                </p>
+               </div>
+               <div class="Mission_Img">
+                <img src="assets/images/about_Us_Img.jpeg" id="mission_img" alt="">
+               </div>
+            </div>
+        <div class="comprehensive_div">
+            <h3>Our Values<i class="fa-solid fa-circle-check"></i> <i class="fa-solid fa-check"></i></h3>
+            <p>
+                At the core of our hospital's operations are the values that guide everything we do. We believe in a patient-centered
+                approach, where each individual is treated with the utmost respect, dignity, and empathy. Our commitment to ethical
+                practices ensures that we uphold the highest standards of integrity and transparency in all our interactions. We value
+                holistic care, recognizing that true health involves the mind, body, and spirit, and we strive to provide comprehensive
+                care that addresses all aspects of a patient's well-being. Our experienced team of healthcare professionals is dedicated
+                to continuous learning and improvement, enabling us to offer the highest quality of care. We are also deeply committed
+                to our community, actively participating in outreach programs, health education, and support services to promote overall
+                wellness.
+            </p>
+        </div>
+        <div class="vision">
+            <h3>Our Vision</h3>
+            Our vision is to be a leader in healthcare, setting the standard for excellence in patient care, medical innovation, and
+            community involvement. We envision a future where healthcare is accessible to all, where every patient receives the best
+            possible care without barriers. Our goal is to be a trusted healthcare provider that patients turn to for all their
+            medical needs, knowing that they will receive care that is not only effective but also compassionate and personalized.
+            We aspire to continuously evolve with advancements in medical technology and practices, ensuring that we remain at the
+            cutting edge of healthcare delivery. By fostering a culture of collaboration, learning, and innovation, we aim to create
+            a healthcare environment where both patients and healthcare professionals thrive, leading to better health outcomes and
+            a healthier community.
+        </div>
+
+
+        </section>
+
+
+        <!-------------------------------------------------------------
+                                                     CONTACTS SECTION/FOOTER
+                                --------------------------------------------------- -->
+        <section id="contact">
+            <div class="contact_Footer">
+                <div class="about_Footer">
+                    <h3>About Us</h3>
+                    <p>
+                        Dedicated to providing compassionate, patient-centered care, our innovative medical care project
+                        ensures
+                        accessible and
+                        quality healthcare through a trusted team of experts, advanced technology, and efficient
+                        appointment
+                        booking, aiming to
+                        improve community health and wellness.
+                    </p>
+                    <div class="contacts_social_footer">
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Ikenegbu Extension, Owerri, Nigeria</p>
+                        </div>
+                        <div class="email_Footer">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p><a href="mailto:miraclechibuike27@gmail.com">C-Health@healthcare.com</a></p>
+                        </div>
+                        <div class="phone_Footer">
+                            <i class="fa-solid fa-phone"></i>
+                            <p><a href="tel:+234 905 625 5572">+234 905 625 5572</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="Navigation_Footer">
+                    <h3>Navigation</h3>
+                    <p><a href="#appointment"><i class="fa-solid fa-angles-right"></i> Appointment</a></p>
+                    <p><a href="#specialists"><i class="fa-solid fa-angles-right"></i> Our Specialists</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Why Choose Us</a></p>
+                    <p><a href="#services"><i class="fa-solid fa-angles-right"></i> Our Services</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Parent FAQ</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Health Tips</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Our Latest News</a></p>
+                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Patients Feedbacks</a></p>
+                </div>
+                <div class="instagram_Footer">
+                    <h3>Instagram</h3>
+                    <div class="IG_Photos">
+                        <img src="assets/images/insta_main.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_2.jpeg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_3.jpeg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_4.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_5.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                        <img src="assets/images/insta_6.jpg"
+                            alt="We're live on Instagram.. Check out our activities there">
+                    </div>
+                </div>
+            </div>
+            <div class="icons-social" id="socials_Footer">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-pinterest-p"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <!-- Language Select -->
+            <div class="language_Div">
+                <p>Language</p>
+                <div id="google_translate_element"></div>
+
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript"
+                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
+            <!-- CopyRight -->
+            <div class="copyRight">
+                <p>Copyright &copy; 2024 All Rights reserved</p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+
+<!-- FA Link -->
+<script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
+<script src="assets/js/about.js"></script>
+<!-- JS Default Link -->
+</body>
+
+</html>
