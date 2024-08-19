@@ -52,12 +52,12 @@
         }
 
         #About {
-            margin: 100px 0 0 0;
+            margin: 80px 0 0 0;
             padding: 20px 0;
         }
         .about_Header{
              text-align: center;
-            margin: 10px 0;
+            margin: 10px 5px;
         }
         #About h2{
             font-size: 2.5rem;
@@ -69,28 +69,40 @@
        /* #about_img_Center{
         width: 100%;
        } */
-        .missionDiv{
-            margin: 20px 0;
+        .comprehensive_div p, .vision p{
+            font-size: 16px;
+        }
+        .missionDiv, .comprehensive_div, .vision{
+            margin: 50px 0;
             display: flex;
             justify-content: space-evenly;
            padding: 10px;
            /* height: 500px; */
         }
-        .missionDiv > div{
+        .mission_Texts p{
+            font-size: 16px;
+        }
+        .mission_Texts i, .comprehensive_Text i, .vision_Text i {
+            color: var(--clr-hospital);
+        }
+        .missionDiv > div, .comprehensive_div > div, .vision > div{
             margin: 0 25px;
         }
-        .missionDiv h3{
-            font-size: 1.8rem;
+        .missionDiv h3, .comprehensive_div h3, .vision h3{
+            font-size: 1.5rem;
             margin: 10px 0;
-            border-left: 5px solid var(--clr-hospital);
+            /* border-left: 5px solid var(--clr-hospital-deep); */
             padding: 2px 10px;
         }
-
+        #mission_img{
+            border-radius: 10px;
+            box-shadow: 0 0 2px var(--clr-dark-main);
+        }
         @media (min-width: 0px) and (max-width: 750px) {
-            .missionDiv{
+            .missionDiv, .comprehensive_div, .vision{
                 display: block;
             }
-        .missionDiv > div{
+        .missionDiv > div, .comprehensive_div > div, .vision > div{
             margin: 10px;
         }
         #mission_img{
@@ -98,10 +110,10 @@
         }
         }
            @media (min-width: 750px) and (max-width: 1024px) {
-            .missionDiv{
+            .missionDiv, .comprehensive_div, .vision{
                 display: block;
             }
-        .missionDiv > div{
+        .missionDiv > div, .comprehensive_div > div, .vision > div{
             margin: 10px;
         }
         #mission_img{
@@ -224,8 +236,8 @@
            </div> -->
             <div class="missionDiv">
                <div class="mission_Texts">
-                <h3>Our Mission</h3>
-                <p>At Capital Health, At Capital Health, our mission is to deliver accessible, high-quality healthcare services to all
+                <h3>Our Mission <i class="fa-solid fa-circle-check"></i></h3>
+                <p> At Capital Health, our mission is to deliver accessible, high-quality healthcare services to all
                     individuals,
                     irrespective of their background, socioeconomic status, or circumstances. We are steadfast in our commitment to
                     ensuring
@@ -235,20 +247,8 @@
                     barriers
                     that prevent access to quality healthcare, working tirelessly to create an inclusive environment where everyone has
                     the
-                    opportunity to live a healthy and fulfilling life. <br> <br>
-                
-                    We are dedicated to integrating advanced medical practices with a patient-centered approach that places the
-                    individual
-                    at the heart of every decision we make. Our healthcare professionals are not only highly skilled and experienced but
-                    also deeply empathetic, understanding the importance of treating the whole person—mind, body, and spirit. We
-                    recognize
-                    that each patient's journey is different, and we are committed to providing care that is as unique as the
-                    individuals we
-                    serve.
+                    opportunity to live a healthy and fulfilling life. <br> 
                     <br>
-                    <br>
-                
-                
                     Capital Health is constantly evolving, driven by a relentless pursuit of excellence in medical care. Our dedication
                     to
                     continuous improvement ensures that we stay at the forefront of medical innovation, incorporating the latest
@@ -263,28 +263,52 @@
                </div>
             </div>
         <div class="comprehensive_div">
-            <h3>Our Values<i class="fa-solid fa-circle-check"></i> <i class="fa-solid fa-check"></i></h3>
+            <div class="comprehensive_Img">
+                <img src="assets/images/insta_2.jpeg" id="mission_img" alt="">
+            </div>
+           <div class="comprehensive_Text">
+            <h3>Our Values <i class="fa-solid fa-circle-check"></i></h3>
             <p>
-                At the core of our hospital's operations are the values that guide everything we do. We believe in a patient-centered
-                approach, where each individual is treated with the utmost respect, dignity, and empathy. Our commitment to ethical
-                practices ensures that we uphold the highest standards of integrity and transparency in all our interactions. We value
-                holistic care, recognizing that true health involves the mind, body, and spirit, and we strive to provide comprehensive
-                care that addresses all aspects of a patient's well-being. Our experienced team of healthcare professionals is dedicated
-                to continuous learning and improvement, enabling us to offer the highest quality of care. We are also deeply committed
-                to our community, actively participating in outreach programs, health education, and support services to promote overall
-                wellness.
+                <strong>At the core of our hospital's operations are the values that guide everything we do</strong>. We believe that healthcare is not
+                just about treating illness but about caring for people as a whole. Our patient-centered approach is the foundation of
+                our practice, where each individual is treated with the utmost respect, dignity, and empathy. We understand that every
+                patient has unique needs, and we are dedicated to creating personalized care plans that reflect those needs, ensuring
+                that every experience with us is both comforting and supportive.
+                Our commitment to ethical practices ensures that we uphold the highest standards of integrity and transparency in all
+                our interactions. We hold ourselves accountable to the communities we serve, making decisions that are in the best
+                interests of our patients and their families. Honesty, trust, and fairness are not just ideals but the principles that
+                drive our daily operations.
+                <br> <br>
+                We value holistic care, recognizing that true health involves the mind, body, and spirit. We believe that healing is not
+                just a physical process but an emotional and spiritual journey as well. Our multidisciplinary approach ensures that we
+                provide comprehensive care that addresses all aspects of a patient's well-being. We offer a range of services, from
+                advanced medical treatments to emotional and psychological support, ensuring that every patient receives the care they
+                need to thrive.
             </p>
+           </div>
         </div>
         <div class="vision">
-            <h3>Our Vision</h3>
-            Our vision is to be a leader in healthcare, setting the standard for excellence in patient care, medical innovation, and
-            community involvement. We envision a future where healthcare is accessible to all, where every patient receives the best
-            possible care without barriers. Our goal is to be a trusted healthcare provider that patients turn to for all their
-            medical needs, knowing that they will receive care that is not only effective but also compassionate and personalized.
-            We aspire to continuously evolve with advancements in medical technology and practices, ensuring that we remain at the
-            cutting edge of healthcare delivery. By fostering a culture of collaboration, learning, and innovation, we aim to create
-            a healthcare environment where both patients and healthcare professionals thrive, leading to better health outcomes and
-            a healthier community.
+          <div class="vision_Text">
+            <h3>Our Vision <i class="fa-solid fa-circle-check"></i></h3>
+            <p>
+            <strong>Our vision is to be a global leader in healthcare, setting the standard for excellence in patient care, medical
+            innovation, and community involvement.</strong> We are committed to pioneering advancements that redefine what is possible in the
+            field of medicine, creating a future where healthcare is not just accessible but truly inclusive for all. We envision a
+            world where every individual, regardless of their background or circumstances, receives the highest quality care, free
+            from barriers and disparities.
+            <br> <br>
+            We strive to be the healthcare provider of choice for patients and families, trusted not only for our clinical expertise
+            but also for our unwavering commitment to compassionate and personalized care. 
+            As we look to the future, we aspire to stay at the forefront of medical technology and practices, continuously evolving
+            to meet the ever-changing needs of our patients and communities. We are committed to investing in cutting-edge research
+            and development, embracing innovation to improve patient outcomes and enhance the quality of life for those we serve.
+            Our vision includes expanding our reach, making advanced healthcare services available to more people, and breaking down
+            geographical, financial, and social barriers that limit access to care.
+            </p>
+          </div>
+          <div class="vision_Img">
+            <img src="assets/images/insta_main.jpg" id="mission_img" alt="">
+          </div>
         </div>
 
 

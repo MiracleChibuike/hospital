@@ -59,9 +59,9 @@ a {
 }
 
 /* Style for main container */
-/* .main{
+.main{
   display: none;
-} */
+}
 
 .socialIconsHeader {
   display: flex;

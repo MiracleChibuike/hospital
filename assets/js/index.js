@@ -1,24 +1,24 @@
 // Loads the animation on a succesful page load
 
-// const AnimationLoad = () => {
-//   const loader = document.querySelector(".loader");
-//   var headre = document.getElementById("header");
-//   var mainDiv = document.querySelector(".main");
+const AnimationLoad = () => {
+  const loader = document.querySelector(".loader");
+  var headre = document.getElementById("header");
+  var mainDiv = document.querySelector(".main");
 
-//   // Show Loader Initially
-//   headre.style.display = "block";
+  // Show Loader Initially
+  headre.style.display = "block";
 
-//   // After 6 seconds, hide the headre and show the mainDiv
-//   setTimeout(() => {
-//     if (mainDiv.style.display = "none") {
-//         mainDiv.style.display = "block";
-//         headre.style.display = "none";
-//     }
-//   }, 12000);
-// };
+  // After 6 seconds, hide the headre and show the mainDiv
+  setTimeout(() => {
+    if (mainDiv.style.display = "none") {
+        mainDiv.style.display = "block";
+        headre.style.display = "none";
+    }
+  }, 12000);
+};
 
-// // Call the AnimationLoad function when page is ready
-// AnimationLoad();
+// Call the AnimationLoad function when page is ready
+AnimationLoad();
 
 
   // Prevent Image dragging
@@ -128,6 +128,10 @@ const load_Department_Page = (e) => {
 //   load_Department_Page();
 //   console.log(re_Direct_Departments)
 // }) 
+
+const load_AboutPage = () => {
+  window.location.href = "About.html"
+}
 
 // VALIDATE THE SERCH ICON TO SHOW THE SEARCH INPUT -- (Desktop)
 const search = document.querySelector(".getData");
