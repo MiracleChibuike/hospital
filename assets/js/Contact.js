@@ -1,20 +1,18 @@
-
 var about_home_logo = document.getElementById("logo-home");
 const go_To_Home = () => {
-    window.location.href = "Index.html"
-}
+  window.location.href = "Index.html";
+};
 
 about_home_logo.addEventListener("click", (e) => {
-    go_To_Home();
+  go_To_Home();
 });
 
 const load_HomePage = () => {
   window.location.href = "Index.html";
   console.log(home_El);
 };
-
-const load_ContactPage = () => {
-  window.location.href = "Contact_Us.html";
+const load_AboutPage = () => {
+  window.location.href = "About.html";
 };
 
 var re_Direct_Departments = document.getElementById("departments_load");
@@ -24,6 +22,33 @@ const load_Department_Page = (e) => {
   console.log(re_Direct_Departments);
   window.location.href = "Departments.html";
 };
+// Contact Us Scripts
+
+const form_Contact = document.getElementById("Contact_form_handler");
+
+form_Contact.addEventListener("submit", (e) => {
+    e.preventDefault();
+})
+let notice_container = document.querySelector(".notice_message");
+let notice_toggle = document.getElementById("notice");
+
+notice_toggle.addEventListener("click", () => {
+    if ((notice_container.style.display = "none")) {
+      notice_container.style.display = "block";
+      notice_container.classList.add("notice_Animate");
+    }
+});
+
+const close_Notice_Message = document.getElementById("close_notice");
+
+close_Notice_Message.addEventListener("click", () => {
+    notice_container.style.display = "none"
+})
+
+
+
+
+
 
 // Prevent Image dragging
 
@@ -201,7 +226,7 @@ var inputSearchMedia = document.getElementById("search-input-media");
 
 // Function to highlight the search term
 const highlightSearchTerm = (searchTerm) => {
-  const elements = document.querySelectorAll("p, h1, h2, h3, button");
+  const elements = document.querySelectorAll("p, h1, h2, h3, button, span");
   const regex = new RegExp(`(${searchTerm})`, "gi");
 
   elements.forEach((element) => {

@@ -7,7 +7,7 @@
     <!-- Description -->
     <meta name="description"
         content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
-    <title>Read More About Us || C-Health</title>
+    <title>Get In touch with Us || C-Health</title>
     <!-- Keywords -->
     <meta name="keywords"
         content="medical care, hospital access, appointment booking, healthcare, online medical services, patient care">
@@ -51,74 +51,238 @@
             --error-message: rgb(126, 23, 23);
         }
 
-        #About {
-            margin: 80px 0 0 0;
+        #Contact_Us {
+            margin: 19px 0 0 0;
             padding: 20px 0;
         }
-        .about_Header{
-             text-align: center;
-            margin: 10px 5px;
-        }
-        #About h2{
-            font-size: 2.5rem;
+
+        .contact_hero {
+            background: linear-gradient(rgba(115, 115, 157, 0.5), rgb(115, 115, 157, 0.5)),
+                url(./assets/images/insta_4.jpg) no-repeat center center/cover;
+            padding: 150px 30px;
         }
 
-        .main {
-            display: block;
+        .hero_Text {
+            text-align: center;
+            color: var(--clr-white-main);
+            position: relative;
+            bottom: 20px;
         }
-       /* #about_img_Center{
-        width: 100%;
-       } */
-        .comprehensive_div p, .vision p{
-            font-size: 16px;
+
+        .hero_Text h2 {
+            font-size: 2.5rem;
+            margin: 10px 0;
         }
-        .missionDiv, .comprehensive_div, .vision{
-            margin: 50px 0;
+
+        .contact_routes {
             display: flex;
             justify-content: space-evenly;
-           padding: 10px;
-           /* height: 500px; */
+            margin: 45px 15px;
         }
-        .mission_Texts p{
+
+
+        .contact_init,
+        .contact_return {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 45px 0;
+            gap: 20px;
+        }
+
+        .phone i,
+        .email i,
+        .address i,
+        .instagram i {
+            background: var(--clr-hospital);
+            color: var(--clr-white-secondary);
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 7px;
+        }
+
+        .phone span,
+        .email span,
+        .address span,
+        .instagram span {
+            padding: 0 10px;
+            position: relative;
+            bottom: 10px;
+        }
+
+        .phone p,
+        .email p,
+        .address p,
+        .instagram p {
+            position: relative;
+            left: 50px;
+            width: 200px;
+            bottom: 15px;
+        }
+
+        .contact_form {
+            background: var(--clr-darkGray);
+            border-radius: 10px;
+            box-shadow: 0 0 2px var(--clr-hospital-deep);
+            padding: 10px;
+        }
+
+        .form_Names,
+        .formActions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form_Names input,
+        .formActions input {
+            padding: 10px 10px;
+            margin: 15px 15px;
+            background: transparent;
+            border: 1px solid var(--clr-dark-main);
+            outline: none;
+            border-radius: 4px;
             font-size: 16px;
         }
-        .mission_Texts i, .comprehensive_Text i, .vision_Text i {
-            color: var(--clr-hospital);
+
+        #notice {
+            position: relative;
+            left: 20px;
+            bottom: 65px;
+            color: var(--clr-hospital-deep);
+            cursor: pointer;
         }
-        .missionDiv > div, .comprehensive_div > div, .vision > div{
-            margin: 0 25px;
+
+        .notice_message {
+            background: var(--clr-semi-dark);
+            color: var(--clr-white-main);
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            position: absolute;
+            margin: 0 130px 0 1px;
+            bottom: 57%;
+            display: none;
         }
-        .missionDiv h3, .comprehensive_div h3, .vision h3{
-            font-size: 1.5rem;
+
+        .notice_message button {
+            padding: 8px;
+            border: none;
+            background: var(--clr-dark-blue);
+            color: var(--clr-white-main);
+            border-radius: 5px;
             margin: 10px 0;
-            /* border-left: 5px solid var(--clr-hospital-deep); */
-            padding: 2px 10px;
+            cursor: pointer;
+
         }
-        #mission_img{
-            border-radius: 10px;
-            box-shadow: 0 0 2px var(--clr-dark-main);
+
+        ::placeholder {
+            font-size: 13px;
         }
-        @media (min-width: 0px) and (max-width: 750px) {
-            .missionDiv, .comprehensive_div, .vision{
+
+        #user_Message {
+            padding: 9px 10px;
+            margin: 15px 15px;
+            background: transparent;
+            border: 1px solid var(--clr-dark-main);
+            outline: none;
+            border-radius: 4px;
+            width: 95%;
+        }
+
+        .send {
+            margin: 20px;
+        }
+
+        .send button {
+            width: 100%;
+            background: var(--clr-hospital);
+            border: none;
+            color: var(--clr-white-main);
+            padding: 12px 0;
+            border-radius: 4px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .send button:hover {
+            background: var(--clr-hospital-deep);
+            transition: .3s;
+        }
+        .notice_Animate{
+            animation: animate_Notice 0.5s ease-in-out;
+            transition: .5s;
+        }
+        @keyframes animate_Notice {
+            0% {
+    opacity: 0;
+    filter: brightness(0%);
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(90%);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(90%);
+    transform: scale(1);
+  }
+        }
+        .map_headre{
+            margin: 25px 65px;
+        }
+        .Map{
+            text-align: center;
+        }
+    #Map{
+        width: 90%;
+        border-radius: 10px;
+    }
+    #Map{
+        border: none;
+    }
+
+
+
+        @media (min-width: 0) and (max-width: 750px) {
+            .contact_routes {
+                display: block;
+                margin: 45px 15px;
+            }
+
+            .contact_init,
+            .contact_return {
+                display: block;
+                margin: 10px;
+            }
+
+            .form_Names,
+            .formActions {
                 display: block;
             }
-        .missionDiv > div, .comprehensive_div > div, .vision > div{
-            margin: 10px;
-        }
-        #mission_img{
-            width: 100%;
-        }
-        }
-           @media (min-width: 750px) and (max-width: 1024px) {
-            .missionDiv, .comprehensive_div, .vision{
-                display: block;
+
+            .form_Names input,
+            .formActions input {
+                width: 90%;
             }
-        .missionDiv > div, .comprehensive_div > div, .vision > div{
-            margin: 10px;
+
+            .notice_message {
+                bottom: 60%;
+            }
         }
-        #mission_img{
-            width: 100%;
-        }
+
+        @media (min-width: 751px) and (max-width: 1025px) {
+              .contact_routes {
+                display: block;
+                margin: 45px 15px;
+            }
+
+            .contact_init,
+            .contact_return {
+                display: flex;
+                justify-content: space-around;
+                margin: 10px;
+            }
         }
     </style>
 </head>
@@ -179,7 +343,7 @@
                     <li id="home_Contents" onclick="load_HomePage()">
                         HOME
                     </li>
-                    <li>
+                    <li onclick="load_AboutPage()">
                         ABOUT
                     </li>
                     <li id="departments_load" onclick="load_Department_Page()">
@@ -202,7 +366,7 @@
                     <li>
                         BLOG
                     </li>
-                    <li onclick="load_ContactPage()">
+                    <li>
                         CONTACT
                     </li>
                 </ul>
@@ -224,94 +388,98 @@
     <div class="inner_Contents">
 
         <!-------------------------------------------------------------
-                                 About Us SECTION
+                                 Contact Us SECTION
             --------------------------------------------------- -->
-        <section id="About">
-           <div class="about_Header">
-            <h2>About Us</h2>
-            <p>Find out what makes us the diffrent from others</p>
-           </div>
-           <!-- <div class="center_Image">
-            <img src="assets/images/about_Us_Img.jpeg" id="about_img_Center" alt="">
-           </div> -->
-            <div class="missionDiv">
-               <div class="mission_Texts">
-                <h3>Our Mission <i class="fa-solid fa-circle-check"></i></h3>
-                <p> At Capital Health, our mission is to deliver accessible, high-quality healthcare services to all
-                    individuals,
-                    irrespective of their background, socioeconomic status, or circumstances. We are steadfast in our commitment to
-                    ensuring
-                    that every patient receives compassionate and personalized care tailored to their unique needs. Our approach is
-                    deeply
-                    rooted in the belief that healthcare is not just a service but a fundamental human right. We strive to remove
-                    barriers
-                    that prevent access to quality healthcare, working tirelessly to create an inclusive environment where everyone has
-                    the
-                    opportunity to live a healthy and fulfilling life. <br> 
-                    <br>
-                    Capital Health is constantly evolving, driven by a relentless pursuit of excellence in medical care. Our dedication
-                    to
-                    continuous improvement ensures that we stay at the forefront of medical innovation, incorporating the latest
-                    research,
-                    technologies, and treatment modalities into our practice. We invest in cutting-edge equipment and ongoing
-                    professional
-                    development for our staff, enabling us to offer the most effective and up-to-date care possible.
-                </p>
-               </div>
-               <div class="Mission_Img">
-                <img src="assets/images/about_Us_Img.jpeg" id="mission_img" alt="">
-               </div>
+        <section id="Contact_Us">
+            <div class="contact_hero">
+                <div class="hero_Text">
+                    <h2 class="title">Contact Us</h2>
+                    <p>Get in touch with us for support, feedback, or general information. Whether you have questions,
+                        <br> need assistance, or want
+                        to share your thoughts, our team is here to help.
+                    </p>
+                </div>
             </div>
-        <div class="comprehensive_div">
-            <div class="comprehensive_Img">
-                <img src="assets/images/insta_2.jpeg" id="mission_img" alt="">
+            <div class="contact_routes">
+                <div class="contact_handles">
+                    <div class="contact_handleText">
+                        <h2 class="title_Text">Get In Touch</h2>
+                        <p>We’d love to hear from you. Reach out with any questions or inquiries!"</p>
+                        <div class="contact_init">
+                            <div class="phone">
+                                <i class="fa-solid fa-phone"></i>
+                                <span><strong>Phone</strong></span>
+                                <p><a href="tel:+2347043382546">+234(0) 704 338 2546</a></p>
+
+                            </div>
+                            <div class="email">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span><strong>Email</strong></span>
+                                <p><a href="mailto:servicesmtechs@gmail.com">servicesmtechs@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact_return">
+                            <div class="address">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span><strong>Address</strong></span>
+                                <p>Ikenegbu extension Owerri</p>
+                            </div>
+                            <div class="instagram">
+                                <i class="fa-brands fa-square-instagram"></i>
+                                <span><strong>Instagram</strong></span>
+                                <p><a href="https://capital_Health">@Capital_Health001</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact_form">
+                    <div class="form_Body">
+                        <form id="Contact_form_handler">
+                            <div class="form_Names">
+                                <div class="form_email">
+                                    <input type="email" placeholder="Enter Your Email" id="userEmail">
+                                </div>
+                                <div class="form_name">
+                                    <input type="text" placeholder="Enter Your Name" id="user_Name">
+                                </div>
+                            </div>
+                            <div class="formActions">
+                                <div class="form_Number">
+                                    <input type="tel" id="userPhone" placeholder="Enter Your Phone">
+                                </div>
+                                <div class="form_Age">
+                                    <input type="number" placeholder="Enter your Age" id="user_Age">
+                                    <p><i class="fa-solid fa-circle-exclamation" id="notice"></i></p>
+                                    <div class="notice_message">
+                                        <small>We use your age to determine the appropriate <br> response based on
+                                            government
+                                            standards, especially <br>for underage
+                                            individuals.</small>
+                                        <br>
+                                        <button id="close_notice">Understand</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_Message">
+                                <textarea rows="5" id="user_Message" placeholder="Enter Your Message"></textarea>
+                            </div>
+                            <div class="send">
+                                <button type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <p><small>* We use your age to determine the appropriate response <br> based on government standards, especially for
+                                underage individuals.</small></p> -->
+                </div>
             </div>
-           <div class="comprehensive_Text">
-            <h3>Our Values <i class="fa-solid fa-circle-check"></i></h3>
-            <p>
-                <strong>At the core of our hospital's operations are the values that guide everything we do</strong>. We believe that healthcare is not
-                just about treating illness but about caring for people as a whole. Our patient-centered approach is the foundation of
-                our practice, where each individual is treated with the utmost respect, dignity, and empathy. We understand that every
-                patient has unique needs, and we are dedicated to creating personalized care plans that reflect those needs, ensuring
-                that every experience with us is both comforting and supportive.
-                Our commitment to ethical practices ensures that we uphold the highest standards of integrity and transparency in all
-                our interactions. We hold ourselves accountable to the communities we serve, making decisions that are in the best
-                interests of our patients and their families. Honesty, trust, and fairness are not just ideals but the principles that
-                drive our daily operations.
-                <br> <br>
-                We value holistic care, recognizing that true health involves the mind, body, and spirit. We believe that healing is not
-                just a physical process but an emotional and spiritual journey as well. Our multidisciplinary approach ensures that we
-                provide comprehensive care that addresses all aspects of a patient's well-being. We offer a range of services, from
-                advanced medical treatments to emotional and psychological support, ensuring that every patient receives the care they
-                need to thrive.
-            </p>
-           </div>
-        </div>
-        <div class="vision">
-          <div class="vision_Text">
-            <h3>Our Vision <i class="fa-solid fa-circle-check"></i></h3>
-            <p>
-            <strong>Our vision is to be a global leader in healthcare, setting the standard for excellence in patient care, medical
-            innovation, and community involvement.</strong> We are committed to pioneering advancements that redefine what is possible in the
-            field of medicine, creating a future where healthcare is not just accessible but truly inclusive for all. We envision a
-            world where every individual, regardless of their background or circumstances, receives the highest quality care, free
-            from barriers and disparities.
-            <br> <br>
-            We strive to be the healthcare provider of choice for patients and families, trusted not only for our clinical expertise
-            but also for our unwavering commitment to compassionate and personalized care. 
-            As we look to the future, we aspire to stay at the forefront of medical technology and practices, continuously evolving
-            to meet the ever-changing needs of our patients and communities. We are committed to investing in cutting-edge research
-            and development, embracing innovation to improve patient outcomes and enhance the quality of life for those we serve.
-            Our vision includes expanding our reach, making advanced healthcare services available to more people, and breaking down
-            geographical, financial, and social barriers that limit access to care.
-            </p>
-          </div>
-          <div class="vision_Img">
-            <img src="assets/images/insta_main.jpg" id="mission_img" alt="">
-          </div>
-        </div>
 
-
+            <!-- Our Map -->
+             <div class="Map" >
+                <iframe id="Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31771.760863061198!2d7.047900712927754!3d5.496984665552462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10425840f781e335%3A0xbe83d6748072c601!2sIkenegbu%2C%20Owerri%2C%20Imo!5e0!3m2!1sen!2sng!4v1725630112341!5m2!1sen!2sng"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+             </div>
         </section>
 
 
@@ -406,7 +574,7 @@
 
 <!-- FA Link -->
 <script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
-<script src="assets/js/about.js"></script>
+<script src="assets/js/Contact.js"></script>
 <!-- JS Default Link -->
 </body>
 

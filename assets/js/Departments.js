@@ -10,7 +10,16 @@ const load_HomePage = () => {
 home_logo.addEventListener("click", (e) => {
     e.preventDefault();
     load_HomePage();
-})
+});
+
+// Load About Page
+const load_AboutPage = () => {
+  window.location.href = "About.html";
+};
+
+const load_ContactPage = () => {
+  window.location.href = "Contact_Us.html";
+};
 
  // Prevent Image dragging
 
