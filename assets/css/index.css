@@ -1664,7 +1664,7 @@ OUR SERVICES SEECTION
 
 
 /* Semi_Big Screens */
-@media (min-width: 751px) and (max-width: 950px) {
+@media (min-width: 751px) and (max-width: 1024px) {
   .servicesContainer{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
