@@ -1769,9 +1769,9 @@ OUR SERVICES SEECTION
 }
    .servicesContainer{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 30px 15px;
-  width: auto;
+  gap: 10px;
  }
 
   /* ************************************************
