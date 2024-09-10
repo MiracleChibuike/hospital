@@ -1664,7 +1664,7 @@ OUR SERVICES SEECTION
 
 
 /* Semi_Big Screens */
-@media (min-width: 751px) and (max-width: 1024px) {
+@media (min-width: 751px) and (max-width: 950px) {
   .servicesContainer{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1738,6 +1738,71 @@ OUR SERVICES SEECTION
 .copyRight{
   text-align: center;
 }
+}
+
+@media (min-width: 950px) and (max-width: 1024px) {
+
+  .departments_specs{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  margin: 5px 20px;
+}
+.box_Specs{
+  width: 100%;
+  text-align: center;
+  margin: 2px 0;
+}
+#img_cardiology{
+  width: 100%;
+}
+.apppointment_Container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  margin: 10px 30px;
+}
+
+   .servicesContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px 15px;
+  column-gap: auto;
+  row-gap: auto;
+ }
+
+  /* ************************************************
+       BLOGS SECTION
+   **************************************************/
+.blogs_contents{
+  display: block;
+}
+
+.blog_Texts, .blog_2_Texts{
+    height: auto;
+}
+ .comment{
+    position: relative;
+    left: 15px;
+   }
+
+   /* ************************************************************
+                            CONTACT/FOOTER SECTION
+ **************************************************************/
+.contact_Footer{
+  grid-template-columns: repeat(2, 1fr);
+}
+.Navigation_Footer{
+  margin-left: 0;
+}
+.IG_Photos{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.IG_Photos img{
+  width: 200px;
+}
+  
 }
 
 /* Css Loader */
