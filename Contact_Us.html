@@ -66,7 +66,7 @@
             text-align: center;
             color: var(--clr-white-main);
             position: relative;
-            bottom: 65px;
+            bottom: 35px;
         }
 
         .hero_Text h2 {
@@ -285,7 +285,7 @@
             }
         }
 
-        @media (min-width: 760px) and (max-width: 950px) {
+        @media (min-width: 760px) and (max-width: 1024px) {
             .contact_routes {
                 display: block;
                 margin: 45px 15px;
@@ -297,10 +297,29 @@
                 justify-content: space-around;
                 margin: 10px;
             }
+              /* .contact_init,
+            .contact_return {
+                display: block;
+                margin: 10px;
+            } */
 
             .notice_message {
                 bottom: 65%;
             }
+
+            .contact_Footer{
+  grid-template-columns: repeat(2, 1fr);
+}
+.Navigation_Footer{
+  margin-left: 0;
+}
+.IG_Photos{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.IG_Photos img{
+  width: 200px;
+}
         }
     </style>
 </head>
