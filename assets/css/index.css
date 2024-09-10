@@ -1762,13 +1762,16 @@ OUR SERVICES SEECTION
   column-gap: 30px;
   margin: 10px 30px;
 }
-
+ #Book_appointment_Image{
+  position: relative;
+  bottom: 100px;
+  left: -20px;
+}
    .servicesContainer{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   margin: 30px 15px;
-  column-gap: auto;
-  row-gap: auto;
+  width: auto;
  }
 
   /* ************************************************
