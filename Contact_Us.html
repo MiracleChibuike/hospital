@@ -66,7 +66,7 @@
             text-align: center;
             color: var(--clr-white-main);
             position: relative;
-            bottom: 20px;
+            bottom: 65px;
         }
 
         .hero_Text h2 {
@@ -143,6 +143,12 @@
             font-size: 16px;
         }
 
+        #user_Name:focus, #userEmail:focus, #userPhone:focus, #user_Age:focus, #user_Message:focus{
+              box-shadow: 0 0 2px var(--clr-hospital);
+            border: 1px solid var(--clr-hospital);
+            transition: .2s;
+            cursor: pointer;
+        }
         #notice {
             position: relative;
             left: 20px;
@@ -207,40 +213,48 @@
             background: var(--clr-hospital-deep);
             transition: .3s;
         }
-        .notice_Animate{
+
+        .notice_Animate {
             animation: animate_Notice 0.5s ease-in-out;
             transition: .5s;
         }
+
         @keyframes animate_Notice {
             0% {
-    opacity: 0;
-    filter: brightness(0%);
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-    filter: brightness(90%);
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(90%);
-    transform: scale(1);
-  }
+                opacity: 0;
+                filter: brightness(0%);
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                filter: brightness(90%);
+                transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                filter: brightness(90%);
+                transform: scale(1);
+            }
         }
-        .map_headre{
+
+        .map_headre {
             margin: 25px 65px;
         }
-        .Map{
+
+        .Map {
             text-align: center;
         }
-    #Map{
-        width: 90%;
-        border-radius: 10px;
-    }
-    #Map{
-        border: none;
-    }
+
+        #Map {
+            width: 90%;
+            border-radius: 10px;
+        }
+
+        #Map {
+            border: none;
+        }
 
 
 
@@ -271,8 +285,8 @@
             }
         }
 
-        @media (min-width: 751px) and (max-width: 1025px) {
-              .contact_routes {
+        @media (min-width: 760px) and (max-width: 950px) {
+            .contact_routes {
                 display: block;
                 margin: 45px 15px;
             }
@@ -282,6 +296,10 @@
                 display: flex;
                 justify-content: space-around;
                 margin: 10px;
+            }
+
+            .notice_message {
+                bottom: 65%;
             }
         }
     </style>
@@ -415,7 +433,7 @@
                             <div class="email">
                                 <i class="fa-solid fa-envelope"></i>
                                 <span><strong>Email</strong></span>
-                                <p><a href="mailto:servicesmtechs@gmail.com">servicesmtechs@gmail.com</a></p>
+                                <p><a href="mailto:servicesmtechs@gmail.com">C-Health@Healthcare.com</a></p>
                             </div>
                         </div>
                         <div class="contact_return">
@@ -474,12 +492,12 @@
             </div>
 
             <!-- Our Map -->
-             <div class="Map" >
+            <div class="Map">
                 <iframe id="Map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31771.760863061198!2d7.047900712927754!3d5.496984665552462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10425840f781e335%3A0xbe83d6748072c601!2sIkenegbu%2C%20Owerri%2C%20Imo!5e0!3m2!1sen!2sng!4v1725630112341!5m2!1sen!2sng"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
-             </div>
+            </div>
         </section>
 
 
