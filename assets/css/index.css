@@ -1664,7 +1664,7 @@ OUR SERVICES SEECTION
 
 
 /* Semi_Big Screens */
-@media (min-width: 751px) and (max-width: 950px) {
+@media screen and (max-width: 820px) and (min-width: 768px) {
   .servicesContainer{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1740,7 +1740,7 @@ OUR SERVICES SEECTION
 }
 }
 
-@media (min-width: 950px) and (max-width: 1024px) {
+@media screen and (min-width: 950px) and (max-width: 1024px) {
   .departments_specs{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1756,15 +1756,23 @@ OUR SERVICES SEECTION
   width: 100%;
 }
 .apppointment_Container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 30px;
+  display: flex;
+  justify-content: space-evenly;
   margin: 10px 30px;
+  position: relative;
+  bottom: 50px;
+}
+.appointment_img{
+  /* background: var(--clr-dark-main); */
+  width: 280px;
+  position: relative;
+  top: 50px;
 }
  #Book_appointment_Image{
   position: relative;
   /* bottom: 100px; */
   left: -50px;
+  max-width: 310px;
 }
    .servicesContainer{
   display: grid;
@@ -1774,6 +1782,12 @@ OUR SERVICES SEECTION
   row-gap: 10px;
  }
 
+ .first_Row, .Second_Row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 40px 15px;
+  column-gap: 15px;
+}
   /* ************************************************
        BLOGS SECTION
    **************************************************/
