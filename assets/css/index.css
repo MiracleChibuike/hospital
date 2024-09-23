@@ -252,7 +252,7 @@ a {
   display: none;
 }
 .drops {
-  width: 200px;
+  width: 250px;
   background: var(--clr-dark-main);
   color: var(--clr-white-main);
   border-radius: 4px;
@@ -262,6 +262,7 @@ a {
   display: none;
   z-index: 100;
   animation: drops 2s linear;
+  box-shadow: 0 0 5px var(--clr-hospital-deep);
 }
 @keyframes drops {
   0%{
@@ -1115,10 +1116,11 @@ OUR SERVICES SEECTION
   }
   #logo-home {
     display: block;
-    width: 80px;
+    width: 75px;
     position: relative;
     bottom: 20px;
-    left: -25px;
+    left: -20px;
+    cursor: pointer;
   }
   .nav-links {
     display: none;
@@ -1215,7 +1217,7 @@ OUR SERVICES SEECTION
     position: relative;
     top: 0px;
     /* background: transparent; */
-    width: 200px;
+    width: 250px;
     left: 1px;
     z-index: 100;
   }
@@ -1430,7 +1432,7 @@ OUR SERVICES SEECTION
     display: block;
     width: 100px;
     position: relative;
-    bottom: 35px;
+    bottom: 20px;
     /* left: -15px; */
   }
 
