@@ -137,6 +137,11 @@ const load_ContactPage = () => {
   window.location.href = "Contact_Us.html"
 }
 
+// Load the Appointment page
+const preview_Appointment = () => {
+  window.location.href = "Appointment.html"
+}
+
 // VALIDATE THE SERCH ICON TO SHOW THE SEARCH INPUT -- (Desktop)
 const search = document.querySelector(".getData");
 var search_Container = document.querySelector(".search-container-Desktop");
@@ -252,10 +257,13 @@ const performSearch = () => {
         `We cannot find "${searchTerm}" now. You can try searching a different keyword`
       );
     } else {
+      // alert` Found ${found} words based on your search`
+      // console.log(found.length);
       highlightSearchTerm(searchTerm);
     }
     inputSearchMedia.value = "";
   }
+  
 };
 
 // Calling the search function when user presses Enter

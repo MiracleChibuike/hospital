@@ -25,6 +25,11 @@ const load_Department_Page = (e) => {
   window.location.href = "Departments.html";
 };
 
+// Load the Appointment page
+const preview_Appointment = () => {
+  window.location.href = "Appointment.html"
+}
+
 // Prevent Image dragging
 
 document.querySelectorAll("img").forEach((img) => {

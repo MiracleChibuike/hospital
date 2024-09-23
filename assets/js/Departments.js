@@ -21,6 +21,11 @@ const load_ContactPage = () => {
   window.location.href = "Contact_Us.html";
 };
 
+// Load the Appointment page
+const preview_Appointment = () => {
+  window.location.href = "Appointment.html"
+}
+
  // Prevent Image dragging
 
     document.querySelectorAll("img").forEach((img) => {

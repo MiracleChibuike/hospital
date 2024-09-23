@@ -1,60 +1,37 @@
-var about_home_logo = document.getElementById("logo-home");
-const go_To_Home = () => {
+var home_El = document.getElementById("home_Contents");
+const home_logo = document.getElementById("logo-home");
+var department_El = document.getElementById("departments_El");
+var home_now = document.getElementById("Pages");
+const load_HomePage = () => {
+    console.log(home_now);
+    home_El.style.color = "var(--clr-dark-main)";
   window.location.href = "Index.html";
+  
 };
 
-about_home_logo.addEventListener("click", (e) => {
-  go_To_Home();
+
+
+home_logo.addEventListener("click", (e) => {
+  e.preventDefault();
+  load_HomePage();
 });
 
-const load_HomePage = () => {
-  window.location.href = "Index.html";
-  console.log(home_El);
-};
+// Load About Page
 const load_AboutPage = () => {
   window.location.href = "About.html";
+};
+
+const load_ContactPage = () => {
+  window.location.href = "Contact_Us.html";
 };
 
 var re_Direct_Departments = document.getElementById("departments_load");
 
 const load_Department_Page = (e) => {
   console.log(re_Direct_Departments);
+  re_Direct_Departments.style.color = "yellow"
   window.location.href = "Departments.html";
 };
-
-// Load the Appointment page
-const preview_Appointment = () => {
-  window.location.href = "Appointment.html"
-}
-
-
-// Contact Us Scripts
-
-const form_Contact = document.getElementById("Contact_form_handler");
-
-form_Contact.addEventListener("submit", (e) => {
-    e.preventDefault();
-})
-let notice_container = document.querySelector(".notice_message");
-let notice_toggle = document.getElementById("notice");
-
-notice_toggle.addEventListener("click", () => {
-    if ((notice_container.style.display = "none")) {
-      notice_container.style.display = "block";
-      notice_container.classList.add("notice_Animate");
-    }
-});
-
-const close_Notice_Message = document.getElementById("close_notice");
-
-close_Notice_Message.addEventListener("click", () => {
-    notice_container.style.display = "none"
-})
-
-
-
-
-
 
 // Prevent Image dragging
 
@@ -110,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 var show_menu = document.getElementById("displayMenu");
 var hide_menu = document.getElementById("hide_menu");
 var nav_links = document.querySelector(".nav-links");
-let Contents_Inner = document.querySelector(".inner_Contents");
+let Contents_Inner = document.getElementById("appointment");
 
 show_menu.addEventListener("click", () => {
   if ((nav_links.style.display = "none")) {
@@ -232,7 +209,7 @@ var inputSearchMedia = document.getElementById("search-input-media");
 
 // Function to highlight the search term
 const highlightSearchTerm = (searchTerm) => {
-  const elements = document.querySelectorAll("p, h1, h2, h3, button, span");
+  const elements = document.querySelectorAll("p, h1, h2, h3, button");
   const regex = new RegExp(`(${searchTerm})`, "gi");
 
   elements.forEach((element) => {
@@ -280,3 +257,48 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
+
+// APPOINTMENT SCRIPTS
+
+
+// Show Modal
+
+let modal = document.querySelector(".modal");
+
+const modal_Show = () => {
+  if (modal.style.display = "none") {
+    modal.style.display = "block";
+    var main_Content = document.querySelector(".main");
+    // main_Content.classList.add("toogle_Body");
+    console.log(main_Content);
+  }
+  // Scroll to the top of the modal
+  modal.scrollIntoView({ behavior: "smooth" });
+};
+
+const appointment_Form = document.getElementById("appointment_form");
+
+appointment_Form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  modal_Show();
+  appointment_Form.reset();
+});
+
+// Remove the Modal
+
+const modal_button_remove = document.getElementById("remove_modal");
+const btn_Success = document.getElementById("btn_success");
+const modal_remove = () => {
+  if (modal.style.display = "block") {
+    modal.style.display = "none";
+    modal.classList.add("animate_Row2");
+  }
+}
+modal_button_remove.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal_remove()
+})
+btn_Success.addEventListener("click", () => {
+  modal_remove();
+})
