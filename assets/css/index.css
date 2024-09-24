@@ -209,7 +209,7 @@ a {
   /* font-weight: bold; */
 }
 .nav-links ul li:hover {
-  border-bottom: 2px solid var(--clr-white-secondary);
+  border-bottom: 2px solid var(--clr-white-default);
   transition: 0.2s;
   /* transform: scale(1.0, 1.2); */
 }
