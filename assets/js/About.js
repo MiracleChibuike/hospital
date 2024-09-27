@@ -1,4 +1,21 @@
 
+// Append a border to the About Text
+
+// addBorder;
+let About_Active = document.getElementById("About_El");
+
+const addBorder = () => {
+  if (About_Active) {
+    About_Active.classList.add("addBorder");
+  }else{
+    About_Active.classList.remove("addBorder");
+  }
+}
+
+addBorder();
+
+
+
 var about_home_logo = document.getElementById("logo-home");
 const go_To_Home = () => {
     window.location.href = "Index.html"
@@ -20,9 +37,12 @@ const load_ContactPage = () => {
 var re_Direct_Departments = document.getElementById("departments_load");
 
 const load_Department_Page = (e) => {
-  re_Direct_Departments.style.color = "red";
   console.log(re_Direct_Departments);
   window.location.href = "Departments.html";
+};
+
+const load_BlogPage = () => {
+  window.location.href = "Blog.html";
 };
 
 // Load the Appointment page

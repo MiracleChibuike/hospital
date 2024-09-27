@@ -1,10 +1,32 @@
 
+
+// Append a border to the Department Text
+
+// addBorder;
+let Dept_Active = document.getElementById("departments_El");
+
+const addBorder = () => {
+  if (Dept_Active) {
+    Dept_Active.classList.add("addBorder");
+  }else{
+    Dept_Active.classList.remove("addBorder");
+  }
+}
+
+addBorder();
+
+
+
 var home_El = document.getElementById("home_Contents");
 const home_logo = document.getElementById("logo-home");
 var department_El = document.getElementById("departments_El");
 const load_HomePage = () => {
     window.location.href = "Index.html";
     console.log(home_El)
+};
+
+const load_BlogPage = () => {
+  window.location.href = "Blog.html";
 };
 
 home_logo.addEventListener("click", (e) => {
