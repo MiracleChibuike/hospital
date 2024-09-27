@@ -112,14 +112,30 @@ pages.addEventListener("click", () => {
   }
 });
 
+// Append a border to the Home Text
+
+// addBorder;
+let home_Active = document.getElementById("home_Contents");
+
+const addBorder = () => {
+  if (home_Active) {
+    home_Active.classList.add("addBorder");
+  }else{
+    home_Active.classList.remove("addBorder");
+  }
+}
+
+addBorder();
+
 // Load all pages as according to the user-clicks(Page-redirect);
 
-
+const load_BlogPage = () => {
+  window.location.href = "Blog.html"
+}
 
 var re_Direct_Departments = document.getElementById("departments_load");
 
 const load_Department_Page = (e) => {
-  re_Direct_Departments.style.color = "red"
   console.log(re_Direct_Departments)
     window.location.href = "Departments.html";
 };

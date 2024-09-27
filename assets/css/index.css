@@ -140,6 +140,10 @@ a {
   position: relative;
   top: 80px;
 }
+
+.addBorder{
+  border-bottom: 2px solid var(--clr-white-default);
+}
 /* Header */
 #headre-background {
   width: 100%;
