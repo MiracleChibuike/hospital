@@ -1,13 +1,14 @@
-// Append a border to the Contact Text
+
+// Append a border to the Blog Text
 
 // addBorder;
-let Contact_Active = document.getElementById("contact_El");
+let Blogs_Active = document.getElementById("Blogs_El");
 
 const addBorder = () => {
-  if (Contact_Active) {
-    Contact_Active.classList.add("addBorder");
+  if (Blogs_Active) {
+    Blogs_Active.classList.add("addBorder");
   } else {
-    Contact_Active.classList.remove("addBorder");
+    Blogs_Active.classList.remove("addBorder");
   }
 };
 
@@ -37,10 +38,9 @@ const load_Department_Page = (e) => {
   window.location.href = "Departments.html";
 };
 
-const load_BlogPage = () => {
-  window.location.href = "Blog.html";
+const load_ContactPage = () => {
+  window.location.href = "Contact_Us.html";
 };
-
 // Load the Appointment page
 const preview_Appointment = () => {
   window.location.href = "Appointment.html";
@@ -48,26 +48,26 @@ const preview_Appointment = () => {
 
 // Contact Us Scripts
 
-const form_Contact = document.getElementById("Contact_form_handler");
+// const form_Contact = document.getElementById("Contact_form_handler");
 
-form_Contact.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-let notice_container = document.querySelector(".notice_message");
-let notice_toggle = document.getElementById("notice");
+// form_Contact.addEventListener("submit", (e) => {
+//   e.preventDefault();
+// });
+// let notice_container = document.querySelector(".notice_message");
+// let notice_toggle = document.getElementById("notice");
 
-notice_toggle.addEventListener("click", () => {
-  if ((notice_container.style.display = "none")) {
-    notice_container.style.display = "block";
-    notice_container.classList.add("notice_Animate");
-  }
-});
+// notice_toggle.addEventListener("click", () => {
+//   if ((notice_container.style.display = "none")) {
+//     notice_container.style.display = "block";
+//     notice_container.classList.add("notice_Animate");
+//   }
+// });
 
-const close_Notice_Message = document.getElementById("close_notice");
+// const close_Notice_Message = document.getElementById("close_notice");
 
-close_Notice_Message.addEventListener("click", () => {
-  notice_container.style.display = "none";
-});
+// close_Notice_Message.addEventListener("click", () => {
+//   notice_container.style.display = "none";
+// });
 
 // Prevent Image dragging
 

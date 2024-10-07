@@ -1,10 +1,12 @@
+
+
+
 var home_El = document.getElementById("home_Contents");
 const home_logo = document.getElementById("logo-home");
 var department_El = document.getElementById("departments_El");
 var home_now = document.getElementById("Pages");
 const load_HomePage = () => {
     console.log(home_now);
-    home_El.style.color = "var(--clr-dark-main)";
   window.location.href = "Index.html";
   
 };
@@ -31,6 +33,10 @@ const load_Department_Page = (e) => {
   console.log(re_Direct_Departments);
   re_Direct_Departments.style.color = "yellow"
   window.location.href = "Departments.html";
+};
+
+const load_BlogPage = () => {
+  window.location.href = "Blog.html";
 };
 
 // Prevent Image dragging
