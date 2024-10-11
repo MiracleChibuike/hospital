@@ -143,6 +143,7 @@ a {
 
 .addBorder{
   border-bottom: 2px solid var(--clr-white-default);
+  font-weight: bold;
 }
 /* Header */
 #headre-background {
