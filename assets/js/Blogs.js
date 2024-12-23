@@ -46,6 +46,11 @@ const preview_Appointment = () => {
   window.location.href = "Appointment.html";
 };
 
+let logIn_Text = document.getElementById("log_In");
+const load_LoginPage = () => {
+  window.location.href = "Login.html";
+};
+
 // Contact Us Scripts
 
 // const form_Contact = document.getElementById("Contact_form_handler");
@@ -126,20 +131,25 @@ var nav_links = document.querySelector(".nav-links");
 let Contents_Inner = document.querySelector(".inner_Contents");
 
 show_menu.addEventListener("click", () => {
-  if ((nav_links.style.display = "none")) {
-    nav_links.style.display = "block";
-    Contents_Inner.classList.add("animate_Background");
-    hide_menu.style.display = "block";
-    show_menu.style.display = "none";
-  }
+  nav_links.classList.toggle("show");
+  Contents_Inner.classList.toggle("animate_Background");
+  hide_menu.classList.toggle("show");
+  show_menu.classList.toggle("hide");
 });
 
 hide_menu.addEventListener("click", () => {
-  if ((nav_links.style.display = "block")) {
-    nav_links.style.display = "none";
+  nav_links.classList.toggle("show");
+  Contents_Inner.classList.toggle("animate_Background");
+  hide_menu.classList.toggle("show");
+  show_menu.classList.toggle("hide");
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target !== nav_links && e.target !== show_menu) {
+    nav_links.classList.remove("show");
     Contents_Inner.classList.remove("animate_Background");
-    hide_menu.style.display = "none";
-    show_menu.style.display = "block";
+    hide_menu.classList.remove("show");
+    show_menu.classList.remove("hide");
   }
 });
 

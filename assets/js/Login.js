@@ -1,28 +1,33 @@
-
-// Append a border to the About Text
+// Append a border to the Log In Text
 
 // addBorder;
-let About_Active = document.getElementById("About_El");
+let Login_Active = document.getElementById("log_In");
 
 const addBorder = () => {
-  if (About_Active) {
-    About_Active.classList.add("addBorder");
-  }else{
-    About_Active.classList.remove("addBorder");
+  if (Login_Active) {
+    Login_Active.classList.add("addBorder");
+  } else {
+    Login_Active.classList.remove("addBorder");
   }
-}
+};
 
 addBorder();
 
+// Redirect to Sign Up page
+let signUpText = document.getElementById("return_signUp");
+const load_SignUpPage = () => {
+  window.location.href = "Register.html"
+};
 
+signUpText.addEventListener("click", load_SignUpPage)
 
 var about_home_logo = document.getElementById("logo-home");
 const go_To_Home = () => {
-    window.location.href = "Index.html"
-}
+  window.location.href = "Index.html";
+};
 
 about_home_logo.addEventListener("click", (e) => {
-    go_To_Home();
+  go_To_Home();
 });
 
 const load_HomePage = () => {
@@ -41,18 +46,17 @@ const load_Department_Page = (e) => {
   window.location.href = "Departments.html";
 };
 
+const load_AboutPage = () => {
+  window.location.href = "About.html";
+};
+
 const load_BlogPage = () => {
   window.location.href = "Blog.html";
 };
 
 // Load the Appointment page
 const preview_Appointment = () => {
-  window.location.href = "Appointment.html"
-}
-
-let logIn_Text = document.getElementById("log_In");
-const load_LoginPage = () => {
-  window.location.href = "Login.html";
+  window.location.href = "Appointment.html";
 };
 
 // Prevent Image dragging
@@ -284,3 +288,30 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
+// Form Controls Code
+const form = document.getElementById("form");
+
+let hide_password = document.getElementById("password_Hide");
+let show_password = document.getElementById("password_Visible");
+let password = document.getElementById("Userpassword");
+
+const showPassword = () => {
+  if (password.type === "password") {
+    password.type = "text";
+    hide_password.style.display = "none";
+    show_password.style.display = "block";
+  }
+};
+
+hide_password.addEventListener("click", showPassword);
+
+const hidePassword = () => {
+  if (password.type === "text") {
+    password.type = "password";
+    hide_password.style.display = "block";
+    show_password.style.display = "none";
+  }
+};
+
+show_password.addEventListener("click", hidePassword);

@@ -202,6 +202,9 @@ a {
     transition: 0.2s;
   }
 }
+.nav-links.show {
+  display: block;
+}
 .nav-links ul {
   display: flex;
   list-style-type: none;
@@ -221,6 +224,11 @@ a {
 .nav-links ul li a {
   color: var(--clr-white-main);
 }
+  #log_In{
+            position: relative;
+            left: 30px;
+            text-transform: uppercase;
+        }
 /* For Search Input on Desktop */
 .search-container-Desktop{
   display: none;
@@ -1172,6 +1180,11 @@ OUR SERVICES SEECTION
   .nav-links ul li a{
     font-size: 18px;
   }
+     #log_In{
+            position: relative;
+            left: 0;
+            text-transform: uppercase;
+        }
   /* Apt Button on Mobile */
   .apt_mobile{
     display: block;
