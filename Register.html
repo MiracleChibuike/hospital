@@ -7,7 +7,7 @@
     <!-- Description -->
     <meta name="description"
         content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
-    <title>Book Appointment || C-Health</title>
+    <title>Create an Account || C-Health</title>
     <!-- Keywords -->
     <meta name="keywords"
         content="medical care, hospital access, appointment booking, healthcare, online medical services, patient care">
@@ -42,33 +42,191 @@
             --clr-white-secondary: #f1f1f1;
             --clr-dark-blue: #46c1ba;
             --clr-hospital: #0bb0b2;
+            --clr-login_Message: #747776;
             --clr-hospital-deep: #043637;
             --clr-white-main: #fff;
-            --clr-darkGray: rgba(230, 217, 217, 0.2);
+            --clr-darkGray: rgba(106, 104, 104, 0.2);
             --clr-dark-main: #000;
             --clr-semi-dark: rgba(0, 0, 0, 0.8);
             --clr-gray-origin: rgb(224, 218, 218);
             --error-message: rgb(126, 23, 23);
         }
-        #Book_appointment_Image{
-            position: relative;
-            top: 10px;
-        }
-        .animate_Background{
-  filter: blur(2px);
-  transition: .5s;
- }
 
- @media  (min-width: 0) and (max-width: 750px) {
-    .bookAppointment{
-        position: relative;
-        top: 70px;
-    }
-     #Book_appointment_Image{
-            position: relative;
-            top: 35px;
+        .addBorder {
+            border-bottom: 2px solid var(--clr-white-default);
+            font-weight: bold;
         }
- }
+
+        #SignUp{
+            /* display: grid;
+            place-content: center;
+            min-height: 100vh; */
+            margin: 10px 0 0 0;
+            padding: 20px 0;
+            /* background: var(--clr-hospital-deep); */
+        }
+
+        .Signup_Message {
+            text-align: center;
+            margin: 0 0 30px 0;
+            background: var(--clr-hospital);
+            color: var(--clr-semi-dark);
+            padding: 70px 0;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            width: 100%;
+        }
+
+        .Signup_Message h2 {
+            text-transform: uppercase;
+            font-weight: lighter;
+            line-height: 2;
+        }
+
+        .form_Container {
+            display: grid;
+            place-content: center;
+            margin: 10px 0;
+        }
+
+        .fullname,
+        .password, .gender, .useremail, .dob, .phone, .password_Confirm {
+            margin: 10px 0;
+        }
+
+        .fullname input,
+        .password input, .useremail input, .gender input, .dob input,
+        .phone input, .password_Confirm input {
+            background: var(--clr-darkGray);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            outline: none;
+            /* cursor: pointer; */
+        }
+        #DateOfBirth{
+            width: 92%;
+            color: var(--clr-login_Message);
+        }
+        /* input[type="date"]::placeholder {
+                                color: var(--clr-hospital);
+            } */
+
+        .password_Icons i {
+            font-size: 13px;
+            color: var(--clr-login_Message);
+            width: 20px;
+            position: relative;
+            left: 230px;
+            bottom: 32px;
+            cursor: pointer;
+        }
+
+        .password_Icons {
+            width: 40px;
+            margin: 0 0;
+        }
+
+        #password_Visible {
+            display: none;
+        }
+
+        .username input:focus,
+        .password input:focus, .fullname input:focus, .useremail input:focus,
+        .gender input:focus, .dob input:focus, .phone input:focus, 
+        .password_Confirm input:focus {
+            outline: 2px solid var(--clr-hospital);
+            transition: .2s ease-in-out;
+            box-shadow: 0 0 15px var(--clr-hospital-deep);
+            /* transform: scale(1.02); */
+        }
+
+        .fullname img,
+        .password img, .useremail img, .gender img, .dob img,
+        .phone img, .password_Confirm img {
+            position: relative;
+            left: 27px;
+            top: 3px;
+        }
+
+        .submit {
+            text-align: center;
+            /* margin: 10px 0; */
+        }
+
+        #login_button {
+            width: 93%;
+            padding: 12px 0;
+            border: none;
+            background: var(--clr-hospital);
+            color: var(--clr-white-default);
+            border-radius: 8px;
+            position: relative;
+            left: 8px;
+            cursor: pointer;
+            position: relative;
+            bottom: 10px;
+        }
+
+        #login_button:hover {
+            background: var(--clr-hospital-deep);
+            transition: .4s ease-in-out;
+            scale: 1.1;
+        }
+
+        .New_Sign {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .Sign_Up_Options{
+            margin: 20px 0 0 0;
+        }
+        #Google_log, #facebook_log{
+            width: 20px;
+            margin: 0 10px;
+        }
+        .New_Sign p {
+            color: var(--clr-hospital);
+            position: relative;
+            left: 7px;
+            cursor: pointer;
+        }
+
+        .account_Create {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        /* .account_Create p{
+            text-decoration: underline;
+        } */
+        .account_Create span {
+            color: var(--clr-hospital);
+            cursor: pointer;
+            border-bottom: 2px solid var(--clr-hospital);
+            position: relative;
+            left: 10px;
+        }
+
+        #log_In {
+            position: relative;
+            left: 30px;
+            text-transform: uppercase;
+        }
+
+        @media screen and (min-width: 0) and (max-width: 750px) {
+        
+            /* #Login {
+                margin: 50px 0 0 0;
+                padding: 20px 10px;
+            } */
+
+            #log_In {
+                position: relative;
+                left: 0;
+                text-transform: uppercase;
+            }
+        }
     </style>
 </head>
 
@@ -95,7 +253,7 @@
                     href="mailto:miraclechibuike27@gmail.com">C-Health@healthcare.com</a></span>
         </div>
         <div class="appointment-Header">
-            <a href="#appointment"><button>Appointment</button></a>
+            <button onclick="preview_Appointment()">Appointment</button>
         </div>
     </div>
     <div class="main_nav">
@@ -131,7 +289,7 @@
                     <li onclick="load_AboutPage()">
                         ABOUT
                     </li>
-                    <li onclick="load_Department_Page()" id="departments_load">
+                    <li id="departments_load" onclick="load_Department_Page()">
                         DEPARTMENTS
                     </li>
                     <li>
@@ -151,7 +309,7 @@
                     <li onclick="load_BlogPage()">
                         BLOG
                     </li>
-                    <li onclick="load_ContactPage()">
+                    <li id="contact_El" onclick="load_ContactPage()">
                         CONTACT
                     </li>
                     <li id="log_In" onclick="load_LoginPage()">
@@ -174,97 +332,85 @@
     </div>
     <!-- End Nav-Links -->
 
-    <!-- appointment Container starts here -->
-      <section id="appointment">
-        <div class="apppointment_Container">
-            <div class="bookAppointment">
-                <div class="appointment_Details">
-                    <div class="appointment_Header">
-                        <h2 class="appointmentHeadre">
-                            APPOINTMENT
-                        </h2>
-                        <p>Schedule your appointment with us today with ease</p>
-                    </div>
-                    <div class="appointment_Form">
-                        <form action="" autocomplete="on" id="appointment_form">
-                            <div class="firstDetails">
-                                <div class="AptName">
-                                    <input type="text" placeholder="Your Name" id="userNameApt" required>
-                                </div>
-                                <div class="AptPhone">
-                                    <input type="tel" placeholder="Your Phone" id="userPhoneApt" required>
-                                </div>
-                            </div>
-                            <!-- Second Details -->
-                            <div class="Second_Details">
-                                <div class="AptEmail">
-                                    <input type="email" placeholder="Your Email" id="userEmailApt" required>
-                                </div>
-                                <div class="AptDate">
-                                    <input type="date" placeholder="date" id="userDateApt" required>
-                                </div>
-                            </div>
-                            <!-- third Details -->
-                            <div class="third_Details">
-                                <div class="doctors">
-                                    <input list="Docs" placeholder="Doctors" id="Docs_Specs" required>
-                                    <datalist id="Docs">
-                                        <option value="Dr. James Edwards"></option>
-                                        <option value="Dr. Anna Gomez"></option>
-                                        <option value="Dr. Emily Rodriguez"></option>
-                                        <option value="Dr. Stephanie Ujuaku"></option>
-                                        <option value="Dr. Emmanuel Francis"></option>
-                                        <option value="Dr. Chidiebere Jane"></option>
-                                    </datalist>
-                                </div>
-                                <div class="departments">
-                                    <input list="Departments_list" placeholder="Departments" id="departments_specs"
-                                        required>
-                                    <datalist id="Departments_list">
-                                        <option value="Cardiology"></option>
-                                        <option value="Neurology"></option>
-                                        <option value="Diagnostics"></option>
-                                        <option value="Dental"></option>
-                                        <option value="Opthalmalogy"></option>
-                                        <option value="Emergency"></option>
-                                        <option value="Oncology"></option>
-                                    </datalist>
-                                </div>
-                            </div>
-                            <div class="appointmentButton">
-                                <button id="submit_Btn_Appointment" type="submit">
-                                    Book an Appointment
-                                </button>
-                            </div>
-    
-                        </form>
-                    </div>
-                </div>
-    
-            </div>
-            <div class="appointment_img">
-                <img src="assets/images/appointment-nurse-2.png" id="Book_appointment_Image"
-                    alt="Booking an appointment with us just got better">
-            </div>
-        </div>
-    </section>
+    <div class="inner_Contents">
 
-    <!-- Modal Display -->
-    <div class="modal">
-        <div class="modal_remove">
-            <i class="fa-solid fa-circle-xmark" id="remove_modal"></i>
-        </div>
-        <div class="modal_contents">
-            <div class="inner_contents">
-                <i class="fa-solid fa-circle-check" id="check_success"></i>
-                <h3>Success!</h3>
-                <div class="response">
-                    <p>Your form has been submitted. We will review your information and get back to you shortly!</p>
-                    <button id="btn_success">Continue</button>
+        <!-------------------------------------------------------------
+                                 Contact Us SECTION
+            --------------------------------------------------- -->
+        <section id="SignUp">
+            <div class="Signup_Message">
+                <h2>Sign up</h2>
+                <p>Create your account.</p>
+            </div>
+
+            <div class="form_Container">
+                <form action="" id="Sign_Up_Form">
+                    <div class="fullname">
+                        <!-- <label for="userName">Username</label> -->
+                        <img src="assets/images/login_icons/Customer.png" alt="">
+                        <input type="text" name="fullname" id="FullName" placeholder="Full name" required>
+                    </div>
+                    <div class="useremail">
+                        <img src="assets/images/login_icons/Email.png" alt="">
+                        <input type="email" name="email" id="userEmail" placeholder="Email address" required>
+                    </div>
+                    <div class="gender">
+                        <img src="assets/images/login_icons/Gender.png" alt="">
+                    <input list="genders" name="gender" id="Gender" placeholder="Gender" required>
+                    <datalist id="genders">
+                        <option value="Male">
+                        <option value="Female">
+                        <option value="Other">
+                    </datalist>
+                    </div>
+                    <div class="dob">
+                        <img src="assets/images/login_icons/Calendar.png" alt="">
+                        <input type="date" name="dob" id="DateOfBirth" placeholder="Date of Birth" required>
+                    </div>
+                    <div class="phone">
+                        <img src="assets/images/login_icons/Phone.png" alt="">
+                        <input type="tel" name="phone" id="PhoneNumber" placeholder="Phone Number" required>
+                    </div>
+                    <div class="password">
+                        <!-- <label for="Userpassword">Password</label> -->
+                        <img src="assets/images/login_icons/Password.png" alt="">
+                        <input type="password" name="password" id="Userpassword" placeholder="Password" required>
+                        <div class="password_Icons">
+                            <i class="fa-solid fa-eye-slash" id="password_Hide"></i>
+                            <i class="fa-solid fa-eye" id="password_Visible"></i>
+                        </div>
+                    </div>
+                    <div class="password_Confirm">
+                        <!-- <label for="Userpassword">Password</label> -->
+                        <img src="assets/images/login_icons/Password.png" alt="">
+                        <input type="password" name="password" id="UserpasswordConfirm" placeholder="Confirm Password" required>
+                        <div class="password_Icons">
+                            <i class="fa-solid fa-eye-slash" id="password_Hide"></i>
+                            <i class="fa-solid fa-eye" id="password_Visible"></i>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="login_button">Sign Up</button>
+                    </div>
+                </form>
+
+                <div class="New_Sign">
+                    <p>or sign up with </p>
+                   <div class="Sign_Up_Options">
+                    <img src="assets/images/login_icons/Google.png" id="Google_log" alt="">
+                    <img src="assets/images/login_icons/Facebook.png" id="facebook_log" alt="">
+                   </div>
+                </div>
+
+                <div class="account_Create">
+                    <p>Already have an account? <span id="return_LogIn">Log In</span></p>
                 </div>
             </div>
+        </section>
+
+        <div class="apt_mobile">
+            <i class="fa-solid fa-calendar-check fa-beat" id="apt_button_Mobile" onclick="preview_Appointment()"></i>
         </div>
-    </div>
 
 
         <!-------------------------------------------------------------
@@ -358,7 +504,7 @@
 
 <!-- FA Link -->
 <script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
-<script src="assets/js/appointment.js"></script>
+<script src="assets/js/Register.js"></script>
 <!-- JS Default Link -->
 </body>
 
