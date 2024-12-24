@@ -7,7 +7,7 @@
     <!-- Description -->
     <meta name="description"
         content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
-    <title>Create an Account || C-Health</title>
+    <title>Welcome || C-Health</title>
     <!-- Keywords -->
     <meta name="keywords"
         content="medical care, hospital access, appointment booking, healthcare, online medical services, patient care">
@@ -57,209 +57,102 @@
             font-weight: bold;
         }
 
-        #SignUp{
-            /* display: grid;
-            place-content: center;
-            min-height: 100vh; */
+        #Welcome {
             margin: 10px 0 0 0;
             padding: 20px 0;
+        }
+
+        /* .top_background{ */
+            /* width: 100%;
+            background: var(--clr-dark-blue);
+            height: 200px; */
+            /* border-radius: 0 50% 70% 40%; */
+
+        /* } */
+
+        .welcomeIllustration {
+            margin: 1px 0 0 0;
+            position: relative;
+            bottom: 100px;
             /* background: var(--clr-hospital-deep); */
-        }
-
-        .Signup_Message {
-            text-align: center;
-            margin: 0 0 30px 0;
-            background: var(--clr-hospital);
-            color: var(--clr-semi-dark);
-            padding: 70px 0;
-            border-bottom-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            width: 100%;
-        }
-
-        .Signup_Message h2 {
-            text-transform: uppercase;
-            font-weight: lighter;
-            line-height: 2;
-        }
-
-        .form_Container {
             display: grid;
             place-content: center;
-            margin: 10px 0;
         }
-
-        .fullname,
-        .password, .gender, .useremail, .dob, .phone, .password_Confirm {
-            margin: 10px 0;
-        }
-
-        .fullname input,
-        .password input, .useremail input, .gender input, .dob input,
-        .phone input, .password_Confirm input {
-            background: var(--clr-darkGray);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 12px;
-            outline: none;
-            /* cursor: pointer; */
-        }
-        #DateOfBirth{
-            width: 92%;
-            color: var(--clr-login_Message);
-        }
-        /* input[type="date"]::placeholder {
-                                color: var(--clr-hospital);
-            } */
-
-        .password_Icons i {
-            font-size: 13px;
-            color: var(--clr-login_Message);
-            width: 20px;
+        #f_doctor{
             position: relative;
-            left: 240px;
-            bottom: 32px;
-            cursor: pointer;
+            left: -220px;
+            top: 20px;
         }
-
-        .password_Icons {
-            width: 40px;
-            margin: 0 0;
-        }
-
-        #password_Visible, #password_Visible2 {
-            display: none;
-        }
-
-        .username input:focus,
-        .password input:focus, .fullname input:focus, .useremail input:focus,
-        .gender input:focus, .dob input:focus, .phone input:focus, 
-        .password_Confirm input:focus {
-            outline: 2px solid var(--clr-hospital);
-            transition: .2s ease-in-out;
-            box-shadow: 0 0 15px var(--clr-hospital-deep);
-            /* transform: scale(1.02); */
-        }
-
-        .fullname img,
-        .password img, .useremail img, .gender img, .dob img,
-        .phone img, .password_Confirm img {
-            position: relative;
-            left: 27px;
-            top: 3px;
-        }
-
-        .submit {
-            text-align: center;
-            /* margin: 10px 0; */
-        }
-
-        #login_button {
-            width: 93%;
-            padding: 12px 0;
-            border: none;
-            background: var(--clr-hospital);
-            color: var(--clr-white-default);
-            border-radius: 8px;
-            position: relative;
-            left: 8px;
-            cursor: pointer;
-            position: relative;
-            bottom: 10px;
-        }
-
-        #login_button:hover {
-            background: var(--clr-hospital-deep);
-            transition: .4s ease-in-out;
-            scale: 1.1;
-        }
-
-        .New_Sign {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .Sign_Up_Options{
-            margin: 20px 0 0 0;
-        }
-        #Google_log, #facebook_log{
-            width: 20px;
-            margin: 0 10px;
-        }
-        .New_Sign p {
-            color: var(--clr-hospital);
-            position: relative;
-            left: 7px;
-            cursor: pointer;
-        }
-
-        .account_Create {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        /* .account_Create p{
-            text-decoration: underline;
-        } */
-        .account_Create span {
-            color: var(--clr-hospital);
-            cursor: pointer;
-            border-bottom: 2px solid var(--clr-hospital);
-            position: relative;
-            left: 10px;
-        }
-
-        #log_In {
-            position: relative;
-            left: 30px;
+        #Welcome_btn{
             text-transform: uppercase;
-        }
-        .modal_SignUp{
-  background: var(--clr-white-main);
-  box-shadow: 0 0 10px var(--clr-dark-main);
-  display: grid;
-  /* place-content: center; */
-  position: absolute;
-  left: 30%;
-  right: 30%;
-  top: 10%;
-  border-radius: 15px;
-   animation: showCarousel 0.5s ease-in-out;
-   z-index: 100;
-   display: none;
-
-        }
-        #val_Passwords{
-            color: var(--error-message);
-            /* font-size: 14px; */
+            padding: 15px 20px;
+            border: 1.8px solid var(--clr-hospital);
+            background: var(--clr-white-main);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--clr-hospital);
+            cursor: pointer;
+            box-shadow: 0 0 2px var(--clr-hospital);
             position: relative;
-            left: 20px;
-            bottom: 15px;
-            display: none;
-            transition: .3s ease-in-out;
+            bottom: 70px;
         }
-        #val_Passwords:focus{
-             transform: translateX(-10px);
+        #Welcome_btn:hover{
+            /* background: var(--clr-hospital-deep); */
+            /* color: var(--clr-white-main); */
+            border: 1.8px solid var(--clr-hospital);
+            box-shadow: 0 0 15px var(--clr-hospital);
+            transition: .5s ease-in-out;
+            transform: scale(1.1);
+        }
+            .illustrate_images{
+            animation: fadeIn 2s ease-in-out, slideIn 1.5s ease-in-out;
         }
 
-  
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
         @media screen and (min-width: 0) and (max-width: 750px) {
-        
-            /* #Login {
-                margin: 50px 0 0 0;
-                padding: 20px 10px;
-            } */
+           .top_background svg{
+            margin: 40px 0 0 0;
+           }
+             .welcomeIllustration {
+            margin: 20px 0 0 0;
+            position: relative;
+            bottom: 50px;
+            /* background: var(--clr-login_Message); */
+        }
 
-            #log_In {
-                position: relative;
-                left: 0;
-                text-transform: uppercase;
-            }
-            /* Modal */
-            .modal_SignUp{
-                top: 15%;
-             left: 7%;
-             right: 7%;
-            }
+        .illustrate_images{
+          position: relative;
+            /* left: 20px; */
+            /* background: var(--clr-hospital-deep); */
+            /* width: 200px; */
+
+        }
+
+        #Welcome_btn{
+            font-size: 0.9rem;
+            padding: 10px 15px;
+            position: absolute;
+            left: 70%;
+        }
+
         }
     </style>
 </head>
@@ -369,94 +262,26 @@
     <div class="inner_Contents">
 
         <!-------------------------------------------------------------
-                                 Register Account SECTION
+                                 Welcome SECTION
             --------------------------------------------------- -->
-        <section id="SignUp">
-            <div class="Signup_Message">
-                <h2>Sign up</h2>
-                <p>Create your account.</p>
+        <section id="Welcome">
+           <div class="welcome_Container">
+            <div class="top_background">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
+                    <path fill="#46c1ba" fill-opacity="1"
+                        d="M0,128L40,144C80,160,160,192,240,208C320,224,400,224,480,202.7C560,181,640,139,720,133.3C800,128,880,160,960,186.7C1040,213,1120,235,1200,245.3C1280,256,1360,256,1400,256L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+                    </path>
+                </svg>
+                <!-- <img src="assets/images/login_icons/Rectangle 12.png" id="clip_Background" alt=""> -->
             </div>
-            <!-- Modal Display for Succesful Sign Up -->
-            <div class="modal_SignUp">
-                <div class="modal_remove">
-                    <i class="fa-solid fa-circle-xmark" id="remove_modal"></i>
-                </div>
-                <div class="modal_contents">
-                    <div class="inner_contents">
-                        <i class="fa-solid fa-circle-check" id="check_success"></i>
-                        <h3>Success!</h3>
-                        <div class="response">
-                            <p>Your account has been created succesfully. You can now continue to your dashboard </p>
-                            <button id="btn_success">Continue</button>
-                        </div>
-                    </div>
+            <div class="welcomeIllustration">
+                <div class="illustrate_images">
+                                    <img src="assets/images/login_icons/building projection.png" id="Projection" alt="">
+                <img src="assets/images/login_icons/female doctor with clipboard.png" id="f_doctor" alt="">
+                    <button id="Welcome_btn">Welcome</button>
                 </div>
             </div>
-            <div class="form_Container">
-                <form action="" id="Sign_Up_Form">
-                    <div class="fullname">
-                        <!-- <label for="userName">Username</label> -->
-                        <img src="assets/images/login_icons/Customer.png" alt="">
-                        <input type="text" name="fullname" id="FullName" placeholder="Full name" required>
-                    </div>
-                    <div class="useremail">
-                        <img src="assets/images/login_icons/Email.png" alt="">
-                        <input type="email" name="email" id="userEmail" placeholder="Email address" required>
-                    </div>
-                    <div class="gender">
-                        <img src="assets/images/login_icons/Gender.png" alt="">
-                    <input list="genders" name="gender" id="Gender" placeholder="Gender" required>
-                    <datalist id="genders">
-                        <option value="Male">
-                        <option value="Female">
-                        <option value="Other">
-                    </datalist>
-                    </div>
-                    <div class="dob">
-                        <img src="assets/images/login_icons/Calendar.png" alt="">
-                        <input type="date" name="dob" id="DateOfBirth" placeholder="Date of Birth" required>
-                    </div>
-                    <div class="phone">
-                        <img src="assets/images/login_icons/Phone.png" alt="">
-                        <input type="tel" name="phone" id="PhoneNumber" placeholder="Phone Number" required>
-                    </div>
-                    <div class="password">
-                        <!-- <label for="Userpassword">Password</label> -->
-                        <img src="assets/images/login_icons/Password.png" alt="">
-                        <input type="password" name="password" id="Userpassword" placeholder="Password" required>
-                        <div class="password_Icons">
-                            <i class="fa-solid fa-eye-slash" id="password_Hide"></i>
-                            <i class="fa-solid fa-eye" id="password_Visible"></i>
-                        </div>
-                    </div>
-                    <div class="password_Confirm">
-                        <!-- <label for="Userpassword">Password</label> -->
-                        <img src="assets/images/login_icons/Password.png" alt="">
-                        <input type="password" name="password" id="UserpasswordConfirm" placeholder="Confirm Password" required>
-                        <div class="password_Icons">
-                            <i class="fa-solid fa-eye-slash" id="password_Hide2"></i>
-                            <i class="fa-solid fa-eye" id="password_Visible2"></i>
-                        </div>
-                        <small id="val_Passwords">Passwords do not match</small>
-
-                    </div>
-                    <div class="submit">
-                        <button type="submit" id="login_button">Sign Up</button>
-                    </div>
-                </form>
-
-                <div class="New_Sign">
-                    <p>or sign up with </p>
-                   <div class="Sign_Up_Options">
-                    <img src="assets/images/login_icons/Google.png" id="Google_log" alt="">
-                    <img src="assets/images/login_icons/Facebook.png" id="facebook_log" alt="">
-                   </div>
-                </div>
-
-                <div class="account_Create">
-                    <p>Already have an account? <span id="return_LogIn">Log In</span></p>
-                </div>
-            </div>
+           </div>
         </section>
 
         <div class="apt_mobile">
@@ -555,7 +380,7 @@
 
 <!-- FA Link -->
 <script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
-<script src="assets/js/Register.js"></script>
+<script src="assets/js/Welcome.js"></script>
 <!-- JS Default Link -->
 </body>
 

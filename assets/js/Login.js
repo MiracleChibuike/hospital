@@ -290,7 +290,7 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 // Form Controls Code
-const form = document.getElementById("form");
+const form = document.getElementById("log_In_Form");
 
 let hide_password = document.getElementById("password_Hide");
 let show_password = document.getElementById("password_Visible");
@@ -315,3 +315,19 @@ const hidePassword = () => {
 };
 
 show_password.addEventListener("click", hidePassword);
+
+// Form Validation
+const formValidation = () => {
+  const userName = document.getElementById("userName");
+  const password = document.getElementById("Userpassword");
+  if (userName.value.trim() != "" && password.value.trim() != "") {
+    alert("Form submitted successfully");
+    form.reset();
+      window.location.href = "Welcome.html";
+  }
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formValidation();
+});
