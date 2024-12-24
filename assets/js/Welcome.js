@@ -18,11 +18,11 @@ const go_To_Home = () => {
   window.location.href = "Index.html";
 };
 
-let log_Text = document.getElementById("return_LogIn");
-const re_direct_Login = () => {
-    window.location.href = "Login.html"
-};
-log_Text.addEventListener("click", re_direct_Login);
+// let log_Text = document.getElementById("return_LogIn");
+// const re_direct_Login = () => {
+//   window.location.href = "Login.html";
+// };
+// log_Text.addEventListener("click", re_direct_Login);
 
 let logIn_Text = document.getElementById("log_In");
 const load_LoginPage = () => {
@@ -291,100 +291,4 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
-
-// Form Controls Code
-const Sin_Inform = document.getElementById("Sign_Up_Form");
-
-let hide_password = document.getElementById("password_Hide");
-let show_password = document.getElementById("password_Visible");
-let password = document.getElementById("Userpassword");
-
-const showPassword = () => {
-  if (password.type === "password") {
-    password.type = "text";
-    hide_password.style.display = "none";
-    show_password.style.display = "block";
-  }
-};
-
-hide_password.addEventListener("click", showPassword);
-
-const hidePassword = () => {
-  if (password.type === "text") {
-    password.type = "password";
-    hide_password.style.display = "block";
-    show_password.style.display = "none";
-  }
-};
-
-show_password.addEventListener("click", hidePassword);
-
-// Update Confirm Password
-let hide_password_Confirm = document.getElementById("password_Hide2");
-let show_password_Confirm = document.getElementById("password_Visible2");
-let password_Confirm = document.getElementById("UserpasswordConfirm");
-
-const showPassword_Confirm = () => { 
-  if (password_Confirm.type === "password") {
-    password_Confirm.type = "text";
-    hide_password_Confirm.style.display = "none";
-    show_password_Confirm.style.display = "block";
-  }
-};
-hide_password_Confirm.addEventListener("click", showPassword_Confirm);
-
-const hidePassword_Confirm = () => {
-  if (password_Confirm.type === "text") {
-    password_Confirm.type = "password";
-    hide_password_Confirm.style.display = "block";
-    show_password_Confirm.style.display = "none";
-  }
-};
-
-show_password_Confirm.addEventListener("click", hidePassword_Confirm);
-
-
-// Register Form Validation
-let password_default = document.getElementById("Userpassword");
-let password_Message_Val = document.getElementById("val_Passwords");
-
-Sin_Inform.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (password_default.value !== password_Confirm.value) {
-    password_Message_Val.style.display = "block";
-    password_Confirm.style.border = "1px solid red";
-  } else {  
-  modal.style.display = "block";
-  Sin_Inform.reset();
-}
-});
-
-password_Confirm.addEventListener("keyup", (e) => {
-  e.preventDefault();
-  if (password_Confirm.value === password_default.value) {
-    password_Message_Val.style.display = "none";
-    password_Confirm.style.border = "none";
-
-  }else {
-    password_Message_Val.style.display = "block";
-    // password_Confirm.style.border = "1px solid red";
-  }
-});
-// Modal Code
-let modal = document.querySelector(".modal_SignUp");
-// modal.style.display = "block";
-
-// Remove the modal
-let close_modal = document.getElementById("remove_modal");
-close_modal.addEventListener("click", () => {
-  modal.style.display = "none";
-  window.location.href = "Welcome.html";
-});
-
-const button_Success = document.getElementById("btn_success");
-
-button_Success.addEventListener("click", () => {
-  modal.style.display = "none";
-  window.location.href = "Welcome.html";
-});
 
