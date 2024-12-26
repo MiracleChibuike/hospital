@@ -347,9 +347,13 @@ show_password_Confirm.addEventListener("click", hidePassword_Confirm);
 // Register Form Validation
 let password_default = document.getElementById("Userpassword");
 let password_Message_Val = document.getElementById("val_Passwords");
+let userGender = document.getElementById("Gender");
+let userAge = document.getElementById("DateOfBirth");
 
 Sin_Inform.addEventListener("submit", (e) => {
   e.preventDefault();
+  const storeGender = localStorage.setItem("gender", userGender.value);
+  const storeAge = localStorage.setItem("age", userAge.value)
   if (password_default.value !== password_Confirm.value) {
     password_Message_Val.style.display = "block";
     password_Confirm.style.border = "1px solid red";
@@ -357,6 +361,8 @@ Sin_Inform.addEventListener("submit", (e) => {
   modal.style.display = "block";
   Sin_Inform.reset();
 }
+console.log(localStorage.getItem("gender"));
+console.log(`Date of Birth: ${userAge.value}`);
 });
 
 password_Confirm.addEventListener("keyup", (e) => {
