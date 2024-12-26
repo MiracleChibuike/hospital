@@ -292,3 +292,40 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
+// Load the dashboard page once users click on the welcome Button
+const welcomeButton = document.getElementById("Welcome_btn");
+
+// Loads an for 1 second animation when a user clicks on the welcome page
+  let mainDiv = document.querySelector(".main");
+  let loader_Welcome = document.getElementById("header_load");
+  let iconsHeader = document.querySelector(".socialIconsHeader");
+  let nav_Main = document.querySelector(".main_nav");
+  console.log(iconsHeader)
+const AnimationLoad = () => {
+
+  // Show Loader Initially
+  iconsHeader.style.display = "none";
+  nav_Main.style.display = "none"
+  loader_Welcome.style.display = "block";
+
+  // After 6 seconds, hide the headre and show the mainDiv
+  setTimeout(() => {
+    if (mainDiv.style.display = "none") {
+        mainDiv.style.display = "block";
+        loader_Welcome.style.display = "none";
+    }
+        window.location.href = "Dashboard.html";
+  }, 4000);
+};
+
+// Remove the immediate redirection to Dashboard.html
+// setTimeout(() => {
+//   window.location.href = "Dashboard.html";
+// }, 4000);
+
+welcomeButton.addEventListener("click", (e) => {
+  AnimationLoad();
+});
+
+// console.log(mainDiv)
+

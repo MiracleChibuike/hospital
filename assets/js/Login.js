@@ -320,13 +320,26 @@ show_password.addEventListener("click", hidePassword);
 const formValidation = () => {
   const userName = document.getElementById("userName");
   const password = document.getElementById("Userpassword");
+  const storeLocal = localStorage.setItem("user", userName.value);
+  const storePassLocal = localStorage.setItem("userPassword", password.value);
   if (userName.value.trim() != "" && password.value.trim() != "") {
-    alert("Form submitted successfully");
+    alert(`Welcome back ${userName.value}`);
+    console.log(localStorage.getItem("user"));
+    console.log(localStorage.getItem("userPassword"))
     form.reset();
       window.location.href = "Welcome.html";
   }
 };
 
+// Retrieve and display the userName on the dashboard page
+document.addEventListener("DOMContentLoaded", () => {
+  const userNameDisplay = document.getElementById("userNameDisplay");
+  const storedUserName = localStorage.getItem("user");
+  const storeGender = localStorage.getItem("gender")
+  if (storedUserName) {
+    userNameDisplay.textContent = `Welcome, ${storedUserName}`;
+  }
+});
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
