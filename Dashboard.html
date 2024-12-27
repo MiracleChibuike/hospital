@@ -89,6 +89,10 @@
             position: relative;
             left: 10px;
         }
+        .Message_D{
+            position: relative;
+            left: 10px;
+        }
         .searchDash{
             margin: 35px 0;
             padding: 0 100px;
@@ -108,7 +112,7 @@
             bottom: 30px;
         }
         .feeds{
-            margin: 5px 0;
+            margin: 70px 0;
             padding: 0 100px;
             display: flex;
             justify-content: space-between;
@@ -168,6 +172,20 @@
             transition: .7s;
             transform: scale(1.1);
         }
+        #contact{
+            padding: 0;
+        }
+        /* .Navigation_Footer p{
+            display: flex;
+        } */
+        .contact_Footer, .dashboardFooter{
+           display: flex;
+            justify-content: space-evenly;
+        }
+        .copyRight{
+            text-align: center;
+            padding: 30px 0;
+        }
         .illustrate_images {
             animation: fadeIn 2s ease-in-out, slideIn 1.5s ease-in-out;
         }
@@ -204,8 +222,10 @@
                 margin: 0 10px;
             }
             .feedsContainer, .categories, .Hospitals{
-                margin: 30px 0;
+                margin: 30px 0 0 0;
                 column-gap: 5px;
+                position: relative;
+                left: -10px;
             }
               .feeds_Head{
                 padding-right: 25px;
@@ -230,6 +250,23 @@
         /* .dashIcons div{
             padding: 0;
         } */
+         #contact{
+            padding: 10px 20px;
+            text-align: center;
+         }
+         .contact_Footer, .dashboardFooter{
+            display: block;
+            margin: 8px 0;
+         }
+         .contacts_social_footer div{
+            display: block;
+         }
+         .contacts_social_footer div i{
+            padding: 10px 0;
+         }
+         .copyRight{
+            padding-bottom: 80px;
+         }
         }
     </style>
 </head>
@@ -278,7 +315,10 @@
                     <img src="assets/images/login_icons/Male User.png" alt="">
                 </div>
                 <div class="userInfo">
-                    <p class="Message_D"><span id="userFullName"></span></p>
+                    <p class="Message_D">
+                        <span id="userFirstName"></span>
+                        <span id="Lastname"></span>
+                    </p>
                     <small id="userGender"></small>
                 </div>
             </div>
@@ -414,10 +454,10 @@
                 <div class="about_Footer">
                     <h3>About Us</h3>
                     <p>
-                        Dedicated to providing compassionate, patient-centered care, our innovative medical care project
+                        Dedicated to providing compassionate, patient-centered care, our innovative medical care project <br>
                         ensures
                         accessible and
-                        quality healthcare through a trusted team of experts, advanced technology, and efficient
+                        quality healthcare through a trusted team of experts, advanced technology, <br> and efficient
                         appointment
                         booking, aiming to
                         improve community health and wellness.
@@ -436,6 +476,19 @@
                             <p><a href="tel:+234 905 625 5572">+234 905 625 5572</a></p>
                         </div>
                     </div>
+                        <!-- Language Select -->
+                        <div class="language_Div">
+                            <p>Language</p>
+                            <div id="google_translate_element"></div>
+                        
+                            <script type="text/javascript">
+                                function googleTranslateElementInit() {
+                                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                                }
+                            </script>
+                            <script type="text/javascript"
+                                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        </div>
                 </div>
                 <div class="Navigation_Footer">
                     <h3>Navigation</h3>
@@ -448,7 +501,7 @@
                     <p><a href="#"><i class="fa-solid fa-angles-right"></i> Our Latest News</a></p>
                     <p><a href="#"><i class="fa-solid fa-angles-right"></i> Patients Feedbacks</a></p>
                 </div>
-                <div class="instagram_Footer">
+                <!-- <div class="instagram_Footer">
                     <h3>Instagram</h3>
                     <div class="IG_Photos">
                         <img src="assets/images/insta_main.jpg"
@@ -464,26 +517,13 @@
                         <img src="assets/images/insta_6.jpg"
                             alt="We're live on Instagram.. Check out our activities there">
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="icons-social" id="socials_Footer">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-x-twitter"></i>
                 <i class="fa-brands fa-pinterest-p"></i>
                 <i class="fa-brands fa-youtube"></i>
-            </div>
-            <!-- Language Select -->
-            <div class="language_Div">
-                <p>Language</p>
-                <div id="google_translate_element"></div>
-
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-                    }
-                </script>
-                <script type="text/javascript"
-                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             </div>
             <!-- CopyRight -->
             <div class="copyRight">

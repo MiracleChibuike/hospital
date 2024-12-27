@@ -316,30 +316,52 @@ const hidePassword = () => {
 
 show_password.addEventListener("click", hidePassword);
 
-// Form Validation
+
 const formValidation = () => {
-  const userName = document.getElementById("userName");
+  const FirstName = document.getElementById("FName");
+  const LastName = document.getElementById("LName");
   const password = document.getElementById("Userpassword");
-  const storeLocal = localStorage.setItem("user", userName.value);
-  const storePassLocal = localStorage.setItem("userPassword", password.value);
-  if (userName.value.trim() != "" && password.value.trim() != "") {
-    alert(`Welcome back ${userName.value}`);
-    console.log(localStorage.getItem("user"));
-    console.log(localStorage.getItem("userPassword"))
-    form.reset();
+  let formError = document.querySelector(".form_Error");
+  // Retrieve values from localStorage
+  const storedFirstName = localStorage.getItem("FirstName");
+  const storedLastName = localStorage.getItem("LastName");
+  const storedPassword = localStorage.getItem("Password");
+
+  if (storedFirstName && storedLastName && storedPassword) {
+    // Check if input values match the stored values
+    if (
+      FirstName.value === storedFirstName &&
+      LastName.value === storedLastName &&
+      password.value === storedPassword
+    ) {
+      alert(`Welcome back, ${storedLastName}!`);
+      // Optionally redirect to a new page or perform other actions
       window.location.href = "Welcome.html";
+    } else if (
+      FirstName.value !== storedFirstName ||
+      LastName.value !== storedLastName ||
+      password.value !== storedPassword
+    ) {
+      formError.style.visibility = "visible";
+      formError.style.transition = "opacity 0.5s ease-in-out";
+      formError.style.opacity = "1";
+    }
+    removeErrorMessage();
+  }else {
+    alert("No account found. Please sign up first.");
   }
 };
 
-// Retrieve and display the userName on the dashboard page
-document.addEventListener("DOMContentLoaded", () => {
-  const userNameDisplay = document.getElementById("userNameDisplay");
-  const storedUserName = localStorage.getItem("user");
-  const storeGender = localStorage.getItem("gender")
-  if (storedUserName) {
-    userNameDisplay.textContent = `Welcome, ${storedUserName}`;
-  }
-});
+// Remove Form Error Message
+const removeErrorMessage = () => {
+  let formError = document.querySelector(".form_Error");
+  setTimeout(() => {
+    formError.style.visibility = "hidden";
+  }, 7000);
+};
+
+
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();

@@ -48,7 +48,8 @@
             --clr-dark-main: #000;
             --clr-semi-dark: rgba(0, 0, 0, 0.8);
             --clr-gray-origin: rgb(224, 218, 218);
-            --error-message: rgb(126, 23, 23);
+            --error-message: rgb(192, 73, 73);
+            --login-error: rgb(242, 184, 184);
         }
         .addBorder{
   border-bottom: 2px solid var(--clr-white-default);
@@ -79,12 +80,31 @@
         .form_Container{
             display: grid;
             place-content: center;
-            margin: 50px 0;
+            margin: 10px 0;
         }
-        .username, .password{
+        .form_Error{
+            display: flex;
+            justify-content: space-evenly;
+            /* width: 100%; */
+            background: var(--login-error);
+            padding: 15px 0;
+            margin: 0 500px;
+            color: var(--error-message);
+            box-shadow: 5.17px 5.17px 10px var(--clr-semi-dark);
+            border-radius: 7px;
+            border: 1px solid var(--error-message);
+            visibility: hidden;
+        }
+        #remove{
+            font-size: 25px;
+            cursor: pointer;
+            color: var(--clr-white-default);
+            background: var(--login-error);
+        }
+        .Firstname, .Lastname, .password{
             margin: 20px 0;
         }
-        .username input, .password input{
+        .Firstname input, .Lastname input, .password input{
             background: var(--clr-darkGray);
             border: none;
             padding: 15px 30px;
@@ -108,13 +128,13 @@
         #password_Visible{
             display: none;
         }
-        .username input:focus, .password input:focus{
+        .Firstname input:focus, .Lastname input:focus, .password input:focus{
             outline: 2px solid var(--clr-hospital);
             transition: .2s ease-in-out;
             box-shadow: 0 0 15px var(--clr-hospital-deep);
             /* transform: scale(1.02); */
         }
-        .username img, .password img{
+        .Firstname img, .Lastname img, .password img{
             position: relative;
             left: 27px;
             top: 3px;
@@ -172,6 +192,11 @@
         }
 
         @media screen and (min-width: 0) and (max-width: 750px) {
+            .form_Error{
+                margin: 0 50px;
+                display: block;
+                text-align: center;
+            }
               #Login {
             margin: 10px 0 0 0;
             padding: 20px 0;
@@ -297,13 +322,25 @@
             <h2>Welcome Back</h2>
             <p>Enter your credentials to access your medical records, book appointments, and more.</p>
         </div>
-
+            <div class="form_Error">
+                <div class="errorIcon">
+                    <!-- <i class="fa-solid fa-circle-xmark" id="remove"></i> -->
+                </div>
+                <div class="errorText">
+                    <p>Invalid first name, last name, or password</p>
+                </div>
+            </div>
         <div class="form_Container">
             <form action="" id="log_In_Form">
-                <div class="username">
+                <div class="Firstname">
                     <!-- <label for="userName">Username</label> -->
                     <img src="assets/images/login_icons/Customer.png" alt="">
-                    <input type="text" name="username" id="userName" placeholder="Username" required>
+                    <input type="text" name="firstname" id="FName" placeholder="First Name" required>
+                </div>
+                <div class="Lastname">
+                    <img src="assets/images/login_icons/Customer.png" alt="">
+                    <input type="text" name="lastname" id="LName" placeholder="Last Name" required>
+
                 </div>
                 <div class="password">
                     <!-- <label for="Userpassword">Password</label> -->

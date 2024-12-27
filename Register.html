@@ -89,12 +89,12 @@
             margin: 10px 0;
         }
 
-        .fullname,
+        .firstname, .lastName,
         .password, .gender, .useremail, .dob, .phone, .password_Confirm {
             margin: 10px 0;
         }
 
-        .fullname input,
+        .firstname input, .lastName input,
         .password input, .useremail input, .gender input, .dob input,
         .phone input, .password_Confirm input {
             background: var(--clr-darkGray);
@@ -131,7 +131,7 @@
             display: none;
         }
 
-        .username input:focus,
+        .firstname input:focus, .lastName input:focus,
         .password input:focus, .fullname input:focus, .useremail input:focus,
         .gender input:focus, .dob input:focus, .phone input:focus, 
         .password_Confirm input:focus {
@@ -141,7 +141,7 @@
             /* transform: scale(1.02); */
         }
 
-        .fullname img,
+        .firstname img, .lastName img,
         .password img, .useremail img, .gender img, .dob img,
         .phone img, .password_Confirm img {
             position: relative;
@@ -394,10 +394,14 @@
             </div>
             <div class="form_Container">
                 <form action="" id="Sign_Up_Form">
-                    <div class="fullname">
+                    <div class="firstname">
                         <!-- <label for="userName">Username</label> -->
                         <img src="assets/images/login_icons/Customer.png" alt="">
-                        <input type="text" name="fullname" id="FullName" placeholder="Full name" required>
+                        <input type="text" name="firstname" id="FName" placeholder="First name" required>
+                    </div>
+                    <div class="lastName">
+                        <img src="assets/images/login_icons/Customer.png" alt="">
+                        <input type="text" name="lastName" id="LName" placeholder="Last name" required>
                     </div>
                     <div class="useremail">
                         <img src="assets/images/login_icons/Email.png" alt="">

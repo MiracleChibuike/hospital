@@ -320,12 +320,21 @@ const AnimationLoad = () => {
 
 // Remove the immediate redirection to Dashboard.html
 // setTimeout(() => {
-//   window.location.href = "Dashboard.html";
 // }, 4000);
 
 welcomeButton.addEventListener("click", (e) => {
-  AnimationLoad();
+    window.location.href = "Dashboard.html";
 });
+
+// Check whether page loads afetr 3 seconds if a client did not click on the welcome button
+const navigateDashboard = () => {
+  setTimeout(() => {
+    alert("You are being re-directed to your dashboard")
+    window.location.href = "Dashboard.html";
+  }, 4000)
+};
+
+document.addEventListener("DOMContentLoaded", navigateDashboard)
 
 // console.log(mainDiv)
 
