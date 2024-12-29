@@ -1,5 +1,6 @@
 // Retrieve and display the userName on the dashboard page
 document.addEventListener("DOMContentLoaded", () => {
+  let pageTitle = document.getElementById("page_title");
   let msg_Welcome = document.querySelector(".Message_D");
   msg_Welcome.style.display = "flex";
   let lastNameContainer = document.querySelector(".Last");
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const storedLastname = localStorage.getItem("LastName");
 
   if (storedFirstName && storedLastname) {
-   firstNameDisplay.textContent = `${storedFirstName},`;
+   firstNameDisplay.textContent = `${storedFirstName}`;
     lastNameDisplay.textContent = `${storedLastname}`;
 
     // Apply styles separately
@@ -20,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     firstNameDisplay.style.fontWeight = "lighter";
     lastNameDisplay.style.position = "relative";
     lastNameDisplay.style.left = "5px";
-  }
+  };
+  pageTitle.textContent = `${storedLastname}'s Dashboard || C-Health`
 });
 
 

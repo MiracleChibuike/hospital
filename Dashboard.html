@@ -7,7 +7,7 @@
     <!-- Description -->
     <meta name="description"
         content="Our medical care platform helps solve the challenges of accessing hospitals and booking appointments, providing a seamless and efficient experience for everyone.">
-    <title>Hospital Dashboard || C-Health</title>
+    <title id="page_title">Hospital Dashboard || C-Health</title>
     <!-- Keywords -->
     <meta name="keywords"
         content="medical care, hospital access, appointment booking, healthcare, online medical services, patient care">
@@ -74,9 +74,23 @@
             padding: 0 100px;
             margin-bottom: 40px;
         }
+        .upper_icons i:hover{
+            cursor: pointer;
+        }
         #bell_Pop{
             position: relative;
             left: -15px;
+        }
+        #dot_notification{
+            position: relative;
+            left: -25px;
+            top: -8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 1px solid var(--error-message);
+            background: red;
+            box-shadow: 0 0 10px var(--error-message);
         }
         #userFullName{
             display: flex;
@@ -117,6 +131,24 @@
             display: flex;
             justify-content: space-between;
         }
+        .main_Feeds{
+            margin: 70px 0;
+            padding: 0 100px;
+            display: none;
+        }
+        .org_Feeds_Block{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .feedsCatalogue{
+            display: flex;
+        }
+        .feedsCatalogue div{
+            margin: 5px 15px;
+        }
+        .img_orgFeeds img{
+            width: 50px
+        }
        .mainTitles{
         display: flex;
         justify-content: space-between;
@@ -130,10 +162,15 @@
         .Hospitals_Block{
             row-gap: 25px;
         }
-        .feeds_Head{
+        .feeds_Head, .org_feeds_Head{
             display: flex;
             justify-content: space-between;
             margin: 15px 0;
+        }
+        .feeds_Head button, .org_feeds_Head button{
+            background: transparent;
+            border: none;
+            cursor: pointer;
         }
         .more{
             display: none;
@@ -152,6 +189,15 @@
              background: var(--clr-hospital);
              padding: 120px 0 0 0;
              box-shadow: 0 3.17px 10px var(--clr-dashbaord);
+             text-align: center;
+        }
+        .dashIcons p{
+            color: var(--clr-white-default);
+            font-size: 12px;
+            font-weight: lighter;
+        }
+        .descp{
+            display: none;
         }
         .Mobile{
             content-visibility: hidden;
@@ -164,7 +210,7 @@
             background: var(--clr-hospital);
         }
         .dashIcons div {
-            padding: 30px 20px;
+            padding: 30px 10px;
         }
         .dashIcons div:hover{
             cursor: pointer;
@@ -172,12 +218,27 @@
             transition: .7s;
             transform: scale(1.1);
         }
+        .dashIcons div:hover > .descp{
+            display: block;
+        }
+        
         #contact{
             padding: 0;
         }
-        /* .Navigation_Footer p{
-            display: flex;
-        } */
+       .nav_dashboard{
+        display: flex;
+       }
+       .nav_dashboard p{
+        padding: 0 15px;
+       }
+       .nav_dashboard p a:hover{
+        cursor: pointer;
+        color: var(--clr-hospital);
+        transition: .4s;
+       }
+       .language_Div{
+        margin: 20px 0 0 30px;
+       }
         .contact_Footer, .dashboardFooter{
            display: flex;
             justify-content: space-evenly;
@@ -239,13 +300,19 @@
             box-shadow: 0 0 10px var(--clr-dashbaord);
         }
         .Mobile div{
-            padding: 20px 25px;
+            padding: 20px 20px;
+            text-align: center;
         }
         .Mobile div:hover{
                cursor: pointer;
             background: var(--clr-hospital-deep);
             transition: .7s;
-            transform: scale(1.1);
+            /* transform: scale(1.1); */
+        }
+        .Mobile div p{
+            color: var(--clr-white-default);
+            font-weight: lighter;
+            font-size: 10px;
         }
         /* .dashIcons div{
             padding: 0;
@@ -266,6 +333,23 @@
          }
          .copyRight{
             padding-bottom: 80px;
+         }
+         .nav_dashboard{
+            display: block;
+         }
+         .nav_dashboard p{
+            padding: 10px 0;
+         }
+        }
+        @media screen and (min-width: 760px) and (max-width: 1024px) {
+            .feeds{
+                display: block;
+            }
+            .nav_dashboard{
+            display: block;
+         }
+         .nav_dashboard p{
+            padding: 10px 0;
          }
         }
     </style>
@@ -307,6 +391,7 @@
                 </div>
                 <div class="upper_icons">
                     <i class="fa-solid fa-bell" id="bell_Pop"></i>
+                    <button id="dot_notification" ></button>
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
@@ -332,7 +417,7 @@
                 <div class="feedsContainer">
                    <div class="feeds_Head">
                     <p>Feeds</p>
-                    <p><small>View All</small></p>
+                    <p><button>View All</button></p>
                    </div>
                    <div class="feeds_Block">
                     <div><img src="assets/images/login_icons/Image.png" alt=""></div>
@@ -355,7 +440,7 @@
                 <div class="categories">
                     <div class="feeds_Head">
                         <p>Categories</p>
-                        <p><small>View All</small></p>
+                        <p><button>View All</button></p>
                     </div>
                    <div class="categories_Block">
                     <div><img src="assets/images/login_icons/Categorize.png" alt=""></div>
@@ -378,7 +463,7 @@
                 <div class="Hospitals">
                     <div class="feeds_Head">
                         <p>Top Hospitals</p>
-                        <p><small>View All</small></p>
+                        <p><button>View All</button></p>
                     </div>
                  <div class="Hospitals_Block">
                     <div><img src="assets/images/login_icons/Building With Rooftop Terrace.png" alt=""></div>
@@ -399,6 +484,99 @@
                 </div>
             </div>
            </div>
+
+           <!-- Main Feeds Container -->
+            <div class="main_Feeds">
+                <div class="all_Main_Feeds">
+                    <div class="org_FeedsContainer">
+                        <div class="org_feeds_Head">
+                            <p>Feeds</p>
+                            <p><button>View All</button></p>
+                        </div>
+                        <div class="org_Feeds_Block">
+                            <div class="feedsCatalogue">
+                                <div class="img_orgFeeds">
+                                    <img src="assets/images/FeedsPics/20241212-exhaust 1.png" alt="">
+                                </div>
+                                <div class="org_textsDesc">
+                                    <p>
+                                      <span style="text-decoration: underline;">
+                                        Long-term exposure to air pollution linked to
+                                        blood clots in veins that bring blood to the heart
+                                      </span>
+                                        
+                                       <aside>
+                                        <strong>December 12, 2024 </strong> — An observational study of
+                                        more than 6,500 adults is one of the most detailed
+                                        in the U.S.
+                                       </aside>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Feed2 -->
+                            <div class="feedsCatalogue">
+                                <div class="img_orgFeeds">
+                                    <img src="assets/images/FeedsPics/20241204-preg 1.png" alt="">
+                                </div>
+                                <div class="org_textsDesc">
+                            <p>
+                                <span style="text-decoration: underline;">
+                                    Long-term exposure to air pollution linked to
+                                    blood clots in veins that bring blood to the heart
+                                </span>
+                            
+                            <aside>
+                                <strong>December 12, 2024 </strong> — An observational study of
+                                more than 6,500 adults is one of the most detailed
+                                in the U.S.
+                            </aside>
+                            </p>
+                                </div>
+                            </div>
+                            <!-- Feed3 -->
+                            <div class="feedsCatalogue">
+                                <div class="img_orgFeeds">
+                                    <img src="assets/images/FeedsPics/20241211-cholesterol 1.png" alt="">
+                                </div>
+                                <div class="org_textsDesc">
+                                    <p>
+                                        <span style="text-decoration: underline;">
+                                            Long-term exposure to air pollution linked to
+                                            blood clots in veins that bring blood to the heart
+                                        </span>
+                                    
+                                    <aside>
+                                        <strong>December 12, 2024 </strong> — An observational study of
+                                        more than 6,500 adults is one of the most detailed
+                                        in the U.S.
+                                    </aside>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Feed4 -->
+                            <div class="feedsCatalogue">
+                                <div class="img_orgFeeds">
+                                    <img src="assets/images/FeedsPics/20241118-clinical-trials_0 1.png" alt="">
+                                </div>
+                                <div class="org_textsDesc">
+                            <p>
+                                <span style="text-decoration: underline;">
+                                    Long-term exposure to air pollution linked to
+                                    blood clots in veins that bring blood to the heart
+                                </span>
+                            
+                            <aside>
+                                <strong>December 12, 2024 </strong> — An observational study of
+                                more than 6,500 adults is one of the most detailed
+                                in the U.S.
+                            </aside>
+                            </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
          
            </div>
            <div class="dashBoardNav">
@@ -406,36 +584,46 @@
             <div class="dashIcons">
                 <div class="calendar">
                     <img src="assets/images/login_icons/Calendar (1).png" alt="">
+                    <p class="descp">Calendar</p>
                 </div>
                 <div class="bel">
                     <img src="assets/images/login_icons/Siren.png" alt="">
+                    <p class="descp">Siren</p>
                 </div>
                 <div class="home">
                     <img src="assets/images/login_icons/Home.png" alt="">
+                    <p class="descp">Home</p>
                 </div>
                 <div class="bag_Doctor">
                     <img src="assets/images/login_icons/Doctors Bag.png" alt="">
+                    <p class="descp">Doctors Bag</p>
                 </div>
                 <div class="alarm">
                     <img src="assets/images/login_icons/FAQ.png" alt="">
+                    <p class="descp">FAQ</p>
                 </div>
             </div>
             <!-- For Mobiles -->
                 <div class="Mobile">
                     <div class="calendar">
                         <img src="assets/images/login_icons/Calendar (1).png" alt="">
+                         <p>Calendar</p>
                     </div>
                     <div class="bel">
                         <img src="assets/images/login_icons/Siren.png" alt="">
+                        <p>Siren</p>
                     </div>
                     <div class="home">
                         <img src="assets/images/login_icons/Home.png" alt="">
+                        <p>Home</p>
                     </div>
                     <div class="bag_Doctor">
                         <img src="assets/images/login_icons/Doctors Bag.png" alt="">
+                        <p>Doctors Bag</p>
                     </div>
                     <div class="alarm">
                         <img src="assets/images/login_icons/FAQ.png" alt="">
+                        <p>FAQ</p>
                     </div>
                 </div>
            </div>
@@ -452,7 +640,7 @@
         <section id="contact">
             <div class="contact_Footer">
                 <div class="about_Footer">
-                    <h3>About Us</h3>
+                    <!-- <h3>About Us</h3>
                     <p>
                         Dedicated to providing compassionate, patient-centered care, our innovative medical care project <br>
                         ensures
@@ -461,8 +649,8 @@
                         appointment
                         booking, aiming to
                         improve community health and wellness.
-                    </p>
-                    <div class="contacts_social_footer">
+                    </p> -->
+                    <!-- <div class="contacts_social_footer">
                         <div>
                             <i class="fa-solid fa-location-dot"></i>
                             <p>Ikenegbu Extension, Owerri, Nigeria</p>
@@ -475,8 +663,21 @@
                             <i class="fa-solid fa-phone"></i>
                             <p><a href="tel:+234 905 625 5572">+234 905 625 5572</a></p>
                         </div>
-                    </div>
+                    </div> -->
                         <!-- Language Select -->
+                            <div class="Navigation_Footer">
+                                <h3>Navigation</h3>
+                                <div class="nav_dashboard">
+                                        <p><a href="#appointment"><i class="fa-solid fa-angles-right"></i> Appointment</a></p>
+                                        <p><a href="#specialists"><i class="fa-solid fa-angles-right"></i> Our Specialists</a></p>
+                                        <p><a href="#"><i class="fa-solid fa-angles-right"></i> Why Choose Us</a></p>
+                                        <p><a href="#services"><i class="fa-solid fa-angles-right"></i> Our Services</a></p>
+                                        <p><a href="#"><i class="fa-solid fa-angles-right"></i> Parent FAQ</a></p>
+                                        <p><a href="#"><i class="fa-solid fa-angles-right"></i> Health Tips</a></p>
+                                        <p><a href="#"><i class="fa-solid fa-angles-right"></i> Our Latest News</a></p>
+                                        <p><a href="#"><i class="fa-solid fa-angles-right"></i> Patients Feedbacks</a></p>
+                                </div>
+                            </div>
                         <div class="language_Div">
                             <p>Language</p>
                             <div id="google_translate_element"></div>
@@ -489,17 +690,6 @@
                             <script type="text/javascript"
                                 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                         </div>
-                </div>
-                <div class="Navigation_Footer">
-                    <h3>Navigation</h3>
-                    <p><a href="#appointment"><i class="fa-solid fa-angles-right"></i> Appointment</a></p>
-                    <p><a href="#specialists"><i class="fa-solid fa-angles-right"></i> Our Specialists</a></p>
-                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Why Choose Us</a></p>
-                    <p><a href="#services"><i class="fa-solid fa-angles-right"></i> Our Services</a></p>
-                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Parent FAQ</a></p>
-                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Health Tips</a></p>
-                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Our Latest News</a></p>
-                    <p><a href="#"><i class="fa-solid fa-angles-right"></i> Patients Feedbacks</a></p>
                 </div>
                 <!-- <div class="instagram_Footer">
                     <h3>Instagram</h3>
