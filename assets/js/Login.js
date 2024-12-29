@@ -318,9 +318,9 @@ show_password.addEventListener("click", hidePassword);
 
 
 const formValidation = () => {
-  const FirstName = document.getElementById("FName");
-  const LastName = document.getElementById("LName");
-  const password = document.getElementById("Userpassword");
+  const FirstName = document.getElementById("FName")
+  const LastName = document.getElementById("LName")
+  const password = document.getElementById("Userpassword")
   let formError = document.querySelector(".form_Error");
   // Retrieve values from localStorage
   const storedFirstName = localStorage.getItem("FirstName");

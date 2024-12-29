@@ -345,19 +345,19 @@ show_password_Confirm.addEventListener("click", hidePassword_Confirm);
 
 
 // Register Form Validation
-let password_default = document.getElementById("Userpassword");
-let password_Message_Val = document.getElementById("val_Passwords");
-let userGender = document.getElementById("Gender");
-let userAge = document.getElementById("DateOfBirth");
-let userFirstName = document.getElementById("FName");
-let userLastName = document.getElementById("LName");
+let password_default = document.getElementById("Userpassword")
+let password_Message_Val = document.getElementById("val_Passwords")
+let userGender = document.getElementById("Gender")
+let userAge = document.getElementById("DateOfBirth")
+let userFirstName = document.getElementById("FName")
+let userLastName = document.getElementById("LName")
 
 Sin_Inform.addEventListener("submit", (e) => {
   e.preventDefault();
-  const storeGender = localStorage.setItem("gender", userGender.value);
-  const storeFirstName = localStorage.setItem("FirstName", userFirstName.value);
-  const storedLastname = localStorage.setItem("LastName", userLastName.value);
-  const storedPassword = localStorage.setItem("Password", password_default.value);
+  const storeGender = localStorage.setItem("gender", userGender.value.trim());
+  const storeFirstName = localStorage.setItem("FirstName", userFirstName.value.trim());
+  const storedLastname = localStorage.setItem("LastName", userLastName.value.trim());
+  const storedPassword = localStorage.setItem("Password", password_default.value.trim());
   console.log(userFirstName.value)
   if (password_default.value !== password_Confirm.value) {
     password_Message_Val.style.display = "block";
