@@ -42,7 +42,39 @@ document.querySelectorAll("img").forEach((img) => {
   img.addEventListener("contextmenu", (event) => {
     event.preventDefault()
   })
-})
+});
+
+// Append an active border style to the Home Page of dashboard Desktop
+let homeActive = document.querySelector(".home");
+const homeText = document.getElementById("HomeText");
+const addActiveLink = () => {
+  if (homeActive) {
+     homeActive.classList.add("active_Nav");
+    //  console.log(homeText)
+    homeText.style.display = "block";
+    homeText.style.fontWeight = "bold"
+  }else{
+    homeActive.classList.remove("active_Nav");
+  }
+};
+
+document.addEventListener("DOMContentLoaded", addActiveLink);
+
+// Append an active border style to the Home Page of dashboard Mobile
+let divHome_Mobile = document.getElementById("homeDiv");
+let textHome_Mobile = document.getElementById("homeTxtMobile");
+const appendMobileActive = () => {
+  if (divHome_Mobile) {
+    divHome_Mobile.classList.add("appendStyle");
+    textHome_Mobile.style.fontWeight = "bold"
+  }else{
+    divHome_Mobile.classList.remove("appendStyle");
+  }
+};
+
+document.addEventListener("DOMContentLoaded", appendMobileActive)
+
+
 // Load the Appointment page
 // const preview_Appointment = () => {
 //   window.location.href = "Appointment.html";

@@ -209,6 +209,12 @@
             bottom: 0;
             background: var(--clr-hospital);
         }
+        .active_Nav{
+            background: var(--clr-hospital-deep);
+            transition: .7s;
+            border-left: 2px solid var(--clr-white-default);
+            font-weight: bold;
+        }
         .dashIcons div {
             padding: 30px 10px;
         }
@@ -216,10 +222,12 @@
             cursor: pointer;
             background: var(--clr-hospital-deep);
             transition: .7s;
-            transform: scale(1.1);
+            border-left: 2px solid var(--clr-white-default);
+            font-weight: bold;
         }
         .dashIcons div:hover > .descp{
             display: block;
+            font-weight: bold;
         }
         
         #contact{
@@ -300,14 +308,30 @@
             box-shadow: 0 0 10px var(--clr-dashbaord);
         }
         .Mobile div{
-            padding: 20px 20px;
+            padding: 15px 15px;
             text-align: center;
         }
         .Mobile div:hover{
                cursor: pointer;
-            background: var(--clr-hospital-deep);
+            /* background: var(--clr-hospital-deep); */
             transition: .7s;
+            font-weight: bold;
+            border-top: 3px solid var(--clr-white-default);
             /* transform: scale(1.1); */
+        }
+        .bag_Doctor{
+            position: relative;
+            top: 4px;
+        }
+        .appendStyle{
+            cursor: pointer;
+            /* background: var(--clr-hospital-deep); */
+            transition: .7s;
+            border-top: 3px solid var(--clr-white-default);
+            /* transform: scale(1.1); */
+        }
+        .Mobile div p:hover{
+            font-weight: bold;
         }
         .Mobile div p{
             color: var(--clr-white-default);
@@ -584,19 +608,19 @@
             <div class="dashIcons">
                 <div class="calendar">
                     <img src="assets/images/login_icons/Calendar (1).png" alt="">
-                    <p class="descp">Calendar</p>
+                    <p class="descp">Appointment</p>
                 </div>
                 <div class="bel">
                     <img src="assets/images/login_icons/Siren.png" alt="">
-                    <p class="descp">Siren</p>
+                    <p class="descp">Emergency</p>
                 </div>
                 <div class="home">
                     <img src="assets/images/login_icons/Home.png" alt="">
-                    <p class="descp">Home</p>
+                    <p class="descp" id="HomeText">Home</p>
                 </div>
                 <div class="bag_Doctor">
                     <img src="assets/images/login_icons/Doctors Bag.png" alt="">
-                    <p class="descp">Doctors Bag</p>
+                    <p class="descp">Specialists</p>
                 </div>
                 <div class="alarm">
                     <img src="assets/images/login_icons/FAQ.png" alt="">
@@ -607,19 +631,19 @@
                 <div class="Mobile">
                     <div class="calendar">
                         <img src="assets/images/login_icons/Calendar (1).png" alt="">
-                         <p>Calendar</p>
+                         <p>Appointment</p>
                     </div>
                     <div class="bel">
                         <img src="assets/images/login_icons/Siren.png" alt="">
-                        <p>Siren</p>
+                        <p>Emergency</p>
                     </div>
-                    <div class="home">
+                    <div class="home" id="homeDiv">
                         <img src="assets/images/login_icons/Home.png" alt="">
-                        <p>Home</p>
+                        <p id="homeTxtMobile">Home</p>
                     </div>
                     <div class="bag_Doctor">
                         <img src="assets/images/login_icons/Doctors Bag.png" alt="">
-                        <p>Doctors Bag</p>
+                        <p>Specialists</p>
                     </div>
                     <div class="alarm">
                         <img src="assets/images/login_icons/FAQ.png" alt="">
