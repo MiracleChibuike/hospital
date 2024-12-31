@@ -75,6 +75,28 @@ const appendMobileActive = () => {
 document.addEventListener("DOMContentLoaded", appendMobileActive)
 
 
+let feeds = document.querySelector(".feeds")
+let mainFeeds = document.querySelector(".main_Feeds");
+
+const retrieveFeeds = () => {
+  setTimeout(() => {
+    feeds.classList.add("feedLoad");
+    feeds.style.display = "none";
+    mainFeeds.style.display = "block";
+  }, 2000)
+};
+
+document.addEventListener("DOMContentLoaded", retrieveFeeds);
+
+// Run a loop to show other available feeds
+let moreFeeds = document.querySelectorAll(".moreFeeds");
+
+const viewMoreButton = document.querySelector(".viewMore");
+moreFeeds.forEach((feeds) => {
+  viewMoreButton.addEventListener("click", () => {
+    feeds.style.contentVisibility = "visible"
+  })
+})
 // Load the Appointment page
 // const preview_Appointment = () => {
 //   window.location.href = "Appointment.html";
