@@ -15,7 +15,7 @@ let signUpText_Active = document.getElementById("return_signUp");
 
 var about_home_logo = document.getElementById("logo-home");
 const go_To_Home = () => {
-  window.location.href = "Index.html";
+  window.location.href = "index.html";
 };
 
 // let log_Text = document.getElementById("return_LogIn");
@@ -34,7 +34,7 @@ about_home_logo.addEventListener("click", (e) => {
 });
 
 const load_HomePage = () => {
-  window.location.href = "Index.html";
+  window.location.href = "index.html";
   console.log(home_El);
 };
 

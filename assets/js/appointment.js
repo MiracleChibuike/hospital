@@ -7,7 +7,7 @@ var department_El = document.getElementById("departments_El");
 var home_now = document.getElementById("Pages");
 const load_HomePage = () => {
     console.log(home_now);
-  window.location.href = "Index.html";
+  window.location.href = "index.html";
   
 };
 

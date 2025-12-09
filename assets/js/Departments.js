@@ -21,7 +21,7 @@ var home_El = document.getElementById("home_Contents");
 const home_logo = document.getElementById("logo-home");
 var department_El = document.getElementById("departments_El");
 const load_HomePage = () => {
-    window.location.href = "Index.html";
+    window.location.href = "index.html";
     console.log(home_El)
 };
 

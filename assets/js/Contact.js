@@ -15,7 +15,7 @@ addBorder();
 
 var about_home_logo = document.getElementById("logo-home");
 const go_To_Home = () => {
-  window.location.href = "Index.html";
+  window.location.href = "index.html";
 };
 
 about_home_logo.addEventListener("click", (e) => {
@@ -23,7 +23,7 @@ about_home_logo.addEventListener("click", (e) => {
 });
 
 const load_HomePage = () => {
-  window.location.href = "Index.html";
+  window.location.href = "index.html";
   console.log(home_El);
 };
 const load_AboutPage = () => {
