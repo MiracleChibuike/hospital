@@ -1,3 +1,6 @@
+
+
+
 // Loads the animation on a succesful page load
 
 // const AnimationLoad = () => {
@@ -20,18 +23,16 @@
 // // Call the AnimationLoad function when page is ready
 // AnimationLoad();
 
+// Prevent Image dragging
 
-  // Prevent Image dragging
-
-    document.querySelectorAll("img").forEach((img) => {
-      img.addEventListener("mousedown", function (event) {
-        event.preventDefault();
-      });
-      img.addEventListener("contextmenu", function (event) {
-        event.preventDefault();
-      });
-    });
-
+document.querySelectorAll("img").forEach((img) => {
+  img.addEventListener("mousedown", function (event) {
+    event.preventDefault();
+  });
+  img.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+});
 
 // Header_Top Scroll Effect
 window.addEventListener("scroll", function () {
@@ -43,286 +44,250 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Prevent back_home Link reload
+// // Show nav-contents
+// let show_menu = document.getElementById("displayMenu");
+// let hide_menu = document.getElementById("hide_menu");
+// let nav_links = document.querySelector(".nav-links");
+// let Contents_Inner = document.querySelector(".inner_Contents");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const backHomeLink = document.getElementById("arrow-back-home");
-  // ShowNavsection - Show_Menu
-  const showNavSection = () => {
-    if ((search_Container_media.style.display = "block")) {
-      search_Container_media.style.display = "none";
-      show_menu.style.display = "block";
-    }
-    search_Media.style.display = "block";
-  };
-
-  // HideNavSection - Hide_Menu
-  const HideNavSection = () => {
-    if ((search_Container_media.style.display = "block")) {
-      search_Container_media.style.display = "none";
-      hide_menu.style.display = "block";
-    }
-    search_Media.style.display = "block";
-  };
-
-  backHomeLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    showNavSection(); // Show navigation and hide main content
-    // HideNavSection();
-  });
-});
-
-// Show nav-contents
-var show_menu = document.getElementById("displayMenu");
-var hide_menu = document.getElementById("hide_menu");
-var nav_links = document.querySelector(".nav-links");
-let Contents_Inner = document.querySelector(".inner_Contents");
-
-show_menu.addEventListener("click", () => {
-  nav_links.classList.toggle("show");
-  Contents_Inner.classList.toggle("animate_Background");
-  hide_menu.classList.toggle("show");
-  show_menu.classList.toggle("hide");
-});
-
-hide_menu.addEventListener("click", () => {
-  nav_links.classList.toggle("show");
-  Contents_Inner.classList.toggle("animate_Background");
-  hide_menu.classList.toggle("show");
-  show_menu.classList.toggle("hide");
-});
-
-document.addEventListener("click", (e) => {
-  if (e.target !== nav_links && e.target !== show_menu) {
-    nav_links.classList.remove("show");
-    Contents_Inner.classList.remove("animate_Background");
-    hide_menu.classList.remove("show");
-    show_menu.classList.remove("hide");
-  }
-});
+// show_menu.addEventListener("click", () => {
+//   nav_links.classList.toggle("show_navs");
+//   Contents_Inner.classList.toggle("animate_Background");
+// });
 
 
+// let pages2 = document.getElementById("Pages");
 
-var pages = document.getElementById("Pages");
-var drop_down = document.querySelector(".drops");
-var icon_down = document.getElementById("icon-drops");
-var icon_up = document.getElementById("icon-drops-up");
-pages.addEventListener("click", () => {
-  if (drop_down.style.display === "none") {
-    drop_down.style.display = "block";
-    icon_up.style.display = "none";
-    icon_down.style.display = "block";
-  } else {
-    drop_down.style.display = "none";
-    icon_up.style.display = "block";
-    icon_down.style.display = "none";
-  }
-});
+// document.addEventListener("click", (e) => {
+//   const show_menu_btn = show_menu;
+
+//   if (
+//     !nav_links.contains(e.target) &&
+//     e.target !== show_menu_btn &&
+//     !pages2.contains(e.target)
+//   ) {
+//     nav_links.classList.remove("show_navs");
+//     Contents_Inner.classList.remove("animate_Background");
+//   }
+// });
+
+// let pages = document.getElementById("Pages");
+// let drop_down = document.querySelector(".drops");
+// let icon_down = document.getElementById("icon-drops");
+// let icon_up = document.getElementById("icon-drops-up");
+// pages.addEventListener("click", (e) => {
+//   drop_down.classList.toggle("show");
+//   icon_down.classList.toggle("hide-icon");
+//   icon_up.classList.toggle("show-icon");
+// });
+
+// document.addEventListener("click", (e) => {
+//   if (e.target !== pages && e.target !== drop_down) {
+//     drop_down.classList.remove("show");
+//     icon_down.classList.toggle("hide-icon");
+//     icon_up.classList.toggle("show-icon");
+//   }
+// });
 
 // Append a border to the Home Text
 
 // addBorder;
-let home_Active = document.getElementById("home_Contents");
+// let home_Active = document.getElementById("home_Contents");
 
-const addBorder = () => {
-  if (home_Active) {
-    home_Active.classList.add("addBorder");
-  }else{
-    home_Active.classList.remove("addBorder");
-  }
-}
+// const addBorder = () => {
+//   if (home_Active) {
+//     home_Active.classList.add("addBorder");
+//   } else {
+//     home_Active.classList.remove("addBorder");
+//   }
+// };
 
-addBorder();
+// addBorder();
 
-// Load all pages as according to the user-clicks(Page-redirect);
+// // Load all pages as according to the user-clicks(Page-redirect);
 
-const load_BlogPage = () => {
-  window.location.href = "Blog.html"
-}
+// const load_BlogPage = () => {
+//   window.location.href = "Blog.html";
+// };
 
-var re_Direct_Departments = document.getElementById("departments_load");
+// var re_Direct_Departments = document.getElementById("departments_load");
 
-const load_Department_Page = (e) => {
-  console.log(re_Direct_Departments)
-    window.location.href = "Departments.html";
-};
-// re_Direct_Departments.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   load_Department_Page();
-//   console.log(re_Direct_Departments)
-// }) 
+// const load_Department_Page = (e) => {
+//   console.log(re_Direct_Departments);
+//   window.location.href = "Departments.html";
+// };
+// // re_Direct_Departments.addEventListener("click", (e) => {
+// //   e.preventDefault();
+// //   load_Department_Page();
+// //   console.log(re_Direct_Departments)
+// // })
 
-const load_AboutPage = () => {
-  window.location.href = "About.html"
-};
+// const load_AboutPage = () => {
+//   window.location.href = "About.html";
+// };
 
-const load_ContactPage = () => {
-  window.location.href = "Contact_Us.html"
-}
+// const load_ContactPage = () => {
+//   window.location.href = "Contact_Us.html";
+// };
 
-// Load the Appointment page
-const preview_Appointment = () => {
-  window.location.href = "Appointment.html"
-}
+// // Load the Appointment page
+// const preview_Appointment = () => {
+//   window.location.href = "Appointment.html";
+// };
 
-let logIn_Text = document.getElementById("log_In");
-const load_LoginPage = () => {
-  window.location.href = "Login.html"
-}
+// let logIn_Text = document.getElementById("log_In");
+// const load_LoginPage = () => {
+//   window.location.href = "Login.html";
+// };
 
 // VALIDATE THE SERCH ICON TO SHOW THE SEARCH INPUT -- (Desktop)
-const search = document.querySelector(".getData");
-var search_Container = document.querySelector(".search-container-Desktop");
+// const search = document.querySelector(".getData");
+// var search_Container = document.querySelector(".search-container-Desktop");
 
-search.addEventListener("click", () => {
-  if ((search_Container.style.display = "none")) {
-    search_Container.style.display = "block";
-  }
-  search.style.display = "none";
-});
+// search.addEventListener("click", () => {
+//   if ((search_Container.style.display = "none")) {
+//     search_Container.style.display = "block";
+//   }
+//   search.style.display = "none";
+// });
 
-// Validate the search feature on DESKTOP
-var searchInputDesktop = document.getElementById("search-input-Desktop");
-// Function to highlight the search term
-const highlightSearchTerm_Desktop = (searchTerm_Desktop) => {
-  const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, button");
-  const regex = new RegExp(`(${searchTerm_Desktop})`, "gi");
+// // Validate the search feature on DESKTOP
+// var searchInputDesktop = document.getElementById("search-input-Desktop");
+// // Function to highlight the search term
+// const highlightSearchTerm_Desktop = (searchTerm_Desktop) => {
+//   const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, button");
+//   const regex = new RegExp(`(${searchTerm_Desktop})`, "gi");
 
-  Desktop_elements.forEach((Desktop_element) => {
-    Desktop_element.innerHTML = Desktop_element.innerHTML.replace(
-      regex,
-      '<span class="highlight">$1</span>'
-    );
-  });
-};
+//   Desktop_elements.forEach((Desktop_element) => {
+//     Desktop_element.innerHTML = Desktop_element.innerHTML.replace(
+//       regex,
+//       '<span class="highlight">$1</span>'
+//     );
+//   });
+// };
 
+// const searchOnDesktop = () => {
+//   const searchTerm_Desktop = searchInputDesktop.value.trim();
+//   if (searchTerm_Desktop === "") {
+//     alert("Please input a word to search for");
+//   } else {
+//     const found_Desktop = document.body.innerText
+//     .toLowerCase()
+//     .includes(searchTerm_Desktop.toLowerCase());
+//     if (!found_Desktop) {
+//       alert(
+//         `We cannot find ${searchTerm_Desktop} now. You can try searching a differnt keyword`
+//       );
+//     } else {
+//       highlightSearchTerm_Desktop(searchTerm_Desktop);
+//     }
+//     searchInputDesktop.value = ""
+//   }
+// };
 
-const searchOnDesktop = () => {
-  const searchTerm_Desktop = searchInputDesktop.value.trim();
-  if (searchTerm_Desktop === "") {
-    alert("Please input a word to search for");
-  } else {
-    const found_Desktop = document.body.innerText
-    .toLowerCase()
-    .includes(searchTerm_Desktop.toLowerCase());
-    if (!found_Desktop) {
-      alert(
-        `We cannot find ${searchTerm_Desktop} now. You can try searching a differnt keyword`
-      );
-    } else {
-      highlightSearchTerm_Desktop(searchTerm_Desktop);
-    }
-    searchInputDesktop.value = ""
-  }
-};
+// searchInputDesktop.addEventListener("keydown", (e) => {
+//   if (e.key === "Enter") {
+//     e.preventDefault();
+//     searchOnDesktop();
+//   }
+// });
 
+// // CSS for highlighting
+// const style_Desktop = document.createElement("style");
+// style_Desktop.innerHTML = `
+//   .highlight {
+//     background-color: yellow;
+//     color: black;
+//   }
+// `;
+// document.head.appendChild(style_Desktop);
 
+// // VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE) - Show_Menu
+// const search_Media = document.querySelector(".search-icon-media");
+// var search_Container_media = document.querySelector(".search-container-media");
+// search_Media.addEventListener("click", () => {
+//   if ((search_Container_media.style.display = "none")) {
+//     search_Container_media.style.display = "block";
+//     show_menu.style.display = "none";
+//   }
+//   search_Media.style.display = "none";
+// });
 
-searchInputDesktop.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    searchOnDesktop();
-  }
-});
+// search_Media.addEventListener("click", () => {
+//   if ((search_Container_media.style.display = "none")) {
+//     search_Container_media.style.display = "block";
+//     hide_menu.style.display = "none";
+//   }
+//   search_Media.style.display = "none";
+// });
 
-// CSS for highlighting
-const style_Desktop = document.createElement("style");
-style_Desktop.innerHTML = `
-  .highlight {
-    background-color: yellow;
-    color: black;
-  }
-`;
-document.head.appendChild(style_Desktop);
+// // Validate the search feature on mobile
+// var inputSearchMedia = document.getElementById("search-input-media");
 
+// // Function to highlight the search term
+// const highlightSearchTerm = (searchTerm) => {
+//   const elements = document.querySelectorAll("p, h1, h2, h3, button");
+//   const regex = new RegExp(`(${searchTerm})`, "gi");
 
-// VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE) - Show_Menu
-const search_Media = document.querySelector(".search-icon-media");
-var search_Container_media = document.querySelector(".search-container-media");
-search_Media.addEventListener("click", () => {
-  if ((search_Container_media.style.display = "none")) {
-    search_Container_media.style.display = "block";
-    show_menu.style.display = "none";
-  }
-  search_Media.style.display = "none";
-});
+//   elements.forEach((element) => {
+//     element.innerHTML = element.innerHTML.replace(
+//       regex,
+//       '<span class="highlight">$1</span>'
+//     );
+//   });
+// };
 
-search_Media.addEventListener("click", () => {
-  if ((search_Container_media.style.display = "none")) {
-    search_Container_media.style.display = "block";
-    hide_menu.style.display = "none";
-  }
-  search_Media.style.display = "none";
-});
+// // Function to be triggered
+// const performSearch = () => {
+//   const searchTerm = inputSearchMedia.value.trim();
+//   if (searchTerm === "") {
+//     alert("Please input a word to search for");
+//   } else {
+//     const found = document.body.innerText
+//       .toLowerCase()
+//       .includes(searchTerm.toLowerCase());
+//     if (!found) {
+//       alert(
+//         `We cannot find "${searchTerm}" now. You can try searching a different keyword`
+//       );
+//     } else {
+//       // alert` Found ${found} words based on your search`
+//       // console.log(found.length);
+//       highlightSearchTerm(searchTerm);
+//     }
+//     inputSearchMedia.value = "";
+//   }
 
-// Validate the search feature on mobile
-var inputSearchMedia = document.getElementById("search-input-media");
+// };
 
-// Function to highlight the search term
-const highlightSearchTerm = (searchTerm) => {
-  const elements = document.querySelectorAll("p, h1, h2, h3, button");
-  const regex = new RegExp(`(${searchTerm})`, "gi");
+// // Calling the search function when user presses Enter
+// inputSearchMedia.addEventListener("keydown", (event) => {
+//   if (event.key === "Enter") {
+//     event.preventDefault(); // Prevent the default form submission behavior
+//     performSearch();
+//   }
+// });
 
-  elements.forEach((element) => {
-    element.innerHTML = element.innerHTML.replace(
-      regex,
-      '<span class="highlight">$1</span>'
-    );
-  });
-};
-
-// Function to be triggered
-const performSearch = () => {
-  const searchTerm = inputSearchMedia.value.trim();
-  if (searchTerm === "") {
-    alert("Please input a word to search for");
-  } else {
-    const found = document.body.innerText
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
-    if (!found) {
-      alert(
-        `We cannot find "${searchTerm}" now. You can try searching a different keyword`
-      );
-    } else {
-      // alert` Found ${found} words based on your search`
-      // console.log(found.length);
-      highlightSearchTerm(searchTerm);
-    }
-    inputSearchMedia.value = "";
-  }
-  
-};
-
-// Calling the search function when user presses Enter
-inputSearchMedia.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault(); // Prevent the default form submission behavior
-    performSearch();
-  }
-});
-
-// CSS for highlighting
-const style = document.createElement("style");
-style.innerHTML = `
-  .highlight {
-    background-color: yellow;
-    color: black;
-  }
-`;
-document.head.appendChild(style);
-
+// // CSS for highlighting
+// const style = document.createElement("style");
+// style.innerHTML = `
+//   .highlight {
+//     background-color: yellow;
+//     color: black;
+//   }
+// `;
+// document.head.appendChild(style);
 
 // Load the about us button when clicked on homepage
-const load_about_btn = document.querySelector(".about-btn");
+// const load_about_btn = document.querySelector(".about-btn");
 
-const fetch_AboutPage = (e) => {
-  window.location.href = "About.html"
-};
+// const fetch_AboutPage = (e) => {
+//   window.location.href = "About.html";
+// };
 
-load_about_btn.addEventListener("click", (e) => {
-  fetch_AboutPage();
-})
+// load_about_btn.addEventListener("click", (e) => {
+//   fetch_AboutPage();
+// });
 
 // VALIDATE SEARCH FEATURE ON THE HOMEPAGE
 
@@ -399,10 +364,10 @@ const showNewurologyDept = () => {
   button_Dental.style.color = "var(--clr-dark-main)";
   button_Opthal.style.background = "transparent";
   button_Opthal.style.color = "var(--clr-dark-main)";
-    button_Emergency.style.background = "transparent";
-    button_Emergency.style.color = "var(--clr-dark-main)";
-       button_Oncology.style.background = "transparent";
-       button_Oncology.style.color = "var(--clr-dark-main)";
+  button_Emergency.style.background = "transparent";
+  button_Emergency.style.color = "var(--clr-dark-main)";
+  button_Oncology.style.background = "transparent";
+  button_Oncology.style.color = "var(--clr-dark-main)";
 };
 
 button_Neurology.addEventListener("click", (e) => {
@@ -431,10 +396,10 @@ const showCardiologyDept = () => {
   button_Dental.style.color = "var(--clr-dark-main)";
   button_Opthal.style.background = "transparent";
   button_Opthal.style.color = "var(--clr-dark-main)";
-    button_Emergency.style.background = "transparent";
-    button_Emergency.style.color = "var(--clr-dark-main)";
-       button_Oncology.style.background = "transparent";
-       button_Oncology.style.color = "var(--clr-dark-main)";
+  button_Emergency.style.background = "transparent";
+  button_Emergency.style.color = "var(--clr-dark-main)";
+  button_Oncology.style.background = "transparent";
+  button_Oncology.style.color = "var(--clr-dark-main)";
 };
 
 button_Cardiology.addEventListener("click", (e) => {
@@ -464,10 +429,10 @@ const Show_Diagnostics = () => {
   button_Dental.style.color = "var(--clr-dark-main)";
   button_Opthal.style.background = "transparent";
   button_Opthal.style.color = "var(--clr-dark-main)";
-    button_Emergency.style.background = "transparent";
-    button_Emergency.style.color = "var(--clr-dark-main)";
-       button_Oncology.style.background = "transparent";
-       button_Oncology.style.color = "var(--clr-dark-main)";
+  button_Emergency.style.background = "transparent";
+  button_Emergency.style.color = "var(--clr-dark-main)";
+  button_Oncology.style.background = "transparent";
+  button_Oncology.style.color = "var(--clr-dark-main)";
 };
 
 button_Diagnosis.addEventListener("click", (e) => {
@@ -496,10 +461,10 @@ const show_Dental = () => {
   button_Diagnosis.style.color = "var(--clr-dark-main)";
   button_Opthal.style.background = "transparent";
   button_Opthal.style.color = "var(--clr-dark-main)";
-    button_Emergency.style.background = "transparent";
-    button_Emergency.style.color = "var(--clr-dark-main)";
-       button_Oncology.style.background = "transparent";
-       button_Oncology.style.color = "var(--clr-dark-main)";
+  button_Emergency.style.background = "transparent";
+  button_Emergency.style.color = "var(--clr-dark-main)";
+  button_Oncology.style.background = "transparent";
+  button_Oncology.style.color = "var(--clr-dark-main)";
 };
 
 button_Dental.addEventListener("click", (e) => {
@@ -528,10 +493,10 @@ const display_Opthalmalogy = () => {
   button_Cardiology.style.color = "var(--clr-dark-main)";
   button_Diagnosis.style.background = "transparent";
   button_Diagnosis.style.color = "var(--clr-dark-main)";
-    button_Emergency.style.background = "transparent";
-    button_Emergency.style.color = "var(--clr-dark-main)";
-       button_Oncology.style.background = "transparent";
-       button_Oncology.style.color = "var(--clr-dark-main)";
+  button_Emergency.style.background = "transparent";
+  button_Emergency.style.color = "var(--clr-dark-main)";
+  button_Oncology.style.background = "transparent";
+  button_Oncology.style.color = "var(--clr-dark-main)";
 };
 
 button_Opthal.addEventListener("click", (e) => {
@@ -553,41 +518,6 @@ const showEmergncyDept = () => {
   }
   button_Emergency.style.background = "var(--clr-hospital)";
   button_Emergency.style.color = "var(--clr-white-main)";
-    button_Opthal.style.background = "transparent";
-    button_Opthal.style.color = "var(--clr-dark-main)";
-    button_Dental.style.background = "transparent";
-    button_Dental.style.color = "var(--clr-dark-main)";
-    button_Neurology.style.background = "transparent";
-    button_Neurology.style.color = "var(--clr-dark-main)";
-    button_Cardiology.style.background = "transparent";
-    button_Cardiology.style.color = "var(--clr-dark-main)";
-    button_Diagnosis.style.background = "transparent";
-    button_Diagnosis.style.color = "var(--clr-dark-main)";
-     button_Oncology.style.background = "transparent";
-     button_Oncology.style.color = "var(--clr-dark-main)";
-};
-
-button_Emergency.addEventListener("click", (e) => {
-  e.preventDefault();
-  showEmergncyDept()
-})
-
-// Show OncologyDept
-
-const display_OncologyDept = () => {
-  if (Oncology_Dept.style.display = "none") {
-    Oncology_Dept.style.display = "block";
-    Emergency_Dept.style.display = "none";
-    Neurology_Dept.style.display = "none";
-    Cardiology_Dept.style.display = "none";
-    Diagnostics_Dept.style.display = "none";
-    Dental_Dept.style.display = "none";
-    Opthalmalogy_Dept.style.display = "none";
-  }
-  button_Oncology.style.background = "var(--clr-hospital)"; 
-  button_Oncology.style.color = "var(--clr-white-main)";
-   button_Emergency.style.background = "transparent";
-   button_Emergency.style.color = "var(--clr-dark-main)";
   button_Opthal.style.background = "transparent";
   button_Opthal.style.color = "var(--clr-dark-main)";
   button_Dental.style.background = "transparent";
@@ -598,19 +528,53 @@ const display_OncologyDept = () => {
   button_Cardiology.style.color = "var(--clr-dark-main)";
   button_Diagnosis.style.background = "transparent";
   button_Diagnosis.style.color = "var(--clr-dark-main)";
-}
+  button_Oncology.style.background = "transparent";
+  button_Oncology.style.color = "var(--clr-dark-main)";
+};
+
+button_Emergency.addEventListener("click", (e) => {
+  e.preventDefault();
+  showEmergncyDept();
+});
+
+// Show OncologyDept
+
+const display_OncologyDept = () => {
+  if ((Oncology_Dept.style.display = "none")) {
+    Oncology_Dept.style.display = "block";
+    Emergency_Dept.style.display = "none";
+    Neurology_Dept.style.display = "none";
+    Cardiology_Dept.style.display = "none";
+    Diagnostics_Dept.style.display = "none";
+    Dental_Dept.style.display = "none";
+    Opthalmalogy_Dept.style.display = "none";
+  }
+  button_Oncology.style.background = "var(--clr-hospital)";
+  button_Oncology.style.color = "var(--clr-white-main)";
+  button_Emergency.style.background = "transparent";
+  button_Emergency.style.color = "var(--clr-dark-main)";
+  button_Opthal.style.background = "transparent";
+  button_Opthal.style.color = "var(--clr-dark-main)";
+  button_Dental.style.background = "transparent";
+  button_Dental.style.color = "var(--clr-dark-main)";
+  button_Neurology.style.background = "transparent";
+  button_Neurology.style.color = "var(--clr-dark-main)";
+  button_Cardiology.style.background = "transparent";
+  button_Cardiology.style.color = "var(--clr-dark-main)";
+  button_Diagnosis.style.background = "transparent";
+  button_Diagnosis.style.color = "var(--clr-dark-main)";
+};
 
 button_Oncology.addEventListener("click", (e) => {
-    e.preventDefault();
-    display_OncologyDept()
-})
-
+  e.preventDefault();
+  display_OncologyDept();
+});
 
 // SPECIALISTS SECTION
 const Row_1_Specialists = document.querySelector(".first_Row");
 const Row_2_Specialists = document.querySelector(".Second_Row");
 
-const specialist_Toogler = document.getElementById("toggler")
+const specialist_Toogler = document.getElementById("toggler");
 
 const left_toggle = document.getElementById("left_toggle");
 
@@ -618,62 +582,59 @@ const right_toggle = document.getElementById("right_toggle");
 
 // Show Specialists Row_2
 const preview_Row2 = () => {
-  
-  if (Row_2_Specialists.style.contentVisibility = "hidden") {
-    Row_2_Specialists.style.contentVisibility ="visible";
-    Row_2_Specialists.classList.remove('animate_Row2');
+  if ((Row_2_Specialists.style.contentVisibility = "hidden")) {
+    Row_2_Specialists.style.contentVisibility = "visible";
+    Row_2_Specialists.classList.remove("animate_Row2");
     void Row_2_Specialists.offsetWidth;
-    Row_2_Specialists.classList.add('animate_Row2')
+    Row_2_Specialists.classList.add("animate_Row2");
   }
-  Row_1_Specialists.style.contentVisibility = "hidden"
-}
+  Row_1_Specialists.style.contentVisibility = "hidden";
+};
 
 right_toggle.addEventListener("click", (e) => {
   e.preventDefault();
-   preview_Row2();
+  preview_Row2();
 });
 
 const preview_Row1 = () => {
-  if (Row_1_Specialists.style.contentVisibility = "hidden") {
+  if ((Row_1_Specialists.style.contentVisibility = "hidden")) {
     Row_1_Specialists.style.contentVisibility = "visible";
     Row_1_Specialists.classList.remove("animate");
     void Row_1_Specialists.offsetWidth; // Trigger a reflow
-    Row_1_Specialists.classList.add('animate')
+    Row_1_Specialists.classList.add("animate");
   }
-  Row_2_Specialists.style.contentVisibility = "hidden"; 
-}
+  Row_2_Specialists.style.contentVisibility = "hidden";
+};
 
 left_toggle.addEventListener("click", (e) => {
   e.preventDefault();
-  preview_Row1()
-})
+  preview_Row1();
+});
 
 // Try show all Specialists
 const show_All_Specialists = () => {
   Row_1_Specialists.style.contentVisibility = "visible";
-   Row_1_Specialists.classList.remove("animate");
-   void Row_1_Specialists.offsetWidth; // Trigger a reflow
-   Row_1_Specialists.classList.add("animate");
+  Row_1_Specialists.classList.remove("animate");
+  void Row_1_Specialists.offsetWidth; // Trigger a reflow
+  Row_1_Specialists.classList.add("animate");
   Row_2_Specialists.style.contentVisibility = "Visible";
   Row_2_Specialists.classList.remove("animate_Row2");
   void Row_2_Specialists.offsetWidth;
   Row_2_Specialists.classList.add("animate_Row2");
   console.log(Row_1_Specialists && Row_2_Specialists);
-
-}
+};
 
 specialist_Toogler.addEventListener("click", (e) => {
   e.preventDefault();
-  show_All_Specialists()
-})
-
+  show_All_Specialists();
+});
 
 // Show Modal
 
 let modal = document.querySelector(".modal");
 
 const modal_Show = () => {
-  if (modal.style.display = "none") {
+  if ((modal.style.display = "none")) {
     modal.style.display = "block";
     var main_Content = document.querySelector(".main");
     // main_Content.classList.add("toogle_Body");
@@ -696,15 +657,15 @@ appointment_Form.addEventListener("submit", (e) => {
 const modal_button_remove = document.getElementById("remove_modal");
 const btn_Success = document.getElementById("btn_success");
 const modal_remove = () => {
-  if (modal.style.display = "block") {
+  if ((modal.style.display = "block")) {
     modal.style.display = "none";
     modal.classList.add("animate_Row2");
   }
-}
+};
 modal_button_remove.addEventListener("click", (e) => {
   e.preventDefault();
-  modal_remove()
-})
+  modal_remove();
+});
 btn_Success.addEventListener("click", () => {
   modal_remove();
-})
+});

@@ -1,4 +1,8 @@
 
+
+// Load Navs Dynamically
+import("./nav-loader.js");
+
 // Append a border to the Blog Text
 
 // addBorder;

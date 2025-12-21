@@ -1,3 +1,6 @@
+// Load Navs Dynamically
+import("./nav-loader.js");
+
 // Append a border to the Contact Text
 
 // addBorder;

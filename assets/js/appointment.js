@@ -1,4 +1,6 @@
 
+// Load Navs Dynamically
+import("./nav-loader.js");
 
 
 var home_El = document.getElementById("home_Contents");

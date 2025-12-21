@@ -224,11 +224,6 @@ a {
 .nav-links ul li a {
   color: var(--clr-white-main);
 }
-  #log_In{
-            position: relative;
-            /* left: 30px; */
-            text-transform: uppercase;
-        }
 /* For Search Input on Desktop */
 .search-container-Desktop{
   display: none;
@@ -261,12 +256,18 @@ a {
 #icon-drops-up {
   margin: 0 20px;
 }
+#icon-drops.hide-icon{
+  display: none;
+}
 #icon-drops-up {
   display: none;
 }
+#icon-drops-up.show-icon{
+  display: block;
+}
+/* My Dropsdown code */
 .drops {
-  width: 250px;
-  background: var(--clr-dark-main);
+  background: var(--clr-hospital);
   color: var(--clr-white-main);
   border-radius: 4px;
   padding: 15px 10px;
@@ -274,16 +275,18 @@ a {
   top: 45px;
   display: none;
   z-index: 100;
-  animation: drops 2s linear;
-  box-shadow: 0 0 5px var(--clr-hospital-deep);
+  animation: drops 0.2s linear;
+    transition: top .4s ease;
+}
+.show.drops{
+  display: block;
 }
 @keyframes drops {
   0%{
-    transform: translateY(0);
-  }
-  50%, 100%{
-     transition: .4s ease;
     transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
   }
 }
 .drops ul {
@@ -1137,112 +1140,69 @@ OUR SERVICES SEECTION
     
   }
   .nav-links {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 45px;
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   position: absolute;
+   top: 45px;
+    right: -90vh;
     background: var(--clr-dark-blue);
-    width: 70%;
-    height: 500px;
+    width: 80%;
     /* text-align: center; */
-    animation: showCarousel 0.5s ease-in-out;
+    /* animation: showCarousel 0.5s ease-in-out; */
     height: calc(100vh - 3rem);
-    /* overflow-y: auto; */
-    padding-bottom: 20px;
-    z-index: 100;
+    transition: right 0.5s ease;
+    overflow-y: auto;
+    z-index: 999;
   }
-
-  /* @keyframes Carousel2 {
-    0% {
-      width: 0;
-      transition: all 0.3s;
-    }
-    50%,
-    100% {
-      width: 70%;
-      transition: all 0.3s;
-    }
-  } */
+  .nav-links.show_navs{
+    right: 0;
+  }
   .nav-links ul {
     display: block;
     margin-bottom: 20px;
   }
   .nav-links ul li {
-    padding: 35px;
+    padding: 35px 15px;
   }
   .nav-links ul li:hover {
     border-bottom: 0;
-    border-left: 2px solid var(--clr-white-main);
-    transform: translateX(15px);
+    border-left: 0;
+    transform: translateX(0);
     background: transparent;
+  }
+  .nav-links-mobile:hover{
+        font-weight: bold;
+
   }
   .nav-links ul li a{
     font-size: 18px;
   }
-     #log_In{
-            position: relative;
-            left: 0;
-            text-transform: uppercase;
-        }
   /* Apt Button on Mobile */
   .apt_mobile{
     display: block;
   }
-  /* Search feature(Input) on Media */
-  .search-container-media{
-    display: none;
-  }
-  #search-input-media{
-    padding: 12px 7px;
-    width: 220px;
-    position: relative;
-    bottom: 35px;
-    left: -25px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-        font-size: 14px;
-
-  }
-  #search-input-media::-webkit-search-cancel-button{
-    cursor: pointer;
-  }
-  #glass-media{
-    position: relative;
-    display: none;
-    left: -80px;
-    z-index: 100;
-    /* right: 30px; */
-    bottom: 35px;
-    cursor: pointer;
-    /* width: 20px; */
-    /* background: var(--error-message); */
-  }
-  /* Arrow */
-  #arrow-back-home{
-    display: block;
-    z-index: 100;
-    position: relative;
-    left: -60px;
-    font-size: 20px;
-    width: 30px;
-    color: var(--clr-white-main);
-  }
-  #arrow-back-home:hover{
-    transition: .2s;
-    transform: translateX(-5px);
-  }
-  .drops {
+  #drops_down {
     position: relative;
     top: 0px;
-    /* background: transparent; */
-    width: 250px;
-    left: 1px;
-    z-index: 100;
+    background: var(--clr-hospital);
+    width: 80%;
+    left: -15px;
+    height: auto;
+    box-shadow: none;
+    z-index: 1000;
   }
-  .drops ul li {
+  /* I want th */
+
+  #drops_down ul li {
     padding: 25px;
+    display: block;
+  }
+
+  
+  #drops_down ul li:hover{
+    transition: .4s;
+    font-weight: bold;
   }
   .search {
     display: none;
@@ -1414,7 +1374,7 @@ OUR SERVICES SEECTION
   margin-left: 0;
 }
 .IG_Photos{
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 .IG_Photos img{
@@ -1433,128 +1393,6 @@ OUR SERVICES SEECTION
 
 /* Ipads */
 
-@media (min-width: 760px) and (max-width: 950px) {
-  /* #headre-background {
-            box-shadow: 0 0 10px var(--clr-dark-main);
-        } */
-          .main_nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-  }
-  .logo h2 {
-    display: none;
-  }
-
-  #logo-home {
-    display: block;
-    width: 100px;
-    position: relative;
-    bottom: 20px;
-    /* left: -15px; */
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 40px;
-    background: var(--clr-dark-blue);
-    width: 100%;
-    height: 800px;
-    animation: nav-rotate 2s linear;
-    height: calc(100vh - 3rem);
-  }
-
-  @keyframes nav-rotate {
-    0% {
-      height: 0;
-      transition: all 0.3s;
-    }
-
-    50%,
-    100% {
-         height: calc(100vh - 3rem);
-      transition: all 0.3s;
-    }
-  }
-
-  .nav-links ul {
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  .nav-links ul li {
-    padding: 55px;
-  }
-
-  /* Apt Button on Mobile */
-  .apt_mobile{
-    display: block;
-  }
- /* Search feature(Input) on Media */
-  .search-container-media{
-    display: none;
-  }
-  #search-input-media{
-    padding: 15px 7px;
-    width: 420px;
-    position: relative;
-    bottom: 35px;
-    left: -25px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    font-size: 14px;
-
-  }
-  #search-input-media::-webkit-search-cancel-button{
-    cursor: pointer;
-   color: var(--clr-hospital-deep);
-  }
-  #glass-media{
-    position: relative;
-    display: none;
-    left: -80px;
-    z-index: 100;
-    /* right: 30px; */
-    bottom: 35px;
-    cursor: pointer;
-    /* width: 20px; */
-    /* background: var(--error-message); */
-  }
-  /* Arrow */
-  #arrow-back-home{
-    display: block;
-    z-index: 100;
-    position: relative;
-    left: -60px;
-    font-size: 20px;
-    width: 30px;
-    color: var(--clr-white-main);
-  }
-  #arrow-back-home:hover{
-    transition: .2s;
-    transform: translateX(-5px);
-  }
-  .search {
-    display: none;
-  }
-
-  .menuTab {
-    display: block;
-  }
-  .drops {
-    position: relative;
-    top: 20px;
-    /* background: transparent; */
-    width: 200px;
-    left: 1px;
-    z-index: 100;
-  }
 
   .drops ul li {
     padding: 25px;
@@ -1680,87 +1518,6 @@ OUR SERVICES SEECTION
 }
 .copyRight{
   text-align: center;
-}
-
-
-}
-
-
-/* Semi_Big Screens */
-@media screen and (max-width: 820px) and (min-width: 768px) {
-  .servicesContainer{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 30px 15px;
-  column-gap: 35px;
-  row-gap: 20px;
- }
- .apppointment_Container{
-   margin: 10px 10px;
-   display: flex;
-   justify-content: space-around;
- }
- .appointment_img{
-  /* width: 100px; */
-  /* background: var(--clr-hospital-deep); */
-  position: relative;
-  left: -80px;
- }
- #Book_appointment_Image{
-  position: relative;
-  bottom: 100px;
-  left: 40px;
-}
-
- .first_Row{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 40px 35px;
-  column-gap: 35px;
-}
-.Second_Row{
-   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
- /* ************************************************
-       BLOGS SECTION
-   **************************************************/
-.blogs_contents{
-  display: block;
-}
-
-.blog_Texts, .blog_2_Texts{
-    height: auto;
-}
- .comment{
-    position: relative;
-    left: 15px;
-   }
-/* ************************************************************
-                            CONTACT/FOOTER SECTION
- **************************************************************/
-.contact_Footer{
-  grid-template-columns: repeat(2, 1fr);
-}
-.Navigation_Footer{
-  margin-left: 0;
-}
-.IG_Photos{
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.IG_Photos img{
-  width: 200px;
-}
-
-#socials_Footer{
-  display: block;
-  text-align: center;
-  margin: 25px 0;
-}
-.copyRight{
-  text-align: center;
-}
 }
 
 @media screen and (min-width: 950px) and (max-width: 1024px) {

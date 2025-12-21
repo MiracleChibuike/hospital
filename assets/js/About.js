@@ -1,4 +1,7 @@
 
+// Load Navs Dynamically
+import("./nav-loader.js");
+
 // Append a border to the About Text
 
 // addBorder;

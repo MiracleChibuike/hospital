@@ -149,80 +149,8 @@
             <button onclick="preview_Appointment()">Appointment</button>
         </div>
     </div>
-    <div class="main_nav">
-        <!-- Header -->
-        <div class="header">
-            <img src="assets/images/design-curve.jpg" id="headre-background" alt="">
-        </div>
-        <!-- Nav-links -->
-        <div class="navs">
-            <div class="logo">
-                <img src="assets/images/Capital_Health.png" id="logo-home" alt="">
-                <h2>C-HEALTH</h2>
-            </div>
-            <!-- Search Icon used in Media Only -->
-            <p class="search-media">
-                <span class="search-container-media">
-                    <i class="fa-solid fa-arrow-left" id="arrow-back-home"></i>
-                    <input type="search" placeholder="Search" id="search-input-media">
-                    <i class="fa-solid fa-magnifying-glass" id="glass-media"></i>
-                </span>
-                <img src="assets/images/search-icon.png" id="search-icon" class="search-icon-media" alt="">
-            </p>
-            <!-- Menu Tab -->
-            <div class="menuTab">
-                <i class="fa-solid fa-bars" id="displayMenu"></i>
-                <i class="fa-solid fa-xmark" id="hide_menu"></i>
-            </div>
-            <div class="nav-links" id="links">
-                <ul>
-                    <li id="home_Contents" onclick="load_HomePage()">
-                        HOME
-                    </li>
-                    <li id="About_El">
-                        ABOUT
-                    </li>
-                    <li id="departments_load" onclick="load_Department_Page()">
-                        DEPARTMENTS
-                    </li>
-                    <li>
-                        <span id="Pages">
-                            PAGES <div class="icons_Drops"><i class="fa-solid fa-caret-down" id="icon-drops">
-                                </i> <i class="fa-solid fa-caret-up" id="icon-drops-up"></i></div>
-                        </span>
-                        <div class="drops">
-                            <ul>
-                                <li>Our Teams</li>
-                                <li>Patient's Faqs</li>
-                                <li>Patient Feedbacks</li>
-                                <li>Our News</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li onclick="load_BlogPage()">
-                        BLOG
-                    </li>
-                    <li onclick="load_ContactPage()">
-                        CONTACT
-                    </li>
-                    <li id="log_In" onclick="load_LoginPage()">
-                        Login
-                    </li>
-                </ul>
-            </div>
-            <!-- {/* For search feature Desktop */} -->
-            <div class="search">
-                <span class="search-container-Desktop">
-                    <form action="">
-                        <input type="search" placeholder="Search" id="search-input-Desktop">
-                        <i class="fa-solid fa-magnifying-glass" id="small-glass-search"></i>
-                    </form>
-                </span>
-                <img src="assets/images/search-icon.png" id="search-icon" class="getData" alt="search" />
-            </div>
-        </div>
-    </div>
-    <!-- End Nav-Links -->
+    <!-- Placeholder for dynamically loaded nav -->
+    <div id="nav-placeholder"></div>
 
     <div class="inner_Contents">
 
@@ -411,8 +339,10 @@
 
 <!-- FA Link -->
 <script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
-<script src="assets/js/About.js"></script>
 <!-- JS Default Link -->
+<script src="assets/js/About.js"></script>
+<!-- Load Navs Dynamically -->
+<script src="assets/js/nav-loader.js"></script>
 </body>
 
 </html>
