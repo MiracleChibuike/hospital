@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,10 +52,33 @@
             --error-message: rgb(192, 73, 73);
             --login-error: rgb(242, 184, 184);
         }
-        .addBorder{
-  border-bottom: 2px solid var(--clr-white-default);
-  font-weight: bold;
+
+        .appointment-Header a {
+            padding: 15px 20px;
+            background: var(--clr-hospital);
+            border: none;
+            color: var(--clr-white-main);
+            border-radius: 4px;
+            cursor: pointer;
+            /* font-weight: bold */
+        }
+
+        .appointment-Header a:hover {
+            background: var(--clr-dark-blue);
+            transition: 0.4s;
+        }
+        .nav-links ul{
+            position: relative;
+            left: -20px;
+        }
+        .nav-links ul li {
+  padding: 0 25px;
+  height: 30px;
+  cursor: pointer;
+  color: var(--clr-white-main);
+  /* font-weight: bold; */
 }
+
         #Login {
             /* display: grid;
             place-content: center;
@@ -62,7 +86,8 @@
             margin: 10px 0 0 0;
             padding: 20px 0;
         }
-        .login_Message{
+
+        .login_Message {
             text-align: center;
             margin: 0 0 10px 0;
             background: var(--clr-hospital);
@@ -72,17 +97,20 @@
             border-bottom-left-radius: 30px;
             width: 100%;
         }
-        .login_Message h2{
+
+        .login_Message h2 {
             text-transform: uppercase;
             font-weight: lighter;
             line-height: 2;
         }
-        .form_Container{
+
+        .form_Container {
             display: grid;
             place-content: center;
             margin: 10px 0;
         }
-        .form_Error{
+
+        .form_Error {
             display: flex;
             justify-content: space-evenly;
             /* width: 100%; */
@@ -95,16 +123,23 @@
             border: 1px solid var(--error-message);
             visibility: hidden;
         }
-        #remove{
+
+        #remove {
             font-size: 25px;
             cursor: pointer;
             color: var(--clr-white-default);
             background: var(--login-error);
         }
-        .Firstname, .Lastname, .password{
+
+        .Firstname,
+        .Lastname,
+        .password {
             margin: 20px 0;
         }
-        .Firstname input, .Lastname input, .password input{
+
+        .Firstname input,
+        .Lastname input,
+        .password input {
             background: var(--clr-darkGray);
             border: none;
             padding: 15px 30px;
@@ -112,7 +147,8 @@
             outline: none;
             /* cursor: pointer; */
         }
-        .password_Icons i{
+
+        .password_Icons i {
             font-size: 13px;
             color: var(--clr-login_Message);
             width: 20px;
@@ -121,29 +157,39 @@
             bottom: 32px;
             cursor: pointer;
         }
-        .password_Icons{
+
+        .password_Icons {
             width: 40px;
             margin: 0 0;
         }
-        #password_Visible{
+
+        #password_Visible {
             display: none;
         }
-        .Firstname input:focus, .Lastname input:focus, .password input:focus{
+
+        .Firstname input:focus,
+        .Lastname input:focus,
+        .password input:focus {
             outline: 2px solid var(--clr-hospital);
             transition: .2s ease-in-out;
             box-shadow: 0 0 15px var(--clr-hospital-deep);
             /* transform: scale(1.02); */
         }
-        .Firstname img, .Lastname img, .password img{
+
+        .Firstname img,
+        .Lastname img,
+        .password img {
             position: relative;
             left: 27px;
             top: 3px;
         }
-        .submit{
+
+        .submit {
             text-align: center;
             /* margin: 10px 0; */
         }
-        #login_button{
+
+        #login_button {
             width: 93%;
             padding: 12px 0;
             border: none;
@@ -156,62 +202,71 @@
             position: relative;
             bottom: 10px;
         }
-        #login_button:hover{
+
+        #login_button:hover {
             background: var(--clr-hospital-deep);
             transition: .4s ease-in-out;
             scale: 1.1;
         }
-        .password_forgot{
+
+        .password_forgot {
             text-align: center;
             margin: 40px 0;
         }
-        .password_forgot p{
+
+        .password_forgot p {
             color: var(--clr-hospital);
             position: relative;
             left: 10px;
             cursor: pointer;
         }
-        .account_Create{
+
+        .account_Create {
             text-align: center;
             margin: 40px 0;
         }
+
         /* .account_Create p{
             text-decoration: underline;
         } */
-        .account_Create span{
+        .account_Create span {
             color: var(--clr-hospital);
             cursor: pointer;
             border-bottom: 2px solid var(--clr-hospital);
             position: relative;
             left: 10px;
         }
-        #log_In{
+
+        #log_In {
             position: relative;
             left: 30px;
             text-transform: uppercase;
         }
 
         @media screen and (min-width: 0) and (max-width: 750px) {
-            .form_Error{
+            .form_Error {
                 margin: 0 50px;
                 display: block;
                 text-align: center;
                 position: relative;
                 bottom: 10px;
             }
-              #Login {
-            margin: 10px 0 0 0;
-            padding: 20px 0;
-        }
-          #log_In{
-            position: relative;
-            left: 0;
-            text-transform: uppercase;
-        }
-        .form_Container{
-            position: relative;
-            top: -30px;
-        }
+
+            #Login {
+                margin: 10px 0 0 0;
+                padding: 20px 0;
+            }
+
+            #log_In {
+                position: relative;
+                left: 0;
+                text-transform: uppercase;
+            }
+
+            .form_Container {
+                position: relative;
+                top: -30px;
+            }
         }
     </style>
 </head>
@@ -239,7 +294,7 @@
                     href="mailto:miraclechibuike27@gmail.com">C-Health@healthcare.com</a></span>
         </div>
         <div class="appointment-Header">
-            <button onclick="preview_Appointment()">Appointment</button>
+            <a href="Appointment.html">Appointment</a>
         </div>
     </div>
     <!-- Placeholder for dynamically loaded nav -->
@@ -247,15 +302,11 @@
     <!-- End Nav-Links -->
 
     <div class="inner_Contents">
-
-        <!-------------------------------------------------------------
-                                 Contact Us SECTION
-            --------------------------------------------------- -->
-       <section id="Login">
-        <div class="login_Message">
-            <h2>Welcome Back</h2>
-            <p>Enter your credentials to access your medical records, book appointments, and more.</p>
-        </div>
+        <section id="Login">
+            <div class="login_Message">
+                <h2>Welcome Back</h2>
+                <p>Enter your credentials to access your medical records, book appointments, and more.</p>
+            </div>
             <div class="form_Error">
                 <div class="errorIcon">
                     <!-- <i class="fa-solid fa-circle-xmark" id="remove"></i> -->
@@ -264,41 +315,41 @@
                     <p>Invalid first name, last name, or password</p>
                 </div>
             </div>
-        <div class="form_Container">
-            <form action="" id="log_In_Form">
-                <div class="Firstname">
-                    <!-- <label for="userName">Username</label> -->
-                    <img src="assets/images/login_icons/Customer.png" alt="">
-                    <input type="text" name="firstname" id="FName" placeholder="First Name" required>
-                </div>
-                <div class="Lastname">
-                    <img src="assets/images/login_icons/Customer.png" alt="">
-                    <input type="text" name="lastname" id="LName" placeholder="Last Name" required>
+            <div class="form_Container">
+                <form action="" id="log_In_Form">
+                    <div class="Firstname">
+                        <!-- <label for="userName">Username</label> -->
+                        <img src="assets/images/login_icons/Customer.png" alt="">
+                        <input type="text" name="firstname" id="FName" placeholder="First Name" required>
+                    </div>
+                    <div class="Lastname">
+                        <img src="assets/images/login_icons/Customer.png" alt="">
+                        <input type="text" name="lastname" id="LName" placeholder="Last Name" required>
 
-                </div>
-                <div class="password">
-                    <!-- <label for="Userpassword">Password</label> -->
-                    <img src="assets/images/login_icons/Password.png" alt="">
-                    <input type="password" name="password" id="Userpassword" placeholder="Password" required>
-                   <div class="password_Icons">
-                    <i class="fa-solid fa-eye-slash" id="password_Hide"></i>
-                    <i class="fa-solid fa-eye" id="password_Visible"></i>
-                   </div>
-                </div>
-                <div class="submit">
-                    <button type="submit" id="login_button">Log In</button>
-                </div>
-            </form>
+                    </div>
+                    <div class="password">
+                        <!-- <label for="Userpassword">Password</label> -->
+                        <img src="assets/images/login_icons/Password.png" alt="">
+                        <input type="password" name="password" id="Userpassword" placeholder="Password" required>
+                        <div class="password_Icons">
+                            <i class="fa-solid fa-eye-slash" id="password_Hide"></i>
+                            <i class="fa-solid fa-eye" id="password_Visible"></i>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="login_button">Log In</button>
+                    </div>
+                </form>
 
-            <div class="password_forgot">
-                <p>Forgot Password?</p>
+                <div class="password_forgot">
+                    <p>Forgot Password?</p>
+                </div>
+
+                <div class="account_Create">
+                    <p>Don't have an account? <span id="return_signUp">Create One</span></p>
+                </div>
             </div>
-
-            <div class="account_Create">
-                <p>Don't have an account?  <span id="return_signUp">Create One</span></p>
-            </div>
-        </div>
-       </section>
+        </section>
 
         <div class="apt_mobile">
             <i class="fa-solid fa-calendar-check fa-beat" id="apt_button_Mobile" onclick="preview_Appointment()"></i>
@@ -398,8 +449,8 @@
 <script src="https://kit.fontawesome.com/9b5c4c6b23.js" crossorigin="anonymous"></script>
 <!-- JS Default Link -->
 <script src="assets/js/Login.js"></script>
- <!-- Load Nav Dynamically -->
-  <script src="assets/js/nav-loader.js"></script>
+<!-- Load Nav Dynamically -->
+<script src="assets/js/nav-loader.js"></script>
 </body>
 
 </html>

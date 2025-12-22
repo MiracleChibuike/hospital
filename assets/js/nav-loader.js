@@ -65,45 +65,36 @@ function initializeNav() {
   let contactPage = document.getElementById("contact_El");
   let loginPage = document.getElementById("log_In");
 
+    const selectedPages = document.getElementsByClassName("nav-links-mobile");
+    console.log(selectedPages);
 
-  const addBorder = () => {
-    const currentPath = window.location.pathname;
+  // Restore active page from localStorage
+  const activePage = localStorage.getItem("activePage");
+  for (let i = 0; i < selectedPages.length; i++) {
+    if (activePage && selectedPages[i].id === activePage) {
+      selectedPages[i].style.fontWeight = "bold";
+      selectedPages[i].style.borderBottom = "2px solid var(--clr-white-default)";
+    }
+  }
 
-    if (currentPath.endsWith("index.html") || currentPath === "/") {
-        home_Active.classList.add("active");
-    } else {
-        home_Active.classList.remove("active");
-    }   
-    if (currentPath.endsWith("about.html")) {
-        aboutUs.classList.add("active");
-    } else {
-        aboutUs.classList.remove("active");
+for (let i = 0; i < selectedPages.length; i++) {
+  selectedPages[i].addEventListener("click", function () {
+    // Remove the "active" class from all items
+    for (let j = 0; j < selectedPages.length; j++) {
+      selectedPages[j].style.fontWeight = "normal";
+      selectedPages[j].style.borderBottom = "none";
     }
-    if (currentPath.endsWith("departments.html")) {
-        departmenrts.classList.add("active");
-    } else {
-        departmenrts.classList.remove("active");
-    }
-    if (currentPath.endsWith("blogs.html")) {
-        blogsPage.classList.add("active");
-    } else {
-        blogsPage.classList.remove("active");
-    }   
-    if (currentPath.endsWith("contact.html")) {
-        contactPage.classList.add("active");
-    } else {
-        contactPage.classList.remove("active");
-    }
-    if (currentPath.endsWith("login.html")) {   
-        loginPage.classList.add("active");
-    } else {
-        loginPage.classList.remove("active");
-    }
-    };
 
-  addBorder();
-
+    // Add the "active" class to the clicked item
+    this.style.fontWeight = "bold";
+    this.style.borderBottom = "2px solid var(--clr-white-default)";
+    
+    // Save the active page to localStorage
+    localStorage.setItem("activePage", this.id);
+  });
 }
+};
+
 
 // Load nav when DOM is ready
 document.addEventListener('DOMContentLoaded', loadNav);
