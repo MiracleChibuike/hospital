@@ -1,0 +1,48 @@
+# This file is meant to be our API testing environments as it allows us to send requests from here
+# INSTEAD OF WRITING YOUR DOCUMENTATIONS ON HOW TO CALL A PARTICULAR API ENDPOINT OR PARAMS,
+# PLEASE USE THIS FILE TO UPDATE THEM
+# Note: You must install this extension from your VS Code Extensions Market place (apirest)
+
+############################# BELOW IS AN EXAMPLE ON HOW IT WORKS AND USE CASE ################################
+
+
+# I FETCHED THIS DATA FROM OUR EXSITING PROJECT WITH BRO KACHI SO YOU CAN SEE, PLEASE DELETE AFTER READING, AND TREPLACE WITH OURS
+### ========= CUR_SESSION API ==================
+
+### GET CUR_SESSION
+# http://localhost/schola/api/cur_sessionapi/get_cursession.php
+https://beta-schola.myf2.net/api/cur_sessionapi/get_cursession.php
+
+
+### ========= SUBJECT API ==================
+### GET A SUBJECT
+httpS://maclesleyinternationalschools.com.ng/api/subjectapi/getsubject.php?subject_id=2
+
+### GET A SUBJECT
+http://localhost/schola/api/subjectapi/getsubject.php?subject_id=2
+
+
+### GET ALL SUBJECTS
+http://localhost/schola/api/subjectapi/getsubjects.php
+
+
+### CRAETE A SUBJECT
+POST http://localhost/schola/api/subjectapi/createsubject.php
+
+{
+    "subject_name": "AMALA SC",
+    "subject_code": "ASmat",
+    "staff_id": 1
+}
+
+### UPDETE A SUBJECT
+POST http://localhost/schola/api/subjectapi/updatesubject.php
+
+{
+    "subject_id": "1",
+    "subject_name": "Mathematics",
+    "subject_code": "mat",
+    "staff_id": 1
+}
+
+### ========SUBJECT API ENDS HERE ========
