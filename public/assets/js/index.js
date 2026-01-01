@@ -44,252 +44,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// // Show nav-contents
-// let show_menu = document.getElementById("displayMenu");
-// let hide_menu = document.getElementById("hide_menu");
-// let nav_links = document.querySelector(".nav-links");
-// let Contents_Inner = document.querySelector(".inner_Contents");
-
-// show_menu.addEventListener("click", () => {
-//   nav_links.classList.toggle("show_navs");
-//   Contents_Inner.classList.toggle("animate_Background");
-// });
-
-
-// let pages2 = document.getElementById("Pages");
-
-// document.addEventListener("click", (e) => {
-//   const show_menu_btn = show_menu;
-
-//   if (
-//     !nav_links.contains(e.target) &&
-//     e.target !== show_menu_btn &&
-//     !pages2.contains(e.target)
-//   ) {
-//     nav_links.classList.remove("show_navs");
-//     Contents_Inner.classList.remove("animate_Background");
-//   }
-// });
-
-// let pages = document.getElementById("Pages");
-// let drop_down = document.querySelector(".drops");
-// let icon_down = document.getElementById("icon-drops");
-// let icon_up = document.getElementById("icon-drops-up");
-// pages.addEventListener("click", (e) => {
-//   drop_down.classList.toggle("show");
-//   icon_down.classList.toggle("hide-icon");
-//   icon_up.classList.toggle("show-icon");
-// });
-
-// document.addEventListener("click", (e) => {
-//   if (e.target !== pages && e.target !== drop_down) {
-//     drop_down.classList.remove("show");
-//     icon_down.classList.toggle("hide-icon");
-//     icon_up.classList.toggle("show-icon");
-//   }
-// });
-
-// Append a border to the Home Text
-
-// addBorder;
-// let home_Active = document.getElementById("home_Contents");
-
-// const addBorder = () => {
-//   if (home_Active) {
-//     home_Active.classList.add("addBorder");
-//   } else {
-//     home_Active.classList.remove("addBorder");
-//   }
-// };
-
-// addBorder();
-
-// // Load all pages as according to the user-clicks(Page-redirect);
-
-// const load_BlogPage = () => {
-//   window.location.href = "Blog.html";
-// };
-
-// var re_Direct_Departments = document.getElementById("departments_load");
-
-// const load_Department_Page = (e) => {
-//   console.log(re_Direct_Departments);
-//   window.location.href = "Departments.html";
-// };
-// // re_Direct_Departments.addEventListener("click", (e) => {
-// //   e.preventDefault();
-// //   load_Department_Page();
-// //   console.log(re_Direct_Departments)
-// // })
-
-// const load_AboutPage = () => {
-//   window.location.href = "About.html";
-// };
-
-// const load_ContactPage = () => {
-//   window.location.href = "Contact_Us.html";
-// };
-
-// // Load the Appointment page
-// const preview_Appointment = () => {
-//   window.location.href = "Appointment.html";
-// };
-
-// let logIn_Text = document.getElementById("log_In");
-// const load_LoginPage = () => {
-//   window.location.href = "Login.html";
-// };
-
-// VALIDATE THE SERCH ICON TO SHOW THE SEARCH INPUT -- (Desktop)
-// const search = document.querySelector(".getData");
-// var search_Container = document.querySelector(".search-container-Desktop");
-
-// search.addEventListener("click", () => {
-//   if ((search_Container.style.display = "none")) {
-//     search_Container.style.display = "block";
-//   }
-//   search.style.display = "none";
-// });
-
-// // Validate the search feature on DESKTOP
-// var searchInputDesktop = document.getElementById("search-input-Desktop");
-// // Function to highlight the search term
-// const highlightSearchTerm_Desktop = (searchTerm_Desktop) => {
-//   const Desktop_elements = document.querySelectorAll("p, h1, h2, h3, button");
-//   const regex = new RegExp(`(${searchTerm_Desktop})`, "gi");
-
-//   Desktop_elements.forEach((Desktop_element) => {
-//     Desktop_element.innerHTML = Desktop_element.innerHTML.replace(
-//       regex,
-//       '<span class="highlight">$1</span>'
-//     );
-//   });
-// };
-
-// const searchOnDesktop = () => {
-//   const searchTerm_Desktop = searchInputDesktop.value.trim();
-//   if (searchTerm_Desktop === "") {
-//     alert("Please input a word to search for");
-//   } else {
-//     const found_Desktop = document.body.innerText
-//     .toLowerCase()
-//     .includes(searchTerm_Desktop.toLowerCase());
-//     if (!found_Desktop) {
-//       alert(
-//         `We cannot find ${searchTerm_Desktop} now. You can try searching a differnt keyword`
-//       );
-//     } else {
-//       highlightSearchTerm_Desktop(searchTerm_Desktop);
-//     }
-//     searchInputDesktop.value = ""
-//   }
-// };
-
-// searchInputDesktop.addEventListener("keydown", (e) => {
-//   if (e.key === "Enter") {
-//     e.preventDefault();
-//     searchOnDesktop();
-//   }
-// });
-
-// // CSS for highlighting
-// const style_Desktop = document.createElement("style");
-// style_Desktop.innerHTML = `
-//   .highlight {
-//     background-color: yellow;
-//     color: black;
-//   }
-// `;
-// document.head.appendChild(style_Desktop);
-
-// // VALIDATE THE SAERCH FEATURE TO SHOW THE SEARCH INPUT -- (MOBILE) - Show_Menu
-// const search_Media = document.querySelector(".search-icon-media");
-// var search_Container_media = document.querySelector(".search-container-media");
-// search_Media.addEventListener("click", () => {
-//   if ((search_Container_media.style.display = "none")) {
-//     search_Container_media.style.display = "block";
-//     show_menu.style.display = "none";
-//   }
-//   search_Media.style.display = "none";
-// });
-
-// search_Media.addEventListener("click", () => {
-//   if ((search_Container_media.style.display = "none")) {
-//     search_Container_media.style.display = "block";
-//     hide_menu.style.display = "none";
-//   }
-//   search_Media.style.display = "none";
-// });
-
-// // Validate the search feature on mobile
-// var inputSearchMedia = document.getElementById("search-input-media");
-
-// // Function to highlight the search term
-// const highlightSearchTerm = (searchTerm) => {
-//   const elements = document.querySelectorAll("p, h1, h2, h3, button");
-//   const regex = new RegExp(`(${searchTerm})`, "gi");
-
-//   elements.forEach((element) => {
-//     element.innerHTML = element.innerHTML.replace(
-//       regex,
-//       '<span class="highlight">$1</span>'
-//     );
-//   });
-// };
-
-// // Function to be triggered
-// const performSearch = () => {
-//   const searchTerm = inputSearchMedia.value.trim();
-//   if (searchTerm === "") {
-//     alert("Please input a word to search for");
-//   } else {
-//     const found = document.body.innerText
-//       .toLowerCase()
-//       .includes(searchTerm.toLowerCase());
-//     if (!found) {
-//       alert(
-//         `We cannot find "${searchTerm}" now. You can try searching a different keyword`
-//       );
-//     } else {
-//       // alert` Found ${found} words based on your search`
-//       // console.log(found.length);
-//       highlightSearchTerm(searchTerm);
-//     }
-//     inputSearchMedia.value = "";
-//   }
-
-// };
-
-// // Calling the search function when user presses Enter
-// inputSearchMedia.addEventListener("keydown", (event) => {
-//   if (event.key === "Enter") {
-//     event.preventDefault(); // Prevent the default form submission behavior
-//     performSearch();
-//   }
-// });
-
-// // CSS for highlighting
-// const style = document.createElement("style");
-// style.innerHTML = `
-//   .highlight {
-//     background-color: yellow;
-//     color: black;
-//   }
-// `;
-// document.head.appendChild(style);
-
-// Load the about us button when clicked on homepage
-// const load_about_btn = document.querySelector(".about-btn");
-
-// const fetch_AboutPage = (e) => {
-//   window.location.href = "About.html";
-// };
-
-// load_about_btn.addEventListener("click", (e) => {
-//   fetch_AboutPage();
-// });
-
-// VALIDATE SEARCH FEATURE ON THE HOMEPAGE
 
 const form = document.getElementById("form_main");
 const locationInput = document.getElementById("input-location");
@@ -334,301 +88,65 @@ Opthalmalogy_Dept = document.getElementById("Ophthalmology_target");
 Emergency_Dept = document.getElementById("Emergency_target");
 Oncology_Dept = document.getElementById("Oncology_target");
 
-//  Defining the buttons for each dept
-const button_Cardiology = document.getElementById("Cardiology_Dept");
-const button_Neurology = document.getElementById("Neurology_Dept");
-const button_Diagnosis = document.getElementById("Diagnostics_Dept");
-const button_Dental = document.getElementById("Dental_Dept");
-const button_Opthal = document.getElementById("Opthalmalogy_Dept");
-const button_Emergency = document.getElementById("Emergency_Dept");
-const button_Oncology = document.getElementById("Oncology_Dept");
+let btnDepartments = document.querySelectorAll(".btn_dept");
+let departments = document.querySelectorAll(".dept");
 
-// showNeurologyDept
-const showNewurologyDept = () => {
-  if ((Neurology_Dept.style.display = "none")) {
-    Neurology_Dept.style.display = "block";
-    Cardiology_Dept.style.display = "none";
-    Diagnostics_Dept.style.display = "none";
-    Dental_Dept.style.display = "none";
-    Opthalmalogy_Dept.style.display = "none";
-    Emergency_Dept.style.display = "none";
-    Oncology_Dept.style.display = "none";
-  }
-  button_Neurology.style.background = "var(--clr-hospital)";
-  button_Neurology.style.color = "var(--clr-white-main)";
-  button_Cardiology.style.background = "transparent";
-  button_Cardiology.style.color = "var(--clr-dark-main)";
-  button_Diagnosis.style.background = "transparent";
-  button_Diagnosis.style.color = "var(--clr-dark-main)";
-  button_Dental.style.background = "transparent";
-  button_Dental.style.color = "var(--clr-dark-main)";
-  button_Opthal.style.background = "transparent";
-  button_Opthal.style.color = "var(--clr-dark-main)";
-  button_Emergency.style.background = "transparent";
-  button_Emergency.style.color = "var(--clr-dark-main)";
-  button_Oncology.style.background = "transparent";
-  button_Oncology.style.color = "var(--clr-dark-main)";
-};
+// optional default
+btnDepartments[0]?.classList.add("active");
+departments[0]?.classList.add("active");
 
-button_Neurology.addEventListener("click", (e) => {
-  e.preventDefault();
-  showNewurologyDept();
+btnDepartments.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const dept = btn.dataset.dept;
+
+    // REMOVE active from ALL buttons
+    btnDepartments.forEach((b) => b.classList.remove("active"));
+
+    // REMOVE active from ALL sections
+    departments.forEach((section) => section.classList.remove("active"));
+
+    // ADD active to clicked button
+    btn.classList.add("active");
+
+    // ADD active to matching section
+    document
+      .querySelector(`.dept[data-dept="${dept}"]`)
+      ?.classList.add("active");
+  });
 });
 
-// Show cardiology Dept
-const showCardiologyDept = () => {
-  if ((Cardiology_Dept.style.display = "none")) {
-    Cardiology_Dept.style.display = "block";
-    Neurology_Dept.style.display = "none";
-    Diagnostics_Dept.style.display = "none";
-    Dental_Dept.style.display = "none";
-    Opthalmalogy_Dept.style.display = "none";
-    Emergency_Dept.style.display = "none";
-    Oncology_Dept.style.display = "none";
-  }
-  button_Neurology.style.background = "transparent";
-  button_Neurology.style.color = "var(--clr-dark-main)";
-  button_Cardiology.style.background = "var(--clr-hospital)";
-  button_Cardiology.style.color = "var(--clr-white-main)";
-  button_Diagnosis.style.background = "transparent";
-  button_Diagnosis.style.color = "var(--clr-dark-main)";
-  button_Dental.style.background = "transparent";
-  button_Dental.style.color = "var(--clr-dark-main)";
-  button_Opthal.style.background = "transparent";
-  button_Opthal.style.color = "var(--clr-dark-main)";
-  button_Emergency.style.background = "transparent";
-  button_Emergency.style.color = "var(--clr-dark-main)";
-  button_Oncology.style.background = "transparent";
-  button_Oncology.style.color = "var(--clr-dark-main)";
-};
 
-button_Cardiology.addEventListener("click", (e) => {
-  e.preventDefault();
-  showCardiologyDept();
+// Show Doctors
+let allDocs = document.querySelectorAll(".show_docs");
+let rightToggle = document.getElementById("right_toggle");
+let leftToggle = document.getElementById("left_toggle");
+let firstRow = document.querySelector(".first_Row");
+let secondRow = document.querySelector(".Second_Row")
+// Show Doctors Row (Right)
+rightToggle.addEventListener("click", () => {
+  rightToggle.classList.add("clickedRow");
+  document.getElementById("toggler").classList.remove("clickedRow");
+  leftToggle.classList.remove("clickedRow");
+  secondRow.classList.add("show_docs");
+  firstRow.classList.remove("show_docs");
+})
+// Show Doctors Row (Left)
+leftToggle.addEventListener("click", () => {
+  leftToggle.classList.add("clickedRow");
+  document.getElementById("toggler").classList.remove("clickedRow");
+    rightToggle.classList.remove("clickedRow");
+  firstRow.classList.add("show_docs");
+  secondRow.classList.remove("show_docs");
 });
 
-// Show Diagnostics
-
-const Show_Diagnostics = () => {
-  if ((Diagnostics_Dept.style.display = "none")) {
-    Diagnostics_Dept.style.display = "block";
-    Neurology_Dept.style.display = "none";
-    Cardiology_Dept.style.display = "none";
-    Dental_Dept.style.display = "none";
-    Opthalmalogy_Dept.style.display = "none";
-    Emergency_Dept.style.display = "none";
-    Oncology_Dept.style.display = "none";
-  }
-  button_Diagnosis.style.background = "var(--clr-hospital)";
-  button_Diagnosis.style.color = "var(--clr-white-main)";
-  button_Neurology.style.background = "transparent";
-  button_Neurology.style.color = "var(--clr-dark-main)";
-  button_Cardiology.style.background = "transparent";
-  button_Cardiology.style.color = "var(--clr-dark-main)";
-  button_Dental.style.background = "transparent";
-  button_Dental.style.color = "var(--clr-dark-main)";
-  button_Opthal.style.background = "transparent";
-  button_Opthal.style.color = "var(--clr-dark-main)";
-  button_Emergency.style.background = "transparent";
-  button_Emergency.style.color = "var(--clr-dark-main)";
-  button_Oncology.style.background = "transparent";
-  button_Oncology.style.color = "var(--clr-dark-main)";
-};
-
-button_Diagnosis.addEventListener("click", (e) => {
-  e.preventDefault();
-  Show_Diagnostics();
-});
-
-// Show Dental
-const show_Dental = () => {
-  if ((Dental_Dept.style.display = "none")) {
-    Dental_Dept.style.display = "block";
-    Neurology_Dept.style.display = "none";
-    Cardiology_Dept.style.display = "none";
-    Diagnostics_Dept.style.display = "none";
-    Opthalmalogy_Dept.style.display = "none";
-    Emergency_Dept.style.display = "none";
-    Oncology_Dept.style.display = "none";
-  }
-  button_Dental.style.background = "var(--clr-hospital)";
-  button_Dental.style.color = "var(--clr-white-main)";
-  button_Neurology.style.background = "transparent";
-  button_Neurology.style.color = "var(--clr-dark-main)";
-  button_Cardiology.style.background = "transparent";
-  button_Cardiology.style.color = "var(--clr-dark-main)";
-  button_Diagnosis.style.background = "transparent";
-  button_Diagnosis.style.color = "var(--clr-dark-main)";
-  button_Opthal.style.background = "transparent";
-  button_Opthal.style.color = "var(--clr-dark-main)";
-  button_Emergency.style.background = "transparent";
-  button_Emergency.style.color = "var(--clr-dark-main)";
-  button_Oncology.style.background = "transparent";
-  button_Oncology.style.color = "var(--clr-dark-main)";
-};
-
-button_Dental.addEventListener("click", (e) => {
-  e.preventDefault();
-  show_Dental();
-});
-
-// Show Opthalmalogy_Dept
-const display_Opthalmalogy = () => {
-  if ((Opthalmalogy_Dept.style.display = "none")) {
-    Opthalmalogy_Dept.style.display = "block";
-    Neurology_Dept.style.display = "none";
-    Cardiology_Dept.style.display = "none";
-    Diagnostics_Dept.style.display = "none";
-    Dental_Dept.style.display = "none";
-    Emergency_Dept.style.display = "none";
-    Oncology_Dept.style.display = "none";
-  }
-  button_Opthal.style.background = "var(--clr-hospital)";
-  button_Opthal.style.color = "var(--clr-white-main)";
-  button_Dental.style.background = "transparent";
-  button_Dental.style.color = "var(--clr-dark-main)";
-  button_Neurology.style.background = "transparent";
-  button_Neurology.style.color = "var(--clr-dark-main)";
-  button_Cardiology.style.background = "transparent";
-  button_Cardiology.style.color = "var(--clr-dark-main)";
-  button_Diagnosis.style.background = "transparent";
-  button_Diagnosis.style.color = "var(--clr-dark-main)";
-  button_Emergency.style.background = "transparent";
-  button_Emergency.style.color = "var(--clr-dark-main)";
-  button_Oncology.style.background = "transparent";
-  button_Oncology.style.color = "var(--clr-dark-main)";
-};
-
-button_Opthal.addEventListener("click", (e) => {
-  e.preventDefault();
-  display_Opthalmalogy();
-});
-
-// Show Emergenncy Dept
-
-const showEmergncyDept = () => {
-  if ((Emergency_Dept.style.display = "none")) {
-    Emergency_Dept.style.display = "block";
-    Neurology_Dept.style.display = "none";
-    Cardiology_Dept.style.display = "none";
-    Diagnostics_Dept.style.display = "none";
-    Dental_Dept.style.display = "none";
-    Opthalmalogy_Dept.style.display = "none";
-    Oncology_Dept.style.display = "none";
-  }
-  button_Emergency.style.background = "var(--clr-hospital)";
-  button_Emergency.style.color = "var(--clr-white-main)";
-  button_Opthal.style.background = "transparent";
-  button_Opthal.style.color = "var(--clr-dark-main)";
-  button_Dental.style.background = "transparent";
-  button_Dental.style.color = "var(--clr-dark-main)";
-  button_Neurology.style.background = "transparent";
-  button_Neurology.style.color = "var(--clr-dark-main)";
-  button_Cardiology.style.background = "transparent";
-  button_Cardiology.style.color = "var(--clr-dark-main)";
-  button_Diagnosis.style.background = "transparent";
-  button_Diagnosis.style.color = "var(--clr-dark-main)";
-  button_Oncology.style.background = "transparent";
-  button_Oncology.style.color = "var(--clr-dark-main)";
-};
-
-button_Emergency.addEventListener("click", (e) => {
-  e.preventDefault();
-  showEmergncyDept();
-});
-
-// Show OncologyDept
-
-const display_OncologyDept = () => {
-  if ((Oncology_Dept.style.display = "none")) {
-    Oncology_Dept.style.display = "block";
-    Emergency_Dept.style.display = "none";
-    Neurology_Dept.style.display = "none";
-    Cardiology_Dept.style.display = "none";
-    Diagnostics_Dept.style.display = "none";
-    Dental_Dept.style.display = "none";
-    Opthalmalogy_Dept.style.display = "none";
-  }
-  button_Oncology.style.background = "var(--clr-hospital)";
-  button_Oncology.style.color = "var(--clr-white-main)";
-  button_Emergency.style.background = "transparent";
-  button_Emergency.style.color = "var(--clr-dark-main)";
-  button_Opthal.style.background = "transparent";
-  button_Opthal.style.color = "var(--clr-dark-main)";
-  button_Dental.style.background = "transparent";
-  button_Dental.style.color = "var(--clr-dark-main)";
-  button_Neurology.style.background = "transparent";
-  button_Neurology.style.color = "var(--clr-dark-main)";
-  button_Cardiology.style.background = "transparent";
-  button_Cardiology.style.color = "var(--clr-dark-main)";
-  button_Diagnosis.style.background = "transparent";
-  button_Diagnosis.style.color = "var(--clr-dark-main)";
-};
-
-button_Oncology.addEventListener("click", (e) => {
-  e.preventDefault();
-  display_OncologyDept();
-});
-
-// SPECIALISTS SECTION
-const Row_1_Specialists = document.querySelector(".first_Row");
-const Row_2_Specialists = document.querySelector(".Second_Row");
-
-const specialist_Toogler = document.getElementById("toggler");
-
-const left_toggle = document.getElementById("left_toggle");
-
-const right_toggle = document.getElementById("right_toggle");
-
-// Show Specialists Row_2
-const preview_Row2 = () => {
-  if ((Row_2_Specialists.style.contentVisibility = "hidden")) {
-    Row_2_Specialists.style.contentVisibility = "visible";
-    Row_2_Specialists.classList.remove("animate_Row2");
-    void Row_2_Specialists.offsetWidth;
-    Row_2_Specialists.classList.add("animate_Row2");
-  }
-  Row_1_Specialists.style.contentVisibility = "hidden";
-};
-
-right_toggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  preview_Row2();
-});
-
-const preview_Row1 = () => {
-  if ((Row_1_Specialists.style.contentVisibility = "hidden")) {
-    Row_1_Specialists.style.contentVisibility = "visible";
-    Row_1_Specialists.classList.remove("animate");
-    void Row_1_Specialists.offsetWidth; // Trigger a reflow
-    Row_1_Specialists.classList.add("animate");
-  }
-  Row_2_Specialists.style.contentVisibility = "hidden";
-};
-
-left_toggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  preview_Row1();
-});
-
-// Try show all Specialists
-const show_All_Specialists = () => {
-  Row_1_Specialists.style.contentVisibility = "visible";
-  Row_1_Specialists.classList.remove("animate");
-  void Row_1_Specialists.offsetWidth; // Trigger a reflow
-  Row_1_Specialists.classList.add("animate");
-  Row_2_Specialists.style.contentVisibility = "Visible";
-  Row_2_Specialists.classList.remove("animate_Row2");
-  void Row_2_Specialists.offsetWidth;
-  Row_2_Specialists.classList.add("animate_Row2");
-  console.log(Row_1_Specialists && Row_2_Specialists);
-};
-
-specialist_Toogler.addEventListener("click", (e) => {
-  e.preventDefault();
-  show_All_Specialists();
-});
-
+// Show All Doctors Row
+document.getElementById("toggler").addEventListener('click', () => {
+  document.getElementById("toggler").classList.add("clickedRow");
+  firstRow.classList.add("show_docs");
+  secondRow.classList.add("show_docs");
+  leftToggle.classList.remove("clickedRow");
+  rightToggle.classList.remove("clickedRow");
+})
 // Show Modal
 
 let modal = document.querySelector(".modal");

@@ -111,17 +111,17 @@
         <!-- specialists Div -->
         <div class="departments_specs">
             <div class="box_Specs">
-                <Button id="Cardiology_Dept" class="button_cardiology_strong"> <i class="fa-solid fa-heart-pulse"></i>
-                    CARDIOLOGY </Button>
-                <Button id="Neurology_Dept"> <i class="fa-solid fa-dna"></i> NEUROLOGY</Button>
-                <Button id="Diagnostics_Dept"><i class="fa-solid fa-bed-pulse"></i> DIAGNOSTICS</Button>
-                <Button id="Dental_Dept"> <i class="fa-solid fa-tooth"></i> Dental</Button>
-                <Button id="Opthalmalogy_Dept"> <i class="fa-solid fa-eye"></i> Opthalmalogy</Button>
-                <Button id="Emergency_Dept"> <i class="fa-regular fa-hospital"></i> Emergency</Button>
-                <Button id="Oncology_Dept"> <i class="fa-solid fa-stethoscope"></i> Oncology</Button>
+                <Button id="Cardiology_Dept" class="btn_dept active" data-dept="Cardiology"> <i class="fa-solid fa-heart-pulse"></i>
+                    Cardiology </Button>
+                <Button id="Neurology_Dept" class="btn_dept" data-dept="Neurology"> <i class="fa-solid fa-dna"></i> Neurology</Button>
+                <Button id="Diagnostics_Dept" class="btn_dept" data-dept="Diagnostics"><i class="fa-solid fa-bed-pulse"></i> Diagnostics</Button>
+                <Button id="Dental_Dept" class="btn_dept" data-dept="Dental"> <i class="fa-solid fa-tooth"></i> Dental</Button>
+                <Button id="Opthalmalogy_Dept" class="btn_dept" data-dept="Opthalmalogy"> <i class="fa-solid fa-eye"></i> Opthalmalogy</Button>
+                <Button id="Emergency_Dept" class="btn_dept" data-dept="Emergency"> <i class="fa-regular fa-hospital"></i> Emergency</Button>
+                <Button id="Oncology_Dept" class="btn_dept" data-dept="Oncology"> <i class="fa-solid fa-stethoscope"></i> Oncology</Button>
             </div>
             <!-- cardiology_Container" -->
-            <div class="cardiology_Container" id="Cardiology_target">
+            <div class="cardiology_Container dept active" id="Cardiology_target" data-dept="Cardiology">
                 <div class="cardImg">
                     <img src="assets/images/cardiology_experiment.jpg" id="img_cardiology"
                         alt="cardiology experiment with our expert doctors">
@@ -145,7 +145,7 @@
                 <button class="contact-btn" id="btn_cardiology">Contact Us</button>
             </div>
             <!-- Neurology Container Goes here -->
-            <div class="Neurology_Container" id="Neurology_target">
+            <div class="Neurology_Container dept" id="Neurology_target" data-dept="Neurology">
                 <div class="neurology_Image_Cover">
                     <img src="assets/images/diagnos-2.jpg" id="img_cardiology" alt="Specialized neurology care services">
                 </div>
@@ -169,7 +169,7 @@
                 <button class="contact-btn" id="btn_Neurology">Contact Us</button>
             </div>
             <!-- Diagnostics Container Goes here -->
-            <div class="Diagnostics_Container" id="Diagnostics_target">
+            <div class="Diagnostics_Container dept" id="Diagnostics_target" data-dept="Diagnostics">
                 <div class="Diagnostics_Image_Cover">
                     <img src="assets/images/diagnosis.jpeg" id="img_cardiology" alt="Advanced medical diagnostic services">
                 </div>
@@ -194,7 +194,7 @@
                 <button class="contact-btn" id="btn_Diagnostics">Contact Us</button>
             </div>
             <!-- Dental Container Goes here -->
-            <div class="Dental_Container" id="Dental_target">
+            <div class="Dental_Container dept" id="Dental_target" data-dept="Dental">
                 <div class="Dental_Image_Cover">
                     <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Professional dental health care">
                 </div>
@@ -221,7 +221,7 @@
                 <button class="contact-btn" id="btn_Dental">Contact Us</button>
             </div>
             <!-- Ophthalmology Container Goes here -->
-            <div class="Ophthalmology_Container" id="Ophthalmology_target">
+            <div class="Ophthalmology_Container dept" id="Ophthalmology_target" data-dept="Opthalmalogy">
                 <div class="Ophthalmology_Image_Cover">
                     <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Comprehensive eye care services">
                 </div>
@@ -246,7 +246,7 @@
                 <button class="contact-btn" id="btn_Ophthalmology">Contact Us</button>
             </div>
             <!-- Emergency Container Goes here -->
-            <div class="Emergency_Container" id="Emergency_target">
+            <div class="Emergency_Container dept" id="Emergency_target" data-dept="Emergency">
                 <div class="Emergency_Image_Cover">
                     <img src="assets/images/emergency.jpeg" id="img_cardiology" alt="Immediate emergency medical care">
                 </div>
@@ -276,7 +276,7 @@
                 <button class="contact-btn" id="btn_Emergency">Contact Us</button>
             </div>
             <!-- Oncology Container Goes here -->
-            <div class="Oncology_Container" id="Oncology_target">
+            <div class="Oncology_Container dept" id="Oncology_target" data-dept="Oncology">
                 <div class="Oncology_Image_Cover">
                     <img src="assets/images/oncology_Dept.jpeg" id="img_cardiology" alt="Expert cancer treatment care">
                 </div>
@@ -484,7 +484,7 @@
                 <p>Meet our dedicated specialists who ensure everything runs smoothly with their diverse expertise.</p>
             </div>
             <div class="main_Specialists">
-                <div class="first_Row">
+                <div class="first_Row docs show_docs">
                     <div class="row">
                         <div class="row_Img_container">
                             <img src="assets/images/doctor-2.png" id="specialist_Image" alt="">
@@ -540,7 +540,7 @@
                     </div>
                 </div>
                 <!-- Second_Row -->
-                <div class="Second_Row">
+                <div class="Second_Row docs">
                     <div class="row">
                         <div class="row_Img_container">
                             <img src="assets/images/doc_Ng_Origin.png" id="specialist_Image" alt="">
@@ -601,7 +601,7 @@
                 <!-- Controller for handling of Doctors tuggling(Show and Hide) -->
                 <div class="controller_Div">
                     <div class="buttons_Controller">
-                        <p><i class="fa-solid fa-angles-left" id="left_toggle"></i></p>
+                        <p><i class="fa-solid fa-angles-left clickedRow" id="left_toggle"></i></p>
                         <button id="toggler">All Doctors</button>
                         <p><i class="fa-solid fa-angles-right" id="right_toggle"></i></p>
                     </div>
@@ -775,6 +775,8 @@
 <script src="assets/js/index.js"></script>
 <!-- Load Navs Dynamically -->
  <script src="assets/js/nav-loader.js"></script>
+ <!-- API DOmain -->
+  <script src="assets/js/api_domain.js"></script>
 </body>
 
 </html>

@@ -107,231 +107,218 @@
         <!-------------------------------------------------------------
                                  DEPARTMENT SEECTION
             --------------------------------------------------- -->
-        <section id="departments">
-            <div class="departmentHeader">
-                <h2 class="department_Header">OUR DEPARTMENT</h2>
-                <P>Welcome to our medical departments, where dedicated professionals provide exceptional care.</P>
-                <div class="department_Indicator">
-                    <i class="fa-regular fa-hospital"></i>
+            <section id="departments" style="margin: 100px 0;">
+                <div class="departmentHeader">
+                    <h2 class="department_Header">OUR DEPARTMENT</h2>
+                    <P>Welcome to our medical departments, where dedicated professionals provide exceptional care.</P>
+                    <div class="department_Indicator">
+                        <i class="fa-regular fa-hospital"></i>
+                    </div>
                 </div>
-            </div>
-            <!-- specialists Div -->
-            <div class="departments_specs">
-                <div class="box_Specs">
-                    <Button id="Cardiology_Dept" class="button_cardiology_strong"> <i
-                            class="fa-solid fa-heart-pulse"></i>
-                        CARDIOLOGY </Button>
-                    <Button id="Neurology_Dept"> <i class="fa-solid fa-dna"></i> NEUROLOGY</Button>
-                    <Button id="Diagnostics_Dept"><i class="fa-solid fa-bed-pulse"></i> DIAGNOSTICS</Button>
-                    <Button id="Dental_Dept"> <i class="fa-solid fa-tooth"></i> Dental</Button>
-                    <Button id="Opthalmalogy_Dept"> <i class="fa-solid fa-eye"></i> Opthalmalogy</Button>
-                    <Button id="Emergency_Dept"> <i class="fa-regular fa-hospital"></i> Emergency</Button>
-                    <Button id="Oncology_Dept"> <i class="fa-solid fa-stethoscope"></i> Oncology</Button>
+                <!-- specialists Div -->
+                <div class="departments_specs">
+                    <div class="box_Specs">
+                        <Button id="Cardiology_Dept" class="btn_dept active" data-dept="Cardiology"> <i
+                                class="fa-solid fa-heart-pulse"></i>
+                            Cardiology </Button>
+                        <Button id="Neurology_Dept" class="btn_dept" data-dept="Neurology"> <i class="fa-solid fa-dna"></i>
+                            Neurology</Button>
+                        <Button id="Diagnostics_Dept" class="btn_dept" data-dept="Diagnostics"><i class="fa-solid fa-bed-pulse"></i>
+                            Diagnostics</Button>
+                        <Button id="Dental_Dept" class="btn_dept" data-dept="Dental"> <i class="fa-solid fa-tooth"></i>
+                            Dental</Button>
+                        <Button id="Opthalmalogy_Dept" class="btn_dept" data-dept="Opthalmalogy"> <i class="fa-solid fa-eye"></i>
+                            Opthalmalogy</Button>
+                        <Button id="Emergency_Dept" class="btn_dept" data-dept="Emergency"> <i class="fa-regular fa-hospital"></i>
+                            Emergency</Button>
+                        <Button id="Oncology_Dept" class="btn_dept" data-dept="Oncology"> <i class="fa-solid fa-stethoscope"></i>
+                            Oncology</Button>
+                    </div>
+                    <!-- cardiology_Container" -->
+                    <div class="cardiology_Container dept active" id="Cardiology_target" data-dept="Cardiology">
+                        <div class="cardImg">
+                            <img src="assets/images/cardiology_experiment.jpg" id="img_cardiology"
+                                alt="cardiology experiment with our expert doctors">
+                        </div>
+                        <h3 class="about_cardiology">About the Cardiology</h3>
+                        <p>Our Cardiology Department is equipped with state-of-the-art technology and experienced cardiologists
+                            who <br> specialize in
+                            heart health. We offer comprehensive cardiac care, from diagnosis to treatment and rehabilitation.
+                        </p>
+                        <div class="cardiology_services">
+                            <div class="service1">
+                                <p><i class="fa-regular fa-circle-check"></i> Heart health evaluations</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Heart disease treatments</p>
+                            </div>
+                            <div class="service2">
+                                <p><i class="fa-regular fa-circle-check"></i> Interventional procedures</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Cardiac rehab programs</p>
+                            </div>
+                        </div>
+                        <!-- Contact Button -->
+                        <button class="contact-btn" id="btn_cardiology">Contact Us</button>
+                    </div>
+                    <!-- Neurology Container Goes here -->
+                    <div class="Neurology_Container dept" id="Neurology_target" data-dept="Neurology">
+                        <div class="neurology_Image_Cover">
+                            <img src="assets/images/diagnos-2.jpg" id="img_cardiology" alt="Specialized neurology care services">
+                        </div>
+                        <h3 class="about_Neurology">About the Neurology</h3>
+                        <p>Our Neurology Department specializes in the diagnosis and treatment of neurological disorders. Our
+                            team of <br> neurologists
+                            uses cutting-edge technology to provide comprehensive care for conditions affecting the brain
+                            and <br> nervous system.</p>
+                        <div class="Neurology_services">
+                            <div class="service1">
+                                <p><i class="fa-regular fa-circle-check"></i> Neurological rehabilitation programs</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Advanced neuroimaging (e.g., MRI, CT scans)</p>
+                            </div>
+                            <div class="service2">
+                                <p><i class="fa-regular fa-circle-check"></i> Comprehensive neurological evaluations</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Treatment of neurological disorders <br>(e.g.,
+                                    epilepsy, multiple sclerosis)</p>
+                            </div>
+                        </div>
+                        <!-- Contact Button -->
+                        <button class="contact-btn" id="btn_Neurology">Contact Us</button>
+                    </div>
+                    <!-- Diagnostics Container Goes here -->
+                    <div class="Diagnostics_Container dept" id="Diagnostics_target" data-dept="Diagnostics">
+                        <div class="Diagnostics_Image_Cover">
+                            <img src="assets/images/diagnosis.jpeg" id="img_cardiology" alt="Advanced medical diagnostic services">
+                        </div>
+                        <h3 class="about_Diagnostics">About the Diagnostics</h3>
+                        <p>The Diagnostics Department focuses on identifying and diagnosing a wide range of health conditions
+                            using <br> advanced
+                            technology. Our diagnostic specialists are experts in their field, ensuring accurate and timely <br>
+                            results for optimal
+                            patient care.</p>
+                        <div class="Diagnostics_services">
+                            <div class="service1">
+                                <p><i class="fa-regular fa-circle-check"></i> Comprehensive lab tests</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Imaging services (e.g., X-rays, MRIs, CT scans)
+                                </p>
+                            </div>
+                            <div class="service2">
+                                <p><i class="fa-regular fa-circle-check"></i> Blood tests and analyses</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Genetic testing and screening</p>
+                            </div>
+                        </div>
+                        <!-- Contact Button -->
+                        <button class="contact-btn" id="btn_Diagnostics">Contact Us</button>
+                    </div>
+                    <!-- Dental Container Goes here -->
+                    <div class="Dental_Container dept" id="Dental_target" data-dept="Dental">
+                        <div class="Dental_Image_Cover">
+                            <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Professional dental health care">
+                        </div>
+                        <h3 class="about_Dental">About the Dental</h3>
+                        <p>Our Dental Department focuses on maintaining and improving oral health using advanced techniques <br>
+                            and
+                            technology. Our
+                            dental specialists are experts in their field, providing comprehensive care for optimal dental
+                            health.
+                        <div class="Dental_services">
+                            <div class="service1">
+                                <p><i class="fa-regular fa-circle-check"></i> Routine dental check-ups and cleanings</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Cosmetic dentistry (e.g., teeth whitening,
+                                    veneers)</p>
+                            </div>
+                            <div class="service2">
+                                <p><i class="fa-regular fa-circle-check"></i> Orthodontic services (e.g., braces, Invisalign)
+                                </p>
+                                <p><i class="fa-regular fa-circle-check"></i> Restorative treatments (e.g., fillings, crowns,
+                                    bridges)</p>
+                            </div>
+                        </div>
+                        <!-- Contact Button -->
+                        <button class="contact-btn" id="btn_Dental">Contact Us</button>
+                    </div>
+                    <!-- Ophthalmology Container Goes here -->
+                    <div class="Ophthalmology_Container dept" id="Ophthalmology_target" data-dept="Opthalmalogy">
+                        <div class="Ophthalmology_Image_Cover">
+                            <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Comprehensive eye care services">
+                        </div>
+                        <h3 class="about_Ophthalmology">About the Ophthalmology</h3>
+                        <p>Our Ophthalmology Department focuses on maintaining and improving eye health using advanced <br>
+                            techniques and technology.
+                            Our ophthalmologists are experts in their field, providing comprehensive care <br> for optimal
+                            vision and
+                            eye health.
+                        <div class="Ophthalmology_services">
+                            <div class="service1">
+                                <p><i class="fa-regular fa-circle-check"></i> Comprehensive eye exams</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Cataract surgery</p>
+                            </div>
+                            <div class="service2">
+                                <p><i class="fa-regular fa-circle-check"></i> Treatment for glaucoma and macular degeneration
+                                </p>
+                                <p><i class="fa-regular fa-circle-check"></i> Corrective procedures (e.g., LASIK, PRK)</p>
+                            </div>
+                        </div>
+                        <!-- Contact Button -->
+                        <button class="contact-btn" id="btn_Ophthalmology">Contact Us</button>
+                    </div>
+                    <!-- Emergency Container Goes here -->
+                    <div class="Emergency_Container dept" id="Emergency_target" data-dept="Emergency">
+                        <div class="Emergency_Image_Cover">
+                            <img src="assets/images/emergency.jpeg" id="img_cardiology" alt="Immediate emergency medical care">
+                        </div>
+                        <h3 class="about_Emergency">About the Emergency</h3>
+                        <p>The Emergency Department is dedicated to providing immediate and life-saving care for a wide range of
+                            <br>
+                            medical
+                            emergencies. Our emergency physicians and nurses are experts in their field, ensuring prompt
+                            and <br> effective treatment for
+                            all patients. We are equipped with the latest technology and resources to handle <br> critical
+                            situations and provide
+                            comprehensive emergency care.
+                        </p>
+                        <div class="Emergency_services">
+                            <div class="service1">
+                                <p><i class="fa-regular fa-circle-check"></i> 24/7 emergency care</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Trauma care and stabilization</p>
+                            </div>
+                            <div class="service2">
+                                <p><i class="fa-regular fa-circle-check"></i> Acute medical treatment (e.g., heart attacks,
+                                    strokes)</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Rapid diagnostic services (e.g., imaging, lab
+                                    tests)</p>
+                            </div>
+                        </div>
+                        <!-- Contact Button -->
+                        <button class="contact-btn" id="btn_Emergency">Contact Us</button>
+                    </div>
+                    <!-- Oncology Container Goes here -->
+                    <div class="Oncology_Container dept" id="Oncology_target" data-dept="Oncology">
+                        <div class="Oncology_Image_Cover">
+                            <img src="assets/images/oncology_Dept.jpeg" id="img_cardiology" alt="Expert cancer treatment care">
+                        </div>
+                        <h3 class="about_Oncology">About the Oncology</h3>
+                        <p>The Oncology Department is dedicated to providing comprehensive and compassionate care for patients
+                            <br>
+                            with cancer. Our
+                            oncologists and specialized staff are experts in diagnosing and treating various types of <br>
+                            cancer, ensuring personalized
+                            treatment plans for each patient.
+                        </p>
+                        <div class="Oncology_services">
+                            <div class="service1">
+                                <p><i class="fa-regular fa-circle-check"></i> Comprehensive cancer screenings and diagnostics
+                                </p>
+                                <p><i class="fa-regular fa-circle-check"></i> Chemotherapy and radiation therapy</p>
+                            </div>
+                            <div class="service2">
+                                <p><i class="fa-regular fa-circle-check"></i> Surgical oncology procedures</p>
+                                <p><i class="fa-regular fa-circle-check"></i> Personalized treatment plans and targeted
+                                    therapies</p>
+                            </div>
+                        </div>
+                        <!-- Contact Button -->
+                        <button class="contact-btn" id="btn_Oncology">Contact Us</button>
+                    </div>
                 </div>
-                <!-- cardiology_Container" -->
-                <div class="cardiology_Container" id="Cardiology_target">
-                    <div class="cardImg">
-                        <img src="assets/images/cardiology_experiment.jpg" id="img_cardiology"
-                            alt="cardiology experiment with our expert doctors">
-                    </div>
-                    <h3 class="about_cardiology">About the Cardiology</h3>
-                    <p>Our Cardiology Department is equipped with state-of-the-art technology and experienced
-                        cardiologists
-                        who <br> specialize in
-                        heart health. We offer comprehensive cardiac care, from diagnosis to treatment and
-                        rehabilitation.
-                    </p>
-                    <div class="cardiology_services">
-                        <div class="service1">
-                            <p><i class="fa-regular fa-circle-check"></i> Heart health evaluations</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Heart disease treatments</p>
-                        </div>
-                        <div class="service2">
-                            <p><i class="fa-regular fa-circle-check"></i> Interventional procedures</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Cardiac rehab programs</p>
-                        </div>
-                    </div>
-                    <!-- Contact Button -->
-                    <button class="contact-btn" id="btn_cardiology">Contact Us</button>
-                </div>
-                <!-- Neurology Container Goes here -->
-                <div class="Neurology_Container" id="Neurology_target">
-                    <div class="neurology_Image_Cover">
-                        <img src="assets/images/diagnos-2.jpg" id="img_cardiology"
-                            alt="Specialized neurology care services">
-                    </div>
-                    <h3 class="about_Neurology">About the Neurology</h3>
-                    <p>Our Neurology Department specializes in the diagnosis and treatment of neurological disorders.
-                        Our
-                        team of <br> neurologists
-                        uses cutting-edge technology to provide comprehensive care for conditions affecting the brain
-                        and <br> nervous system.</p>
-                    <div class="Neurology_services">
-                        <div class="service1">
-                            <p><i class="fa-regular fa-circle-check"></i> Neurological rehabilitation programs</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Advanced neuroimaging (e.g., MRI, CT scans)
-                            </p>
-                        </div>
-                        <div class="service2">
-                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive neurological evaluations</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Treatment of neurological disorders <br>(e.g.,
-                                epilepsy, multiple sclerosis)</p>
-                        </div>
-                    </div>
-                    <!-- Contact Button -->
-                    <button class="contact-btn" id="btn_Neurology">Contact Us</button>
-                </div>
-                <!-- Diagnostics Container Goes here -->
-                <div class="Diagnostics_Container" id="Diagnostics_target">
-                    <div class="Diagnostics_Image_Cover">
-                        <img src="assets/images/diagnosis.jpeg" id="img_cardiology"
-                            alt="Advanced medical diagnostic services">
-                    </div>
-                    <h3 class="about_Diagnostics">About the Diagnostics</h3>
-                    <p>The Diagnostics Department focuses on identifying and diagnosing a wide range of health
-                        conditions
-                        using <br> advanced
-                        technology. Our diagnostic specialists are experts in their field, ensuring accurate and timely
-                        <br>
-                        results for optimal
-                        patient care.
-                    </p>
-                    <div class="Diagnostics_services">
-                        <div class="service1">
-                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive lab tests</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Imaging services (e.g., X-rays, MRIs, CT
-                                scans)
-                            </p>
-                        </div>
-                        <div class="service2">
-                            <p><i class="fa-regular fa-circle-check"></i> Blood tests and analyses</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Genetic testing and screening</p>
-                        </div>
-                    </div>
-                    <!-- Contact Button -->
-                    <button class="contact-btn" id="btn_Diagnostics">Contact Us</button>
-                </div>
-                <!-- Dental Container Goes here -->
-                <div class="Dental_Container" id="Dental_target">
-                    <div class="Dental_Image_Cover">
-                        <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Professional dental health care">
-                    </div>
-                    <h3 class="about_Dental">About the Dental</h3>
-                    <p>Our Dental Department focuses on maintaining and improving oral health using advanced techniques
-                        <br>
-                        and
-                        technology. Our
-                        dental specialists are experts in their field, providing comprehensive care for optimal dental
-                        health.
-                    <div class="Dental_services">
-                        <div class="service1">
-                            <p><i class="fa-regular fa-circle-check"></i> Routine dental check-ups and cleanings</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Cosmetic dentistry (e.g., teeth whitening,
-                                veneers)</p>
-                        </div>
-                        <div class="service2">
-                            <p><i class="fa-regular fa-circle-check"></i> Orthodontic services (e.g., braces,
-                                Invisalign)
-                            </p>
-                            <p><i class="fa-regular fa-circle-check"></i> Restorative treatments (e.g., fillings,
-                                crowns,
-                                bridges)</p>
-                        </div>
-                    </div>
-                    <!-- Contact Button -->
-                    <button class="contact-btn" id="btn_Dental">Contact Us</button>
-                </div>
-                <!-- Ophthalmology Container Goes here -->
-                <div class="Ophthalmology_Container" id="Ophthalmology_target">
-                    <div class="Ophthalmology_Image_Cover">
-                        <img src="assets/images/dental.jpeg" id="img_cardiology" alt="Comprehensive eye care services">
-                    </div>
-                    <h3 class="about_Ophthalmology">About the Ophthalmology</h3>
-                    <p>Our Ophthalmology Department focuses on maintaining and improving eye health using advanced <br>
-                        techniques and technology.
-                        Our ophthalmologists are experts in their field, providing comprehensive care <br> for optimal
-                        vision and
-                        eye health.
-                    <div class="Ophthalmology_services">
-                        <div class="service1">
-                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive eye exams</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Cataract surgery</p>
-                        </div>
-                        <div class="service2">
-                            <p><i class="fa-regular fa-circle-check"></i> Treatment for glaucoma and macular
-                                degeneration
-                            </p>
-                            <p><i class="fa-regular fa-circle-check"></i> Corrective procedures (e.g., LASIK, PRK)</p>
-                        </div>
-                    </div>
-                    <!-- Contact Button -->
-                    <button class="contact-btn" id="btn_Ophthalmology">Contact Us</button>
-                </div>
-                <!-- Emergency Container Goes here -->
-                <div class="Emergency_Container" id="Emergency_target">
-                    <div class="Emergency_Image_Cover">
-                        <img src="assets/images/emergency.jpeg" id="img_cardiology"
-                            alt="Immediate emergency medical care">
-                    </div>
-                    <h3 class="about_Emergency">About the Emergency</h3>
-                    <p>The Emergency Department is dedicated to providing immediate and life-saving care for a wide
-                        range of
-                        <br>
-                        medical
-                        emergencies. Our emergency physicians and nurses are experts in their field, ensuring prompt
-                        and <br> effective treatment for
-                        all patients. We are equipped with the latest technology and resources to handle <br> critical
-                        situations and provide
-                        comprehensive emergency care.
-                    </p>
-                    <div class="Emergency_services">
-                        <div class="service1">
-                            <p><i class="fa-regular fa-circle-check"></i> 24/7 emergency care</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Trauma care and stabilization</p>
-                        </div>
-                        <div class="service2">
-                            <p><i class="fa-regular fa-circle-check"></i> Acute medical treatment (e.g., heart attacks,
-                                strokes)</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Rapid diagnostic services (e.g., imaging, lab
-                                tests)</p>
-                        </div>
-                    </div>
-                    <!-- Contact Button -->
-                    <button class="contact-btn" id="btn_Emergency">Contact Us</button>
-                </div>
-                <!-- Oncology Container Goes here -->
-                <div class="Oncology_Container" id="Oncology_target">
-                    <div class="Oncology_Image_Cover">
-                        <img src="assets/images/oncology_Dept.jpeg" id="img_cardiology"
-                            alt="Expert cancer treatment care">
-                    </div>
-                    <h3 class="about_Oncology">About the Oncology</h3>
-                    <p>The Oncology Department is dedicated to providing comprehensive and compassionate care for
-                        patients
-                        <br>
-                        with cancer. Our
-                        oncologists and specialized staff are experts in diagnosing and treating various types of <br>
-                        cancer, ensuring personalized
-                        treatment plans for each patient.
-                    </p>
-                    <div class="Oncology_services">
-                        <div class="service1">
-                            <p><i class="fa-regular fa-circle-check"></i> Comprehensive cancer screenings and
-                                diagnostics
-                            </p>
-                            <p><i class="fa-regular fa-circle-check"></i> Chemotherapy and radiation therapy</p>
-                        </div>
-                        <div class="service2">
-                            <p><i class="fa-regular fa-circle-check"></i> Surgical oncology procedures</p>
-                            <p><i class="fa-regular fa-circle-check"></i> Personalized treatment plans and targeted
-                                therapies</p>
-                        </div>
-                    </div>
-                    <!-- Contact Button -->
-                    <button class="contact-btn" id="btn_Oncology">Contact Us</button>
-                </div>
-            </div>
-        </section>
+            </section>
 
                 <div class="apt_mobile">
                     <i class="fa-solid fa-calendar-check fa-beat" id="apt_button_Mobile" onclick="preview_Appointment()"></i>
