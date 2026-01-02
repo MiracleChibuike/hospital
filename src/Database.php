@@ -26,4 +26,9 @@ class Database
             return null;
         }
     }
+
+    public function sanitizeInput(string $input): string
+    {
+        return htmlspecialchars(stripcslashes(strip_tags(trim($input))));
+    }
 }

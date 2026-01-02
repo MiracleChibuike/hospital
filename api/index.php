@@ -9,7 +9,6 @@ set_exception_handler('ErrorHandler::handleException');
 
 header("Content-type: application/json; charset=UTF-8");
 
-
 $database = new Database(
     $_ENV["DB_HOST"],
     $_ENV["DB_NAME"],
