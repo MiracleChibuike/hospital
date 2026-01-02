@@ -22,15 +22,6 @@ class Admin extends User
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
-  public function setAdminRole($adminId, $adminRole)
-  {
-    $sql = "UPDATE " . $this->table . " SET admin_role = :admin_role WHERE admin_id = :admin_id";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bindValue(":admin_id", $adminId, PDO::PARAM_STR);
-    $stmt->bindValue(":admin_role", $adminRole, PDO::PARAM_STR);
-    return $stmt->execute();
-  }
-
   public function register(array $adminData, $role): bool
   {
     if ($role !== 'superadmin') {
@@ -55,17 +46,52 @@ class Admin extends User
   }
 
 
-
-
-
-  public function deleteAdmin($adminId, $role): bool
+  public function deleteAdmin($adminId, $role, $deletedBy): bool
   {
     if ($role !== 'superadmin') {
       throw new Exception("Only superadmins can delete admins.");
     } else {
-      $sql = "DELETE FROM " . $this->table . " WHERE admin_id = :admin_id";
+      $sql = "UPDATE " . $this->table . " SET deleted = 1, deleted_by = :deleted_by WHERE admin_id = :admin_id";
       $stmt = $this->conn->prepare($sql);
       $stmt->bindValue(":admin_id", $adminId, PDO::PARAM_STR);
+      $stmt->bindValue(":deleted_by", $deletedBy, PDO::PARAM_STR);
+      return $stmt->execute();
+    }
+  }
+
+  public function getAllAdmins(): array
+  {
+    $sql = "SELECT admin_id, firstname, lastname, email, username, gender, image, emergency_contact_id, admin_role, created_at, last_login FROM " . $this->table;
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function updateAdmin($adminId, array $adminData, $role): bool
+  {
+    if ($role !== 'superadmin') {
+      throw new Exception("Only superadmins can update admin details.");
+    } else {
+      $sql = "UPDATE " . $this->table . " SET firstname = :firstname, lastname = :lastname, email = :email, gender = :gender WHERE admin_id = :admin_id";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bindValue(":admin_id", $adminId, PDO::PARAM_STR);
+      $stmt->bindValue(":firstname", $adminData['firstname'], PDO::PARAM_STR);
+      $stmt->bindValue(":lastname", $adminData['lastname'], PDO::PARAM_STR);
+      $stmt->bindValue(":email", $adminData['email'], PDO::PARAM_STR);
+      $stmt->bindValue(":gender", $adminData['gender'], PDO::PARAM_STR);
+      return $stmt->execute();
+    }
+  }
+
+  public function setAdminRole($adminId, $newRole, $role): bool
+  {
+    if ($role !== 'superadmin') {
+      throw new Exception("Only superadmins can change admin roles.");
+    } else {
+      $sql = "UPDATE " . $this->table . " SET admin_role = :admin_role WHERE admin_id = :admin_id";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bindValue(":admin_id", $adminId, PDO::PARAM_STR);
+      $stmt->bindValue(":admin_role", $newRole, PDO::PARAM_STR);
       return $stmt->execute();
     }
   }
