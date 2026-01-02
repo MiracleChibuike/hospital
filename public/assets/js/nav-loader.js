@@ -16,8 +16,7 @@ async function loadNav() {
 
 // Function to initialize nav-specific logic (e.g., dropdowns, mobile menu)
 function initializeNav() {
-  // Add your nav JS logic here, e.g., dropdown toggles, mobile menu
-  // Example: Copy from your existing index.js or create shared functions
+  //  Copied from your existing index.js 
   // Show nav-contents
   let show_menu = document.getElementById("displayMenu");
   let hide_menu = document.getElementById("hide_menu");
@@ -53,7 +52,6 @@ function initializeNav() {
     icon_down.classList.toggle("hide-icon");
     icon_up.classList.toggle("show-icon");
   });
-  // Add more nav logic (e.g., mobile menu toggle)
 
   // Append a border to the Home Text
 

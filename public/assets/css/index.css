@@ -62,9 +62,9 @@ a {
 }
 
 /* Style for main container */
-/* .main{
+.main{
   display: none;
-} */
+}
 
 .socialIconsHeader {
   display: flex;
@@ -186,6 +186,8 @@ a {
   height: 35px;
   box-shadow: 0 0 10px var(--clr-dark-main);
   cursor: pointer;
+  position: relative;
+  top: -7px;
 }
 #hide_menu {
   display: none;
@@ -477,8 +479,12 @@ DEPARTMENT SEECTION
   left: -7px;
 }
 #Cardiology_Dept{
-  background: var(--clr-hospital);
-  color: var(--clr-white-main);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#Oncology_Dept{
+    border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .box_Specs button{
   background: transparent;
@@ -502,24 +508,24 @@ DEPARTMENT SEECTION
 /***************************************************
     ALL THE CODES THAT GOES IN HERE IS TO HELP FOR DEPTS VALIDATION 
  ************************************************/
-#Neurology_target{
+
+.dept{
   display: none;
 }
-#Diagnostics_target{
-  display: none;
+.dept.active{
+  display: block;
 }
-#Dental_target{
-  display: none;
+.btn_dept {
+  background: #f5f5f5;
+  color: #000;
+  transition: 0.3s;
 }
-#Ophthalmology_target{
-  display: none;
+
+.btn_dept.active {
+  background: #0bb0b2;
+  color: #fff;
 }
-#Emergency_target{
-  display: none;
-}
-#Oncology_target{
-  display: none;
-}
+
 
 
 
@@ -556,6 +562,7 @@ DEPARTMENT SEECTION
   margin: 16px 0;
   display: flex;
   justify-content: space-between;
+  gap: 2px;
 }
 .cardiology_services p, .Neurology_services p, 
 .Diagnostics_services p, .Dental_services p,
@@ -578,7 +585,10 @@ DEPARTMENT SEECTION
  #btn_Ophthalmology:hover, #btn_Emergency:hover, #btn_Oncology:hover{
   background: var(--clr-hospital-deep);
 }
-
+.active_button{
+  background: var(--clr-hospital);
+  color: var(--clr-white-main);
+}
 
 /**********************************  
 OUR SERVICES SEECTION 
@@ -816,7 +826,16 @@ OUR SERVICES SEECTION
   grid-template-columns: repeat(3, 1fr);
   margin: 40px 35px;
   column-gap: 35px;
+  /* content-visibility: hidden; */
+}
+.docs{
   content-visibility: hidden;
+}
+.docs.show_docs{
+  content-visibility: visible;
+}
+.clickedRow{
+  color: var(--clr-dark-main);
 }
 .row, .row_2, .row_3{
   transition: transform 0.9s ease, background-color 0.9s ease;
@@ -900,6 +919,11 @@ OUR SERVICES SEECTION
   padding: 10px;
   border-radius: 4px;
  }
+ .buttons_Controller i.clickedRow{
+   background: var(--clr-hospital-deep);
+  cursor: pointer;
+  transition: .2s;
+ }
  .buttons_Controller i:hover{
   background: var(--clr-hospital-deep);
   cursor: pointer;
@@ -919,6 +943,11 @@ OUR SERVICES SEECTION
   color: var(--clr-white-main);
   cursor: pointer;
   border-radius: 5px;
+ }
+ .buttons_Controller button.clickedRow{
+     background: var(--clr-hospital-deep);
+  cursor: pointer;
+  transition: .2s;
  }
  .buttons_Controller button:hover{
   background: var(--clr-hospital-deep);
