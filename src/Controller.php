@@ -1,6 +1,6 @@
 <?php class Controller
 {
-    public function __construct(private Gateway $gateway) {}
+    public function __construct() {}
 
     public static function processRequest(string $method): bool
     {

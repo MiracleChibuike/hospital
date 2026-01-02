@@ -5,15 +5,15 @@
 
     protected $table;
 
-    public function __construct()
-    {
-        $this->conn = $this->getConnection();
-    }
-
-    // public function __construct(Database $database)
+    // public function __construct()
     // {
-    //     $this->conn = $database->getConnection();
+    //     $this->conn = $this->getConnection();
     // }
+
+    public function __construct(Database $database)
+    {
+        $this->conn = $database->getConnection();
+    }
 
     public static function getByAPIKey(string $key): bool
     {

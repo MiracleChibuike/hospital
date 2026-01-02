@@ -2,14 +2,22 @@
 class Database
 {
     private ?PDO $conn = null;
+    private string $host;
+    private string $name;
+    private string $user;
+    private string $password;
 
     public function __construct(
-        private string $host,
-        private string $name,
-        private string $user,
-        private string $password
-    ) {}
-
+        $host,
+        $name,
+        $user,
+        $password
+    ) {
+        $this->host = $host;
+        $this->name = $name;
+        $this->user = $user;
+        $this->password = $password;
+    }
     public function getConnection(): ?PDO
     {
         try {

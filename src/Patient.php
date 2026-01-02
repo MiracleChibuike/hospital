@@ -4,7 +4,6 @@ class Patient extends User
 
   public function __construct()
   {
-    parent::__construct();
     $this->setTable('patient');
   }
 
