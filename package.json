@@ -4,11 +4,13 @@
   "description": "Capital Health (C-Health) is a Hospital Management System aimed at creating a more suitable environments for patients and doctors",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack --mode development"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CapitalhealthCareProject/Capital_Heath_org.git"
+    "url": "git+https://github.com/CapitalhealthCareProject/Capital_Heath_org.git"
   },
   "keywords": [],
   "author": "Onyia Miracle, Trust Cyril",
@@ -17,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/CapitalhealthCareProject/Capital_Heath_org/issues"
   },
-  "homepage": "https://github.com/CapitalhealthCareProject/Capital_Heath_org"
+  "homepage": "https://github.com/CapitalhealthCareProject/Capital_Heath_org",
+  "dependencies": {
+    "axios": "^1.13.2"
+  },
+   "devDependencies": {
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
 }

@@ -42,5 +42,9 @@ window.addEventListener('offline', () => {
 
 // Set API domain based on environment =============
 // const API_DOMAIN = location.hostname == "localhost" || location.hostname == "127.0.0.1" ? myLocalHost : myProductionHost;
+const API_DOMAIN =
+  location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? "http://localhost/Capital_Health(original)/Capital_Heath_org/api"
+    : location.origin;
 
 // The above code will help us to be using API_DOMAIN as our localhost
