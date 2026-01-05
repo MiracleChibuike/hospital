@@ -23,7 +23,8 @@ if ($requestMethod === "POST") {
         exit;
       }
 
-      $result = $user->login($input['email'], $input['password']) ? Controller::requestRespond(200, "Login successful") : Controller::requestRespond(401, "Invalid username or password");
+      $result = $user->login($input['email'], $input['password']);
+      $result ? Controller::requestRespond(200, "Login successful") : Controller::requestRespond(401, "Invalid username or password");
       break;
 
     case 'register':
@@ -58,7 +59,8 @@ if ($requestMethod === "POST") {
         exit;
       }
 
-      $result = $user->register($input) ? Controller::requestRespond(201, "Patient registered successfully") : Controller::requestRespond(500, "Registration failed");
+      $result = $user->register($input);
+      $result ? Controller::requestRespond(201, "Patient registered successfully") : Controller::requestRespond(500, "Registration failed");
       break;
 
     case 'logout':
@@ -77,7 +79,8 @@ if ($requestMethod === "POST") {
           exit;
         }
 
-        $result = $user->addMedicalHistory($patientId, $input) ? Controller::requestRespond(201, "Medical history added successfully") : Controller::requestRespond(500, "Failed to add medical history");
+        $result = $user->addMedicalHistory($patientId, $input);
+        !$result ? Controller::requestRespond(500, "Failed to add medical history") : Controller::requestRespond(201, "Medical history added successfully");
       }
       break;
 
@@ -92,7 +95,8 @@ if ($requestMethod === "POST") {
           exit;
         }
 
-        $result = $user->assignEmergencyContactId($patientId, $input['emergency_contact_id']) ? Controller::requestRespond(201, "Emergency contact added successfully") : Controller::requestRespond(500, "Failed to add emergency contact");
+        $result = $user->assignEmergencyContactId($patientId, $input['emergency_contact_id']);
+        !$result ? Controller::requestRespond(500, "Failed to add emergency contact") : Controller::requestRespond(201, "Emergency contact added successfully");
       }
       break;
     default:
@@ -103,7 +107,8 @@ if ($requestMethod === "POST") {
     case 'get_emergency_contact':
       if (isset($pId) && is_numeric($pId)) {
         $patientId = $pId;
-        $data = $user->getEmergencyContact($patientId) ? Controller::requestRespond(200, "Emergency contact retrieved successfully", $data) : Controller::requestRespond(404, "No emergency contact found for the patient");
+        $data = $user->getEmergencyContact($patientId);
+        !$data ? Controller::requestRespond(404, "No emergency contact found for the patient") : Controller::requestRespond(200, "Emergency contact retrieved successfully", $data);
       } else {
         Controller::requestRespond(400, "Patient ID is required");
       }
@@ -111,7 +116,8 @@ if ($requestMethod === "POST") {
     case 'get_profile':
       if (isset($pId) && is_numeric($pId)) {
         $patientId = $pId;
-        $data = $user->getPatientById($patientId) ? Controller::requestRespond(200, "Patient profile retrieved successfully", $data) : Controller::requestRespond(404, "No patient profile found for the patient");
+        $data = $user->getPatientById($patientId);
+        !$data ? Controller::requestRespond(404, "Patient not found") : Controller::requestRespond(200, "Patient profile retrieved successfully", $data);
       } else {
         Controller::requestRespond(400, "Patient ID is required");
       }
@@ -119,7 +125,8 @@ if ($requestMethod === "POST") {
     case 'get_medical_history':
       if (isset($pId) && is_numeric($pId)) {
         $patientId = $pId;
-        $data = $user->getMedicalHistory($patientId) ? Controller::requestRespond(200, "Medical history retrieved successfully", $data) : Controller::requestRespond(404, "No medical history found for the patient");
+        $data = $user->getMedicalHistory($patientId);
+        !$data ? Controller::requestRespond(404, "No medical history found for the patient") : Controller::requestRespond(200, "Medical history retrieved successfully", $data);
       } else {
         Controller::requestRespond(400, "Patient ID is required");
       }
