@@ -1,19 +1,14 @@
-<?php class User extends Database
+<?php class User
 {
 
     protected  PDO $conn;
 
     protected $table;
 
-    public function __construct()
+    public function __construct(Database $database)
     {
-        $this->conn = $this->getConnection();
+        $this->conn = $database->getConnection();
     }
-
-    // public function __construct(Database $database)
-    // {
-    //     $this->conn = $database->getConnection();
-    // }
 
     public static function getByAPIKey(string $key): bool
     {
@@ -31,14 +26,16 @@
 
     public function login($email, $password): bool | array
     {
-        $email = $this->sanitizeInput($email);
-        $password = $this->sanitizeInput($password);
+        $email = Database::sanitizeInput($email);
+        $password = Database::sanitizeInput($password);
 
         $sql = "SELECT * FROM " . $this->table . " WHERE email = :email AND deleted = 0";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":email", $email, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $token = bin2hex(random_bytes(16));
+        $user = array_merge($user, ['token' => $token]);
 
         if ($user && password_verify($password, $user['password'])) {
             return $user;
@@ -61,8 +58,8 @@
     {
         $user_id = $this->table === 'admin' ? 'admin_id' : 'patient_id';
 
-        $newPassword = $this->sanitizeInput($newPassword);
-        $oldPassword = $this->sanitizeInput($oldPassword);
+        $newPassword = Database::sanitizeInput($newPassword);
+        $oldPassword = Database::sanitizeInput($oldPassword);
 
         if (!$this->confimPassword($userId, $oldPassword)) {
             return Controller::requestRespond(400, "Old password is incorrect.");
@@ -218,18 +215,18 @@
 
 
 
-    public function passwordCheck($password)
+    public function passwordCheck($password): bool
     {
         $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/';
         return preg_match($pattern, $password);
     }
 
-    public function passwordMatch($password, $confirmPassword)
+    public function passwordMatch($password, $confirmPassword): bool
     {
         return $password === $confirmPassword;
     }
 
-    public function validateEmail($email)
+    public function validateEmail($email): bool
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
