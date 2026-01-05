@@ -2,14 +2,22 @@
 class Database
 {
     private ?PDO $conn = null;
+    private string $host;
+    private string $name;
+    private string $user;
+    private string $password;
 
     public function __construct(
-        private string $host,
-        private string $name,
-        private string $user,
-        private string $password
-    ) {}
-
+        $host,
+        $name,
+        $user,
+        $password
+    ) {
+        $this->host = $host;
+        $this->name = $name;
+        $this->user = $user;
+        $this->password = $password;
+    }
     public function getConnection(): ?PDO
     {
         try {
@@ -27,7 +35,7 @@ class Database
         }
     }
 
-    public function sanitizeInput(string $input): string
+    public static function sanitizeInput(string $input): string
     {
         return htmlspecialchars(stripcslashes(strip_tags(trim($input))));
     }
