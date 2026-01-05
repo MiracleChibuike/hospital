@@ -76,7 +76,7 @@ class Patient extends User
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function getPatientById($patientId): bool | string
+  public function getPatientById($patientId): bool | array
   {
     $sql = "SELECT * FROM " . $this->table . " WHERE patient_id = :patient_id";
     $stmt = $this->conn->prepare($sql);
