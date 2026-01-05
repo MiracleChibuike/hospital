@@ -2,8 +2,9 @@
 class Patient extends User
 {
 
-  public function __construct()
+  public function __construct(Database $database)
   {
+    parent::__construct($database);
     $this->setTable('patient');
   }
 
@@ -75,13 +76,8 @@ class Patient extends User
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function getPatientById($patientId, $role): bool | string
+  public function getPatientById($patientId): bool | string
   {
-    $roles = ['admin', 'superadmin', 'doctor', 'nurse', 'labtech', 'pharmacist', 'receptionist'];
-    if (!in_array($role, $roles)) {
-      throw new Exception("Unauthorized access to patient data.");
-    }
-
     $sql = "SELECT * FROM " . $this->table . " WHERE patient_id = :patient_id";
     $stmt = $this->conn->prepare($sql);
     $stmt->bindValue(":patient_id", $patientId, PDO::PARAM_STR);

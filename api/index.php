@@ -7,6 +7,9 @@ set_error_handler('ErrorHandler::handleError');
 set_exception_handler('ErrorHandler::handleException');
 
 
+header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Content-type: application/json; charset=UTF-8");
 
 $database = new Database(
@@ -15,21 +18,3 @@ $database = new Database(
     $_ENV["DB_USER"],
     $_ENV["DB_PASS"]
 );
-
-
-
-// $user = new User($database);
-
-// $auth = new Authenticate($user);
-
-// if (!$auth->authenticateAPIKey()) {
-//     exit;
-// }
-
-// $gateway = new Gateway($database);
-
-// $controller = new Controller($gateway);
-
-
-
-// $controller->processRequest($_SERVER['REQUEST_METHOD']);

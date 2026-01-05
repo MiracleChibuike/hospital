@@ -1,35 +1,137 @@
-<?php require dirname(__DIR__, 2) . '/vendor/autoload.php';
+  
 
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
-$dotenv->load();
-set_error_handler('ErrorHandler::handleError');
-set_exception_handler('ErrorHandler::handleException');
-header("Content-type: application/json; charset=UTF-8");
+<?php
+require dirname(__DIR__) . '/index.php';
 
-$requstMethod = $_SERVER['REQUEST_METHOD'];
+$requestMethod = $_SERVER['REQUEST_METHOD'];
 
-$request = $_GET['request'] ?? '';
+$request = isset($_GET['request']) ? $_GET['request'] : '';
 
-$database = new Database(
-  $_ENV["DB_HOST"],
-  $_ENV["DB_NAME"],
-  $_ENV["DB_USER"],
-  $_ENV["DB_PASS"]
-);
+$pId = $_GET['pId'] ?? '';
 
-if (Controller::processRequest($requstMethod)) {
 
-  $user = new Patient($database);
-  if ($request === "" || $request === null) {
-    Controller::requestRespond(400, "No endpoint specified");
-    exit;
+$user = new Patient($database);
+
+if ($requestMethod === "POST") {
+  switch ($_GET['request']) {
+    case 'login':
+      // Authenticate::authenticateRootAPIKey(); Authenticate Root API KEY for login
+      $input = (array) json_decode(file_get_contents('php://input'), true) ?? $_POST;
+
+      if (empty($input)) {
+        Controller::requestRespond(400, "All fields are required");
+        exit;
+      }
+
+      $result = $user->login($input['email'], $input['password']) ? Controller::requestRespond(200, "Login successful") : Controller::requestRespond(401, "Invalid username or password");
+      break;
+
+    case 'register':
+      // Authenticate::authenticateRootAPIKey(); Authenticate Root API KEY for registration
+      $input = (array) json_decode(file_get_contents('php://input'), true) ?? $_POST;
+      if (empty($input)) {
+        Controller::requestRespond(400, "All fields are required");
+        exit;
+      }
+      if (!$user->checkEmailExists($input['email'])) {
+        Controller::requestRespond(409, "Email already exists");
+        exit;
+      }
+
+      if (!$user->checkUsernameExists($input['username'])) {
+        Controller::requestRespond(409, "Username already exists");
+        exit;
+      }
+
+      if (!$user->validateEmail($input['email'])) {
+        Controller::requestRespond(400, "Invalid email format");
+        exit;
+      }
+
+      if (!$user->passwordCheck($input['password'])) {
+        Controller::requestRespond(400, "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character");
+        exit;
+      }
+
+      if (!$user->passwordMatch($input['password'], $input['confirm_password'])) {
+        Controller::requestRespond(400, "Passwords do not match");
+        exit;
+      }
+
+      $result = $user->register($input) ? Controller::requestRespond(201, "Patient registered successfully") : Controller::requestRespond(500, "Registration failed");
+      break;
+
+    case 'logout':
+      $user->logout($pId);
+      Controller::requestRespond(200, "Logout successful");
+      break;
+
+    case 'add_medical_history':
+      // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for adding medical history
+      if (isset($pId) && is_numeric($pId)) {
+        $patientId = $pId;
+        $input = (array) json_decode(file_get_contents('php://input'), true) ?? $_POST;
+
+        if (empty($input)) {
+          Controller::requestRespond(400, "All fields are required");
+          exit;
+        }
+
+        $result = $user->addMedicalHistory($patientId, $input) ? Controller::requestRespond(201, "Medical history added successfully") : Controller::requestRespond(500, "Failed to add medical history");
+      }
+      break;
+
+    case 'add_emergency_contact':
+      // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for adding emergency contact
+      if (isset($pId) && is_numeric($pId)) {
+        $patientId = $pId;
+        $input = (array) json_decode(file_get_contents('php://input'), true) ?? $_POST;
+
+        if (empty($input) || !isset($input['emergency_contact_id'])) {
+          Controller::requestRespond(400, "All fields are required");
+          exit;
+        }
+
+        $result = $user->assignEmergencyContactId($patientId, $input['emergency_contact_id']) ? Controller::requestRespond(201, "Emergency contact added successfully") : Controller::requestRespond(500, "Failed to add emergency contact");
+      }
+      break;
+    default:
+      Controller::requestRespond(400, "Bad post Request");
   }
-
-  if ($request === "login" || $request === "register") {
-    Authenticate::authenticateRootAPIKey() && require $request . '.php';
-  } else {
-    Authenticate::authenticateUserAPIKey() && require $request . '.php';
+} elseif ($requestMethod === "GET") {
+  switch ($_GET['request']) {
+    case 'get_emergency_contact':
+      if (isset($pId) && is_numeric($pId)) {
+        $patientId = $pId;
+        $data = $user->getEmergencyContact($patientId) ? Controller::requestRespond(200, "Emergency contact retrieved successfully", $data) : Controller::requestRespond(404, "No emergency contact found for the patient");
+      } else {
+        Controller::requestRespond(400, "Patient ID is required");
+      }
+      break;
+    case 'get_profile':
+      if (isset($pId) && is_numeric($pId)) {
+        $patientId = $pId;
+        $data = $user->getPatientById($patientId) ? Controller::requestRespond(200, "Patient profile retrieved successfully", $data) : Controller::requestRespond(404, "No patient profile found for the patient");
+      } else {
+        Controller::requestRespond(400, "Patient ID is required");
+      }
+      break;
+    case 'get_medical_history':
+      if (isset($pId) && is_numeric($pId)) {
+        $patientId = $pId;
+        $data = $user->getMedicalHistory($patientId) ? Controller::requestRespond(200, "Medical history retrieved successfully", $data) : Controller::requestRespond(404, "No medical history found for the patient");
+      } else {
+        Controller::requestRespond(400, "Patient ID is required");
+      }
+      break;
+    default:
+      Controller::requestRespond(400, "Bad get Request");
   }
+} elseif ($requestMethod === "PUT") {
+  // PUT request handling can be added here
+} elseif ($requestMethod === "DELETE") {
+  // DELETE request handling can be added here
 } else {
   Controller::methodNotAllowed();
+  exit;
 }

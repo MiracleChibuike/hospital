@@ -35,7 +35,7 @@ class Database
         }
     }
 
-    public function sanitizeInput(string $input): string
+    public static function sanitizeInput(string $input): string
     {
         return htmlspecialchars(stripcslashes(strip_tags(trim($input))));
     }
