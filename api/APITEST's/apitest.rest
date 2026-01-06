@@ -48,10 +48,13 @@
 ############################## PATIENT API EXAMPLES 
 
 ###### GET MEDICAL HISTORY WITH PATIENT ID = 1
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=get_medical_history&pId=1
+GET http://localhost/c-health-team/Capital_Heath_org/api/patient/index.php?request=get_medical_history&pId=1
+Content-Type: application/json
 
 ### REGISTER A PATIENT
-POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=register
+POST http://localhost/c-health-team/Capital_Heath_org/api/patient/index.php?request=register
+Content-Type: application/json
+
 {
     "firstname": "John",
     "lastname": "Doe",
@@ -64,17 +67,23 @@ POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=re
 }
 
 ### PATIENT LOGIN
-POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=login
+POST http://localhost/c-health-team/Capital_Heath_org/api/patient/index.php?request=login
+Content-Type: application/json
+
 {
     "email": "john.doe@example.com",
     "password": "securepassword"
 }
 
 ### GET PATIENT DETAILS WITH PATIENT ID = 1
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=get_profile&pId=1
+GET http://localhost/c-health-team/Capital_Heath_org/api/patient/index.php?request=get_profile&pId=1
+
+Content-Type: application/json
 
 ### ADD MEDICAL HISTORY FOR PATIENT ID = 1
-POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=add_medical_history&pId=1
+POST http://localhost/c-health-team/Capital_Heath_org/api/patient/index.php?request=add_medical_history&pId=1
+Content-Type: application/json
+
 {
     "condition": "Hypertension",
     "description": "High blood pressure",

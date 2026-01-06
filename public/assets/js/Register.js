@@ -15,6 +15,7 @@
 
 // Prevent Image dragging
 
+
 document.querySelectorAll("img").forEach((img) => {
   img.addEventListener("mousedown", function (event) {
     event.preventDefault();
@@ -96,21 +97,24 @@ let userAge = document.getElementById("DateOfBirth")
 let userFirstName = document.getElementById("FName")
 let userLastName = document.getElementById("LName")
 
-
+// console.log(API_DOMAIN)
 Sin_Inform.addEventListener("submit", async(e) => {
   e.preventDefault();
    try {
      const formData = new FormData(Sin_Inform);
      const userData = Object.fromEntries(formData);
 
-    const response = await fetch(`${API_DOMAIN}/patient?request=register`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'Application/json',
-        'Content-Type': 'Application/json'
-      },
-      body: JSON.stringify(userData)
-    });
+    const response = await fetch(
+      `${API_DOMAIN}/patient/index.php?request=register`,
+      {
+        method: "POST",
+        headers: {
+          Accept: "Application/json",
+          "Content-Type": "Application/json",
+        },
+        body: JSON.stringify(userData),
+      }
+    );
     if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
@@ -118,6 +122,7 @@ Sin_Inform.addEventListener("submit", async(e) => {
     console.log(result)
    } catch (err) {
     console.log(err)
+    console.log(`Base_URL: ${API_DOMAIN}`)
    }
 
 });

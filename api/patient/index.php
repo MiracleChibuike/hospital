@@ -34,12 +34,12 @@ if ($requestMethod === "POST") {
         Controller::requestRespond(400, "All fields are required");
         exit;
       }
-      if (!$user->checkEmailExists($input['email'])) {
+      if ($user->checkEmailExists($input['email'])) {
         Controller::requestRespond(409, "Email already exists");
         exit;
       }
 
-      if (!$user->checkUsernameExists($input['username'])) {
+      if ($user->checkUsernameExists($input['username'])) {
         Controller::requestRespond(409, "Username already exists");
         exit;
       }
