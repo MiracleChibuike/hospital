@@ -77,7 +77,6 @@ Content-Type: application/json
 
 ### GET PATIENT DETAILS WITH PATIENT ID = 1
 GET http://localhost/c-health-team/Capital_Heath_org/api/patient/index.php?request=get_profile&pId=1
-
 Content-Type: application/json
 
 ### ADD MEDICAL HISTORY FOR PATIENT ID = 1

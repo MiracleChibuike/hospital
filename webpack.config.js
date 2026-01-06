@@ -21,7 +21,6 @@ module.exports = {
   output: {
     filename: "[name].bundle.js", // [name] uses the entry key (e.g., index.bundle.js)
     path: path.resolve(__dirname, "public/assets/js/dist"),
+    clean: true
   },
-  mode: "development",
-  watch: true, // Watch for changes
 };
