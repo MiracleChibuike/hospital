@@ -1,26 +1,5 @@
 
 
-
-// Loads the animation on a succesful page load
-
-const AnimationLoad = () => {
-  const loader = document.querySelector(".loader");
-  var headre = document.getElementById("header");
-  var mainDiv = document.querySelector(".main");
-
-  // Show Loader Initially
-  headre.style.display = "block";
-
-  // Hide loader according to when Page is ready
-  if ((mainDiv.style.display = "none")) {
-    headre.style.display = "none";
-    mainDiv.style.display = "block"
-  }
-};
-
-// Call the AnimationLoad function when page is ready
-document.addEventListener("DOMContentLoaded", AnimationLoad);
-
 // Prevent Image dragging
 document.querySelectorAll("img").forEach((img) => {
   img.addEventListener("mousedown", function (event) {
@@ -184,3 +163,6 @@ modal_button_remove.addEventListener("click", (e) => {
 btn_Success.addEventListener("click", () => {
   modal_remove();
 });
+
+
+

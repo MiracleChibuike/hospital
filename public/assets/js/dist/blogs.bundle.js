@@ -1,0 +1,1 @@
+document.querySelectorAll("img").forEach(e=>{e.addEventListener("mousedown",function(e){e.preventDefault()}),e.addEventListener("contextmenu",function(e){e.preventDefault()})}),window.addEventListener("scroll",function(){const e=document.querySelector(".socialIconsHeader");window.scrollY>0?e.classList.add("scroll"):e.classList.remove("scroll")});

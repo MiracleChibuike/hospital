@@ -9,39 +9,39 @@
 
 ### GET CUR_SESSION
 # http://localhost/schola/api/cur_sessionapi/get_cursession.php
-https://beta-schola.myf2.net/api/cur_sessionapi/get_cursession.php
+# https://beta-schola.myf2.net/api/cur_sessionapi/get_cursession.php
 
 
-### ========= SUBJECT API ==================
-### GET A SUBJECT
-httpS://maclesleyinternationalschools.com.ng/api/subjectapi/getsubject.php?subject_id=2
+# ### ========= SUBJECT API ==================
+# ### GET A SUBJECT
+# httpS://maclesleyinternationalschools.com.ng/api/subjectapi/getsubject.php?subject_id=2
 
-### GET A SUBJECT
-http://localhost/schola/api/subjectapi/getsubject.php?subject_id=2
-
-
-### GET ALL SUBJECTS
-http://localhost/schola/api/subjectapi/getsubjects.php
+# ### GET A SUBJECT
+# http://localhost/schola/api/subjectapi/getsubject.php?subject_id=2
 
 
-### CRAETE A SUBJECT
-POST http://localhost/schola/api/subjectapi/createsubject.php
+# ### GET ALL SUBJECTS
+# http://localhost/schola/api/subjectapi/getsubjects.php
 
-{
-    "subject_name": "AMALA SC",
-    "subject_code": "ASmat",
-    "staff_id": 1
-}
 
-### UPDETE A SUBJECT
-POST http://localhost/schola/api/subjectapi/updatesubject.php
+# ### CRAETE A SUBJECT
+# POST http://localhost/schola/api/subjectapi/createsubject.php
 
-{
-    "subject_id": "1",
-    "subject_name": "Mathematics",
-    "subject_code": "mat",
-    "staff_id": 1
-}
+# {
+#     "subject_name": "AMALA SC",
+#     "subject_code": "ASmat",
+#     "staff_id": 1
+# }
+
+# ### UPDETE A SUBJECT
+# POST http://localhost/schola/api/subjectapi/updatesubject.php
+
+# {
+#     "subject_id": "1",
+#     "subject_name": "Mathematics",
+#     "subject_code": "mat",
+#     "staff_id": 1
+# }
 
 ### ========SUBJECT API ENDS HERE ========
 
