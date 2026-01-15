@@ -33,6 +33,12 @@ switch ($request) {
 
   case 'register':
     // Authenticate::authenticateRootAPIKey(); Authenticate Root API KEY for registration
+
+    if (isset($_SESSION['patient_id'])) {
+      Controller::badRequest();
+      exit;
+    }
+
     $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
     if (empty($input)) {
       Controller::requestRespond(400, "All fields are required");
@@ -53,13 +59,13 @@ switch ($request) {
       exit;
     }
 
-    if ($user->passwordCheck($input['password'])) {
-      Controller::requestRespond(400, "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character");
+    if (!$user->passwordMatch($input['password'], $input['confirm_password'])) {
+      Controller::requestRespond(400, "Passwords do not match");
       exit;
     }
 
-    if (!$user->passwordMatch($input['password'], $input['confirm_password'])) {
-      Controller::requestRespond(400, "Passwords do not match");
+    if (!$user->passwordCheck($input['password'])) {
+      Controller::requestRespond(400, "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character");
       exit;
     }
 
@@ -68,15 +74,27 @@ switch ($request) {
     break;
 
   case 'logout':
+
+    if (!isset($_SESSION['patient_id'])) {
+      Controller::badRequest();
+      exit;
+    }
+
     $user->logout($_SESSION['patient_id']);
     Controller::requestRespond(200, "Logout successful");
     break;
 
   case 'add_medical_history':
     // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for adding medical history
+
+    if (!isset($_SESSION['patient_id'])) {
+      Controller::badRequest();
+      exit;
+    }
+
     if (isset($pId) && is_numeric($pId)) {
       $patientId = $pId;
-      $input = (array) json_decode(file_get_contents('php://input'), true) ?? $_POST;
+      $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
 
       if (empty($input)) {
         Controller::requestRespond(400, "All fields are required");
@@ -90,9 +108,15 @@ switch ($request) {
 
   case 'add_emergency_contact':
     // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for adding emergency contact
+
+    if (!isset($_SESSION['patient_id'])) {
+      Controller::badRequest();
+      exit;
+    }
+
     if (isset($pId) && is_numeric($pId)) {
       $patientId = $pId;
-      $input = (array) json_decode(file_get_contents('php://input'), true) ?? $_POST;
+      $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
 
       if (empty($input) || !isset($input['emergency_contact_id'])) {
         Controller::requestRespond(400, "All fields are required");
@@ -104,7 +128,14 @@ switch ($request) {
     }
     break;
   case 'set_otp':
-    $input = (array) json_decode(file_get_contents('php://input'), true) ?? $_POST;
+    // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for generating OTP
+
+    if (!isset($_SESSION['patient_id'])) {
+      Controller::badRequest();
+      exit;
+    }
+
+    $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
     if (empty($input) || !isset($input['email']) || !isset($input['otp'])) {
       Controller::requestRespond(400, "Email and OTP are required");
       exit;

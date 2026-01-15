@@ -76,9 +76,18 @@ GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=ge
 ### ADD MEDICAL HISTORY FOR PATIENT ID = 1
 POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=add_medical_history&pId=1
 {
-    "condition": "Hypertension",
-    "description": "High blood pressure",
-    "date_diagnosed": "2020-05-15"
+    "patient_id" : "2",
+    "allergies" : "Pepper",
+    "current_medications" : "none",
+    "past_illnesses" : "none",
+    "surgeries" : "['yes', 'hyiner']",
+    "family_history" : "High BP",
+    "current_conditions" : "Healthy",
+    "genotype" : "AA",
+    "blood_group" : "O",
+    "blood_pressure" : "120/80",
+    "blood_sugar" : "50%"
 }
 
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_profile&pId=1
+### GET PATIENT MEDICAL HISTORY
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_medical_history&pId=2

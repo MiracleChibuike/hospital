@@ -47,7 +47,6 @@
     public static function notFound(): void
     {
         http_response_code(404);
-        header("Content-type: application/json; charset=UTF-8");
         echo json_encode(["message" => "Not Found"]);
         die();
     }
