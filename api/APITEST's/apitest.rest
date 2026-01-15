@@ -48,10 +48,10 @@ POST http://localhost/schola/api/subjectapi/updatesubject.php
 ############################## PATIENT API EXAMPLES 
 
 ###### GET MEDICAL HISTORY WITH PATIENT ID = 1
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=get_medical_history&pId=1
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_medical_history&pId=1
 
 ### REGISTER A PATIENT
-POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=register
+POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=register
 {
     "firstname": "John",
     "lastname": "Doe",
@@ -64,19 +64,21 @@ POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=re
 }
 
 ### PATIENT LOGIN
-POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=login
+POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=login
 {
-    "email": "john.doe@example.com",
-    "password": "securepassword"
+    "email": "jamesdoe@example.com",
+    "password": "12345"
 }
 
 ### GET PATIENT DETAILS WITH PATIENT ID = 1
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=get_profile&pId=1
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_profile&pId=1
 
 ### ADD MEDICAL HISTORY FOR PATIENT ID = 1
-POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient?request=add_medical_history&pId=1
+POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=add_medical_history&pId=1
 {
     "condition": "Hypertension",
     "description": "High blood pressure",
     "date_diagnosed": "2020-05-15"
 }
+
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_profile&pId=1

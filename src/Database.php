@@ -25,6 +25,7 @@ class Database
                 $this->conn = new PDO("mysql:host=$this->host;dbname={$this->name}", $this->user, $this->password);
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+                // $this->conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
                 $this->conn->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
             }
 
