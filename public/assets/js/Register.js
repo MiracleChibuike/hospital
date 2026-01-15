@@ -12,6 +12,7 @@
 
 // addBorder();
 
+import axios from "axios";
 
 // Prevent Image dragging
 

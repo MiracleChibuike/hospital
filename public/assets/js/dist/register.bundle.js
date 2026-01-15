@@ -1,1 +1,32 @@
-(()=>{document.querySelectorAll("img").forEach(e=>{e.addEventListener("mousedown",function(e){e.preventDefault()}),e.addEventListener("contextmenu",function(e){e.preventDefault()})}),window.addEventListener("scroll",function(){const e=document.querySelector(".socialIconsHeader");window.scrollY>0?e.classList.add("scroll"):e.classList.remove("scroll")});const e=document.getElementById("Sign_Up_Form");let t=document.getElementById("password_Hide"),n=document.getElementById("password_Visible"),s=document.getElementById("Userpassword");t.addEventListener("click",()=>{"password"===s.type&&(s.type="text",t.style.display="none",n.style.display="block")}),n.addEventListener("click",()=>{"text"===s.type&&(s.type="password",t.style.display="block",n.style.display="none")});let o=document.getElementById("password_Hide2"),d=document.getElementById("password_Visible2"),l=document.getElementById("UserpasswordConfirm");o.addEventListener("click",()=>{"password"===l.type&&(l.type="text",o.style.display="none",d.style.display="block")}),d.addEventListener("click",()=>{"text"===l.type&&(l.type="password",o.style.display="block",d.style.display="none")});let c=document.getElementById("Userpassword"),a=document.getElementById("val_Passwords");document.getElementById("Gender"),document.getElementById("DateOfBirth"),document.getElementById("FName"),document.getElementById("LName"),e.addEventListener("submit",async t=>{t.preventDefault();try{const t=new FormData(e),n=Object.fromEntries(t),s=await fetch(`${API_DOMAIN}/patient/index.php?request=register`,{method:"POST",headers:{Accept:"Application/json","Content-Type":"Application/json"},body:JSON.stringify(n)});if(!s.ok)throw new Error(`Error: ${s.status} ${s.statusText}`);const o=await s.json();console.log(o)}catch(e){console.log(e),console.log(`Base_URL: ${API_DOMAIN}`)}}),l.addEventListener("keyup",e=>{e.preventDefault(),l.value===c.value?(a.style.display="none",l.style.border="none"):a.style.display="block"});let r=document.querySelector(".modal_SignUp");document.getElementById("remove_modal").addEventListener("click",()=>{r.style.display="none",window.location.href="Welcome.html"}),document.getElementById("btn_success").addEventListener("click",()=>{r.style.display="none",window.location.href="Welcome.html"})})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./public/assets/js/Register.js"
+/*!**************************************!*\
+  !*** ./public/assets/js/Register.js ***!
+  \**************************************/
+() {
+
+eval("{throw new Error(\"Module parse failed: 'import' and 'export' may appear only with 'sourceType: module' (15:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| // addBorder();\\n| \\n> import axios from \\\"axios\\\";\\n| \\n| // Prevent Image dragging\");\n\n//# sourceURL=webpack://capital_heath_org/./public/assets/js/Register.js?\n}");
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./public/assets/js/Register.js"]();
+/******/ 	
+/******/ })()
+;
