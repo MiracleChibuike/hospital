@@ -34,10 +34,11 @@
         $stmt->bindValue(":email", $email, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        $token = bin2hex(random_bytes(16));
-        $user = array_merge($user, ['token' => $token]);
+
 
         if ($user && password_verify($password, $user['password'])) {
+            $token = bin2hex(random_bytes(16));
+            $user = array_merge($user, ['xToken' => $token]);
             return $user;
         } else {
             return false;
@@ -214,7 +215,6 @@
     }
 
 
-
     public function passwordCheck($password): bool
     {
         $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/';
@@ -259,5 +259,27 @@
         $this->updateLastLogin($userId);
         session_unset();
         session_destroy();
+    }
+
+    public function resetPassword($userId, $newPassword): bool
+    {
+        $user_id = $this->table === 'admin' ? 'admin_id' : 'patient_id';
+
+        $newPassword = Database::sanitizeInput($newPassword);
+
+        $sql = "UPDATE " . $this->table . " SET password = :password WHERE " . $user_id . " = :user_id AND deleted = 0";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(":user_id", $userId, PDO::PARAM_STR);
+        $stmt->bindValue(":password", password_hash($newPassword, PASSWORD_DEFAULT), PDO::PARAM_STR);
+        return $stmt->execute();
+    }
+
+    public function setTempOTP($email, $otp): bool
+    {
+        $sql = "UPDATE " . $this->table . " SET temp_otp = :otp, otp_created_at = NOW() WHERE email = :email AND deleted = 0";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(":email", $email, PDO::PARAM_STR);
+        $stmt->bindValue(":otp", $otp, PDO::PARAM_STR);
+        return $stmt->execute();
     }
 }

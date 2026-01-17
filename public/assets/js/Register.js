@@ -12,7 +12,7 @@
 
 // addBorder();
 
-import axios from "axios";
+// import axios from "axios";
 
 // Prevent Image dragging
 
@@ -104,18 +104,15 @@ Sin_Inform.addEventListener("submit", async(e) => {
    try {
      const formData = new FormData(Sin_Inform);
      const userData = Object.fromEntries(formData);
-
-    const response = await fetch(
-      `${API_DOMAIN}/patient/index.php?request=register`,
-      {
-        method: "POST",
-        headers: {
-          Accept: "Application/json",
-          "Content-Type": "Application/json",
-        },
-        body: JSON.stringify(userData),
-      }
-    );
+    console.log(userData);
+    const response = await fetch(`${API_DOMAIN}/patient/?request=register`, {
+      method: "POST",
+      headers: {
+        Accept: "Application/json",
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(userData),
+    });
     if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }

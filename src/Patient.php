@@ -88,13 +88,25 @@ class Patient extends User
   {
     $roles = ['admin', 'superadmin'];
     if (!in_array($role, $roles)) {
-      throw new Exception("Unauthorized access to patient data.");
+      throw new Exception("Only admins and superadmins can delete patients.");
     }
 
     $sql = "UPDATE " . $this->table . " SET deleted = 1, deleted_by = :deleted_by WHERE patient_id = :patient_id";
     $stmt = $this->conn->prepare($sql);
     $stmt->bindValue(":patient_id", $patientId, PDO::PARAM_STR);
     $stmt->bindValue(":deleted_by", $deletedBy, PDO::PARAM_STR);
+    return $stmt->execute();
+  }
+
+  public function updateProfile($patientId, array $profileData): bool
+  {
+    $sql = "UPDATE " . $this->table . " SET nationality = :nationality, state_of_origin = :state_of_origin, LGA = :LGA, communication_channel = :communication_channel WHERE patient_id = :patient_id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindValue(":nationality", $profileData['nationality'], PDO::PARAM_STR);
+    $stmt->bindValue(":state_of_origin", $profileData['state_of_origin'], PDO::PARAM_STR);
+    $stmt->bindValue(":LGA", $profileData['LGA'], PDO::PARAM_STR);
+    $stmt->bindValue(":communication_channel", $profileData['communication_channel'], PDO::PARAM_STR);
+    $stmt->bindValue(":patient_id", $patientId, PDO::PARAM_STR);
     return $stmt->execute();
   }
 }
