@@ -99,30 +99,47 @@ let userFirstName = document.getElementById("FName")
 let userLastName = document.getElementById("LName")
 
 // console.log(API_DOMAIN)
+let modal_success = document.querySelector(".modal_success");
+let succes_inner = document.getElementById("success");
+let modal_error = document.querySelector(".modal_error");
+let error_inner = document.getElementById("error");
 Sin_Inform.addEventListener("submit", async(e) => {
   e.preventDefault();
    try {
      const formData = new FormData(Sin_Inform);
+    //  console.log(formData)
      const userData = Object.fromEntries(formData);
-    console.log(userData);
+    // console.log(userData);
     const response = await fetch(`${API_DOMAIN}/patient/?request=register`, {
       method: "POST",
-      headers: {
-        Accept: "Application/json",
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(userData),
+      // headers: {
+      //   Accept: "application/json",
+      //   "Content-Type": "application/json",
+      // }, // Removed headers: Application/json because is not needed here as the browser will generate and original is 'multipart/form-data'; boundary=<calculated when request is sent>
+      body: formData, // Changed from stringify to userData(FormData) directly
     });
     if (!response.ok) {
-      throw new Error(`Error: ${response.status} ${response.statusText}`);
+      throw new Error(` ${response.status} ${response.statusText}`);
     }
     const result = await response.json();
-    console.log(result)
+    console.log(result);
+    modal_success.classList.add("show");
+    modal_success.scrollIntoView({behavior: 'smooth'});
+    succes_inner.textContent = `Success ${result.message}`;
+    setTimeout(() => {
+      modal_success.classList.remove("show")
+    }, 7000);
    } catch (err) {
     console.log(err)
-    console.log(`Base_URL: ${API_DOMAIN}`)
+    modal_error.classList.add("showError");
+    modal_error.scrollIntoView({behavior: 'smooth'});
+    error_inner.innerHTML = `${err}`;
+    setTimeout(() => {
+      modal_error.classList.remove("showError")
+    }, 7000)
+    console.log(`Error: ${err.message}`)
    }
-
+   Sin_Inform.reset(); // Clear all inputs - resets to default
 });
 
 password_Confirm.addEventListener("keyup", (e) => {
@@ -136,21 +153,5 @@ password_Confirm.addEventListener("keyup", (e) => {
     // password_Confirm.style.border = "1px solid red";
   }
 });
-// Modal Code
-let modal = document.querySelector(".modal_SignUp");
-// modal.style.display = "block";
 
-// Remove the modal
-let close_modal = document.getElementById("remove_modal");
-close_modal.addEventListener("click", () => {
-  modal.style.display = "none";
-  window.location.href = "Welcome.html";
-});
-
-const button_Success = document.getElementById("btn_success");
-
-button_Success.addEventListener("click", () => {
-  modal.style.display = "none";
-  window.location.href = "Welcome.html";
-});
 
