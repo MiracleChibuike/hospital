@@ -27,14 +27,28 @@ switch ($request) {
 
     $result = $user->login($input['email'], $input['password']);
 
-    if ($result === "Email not verified") {
-      Controller::requestRespond(203, "Please verify your email");
+    if ($result) {
+
+
+      ## Email verification check 
+      // if (!$user->isEmailVerified($result['patient_id'])) {
+      //   Controller::requestRespond(203, "Please verify your email");
+      //   exit;
+      // }
+
+      $_SESSION['patient_id'] = $result['patient_id'];
+      $_SESSION['xToken'] = $result['xToken'];
+      Controller::requestRespond(200, "Login successful", $result);
       exit;
+    } else {
+      Controller::requestRespond(401, "Invalid email or password");
     }
 
-    $result ? Controller::requestRespond(200, "Login successful", $result) : Controller::requestRespond(401, "Invalid username or password");
-    $result ? $_SESSION['patient_id'] = $result['patient_id'] : null;
-    $result ? $_SESSION['xToken'] = $result['xToken'] : null;
+
+    // $result ? Controller::requestRespond(200, "Login successful", $result) :
+
+    //   $result ? $_SESSION['patient_id'] = $result['patient_id'] : null;
+    // $result ? $_SESSION['xToken'] = $result['xToken'] : null;
 
     break;
 

@@ -39,9 +39,6 @@
 
 
         if ($user && password_verify($password, $user['password'])) {
-            if (!$this->isEmailVerified($user_id)) {
-                return "Email not verified";
-            }
 
             $token = bin2hex(random_bytes(16));
             $user = array_merge($user, ['xToken' => $token]);
@@ -250,7 +247,7 @@
 
     public function passwordCheck($password): bool
     {
-        $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/';
+        $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/';
         return preg_match($pattern, $password);
     }
 
@@ -282,9 +279,10 @@
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":user_id", $userId, PDO::PARAM_STR);
         $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch();
 
-        return $result['email_verified'] == '1' ? true : false;
+        return $result['email_verified'] === 1 ? true : false;
     }
 
     public function logout($userId): void
