@@ -71,7 +71,7 @@ POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=l
 }
 
 ### GET PATIENT DETAILS WITH PATIENT ID = 1
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_profile&pId=1
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_profile&pId=3
 
 ### ADD MEDICAL HISTORY FOR PATIENT ID = 1
 POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=add_medical_history&pId=1
@@ -90,4 +90,8 @@ POST localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=a
 }
 
 ### GET PATIENT MEDICAL HISTORY
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_medical_history&pId=2
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_medical_history&pId=1
+
+
+### GET PATIENT EMERGENCY CONTACT
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_emergency_contact&pId=1

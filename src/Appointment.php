@@ -14,11 +14,11 @@ class Appointment
   {
     $sql = "INSERT INTO " . $this->table . " (patient_id, appointment_date, appointment_time, appointment_type, visit_reason) VALUES (:patient_id, :appointment_date, :appointment_time, :appointment_type, :visit_reason)";
     $stmt = $this->conn->prepare($sql);
-    $stmt->bindValue(":patient_id", $appointmentData['patient_id'], PDO::PARAM_STR);
-    $stmt->bindValue(":appointment_date", $appointmentData['appointment_date'], PDO::PARAM_STR);
-    $stmt->bindValue(":appointment_time", $appointmentData['appointment_time'], PDO::PARAM_STR);
-    $stmt->bindValue(":appointment_type", $appointmentData['appointment_type'], PDO::PARAM_STR);
-    $stmt->bindValue(":visit_reason", $appointmentData['visit_reason'], PDO::PARAM_STR);
+    $stmt->bindValue(":patient_id", Database::sanitizeInput($appointmentData['patient_id']), PDO::PARAM_STR);
+    $stmt->bindValue(":appointment_date", Database::sanitizeInput($appointmentData['appointment_date']), PDO::PARAM_STR);
+    $stmt->bindValue(":appointment_time", Database::sanitizeInput($appointmentData['appointment_time']), PDO::PARAM_STR);
+    $stmt->bindValue(":appointment_type", Database::sanitizeInput($appointmentData['appointment_type']), PDO::PARAM_STR);
+    $stmt->bindValue(":visit_reason", Database::sanitizeInput($appointmentData['visit_reason']), PDO::PARAM_STR);
     return $stmt->execute();
   }
 
@@ -26,7 +26,7 @@ class Appointment
   {
     $sql = "SELECT * FROM " . $this->table . " WHERE patient_id = :patient_id AND deleted = 0";
     $stmt = $this->conn->prepare($sql);
-    $stmt->bindValue(":patient_id", $patientId, PDO::PARAM_STR);
+    $stmt->bindValue(":patient_id", Database::sanitizeInput($patientId), PDO::PARAM_STR);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -35,7 +35,7 @@ class Appointment
   {
     $sql = "UPDATE " . $this->table . " SET status = 'approved' WHERE appointment_id = :appointment_id";
     $stmt = $this->conn->prepare($sql);
-    $stmt->bindValue(":appointment_id", $appointmentId, PDO::PARAM_STR);
+    $stmt->bindValue(":appointment_id", Database::sanitizeInput($appointmentId), PDO::PARAM_STR);
     return $stmt->execute();
   }
 
@@ -43,7 +43,7 @@ class Appointment
   {
     $sql = "UPDATE " . $this->table . " SET status = 'canceled' WHERE appointment_id = :appointment_id";
     $stmt = $this->conn->prepare($sql);
-    $stmt->bindValue(":appointment_id", $appointmentId, PDO::PARAM_STR);
+    $stmt->bindValue(":appointment_id", Database::sanitizeInput($appointmentId), PDO::PARAM_STR);
     return $stmt->execute();
   }
 
@@ -51,9 +51,9 @@ class Appointment
   {
     $sql = "UPDATE " . $this->table . " SET appointment_date = :new_date, appointment_time = :new_time WHERE appointment_id = :appointment_id";
     $stmt = $this->conn->prepare($sql);
-    $stmt->bindValue(":new_date", $newDate, PDO::PARAM_STR);
-    $stmt->bindValue(":new_time", $newTime, PDO::PARAM_STR);
-    $stmt->bindValue(":appointment_id", $appointmentId, PDO::PARAM_STR);
+    $stmt->bindValue(":new_date", Database::sanitizeInput($newDate), PDO::PARAM_STR);
+    $stmt->bindValue(":new_time", Database::sanitizeInput($newTime), PDO::PARAM_STR);
+    $stmt->bindValue(":appointment_id", Database::sanitizeInput($appointmentId), PDO::PARAM_STR);
     return $stmt->execute();
   }
 

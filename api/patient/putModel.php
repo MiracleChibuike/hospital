@@ -29,6 +29,12 @@ switch ($request) {
 
   case 'update_profile':
     // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for updating profile
+
+    if (!isset($_SESSION['patient_id'])) {
+      Controller::badRequest();
+      exit;
+    }
+
     if (isset($pId) && is_numeric($pId)) {
       $patientId = $pId;
       $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;

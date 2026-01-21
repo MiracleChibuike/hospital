@@ -26,16 +26,23 @@ switch ($request) {
     }
 
     $result = $user->login($input['email'], $input['password']);
+
+    if ($result === "Email not verified") {
+      Controller::requestRespond(203, "Please verify your email");
+      exit;
+    }
+
     $result ? Controller::requestRespond(200, "Login successful", $result) : Controller::requestRespond(401, "Invalid username or password");
     $result ? $_SESSION['patient_id'] = $result['patient_id'] : null;
     $result ? $_SESSION['xToken'] = $result['xToken'] : null;
+
     break;
 
   case 'register':
     // Authenticate::authenticateRootAPIKey(); Authenticate Root API KEY for registration
 
     if (isset($_SESSION['patient_id'])) {
-      Controller::badRequest();
+      Controller::forbidden();
       exit;
     }
 
@@ -103,6 +110,9 @@ switch ($request) {
 
       $result = $user->addMedicalHistory($patientId, $input);
       !$result ? Controller::requestRespond(500, "Failed to add medical history") : Controller::requestRespond(201, "Medical history added successfully");
+    } else {
+      Controller::requestRespond(400, "Patient ID is required");
+      exit;
     }
     break;
 
@@ -118,14 +128,38 @@ switch ($request) {
       $patientId = $pId;
       $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
 
-      if (empty($input) || !isset($input['emergency_contact_id'])) {
+      if (empty($input)) {
         Controller::requestRespond(400, "All fields are required");
         exit;
       }
 
-      $result = $user->assignEmergencyContactId($patientId, $input['emergency_contact_id']);
-      !$result ? Controller::requestRespond(500, "Failed to add emergency contact") : Controller::requestRespond(201, "Emergency contact added successfully");
+      if ($user->checkEmergencyContactExist($patientId)) {
+        Controller::requestRespond(409, "You already have an Emergency contact");
+        exit;
+      }
+
+      $result = $user->createEmergencyContact($input, $patientId);
+      !$result ? Controller::requestRespond(500, "Failed to add emergency contact", $result) : Controller::requestRespond(201, "Emergency contact added successfully");
+    } else {
+      Controller::requestRespond(400, "Patient ID is required");
+      exit;
     }
+    break;
+  case 'upload_image':
+    // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for upload image
+
+    if (!isset($_SESSION['patient_id'])) {
+      Controller::badRequest();
+      exit;
+    }
+
+    if (isset($pId) && is_numeric($pId)) {
+      $patientId = $pId;
+    } else {
+      Controller::requestRespond(400, "Patient ID is required");
+      exit;
+    }
+
     break;
   case 'set_otp':
     // Authenticate::authenticateUserAPIKey(); Authenticate User API KEY for generating OTP
@@ -145,5 +179,5 @@ switch ($request) {
     !$result ? Controller::requestRespond(500, "Failed to set OTP") : Controller::requestRespond(200, "OTP set successfully");
     break;
   default:
-    Controller::requestRespond(400, "Bad post Request");
+    Controller::requestRespond(400, "Bad Request");
 }
