@@ -45,7 +45,7 @@ window.addEventListener('offline', () => {
 // Please configure to your own file path
 const API_DOMAIN =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
-    ? "http://localhost/c-health-team/Capital_Heath_org/api"
+    ? "http://localhost/Capital_Heath_org/api"
     : location.origin;
 
 // The above code will help us to be using API_DOMAIN as our localhost
