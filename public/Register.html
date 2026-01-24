@@ -283,6 +283,10 @@
         #val_Passwords:focus {
             transform: translateX(-10px);
         }
+        .disable_btn{
+            pointer-events: none;
+            opacity: 0.6;
+        }
 
 
         @media screen and (min-width: 0) and (max-width: 750px) {
@@ -430,7 +434,7 @@
                 </div>
 
                 <div class="account_Create">
-                    <p>Already have an account? <span id="return_LogIn">Log In</span></p>
+                    <p>Already have an account? <span id="return_LogIn" onclick="location.href='Login.html'">Log In</span></p>
                 </div>
             </div>
         </section>

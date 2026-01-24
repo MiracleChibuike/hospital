@@ -1,63 +1,5 @@
-// Append a border to the Log In Text
+// Import Axios;
 
-// addBorder;
-// let Login_Active = document.getElementById("log_In");
-
-// const addBorder = () => {
-//   if (Login_Active) {
-//     Login_Active.classList.add("addBorder");
-//   } else {
-//     Login_Active.classList.remove("addBorder");
-//   }
-// };
-
-// addBorder();
-
-// Redirect to Sign Up page
-let signUpText = document.getElementById("return_signUp");
-const load_SignUpPage = () => {
-  window.location.href = "Register.html"
-};
-
-signUpText.addEventListener("click", load_SignUpPage)
-
-// var about_home_logo = document.getElementById("logo-home");
-// const go_To_Home = () => {
-//   window.location.href = "index.html";
-// };
-
-// about_home_logo.addEventListener("click", (e) => {
-//   go_To_Home();
-// });
-
-// const load_HomePage = () => {
-//   window.location.href = "index.html";
-//   console.log(home_El);
-// };
-
-// const load_ContactPage = () => {
-//   window.location.href = "Contact_Us.html";
-// };
-
-// var re_Direct_Departments = document.getElementById("departments_load");
-
-// const load_Department_Page = (e) => {
-//   console.log(re_Direct_Departments);
-//   window.location.href = "Departments.html";
-// };
-
-// const load_AboutPage = () => {
-//   window.location.href = "About.html";
-// };
-
-// const load_BlogPage = () => {
-//   window.location.href = "Blog.html";
-// };
-
-// // Load the Appointment page
-// const preview_Appointment = () => {
-//   window.location.href = "Appointment.html";
-// };
 
 // Prevent Image dragging
 
@@ -110,40 +52,7 @@ const hidePassword = () => {
 show_password.addEventListener("click", hidePassword);
 
 
-const formValidation = () => {
-  const FirstName = document.getElementById("FName")
-  const LastName = document.getElementById("LName")
-  const password = document.getElementById("Userpassword")
-  let formError = document.querySelector(".form_Error");
-  // Retrieve values from localStorage
-  const storedFirstName = localStorage.getItem("FirstName");
-  const storedLastName = localStorage.getItem("LastName");
-  const storedPassword = localStorage.getItem("Password");
 
-  if (storedFirstName && storedLastName && storedPassword) {
-    // Check if input values match the stored values
-    if (
-      FirstName.value === storedFirstName &&
-      LastName.value === storedLastName &&
-      password.value === storedPassword
-    ) {
-      alert(`Welcome back, ${storedLastName}!`);
-      // Optionally redirect to a new page or perform other actions
-      window.location.href = "Welcome.html";
-    } else if (
-      FirstName.value !== storedFirstName ||
-      LastName.value !== storedLastName ||
-      password.value !== storedPassword
-    ) {
-      formError.style.visibility = "visible";
-      formError.style.transition = "opacity 0.5s ease-in-out";
-      formError.style.opacity = "1";
-    }
-    removeErrorMessage();
-  }else {
-    alert("No account found. Please sign up first.");
-  }
-};
 
 // Remove Form Error Message
 const removeErrorMessage = () => {
@@ -154,8 +63,38 @@ const removeErrorMessage = () => {
 };
 
 
-
-form.addEventListener("submit", (e) => {
+let success_Modal = document.querySelector(".modal_success");
+let success_Msg = document.getElementById("success");
+let modal_Error = document.querySelector(".modal_error");
+let error_Msg = document.getElementById("error")
+form.addEventListener("submit", async(e) => {
   e.preventDefault();
-  formValidation();
+  const userCredentials = new FormData(form)
+  try {
+    const response = await fetch(
+      `${API_DOMAIN}/patient/?request=login`, {
+        method: 'POST',
+        body: userCredentials,
+      }
+    );
+    if (!response.ok) {
+      throw new Error(`Sorry, something went wrong: ${response.status} ${response.statusText} ${response.message}`);
+    };
+    console.log(response)
+    success_Modal.classList.add("show");
+    success_Modal.scrollIntoView({behavior: "smooth"});
+    success_Msg.textContent = `${response.message}`;
+    setTimeout(() => {
+      success_Modal.classList.remove("show");
+      location.href = 'Dashboard.html'
+    }, 8000);
+  } catch (err) {
+    console.log(err);
+    modal_Error.classList.add("showError");
+    modal_Error.scrollIntoView({behavior: 'smooth'});
+    error_Msg.textContent = `${err}`;
+    setTimeout(() => {
+      modal_Error.classList.remove("showError");
+    }, 8000)
+  }
 });

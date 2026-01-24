@@ -103,9 +103,14 @@ let modal_success = document.querySelector(".modal_success");
 let succes_inner = document.getElementById("success");
 let modal_error = document.querySelector(".modal_error");
 let error_inner = document.getElementById("error");
+    let userId = null;
+    const signUpButton = document.getElementById("login_button");
 Sin_Inform.addEventListener("submit", async(e) => {
   e.preventDefault();
    try {
+    signUpButton.disabled = true;
+    signUpButton.textContent = 'Creating account...';
+    signUpButton.classList.add("disable_btn");
      const formData = new FormData(Sin_Inform);
     //  console.log(formData)
      const userData = Object.fromEntries(formData);
@@ -123,12 +128,17 @@ Sin_Inform.addEventListener("submit", async(e) => {
     }
     const result = await response.json();
     console.log(result);
+    
     modal_success.classList.add("show");
     modal_success.scrollIntoView({behavior: 'smooth'});
     succes_inner.textContent = `Success ${result.message}`;
+     userId = response.pId;
+     console.log(userId);
     setTimeout(() => {
-      modal_success.classList.remove("show")
+      modal_success.classList.remove("show");
+             location.href = `Welcome.html`;
     }, 7000);
+      
    } catch (err) {
     console.log(err)
     modal_error.classList.add("showError");
@@ -138,6 +148,10 @@ Sin_Inform.addEventListener("submit", async(e) => {
       modal_error.classList.remove("showError")
     }, 7000)
     console.log(`Error: ${err.message}`)
+   }finally{
+    signUpButton.disabled = false;
+    signUpButton.textContent = "Sign Up";
+    signUpButton.classList.remove("disable_btn");
    }
    Sin_Inform.reset(); // Clear all inputs - resets to default
 });

@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",()=>{document.querySelector(".loader");var e=document.getElementById("header"),t=document.querySelector(".main");e.style.display="block",(t.style.display="none")&&(e.style.display="none",t.style.display="block")});
+document.addEventListener("DOMContentLoaded",()=>{document.querySelector(".loader");let e=document.getElementById("header"),t=document.querySelector(".main");e.style.display="block",(t.style.display="none")&&(e.style.display="none",t.style.display="block")});

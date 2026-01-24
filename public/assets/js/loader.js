@@ -2,8 +2,8 @@
 
 const AnimationLoad = () => {
   const loader = document.querySelector(".loader");
-  var headre = document.getElementById("header");
-  var mainDiv = document.querySelector(".main");
+  let headre = document.getElementById("header");
+  let mainDiv = document.querySelector(".main");
 
   // Show Loader Initially
   headre.style.display = "block";

@@ -1,29 +1,32 @@
 // Retrieve and display the userName on the dashboard page
-document.addEventListener("DOMContentLoaded", () => {
-  let pageTitle = document.getElementById("page_title");
-  let msg_Welcome = document.querySelector(".Message_D");
-  msg_Welcome.style.display = "flex";
-  let lastNameContainer = document.querySelector(".Last");
-  let f_D = document.querySelector(".FDisplay");
+// document.addEventListener("DOMContentLoaded", () => {
+//   let pageTitle = document.getElementById("page_title");
+//   let msg_Welcome = document.querySelector(".Message_D");
+//   msg_Welcome.style.display = "flex";
+//   let lastNameContainer = document.querySelector(".Last");
+//   let f_D = document.querySelector(".FDisplay");
 
-  const firstNameDisplay = document.getElementById("userFirstName");
-  const lastNameDisplay = document.getElementById("Lastname");
+//   const firstNameDisplay = document.getElementById("userFirstName");
+//   const lastNameDisplay = document.getElementById("Lastname");
 
-  const storedFirstName = localStorage.getItem("FirstName");
-  const storedLastname = localStorage.getItem("LastName");
+//   const storedFirstName = localStorage.getItem("FirstName");
+//   const storedLastname = localStorage.getItem("LastName");
 
-  if (storedFirstName && storedLastname) {
-   firstNameDisplay.textContent = `${storedFirstName}`;
-    lastNameDisplay.textContent = `${storedLastname}`;
+//   if (storedFirstName && storedLastname) {
+//    firstNameDisplay.textContent = `${storedFirstName}`;
+//     lastNameDisplay.textContent = `${storedLastname}`;
 
-    // Apply styles separately
-    lastNameDisplay.style.fontWeight = "bold";
-    firstNameDisplay.style.fontWeight = "lighter";
-    lastNameDisplay.style.position = "relative";
-    lastNameDisplay.style.left = "5px";
-  };
-  pageTitle.textContent = `${storedLastname}'s Dashboard || C-Health`
-});
+//     // Apply styles separately
+//     lastNameDisplay.style.fontWeight = "bold";
+//     firstNameDisplay.style.fontWeight = "lighter";
+//     lastNameDisplay.style.position = "relative";
+//     lastNameDisplay.style.left = "5px";
+//   };
+//   pageTitle.textContent = `${storedLastname}'s Dashboard || C-Health`
+// });
+
+// Get the data of the logged in user
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

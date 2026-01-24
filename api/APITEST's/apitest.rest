@@ -58,11 +58,11 @@ POST http://localhost/Capital_Heath_org/api/patient/?request=register
 Content-Type: application/json
 
 {
-    "firstname": "John",
-    "lastname": "Doe",
-    "email": "john.doe@example.com",
-    "password": "123456789Tr@",
-    "confirm_password": "123456789Tr@",
+    "firstname": "Judy",
+    "lastname": "Donald",
+    "email": "donald@gmail.com",
+    "password": "123456789Tr@$",
+    "confirm_password": "123456789Tr@$",
     "gender": "Male",
     "date_of_birth": "1990-01-01",
     "phone": "1234567890",
@@ -73,8 +73,8 @@ POST http://localhost/Capital_Heath_org/api/patient/?request=login
 Content-Type: application/json
 
 {
-    "email": "jamesdoe@example.com",
-    "password": "12345"
+    "email": "judy@elite.com",
+    "password": "123456789Tr@"
 }
 
 ### GET PATIENT DETAILS WITH PATIENT ID = 1
