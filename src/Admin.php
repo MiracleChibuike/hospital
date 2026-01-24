@@ -33,13 +33,13 @@ class Admin extends User
 
       $stmt = $this->conn->prepare($sql);
 
-      $stmt->bindValue(":firstname", $adminData['firstname'], PDO::PARAM_STR);
-      $stmt->bindValue(":lastname", $adminData['lastname'], PDO::PARAM_STR);
-      $stmt->bindValue(":email", $adminData['email'], PDO::PARAM_STR);
-      $stmt->bindValue(":password", password_hash($adminData['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
-      $stmt->bindValue(":username", $adminData['username'], PDO::PARAM_STR);
-      $stmt->bindValue(":gender", $adminData['gender'], PDO::PARAM_STR);
-      $stmt->bindValue(":admin_role", $adminData['admin_role'], PDO::PARAM_STR);
+      $stmt->bindValue(":firstname", Database::sanitizeInput($adminData['firstname']), PDO::PARAM_STR);
+      $stmt->bindValue(":lastname", Database::sanitizeInput($adminData['lastname']), PDO::PARAM_STR);
+      $stmt->bindValue(":email", Database::sanitizeInput($adminData['email']), PDO::PARAM_STR);
+      $stmt->bindValue(":password", password_hash(Database::sanitizeInput($adminData['password']), PASSWORD_DEFAULT), PDO::PARAM_STR);
+      $stmt->bindValue(":username", Database::sanitizeInput($adminData['username']), PDO::PARAM_STR);
+      $stmt->bindValue(":gender", Database::sanitizeInput($adminData['gender']), PDO::PARAM_STR);
+      $stmt->bindValue(":admin_role", Database::sanitizeInput($adminData['admin_role']), PDO::PARAM_STR);
 
       return $stmt->execute();
     }
@@ -53,8 +53,8 @@ class Admin extends User
     } else {
       $sql = "UPDATE " . $this->table . " SET deleted = 1, deleted_by = :deleted_by WHERE admin_id = :admin_id";
       $stmt = $this->conn->prepare($sql);
-      $stmt->bindValue(":admin_id", $adminId, PDO::PARAM_STR);
-      $stmt->bindValue(":deleted_by", $deletedBy, PDO::PARAM_STR);
+      $stmt->bindValue(":admin_id", Database::sanitizeInput($adminId), PDO::PARAM_STR);
+      $stmt->bindValue(":deleted_by", Database::sanitizeInput($deletedBy), PDO::PARAM_STR);
       return $stmt->execute();
     }
   }
@@ -74,11 +74,11 @@ class Admin extends User
     } else {
       $sql = "UPDATE " . $this->table . " SET firstname = :firstname, lastname = :lastname, email = :email, gender = :gender WHERE admin_id = :admin_id";
       $stmt = $this->conn->prepare($sql);
-      $stmt->bindValue(":admin_id", $adminId, PDO::PARAM_STR);
-      $stmt->bindValue(":firstname", $adminData['firstname'], PDO::PARAM_STR);
-      $stmt->bindValue(":lastname", $adminData['lastname'], PDO::PARAM_STR);
-      $stmt->bindValue(":email", $adminData['email'], PDO::PARAM_STR);
-      $stmt->bindValue(":gender", $adminData['gender'], PDO::PARAM_STR);
+      $stmt->bindValue(":admin_id", Database::sanitizeInput($adminId), PDO::PARAM_STR);
+      $stmt->bindValue(":firstname", Database::sanitizeInput($adminData['firstname']), PDO::PARAM_STR);
+      $stmt->bindValue(":lastname", Database::sanitizeInput($adminData['lastname']), PDO::PARAM_STR);
+      $stmt->bindValue(":email", Database::sanitizeInput($adminData['email']), PDO::PARAM_STR);
+      $stmt->bindValue(":gender", Database::sanitizeInput($adminData['gender']), PDO::PARAM_STR);
       return $stmt->execute();
     }
   }
@@ -90,8 +90,8 @@ class Admin extends User
     } else {
       $sql = "UPDATE " . $this->table . " SET admin_role = :admin_role WHERE admin_id = :admin_id";
       $stmt = $this->conn->prepare($sql);
-      $stmt->bindValue(":admin_id", $adminId, PDO::PARAM_STR);
-      $stmt->bindValue(":admin_role", $newRole, PDO::PARAM_STR);
+      $stmt->bindValue(":admin_id", Database::sanitizeInput($adminId), PDO::PARAM_STR);
+      $stmt->bindValue(":admin_role", Database::sanitizeInput($newRole), PDO::PARAM_STR);
       return $stmt->execute();
     }
   }

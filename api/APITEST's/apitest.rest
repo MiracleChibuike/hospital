@@ -78,9 +78,7 @@ Content-Type: application/json
 }
 
 ### GET PATIENT DETAILS WITH PATIENT ID = 1
-GET http://localhost/Capital_Heath_org/api/patient/?request=get_profile&pId=1
-Content-Type: application/json
-
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_profile&pId=1
 
 ### ADD MEDICAL HISTORY FOR PATIENT ID = 1
 POST http://localhost/Capital_Heath_org/api/patient/?request=add_medical_history&pId=1
@@ -101,5 +99,4 @@ Content-Type: application/json
 }
 
 ### GET PATIENT MEDICAL HISTORY
-GET http://localhost/Capital_Heath_org/api/patient/?request=get_medical_history&pId=2
-Content-Type: application/json
+GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_medical_history&pId=2

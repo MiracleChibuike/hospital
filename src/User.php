@@ -26,6 +26,8 @@
 
     public function login($email, $password): bool | array
     {
+        $user_id = $this->table === 'admin' ? 'admin_id' : 'patient_id';
+
         $email = Database::sanitizeInput($email);
         $password = Database::sanitizeInput($password);
 
@@ -37,6 +39,7 @@
 
 
         if ($user && password_verify($password, $user['password'])) {
+
             $token = bin2hex(random_bytes(16));
             $user = array_merge($user, ['xToken' => $token]);
             return $user;
@@ -143,24 +146,51 @@
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function createEmergencyContact(array $contactData, $userId): bool
+    public function createEmergencyContact(array $contactData, $userId): bool | string
     {
         $user_id = $this->table === 'admin' ? 'admin_id' : 'patient_id';
 
         $sql = "INSERT INTO emergency_contact (" . $user_id . ", firstname, lastname, relationship, phone, email, gender,address) VALUES (:user_id, :firstname, :lastname, :relationship, :phone, :email, :gender, :address)";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":user_id", $userId, PDO::PARAM_STR);
-        $stmt->bindValue(":firstname", $contactData['firstname'], PDO::PARAM_STR);
-        $stmt->bindValue(":lastname", $contactData['lastname'], PDO::PARAM_STR);
-        $stmt->bindValue(":relationship", $contactData['relationship'], PDO::PARAM_STR);
-        $stmt->bindValue(":phone", $contactData['phone'], PDO::PARAM_STR);
-        $stmt->bindValue(":email", $contactData['email'], PDO::PARAM_STR);
-        $stmt->bindValue(":gender", $contactData['gender'], PDO::PARAM_STR);
-        $stmt->bindValue(":address", $contactData['address'], PDO::PARAM_STR);
-        return $stmt->execute();
+        $stmt->bindValue(":firstname", Database::sanitizeInput($contactData['firstname']), PDO::PARAM_STR);
+        $stmt->bindValue(":lastname", Database::sanitizeInput($contactData['lastname']), PDO::PARAM_STR);
+        $stmt->bindValue(":relationship", Database::sanitizeInput($contactData['relationship']), PDO::PARAM_STR);
+        $stmt->bindValue(":phone", Database::sanitizeInput($contactData['phone']), PDO::PARAM_STR);
+        $stmt->bindValue(":email", Database::sanitizeInput($contactData['email']), PDO::PARAM_STR);
+        $stmt->bindValue(":gender", Database::sanitizeInput($contactData['gender']), PDO::PARAM_STR);
+        $stmt->bindValue(":address", Database::sanitizeInput($contactData['address']), PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+            $assignSql = "SELECT id FROM emergency_contact WHERE " . $user_id . "= " . $userId . " AND deleted = 0";
+            $assignStmt = $this->conn->prepare($assignSql);
+            $assignStmt->execute();
+            // $emergency_contact_id = $assignStmt->fetch(PDO::FETCH_ASSOC);
+            $emergency_contact_id = $assignStmt->fetchColumn();
+
+            if ($this->assignEmergencyContactId($userId, $emergency_contact_id)) {
+                return true;
+            } else {
+                return "Error occured while assiging contact ID";
+            }
+        } else {
+            return false;
+        }
     }
 
-    public function assignEmergencyContactId($userId, $contactId): bool
+    public function checkEmergencyContactExist($userId): bool
+    {
+        $user_id = $this->table === 'admin' ? 'admin_id' : 'patient_id';
+
+        $sql = "SELECT COUNT(*) FROM emergency_contact WHERE " . $user_id . " = :user_id AND deleted = 0";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(":user_id", $userId, PDO::PARAM_STR);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        return $count > 0;
+    }
+
+    protected function assignEmergencyContactId($userId, $contactId): bool
     {
         $user_id = $this->table === 'admin' ? 'admin_id' : 'patient_id';
 
@@ -217,7 +247,7 @@
 
     public function passwordCheck($password): bool
     {
-        $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/';
+        $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/';
         return preg_match($pattern, $password);
     }
 
@@ -249,9 +279,10 @@
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":user_id", $userId, PDO::PARAM_STR);
         $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch();
 
-        return isset($result['email_verified']) && $result['email_verified'] == 1;
+        return $result['email_verified'] === 1 ? true : false;
     }
 
     public function logout($userId): void
