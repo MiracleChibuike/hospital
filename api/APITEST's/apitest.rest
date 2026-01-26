@@ -74,11 +74,11 @@ Content-Type: application/json
 
 {
     "email": "judy@elite.com",
-    "password": "123456789Tr@"
+    "password": "123456789Tr@",
 }
 
 ### GET PATIENT DETAILS WITH PATIENT ID = 1
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_profile&pId=1
+GET http://localhost/Capital_Heath_org/api/patient/?request=get_profile&pId=1
 
 ### ADD MEDICAL HISTORY FOR PATIENT ID = 1
 POST http://localhost/Capital_Heath_org/api/patient/?request=add_medical_history&pId=1
@@ -99,4 +99,4 @@ Content-Type: application/json
 }
 
 ### GET PATIENT MEDICAL HISTORY
-GET localhost/Capital_Health(original)/Capital_Heath_org/api/patient/?request=get_medical_history&pId=2
+GET http://localhost/Capital_Heath_org/api/patient/?request=get_medical_history&pId=2

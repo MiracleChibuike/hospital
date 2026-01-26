@@ -108,7 +108,6 @@
         .password input,
         .useremail input,
         .gender input,
-        .dob input,
         .phone input,
         .password_Confirm input {
             background: var(--clr-darkGray);
@@ -116,9 +115,16 @@
             padding: 15px 30px;
             border-radius: 12px;
             outline: none;
-            width: 300px;
+            width: 340px;
             /* cursor: pointer; */
         }
+         .dob select{
+              background: var(--clr-darkGray);
+            border: none;
+            padding: 15px 20px;
+            border-radius: 12px;
+            outline: none;
+         }
 
         #DateOfBirth {
             width: 92%;
@@ -155,7 +161,7 @@
         .fullname input:focus,
         .useremail input:focus,
         .gender input:focus,
-        .dob input:focus,
+        .dob select:focus,
         .phone input:focus,
         .password_Confirm input:focus {
             outline: 2px solid var(--clr-hospital);
@@ -174,7 +180,7 @@
         .password_Confirm img {
             position: relative;
             left: 27px;
-            top: 3px;
+            /* top: 3px; */
         }
 
         .submit {
@@ -288,7 +294,10 @@
             opacity: 0.6;
         }
 
-
+        .appendError{
+            outline: 2px solid var(--error-message);
+            box-shadow: none;
+        }
         @media screen and (min-width: 0) and (max-width: 750px) {
 
             /* #Login {
@@ -393,7 +402,19 @@
                     </div>
                     <div class="dob">
                         <img src="assets/images/login_icons/Calendar.png" alt="">
-                        <input type="date" name="date_of_birth" id="DateOfBirth" placeholder="Date of Birth" required>
+                        <select name="dob_day" id="dob_day" >
+                            <option value="" selected>Day</option>
+                        </select>
+                        
+                        <select name="dob_month" id="dob_month" >
+                            <option value="" selected>Month</option>
+                        </select>
+                        
+                        <select name="dob_year" id="dob_year">
+                            <option value="" selected>Year</option>
+                        </select>
+
+                        <!-- <input type="date" name="date_of_birth" id="DateOfBirth" placeholder="Date of Birth" required> -->
                     </div>
                     <div class="phone">
                         <img src="assets/images/login_icons/Phone.png" alt="">

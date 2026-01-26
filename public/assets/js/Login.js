@@ -86,7 +86,7 @@ form.addEventListener("submit", async(e) => {
     success_Msg.textContent = `${response.message}`;
     setTimeout(() => {
       success_Modal.classList.remove("show");
-      location.href = 'Dashboard.html'
+      location.href = 'dashboard.html'
     }, 8000);
   } catch (err) {
     console.log(err);

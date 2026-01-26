@@ -49,3 +49,19 @@ const API_DOMAIN =
     : location.origin;
 
 // The above code will help us to be using API_DOMAIN as our localhost
+
+// Check whether a user is visiitng outside secured port localHost
+
+const checkSecurePort = () => {
+  if (
+    (location.hostname === "localhost" || location.hostname === "127.0.0.1") &&
+    location.port !== "80"
+  ) {
+   console.warn(`Running on localhost but not on port 80. Current port: ${location.port}`);
+  }else{
+     alert("You are visiting a non-secure port on localhost");
+     console.warn("You are visiting a non-secure port on localhost");
+     console.warn(`You are not allowed to view this page`);
+  }
+};
+checkSecurePort();

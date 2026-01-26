@@ -89,6 +89,47 @@ const hidePassword_Confirm = () => {
 
 show_password_Confirm.addEventListener("click", hidePassword_Confirm);
 
+// Populate data for Date of Birth
+// Populate for days (1-31)
+let dob_day = document.getElementById("dob_day");
+document.addEventListener("DOMContentLoaded", () => {
+  for (let d = 1; d <= 31; d++) {
+    dob_day.innerHTML += `<option value='${d}'>${d}</option>`
+  };
+})
+
+// Populate for months
+let dob_month = document.getElementById("dob_month");
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+months.forEach((m, i) => {
+  dob_month.innerHTML += `<option value="${i + 1}">${m}</option>`;
+});
+
+// Populate for years (1900 - current year)
+let dob_year = document.getElementById("dob_year");
+const currentYear = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  for (let y = currentYear; y >= 1900; y--) {
+    dob_year.innerHTML += `<option value='${y}'>${y}</option>`;
+  }
+});
+
+
+
 
 // Register Form Validation
 let password_default = document.getElementById("Userpassword")
@@ -108,37 +149,73 @@ let error_inner = document.getElementById("error");
 Sin_Inform.addEventListener("submit", async(e) => {
   e.preventDefault();
    try {
-    signUpButton.disabled = true;
-    signUpButton.textContent = 'Creating account...';
-    signUpButton.classList.add("disable_btn");
+     signUpButton.disabled = true;
+     signUpButton.textContent = "Creating account...";
+     signUpButton.classList.add("disable_btn");
+     const day = document.getElementById("dob_day").value.trim();
+     const month = document.getElementById("dob_month").value.trim();
+     const year = document.getElementById("dob_year").value.trim();
+     if (!day || !month || !year) {
+       modal_error.classList.add("showError");
+       modal_error.scrollIntoView({ behavior: "smooth" });
+       error_inner.innerHTML = `Please select a valid Date of Birth to proceed.`;
+       setTimeout(() => {
+         modal_error.classList.remove("showError");
+       }, 7000);
+       return;
+     }
+
+     // Prevent February 30 or 31, April 31, June 31, September 31, November 31
+     const testDate = new Date(year, month - 1, day);
+     if (
+       testDate.getFullYear() != year ||
+       testDate.getMonth() != month - 1 ||
+       testDate.getDate() != day
+     ) {
+         modal_error.classList.add("showError");
+         modal_error.scrollIntoView({ behavior: "smooth" });
+         error_inner.innerHTML = `Invalid date selected.`;
+         setTimeout(() => {
+           modal_error.classList.remove("showError");
+         }, 7000);
+       return;
+     }
+
+     // Zero-pad day & month APIs expect YYYY-MM-DD, not YYYY-M-D.
+     const paddedDay = String(day).padStart(2, "0");
+     const paddedMonth = String(month).padStart(2, "0");
+     //  Combine into date string
+     const dateOfBirth = `${year}-${paddedMonth}-${paddedDay}`;
      const formData = new FormData(Sin_Inform);
-    //  console.log(formData)
+     formData.append("date_of_birth", dateOfBirth);
+     //  console.log(formData)
      const userData = Object.fromEntries(formData);
-    // console.log(userData);
-    const response = await fetch(`${API_DOMAIN}/patient/?request=register`, {
-      method: "POST",
-      // headers: {
-      //   Accept: "application/json",
-      //   "Content-Type": "application/json",
-      // }, // Removed headers: Application/json because is not needed here as the browser will generate and original is 'multipart/form-data'; boundary=<calculated when request is sent>
-      body: formData, // Changed from stringify to userData(FormData) directly
-    });
-    if (!response.ok) {
-      throw new Error(` ${response.status} ${response.statusText}`);
-    }
-    const result = await response.json();
-    console.log(result);
-    
-    modal_success.classList.add("show");
-    modal_success.scrollIntoView({behavior: 'smooth'});
-    succes_inner.textContent = `Success ${result.message}`;
+     console.log(`Payload`, userData);
+
+     // console.log(userData);
+     const response = await fetch(`${API_DOMAIN}/patient/?request=register`, {
+       method: "POST",
+       // headers: {
+       //   Accept: "application/json",
+       //   "Content-Type": "application/json",
+       // }, // Removed headers: Application/json because is not needed here as the browser will generate and original is 'multipart/form-data'; boundary=<calculated when request is sent>
+       body: formData, // Changed from stringify to userData(FormData) directly
+     });
+     if (!response.ok) {
+       throw new Error(` ${response.status} ${response.statusText}`);
+     }
+     const result = await response.json();
+     console.log(result);
+
+     modal_success.classList.add("show");
+     modal_success.scrollIntoView({ behavior: "smooth" });
+     succes_inner.textContent = `Success ${result.message}`;
      userId = response.pId;
      console.log(userId);
-    setTimeout(() => {
-      modal_success.classList.remove("show");
-             location.href = `Welcome.html`;
-    }, 7000);
-      
+     setTimeout(() => {
+       modal_success.classList.remove("show");
+       location.href = `welcome.html`;
+     }, 7000);
    } catch (err) {
     console.log(err)
     modal_error.classList.add("showError");
