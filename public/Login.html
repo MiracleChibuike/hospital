@@ -123,12 +123,12 @@
             color: var(--clr-white-default);
             background: var(--login-error);
         }
-
+/* 
         .Firstname,
         .email,
         .password {
             margin: 20px 0;
-        }
+        } */
 
         .Firstname input,
         .email input,
@@ -138,7 +138,7 @@
             padding: 15px 30px;
             border-radius: 12px;
             outline: none;
-            width: 300px;
+            width: 100%;
             /* cursor: pointer; */
         }
 
@@ -147,8 +147,8 @@
             color: var(--clr-login_Message);
             width: 20px;
             position: relative;
-            left: 280px;
-            bottom: 32px;
+            left: 230px;
+            bottom: 38px;
             cursor: pointer;
         }
 
@@ -174,8 +174,8 @@
         .email img,
         .password img {
             position: relative;
-            left: 27px;
-            top: 3px;
+            left: 10px;
+            top: 38px;
         }
 
         .submit {
@@ -184,14 +184,13 @@
         }
 
         #login_button {
-            width: 93%;
+            width: 100%;
             padding: 12px 0;
             border: none;
             background: var(--clr-hospital);
             color: var(--clr-white-default);
             border-radius: 8px;
             position: relative;
-            left: 8px;
             cursor: pointer;
             position: relative;
             bottom: 10px;
@@ -269,8 +268,7 @@
             }
 
             #Login {
-                margin: 10px 0 0 0;
-                padding: 20px 0;
+                margin: 3px 1px;
             }
 
             #log_In {
@@ -295,6 +293,7 @@
 <header id="header">
         <span class="loader"></span>
  </header>
+
 
 <!-- MAIN-CONTAINER -->
 
@@ -371,7 +370,7 @@
                 </div>
 
                 <div class="account_Create">
-                    <p>Don't have an account? <span id="return_signUp" onclick="location.href='Register.html'">Create One</span></p>
+                    <p>Don't have an account? <span id="return_signUp" onclick="location.href='register.html'">Create One</span></p>
                 </div>
             </div>
         </section>

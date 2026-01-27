@@ -3,7 +3,7 @@
 // assets/js/nav-loader.js
 async function loadNav() {
     try {
-        const response = await fetch('assets/nav.html'); // Adjust path if needed
+        const response = await fetch('assets/nav.html'); 
         if (!response.ok) throw new Error('Failed to load nav');
         const navHtml = await response.text();
         document.getElementById('nav-placeholder').innerHTML = navHtml;
@@ -64,7 +64,7 @@ function initializeNav() {
   let loginPage = document.getElementById("log_In");
 
     const selectedPages = document.getElementsByClassName("nav-links-mobile");
-    console.log(selectedPages);
+    // console.log(selectedPages);
 
   // Restore active page from localStorage
   const activePage = localStorage.getItem("activePage");

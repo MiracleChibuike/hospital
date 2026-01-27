@@ -69,7 +69,10 @@ let modal_Error = document.querySelector(".modal_error");
 let error_Msg = document.getElementById("error")
 form.addEventListener("submit", async(e) => {
   e.preventDefault();
-  const userCredentials = new FormData(form)
+  const userCredentials = new FormData(form);
+  let loginButton = document.getElementById("login_button");
+  loginButton.disabled = true;
+  loginButton.innerHTML = `Logging in...`;
   try {
     const response = await fetch(
       `${API_DOMAIN}/patient/?request=login`, {
@@ -78,7 +81,7 @@ form.addEventListener("submit", async(e) => {
       }
     );
     if (!response.ok) {
-      throw new Error(`Sorry, something went wrong: ${response.status} ${response.statusText} ${response.message}`);
+      throw new Error(`Unable to login: ${response.status} ${response.statusText}`);
     };
     console.log(response)
     success_Modal.classList.add("show");
@@ -92,9 +95,12 @@ form.addEventListener("submit", async(e) => {
     console.log(err);
     modal_Error.classList.add("showError");
     modal_Error.scrollIntoView({behavior: 'smooth'});
-    error_Msg.textContent = `${err}`;
+    error_Msg.textContent = `${err.message}`;
     setTimeout(() => {
       modal_Error.classList.remove("showError");
     }, 8000)
+  }finally{
+    loginButton.disabled = false;
+    loginButton.innerHTML = `Log In`;
   }
 });

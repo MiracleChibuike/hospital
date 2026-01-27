@@ -59,7 +59,7 @@ const checkSecurePort = () => {
   ) {
    console.warn(`Running on localhost but not on port 80. Current port: ${location.port}`);
   }else{
-     alert("You are visiting a non-secure port on localhost");
+    //  alert("You are visiting a non-secure port on localhost");
      console.warn("You are visiting a non-secure port on localhost");
      console.warn(`You are not allowed to view this page`);
   }

@@ -89,6 +89,7 @@
         .form_Container {
             display: grid;
             place-content: center;
+            align-items: center;
             margin: 10px 0;
         }
 
@@ -100,7 +101,11 @@
         .dob,
         .phone,
         .password_Confirm {
-            margin: 15px 0;
+            /* margin: 2px 0; */
+        }
+        .password_Confirm{
+            position: relative;
+            bottom: 25px;
         }
 
         .firstname input,
@@ -115,21 +120,17 @@
             padding: 15px 30px;
             border-radius: 12px;
             outline: none;
-            width: 340px;
+            width: 100%;
             /* cursor: pointer; */
         }
          .dob select{
               background: var(--clr-darkGray);
             border: none;
-            padding: 15px 20px;
+            padding: 15px 30px;
             border-radius: 12px;
             outline: none;
+            width: 100%;
          }
-
-        #DateOfBirth {
-            width: 92%;
-            color: var(--clr-login_Message);
-        }
 
         /* input[type="date"]::placeholder {
                                 color: var(--clr-hospital);
@@ -179,8 +180,8 @@
         .phone img,
         .password_Confirm img {
             position: relative;
-            left: 27px;
-            /* top: 3px; */
+            left: 10px;
+            top: 38px;
         }
 
         .submit {
@@ -195,17 +196,14 @@
             background: var(--clr-hospital);
             color: var(--clr-white-default);
             border-radius: 8px;
-            position: relative;
-            left: 8px;
             cursor: pointer;
             position: relative;
-            bottom: 10px;
         }
 
         #login_button:hover {
-            background: var(--clr-hospital-deep);
+            background: var(--clr-dark-blue);
             transition: .4s ease-in-out;
-            scale: 1.1;
+            scale: 1;
         }
 
         .New_Sign {
@@ -300,10 +298,9 @@
         }
         @media screen and (min-width: 0) and (max-width: 750px) {
 
-            /* #Login {
-                margin: 50px 0 0 0;
-                padding: 20px 10px;
-            } */
+            .form_Container{
+                margin: 3px 20px;
+            }
 
             #log_In {
                 position: relative;
@@ -316,11 +313,6 @@
                 top: 15%;
                 left: 7%;
                 right: 7%;
-            }
-
-            form {
-                position: relative;
-                left: -10px;
             }
         }
     </style>
@@ -406,7 +398,7 @@
                             <option value="" selected>Day</option>
                         </select>
                         
-                        <select name="dob_month" id="dob_month" >
+                        <select name="dob_month" id="dob_month" style="margin: 20px 0;">
                             <option value="" selected>Month</option>
                         </select>
                         
@@ -442,12 +434,12 @@
 
                     </div>
                     <div class="submit">
-                        <button type="submit" id="login_button">Sign Up</button>
+                        <button type="submit" id="login_button" style="width: 100%;" >Sign Up</button>
                     </div>
                 </form>
 
                 <div class="New_Sign">
-                    <p>or sign up with </p>
+                    <p >or sign up with </p>
                     <div class="Sign_Up_Options">
                         <img src="assets/images/login_icons/Google.png" id="Google_log" alt="">
                         <img src="assets/images/login_icons/Facebook.png" id="facebook_log" alt="">
@@ -455,7 +447,7 @@
                 </div>
 
                 <div class="account_Create">
-                    <p>Already have an account? <span id="return_LogIn" onclick="location.href='Login.html'">Log In</span></p>
+                    <p>Already have an account? <span id="return_LogIn" onclick="location.href='login.html'">Log In</span></p>
                 </div>
             </div>
         </section>

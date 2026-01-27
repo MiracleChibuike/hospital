@@ -158,7 +158,7 @@ Sin_Inform.addEventListener("submit", async(e) => {
      if (!day || !month || !year) {
        modal_error.classList.add("showError");
        modal_error.scrollIntoView({ behavior: "smooth" });
-       error_inner.innerHTML = `Please select a valid Date of Birth to proceed.`;
+       error_inner.innerHTML = `Please select a valid Date of Birth.`;
        setTimeout(() => {
          modal_error.classList.remove("showError");
        }, 7000);
@@ -202,7 +202,7 @@ Sin_Inform.addEventListener("submit", async(e) => {
        body: formData, // Changed from stringify to userData(FormData) directly
      });
      if (!response.ok) {
-       throw new Error(` ${response.status} ${response.statusText}`);
+       throw new Error(`Registration failed: ${response.status} ${response.statusText}`);
      }
      const result = await response.json();
      console.log(result);
@@ -217,7 +217,7 @@ Sin_Inform.addEventListener("submit", async(e) => {
        location.href = `welcome.html`;
      }, 7000);
    } catch (err) {
-    console.log(err)
+    console.log(err.message)
     modal_error.classList.add("showError");
     modal_error.scrollIntoView({behavior: 'smooth'});
     error_inner.innerHTML = `${err}`;
